@@ -30,10 +30,15 @@ namespace ProjetoFinalPJS
         {
 
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
+
             FormCadastrarMidia frm = new FormCadastrarMidia();
+            //Meu trecho
+            int teste1 = 1;
             frm.Show();
+            teste1 = teste1 + 1;
         }
 
         private void inserirMídiaToolStripMenuItem_Click(object sender, EventArgs e)
