@@ -34,6 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +60,24 @@
     <Compile Include="FormCadastrarMidia.Designer.cs">
       <DependentUpon>FormCadastrarMidia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDevolverMidia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDevolverMidia.Designer.cs">
+      <DependentUpon>FormDevolverMidia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmprestarMidia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmprestarMidia.Designer.cs">
+      <DependentUpon>FormEmprestarMidia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaAmigos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaAmigos.Designer.cs">
+      <DependentUpon>FormListaAmigos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +91,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastrarMidia.resx">
       <DependentUpon>FormCadastrarMidia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDevolverMidia.resx">
+      <DependentUpon>FormDevolverMidia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmprestarMidia.resx">
+      <DependentUpon>FormEmprestarMidia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaAmigos.resx">
+      <DependentUpon>FormListaAmigos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
