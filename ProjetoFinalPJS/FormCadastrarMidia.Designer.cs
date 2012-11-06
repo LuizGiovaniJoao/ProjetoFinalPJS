@@ -51,8 +51,8 @@
             this.buttonGravar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox_nomeMusica = new System.Windows.Forms.TextBox();
-            this.checkBox_album = new System.Windows.Forms.CheckBox();
-            this.checkBox_musica = new System.Windows.Forms.CheckBox();
+            this.radio_Album = new System.Windows.Forms.RadioButton();
+            this.radioButton_Musica = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // textBoxInterprete
@@ -277,35 +277,37 @@
             this.textBox_nomeMusica.Size = new System.Drawing.Size(535, 20);
             this.textBox_nomeMusica.TabIndex = 22;
             // 
-            // checkBox_album
+            // radio_Album
             // 
-            this.checkBox_album.AutoSize = true;
-            this.checkBox_album.Location = new System.Drawing.Point(12, 12);
-            this.checkBox_album.Name = "checkBox_album";
-            this.checkBox_album.Size = new System.Drawing.Size(55, 17);
-            this.checkBox_album.TabIndex = 23;
-            this.checkBox_album.Text = "Álbum";
-            this.checkBox_album.UseVisualStyleBackColor = true;
-            this.checkBox_album.CheckedChanged += new System.EventHandler(this.checkBox_album_CheckedChanged);
+            this.radio_Album.AutoSize = true;
+            this.radio_Album.Location = new System.Drawing.Point(15, 13);
+            this.radio_Album.Name = "radio_Album";
+            this.radio_Album.Size = new System.Drawing.Size(54, 17);
+            this.radio_Album.TabIndex = 23;
+            this.radio_Album.TabStop = true;
+            this.radio_Album.Text = "Álbum";
+            this.radio_Album.UseVisualStyleBackColor = true;
+            this.radio_Album.CheckedChanged += new System.EventHandler(this.radio_Album_CheckedChanged);
             // 
-            // checkBox_musica
+            // radioButton_Musica
             // 
-            this.checkBox_musica.AutoSize = true;
-            this.checkBox_musica.Location = new System.Drawing.Point(73, 12);
-            this.checkBox_musica.Name = "checkBox_musica";
-            this.checkBox_musica.Size = new System.Drawing.Size(60, 17);
-            this.checkBox_musica.TabIndex = 24;
-            this.checkBox_musica.Text = "Música";
-            this.checkBox_musica.UseVisualStyleBackColor = true;
-            this.checkBox_musica.CheckedChanged += new System.EventHandler(this.checkBox_musica_CheckedChanged);
+            this.radioButton_Musica.AutoSize = true;
+            this.radioButton_Musica.Location = new System.Drawing.Point(75, 13);
+            this.radioButton_Musica.Name = "radioButton_Musica";
+            this.radioButton_Musica.Size = new System.Drawing.Size(59, 17);
+            this.radioButton_Musica.TabIndex = 24;
+            this.radioButton_Musica.TabStop = true;
+            this.radioButton_Musica.Text = "Música";
+            this.radioButton_Musica.UseVisualStyleBackColor = true;
+            this.radioButton_Musica.CheckedChanged += new System.EventHandler(this.radioButton_Musica_CheckedChanged);
             // 
             // FormCadastrarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 395);
-            this.Controls.Add(this.checkBox_musica);
-            this.Controls.Add(this.checkBox_album);
+            this.Controls.Add(this.radioButton_Musica);
+            this.Controls.Add(this.radio_Album);
             this.Controls.Add(this.textBox_nomeMusica);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonGravar);
@@ -361,7 +363,7 @@
         private System.Windows.Forms.Button buttonGravar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox_nomeMusica;
-        private System.Windows.Forms.CheckBox checkBox_album;
-        private System.Windows.Forms.CheckBox checkBox_musica;
+        private System.Windows.Forms.RadioButton radio_Album;
+        private System.Windows.Forms.RadioButton radioButton_Musica;
     }
 }

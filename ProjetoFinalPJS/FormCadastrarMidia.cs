@@ -21,11 +21,10 @@ namespace ProjetoFinalPJS
 
         }
 
-        private void checkBox_album_CheckedChanged(object sender, EventArgs e)
+        private void radio_Album_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_album.Checked)
+            if (radio_Album.Checked)
             {
-                checkBox_musica.Checked = false;
                 textBoxInterprete.Enabled = true;
                 textBoxAutor.Enabled = true;
                 textBoxAlbum.Enabled = true;
@@ -34,7 +33,6 @@ namespace ProjetoFinalPJS
                 textBoxOrigemCompra.Enabled = true;
                 comboBoxMidia.Enabled = true;
                 comboBoxNota.Enabled = true;
-                textBoxObsevacoes.Enabled = true;
             }
             else
             {
@@ -46,32 +44,33 @@ namespace ProjetoFinalPJS
                 textBoxOrigemCompra.Enabled = false;
                 comboBoxMidia.Enabled = false;
                 comboBoxNota.Enabled = false;
-                textBoxObsevacoes.Enabled = false;
             }
+            
         }
 
-        private void checkBox_musica_CheckedChanged(object sender, EventArgs e)
+        private void radioButton_Musica_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_musica.Checked)
+            if (radioButton_Musica.Checked)
             {
-                checkBox_album.Checked = false;
                 textBoxInterprete.Enabled = true;
                 textBoxAutor.Enabled = true;
+                textBox_nomeMusica.Enabled = true;
                 dateTimePickerCompra.Enabled = true;
                 textBoxOrigemCompra.Enabled = true;
                 comboBoxMidia.Enabled = true;
                 comboBoxNota.Enabled = true;
                 textBoxObsevacoes.Enabled = true;
             }
-            else 
+            else
             {
                 textBoxInterprete.Enabled = false;
                 textBoxAutor.Enabled = false;
+                textBox_nomeMusica.Enabled = false;
                 dateTimePickerCompra.Enabled = false;
                 textBoxOrigemCompra.Enabled = false;
                 comboBoxMidia.Enabled = false;
                 comboBoxNota.Enabled = false;
-                textBoxObsevacoes.Enabled = false; 
+                textBoxObsevacoes.Enabled = false;
             }
         }
     }
