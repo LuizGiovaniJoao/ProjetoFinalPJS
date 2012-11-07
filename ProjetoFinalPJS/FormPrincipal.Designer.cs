@@ -92,6 +92,9 @@
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Numero,
             this.interprete,
@@ -162,6 +165,7 @@
             // 
             // buttonAlterar
             // 
+            this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAlterar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAlterar.Image")));
             this.buttonAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAlterar.Location = new System.Drawing.Point(723, 547);
@@ -174,6 +178,7 @@
             // 
             // buttonRemover
             // 
+            this.buttonRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRemover.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemover.Image")));
             this.buttonRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRemover.Location = new System.Drawing.Point(804, 547);
@@ -186,6 +191,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.checkBox_nota);
@@ -223,6 +230,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(522, 106);
             this.label8.Name = "label8";
@@ -232,6 +240,7 @@
             // 
             // checkBox_nota
             // 
+            this.checkBox_nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_nota.AutoSize = true;
             this.checkBox_nota.Location = new System.Drawing.Point(504, 130);
             this.checkBox_nota.Name = "checkBox_nota";
@@ -242,6 +251,7 @@
             // 
             // comboBox_Nota
             // 
+            this.comboBox_Nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_Nota.Enabled = false;
             this.comboBox_Nota.FormattingEnabled = true;
             this.comboBox_Nota.Items.AddRange(new object[] {
@@ -263,6 +273,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(436, 106);
             this.label7.Name = "label7";
@@ -272,6 +283,7 @@
             // 
             // comboBox_midia
             // 
+            this.comboBox_midia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_midia.Enabled = false;
             this.comboBox_midia.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox_midia.FormattingEnabled = true;
@@ -288,6 +300,7 @@
             // 
             // dateTime_dataCompra
             // 
+            this.dateTime_dataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTime_dataCompra.Enabled = false;
             this.dateTime_dataCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTime_dataCompra.Location = new System.Drawing.Point(439, 81);
@@ -297,6 +310,7 @@
             // 
             // checkBox_midia
             // 
+            this.checkBox_midia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_midia.AutoSize = true;
             this.checkBox_midia.Location = new System.Drawing.Point(418, 130);
             this.checkBox_midia.Name = "checkBox_midia";
@@ -307,6 +321,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(436, 62);
             this.label4.Name = "label4";
@@ -316,6 +331,7 @@
             // 
             // dateTime_dataAlbum
             // 
+            this.dateTime_dataAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTime_dataAlbum.Enabled = false;
             this.dateTime_dataAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTime_dataAlbum.Location = new System.Drawing.Point(439, 39);
@@ -325,6 +341,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(436, 20);
             this.label6.Name = "label6";
@@ -343,6 +360,7 @@
             // 
             // checkBox_dataCompra
             // 
+            this.checkBox_dataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataCompra.AutoSize = true;
             this.checkBox_dataCompra.Location = new System.Drawing.Point(418, 86);
             this.checkBox_dataCompra.Name = "checkBox_dataCompra";
@@ -353,6 +371,8 @@
             // 
             // textBox_origemCompra
             // 
+            this.textBox_origemCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_origemCompra.Enabled = false;
             this.textBox_origemCompra.Location = new System.Drawing.Point(39, 169);
             this.textBox_origemCompra.Name = "textBox_origemCompra";
@@ -379,6 +399,8 @@
             // 
             // textBox_Album
             // 
+            this.textBox_Album.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Album.Enabled = false;
             this.textBox_Album.Location = new System.Drawing.Point(39, 125);
             this.textBox_Album.Name = "textBox_Album";
@@ -387,6 +409,7 @@
             // 
             // checkBox_dataAlbum
             // 
+            this.checkBox_dataAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataAlbum.AutoSize = true;
             this.checkBox_dataAlbum.Location = new System.Drawing.Point(418, 42);
             this.checkBox_dataAlbum.Name = "checkBox_dataAlbum";
@@ -406,6 +429,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(417, 169);
@@ -418,6 +442,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.Location = new System.Drawing.Point(498, 169);
@@ -429,6 +454,8 @@
             // 
             // textBox_Autor
             // 
+            this.textBox_Autor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Autor.Enabled = false;
             this.textBox_Autor.Location = new System.Drawing.Point(39, 81);
             this.textBox_Autor.Name = "textBox_Autor";
@@ -447,6 +474,8 @@
             // 
             // textBoxInterprete
             // 
+            this.textBoxInterprete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxInterprete.Enabled = false;
             this.textBoxInterprete.Location = new System.Drawing.Point(39, 37);
             this.textBoxInterprete.Name = "textBoxInterprete";
