@@ -21,5 +21,15 @@ namespace ProjetoFinalPJS
             FormCadastrarAmigo frm = new FormCadastrarAmigo();
             frm.ShowDialog();
         }
+
+        private void FormListaAmigos_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+   
+        }
     }
 }

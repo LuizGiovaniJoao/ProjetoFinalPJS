@@ -24,6 +24,7 @@ namespace ProjetoFinalPJS
         private void radio_Album_CheckedChanged(object sender, EventArgs e)
         {
             buttonGravar.Enabled = false;
+            
             if (radio_Album.Checked)
             {
                 textBoxInterprete.Enabled = true;
@@ -34,6 +35,7 @@ namespace ProjetoFinalPJS
                 textBoxOrigemCompra.Enabled = true;
                 comboBoxMidia.Enabled = true;
                 comboBoxNota.Enabled = true;
+                textBoxObsevacoes.Enabled = true;
             }
             else
             {
@@ -46,12 +48,14 @@ namespace ProjetoFinalPJS
                 comboBoxMidia.Enabled = false;
                 comboBoxNota.Enabled = false;
             }
+            textBoxInterprete.Focus();
             
         }
 
         private void radioButton_Musica_CheckedChanged(object sender, EventArgs e)
         {
             buttonGravar.Enabled = false;
+            
             if (radioButton_Musica.Checked)
             {
                 textBoxInterprete.Enabled = true;
@@ -74,6 +78,7 @@ namespace ProjetoFinalPJS
                 comboBoxNota.Enabled = false;
                 textBoxObsevacoes.Enabled = false;
             }
+            textBoxInterprete.Focus();
         }
 
         private void buttonLimpar_Click(object sender, EventArgs e)

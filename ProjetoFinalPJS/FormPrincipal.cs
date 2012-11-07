@@ -156,6 +156,13 @@ namespace ProjetoFinalPJS
         private void button1_Click(object sender, EventArgs e)
         {
             checkBoxInterprete.Checked = false;
+            checkBox_album.Checked = false;
+            checkBox_Autor.Checked = false;
+            checkBox_origemCompra.Checked = false;
+            checkBox_dataCompra.Checked = false;
+            checkBox_dataAlbum.Checked = false;
+            checkBox_midia.Checked = false;
+            checkBox_nota.Checked = false;
         }
     }
 }

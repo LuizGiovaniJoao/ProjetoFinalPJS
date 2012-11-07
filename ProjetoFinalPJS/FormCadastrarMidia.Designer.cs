@@ -58,6 +58,8 @@
             // 
             // textBoxInterprete
             // 
+            this.textBoxInterprete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxInterprete.Enabled = false;
             this.textBoxInterprete.Location = new System.Drawing.Point(15, 57);
             this.textBoxInterprete.Name = "textBoxInterprete";
@@ -66,6 +68,8 @@
             // 
             // textBoxAutor
             // 
+            this.textBoxAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAutor.Enabled = false;
             this.textBoxAutor.Location = new System.Drawing.Point(15, 96);
             this.textBoxAutor.Name = "textBoxAutor";
@@ -74,6 +78,8 @@
             // 
             // textBoxOrigemCompra
             // 
+            this.textBoxOrigemCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxOrigemCompra.Enabled = false;
             this.textBoxOrigemCompra.Location = new System.Drawing.Point(20, 256);
             this.textBoxOrigemCompra.Name = "textBoxOrigemCompra";
@@ -82,6 +88,8 @@
             // 
             // textBoxAlbum
             // 
+            this.textBoxAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAlbum.Enabled = false;
             this.textBoxAlbum.Location = new System.Drawing.Point(15, 135);
             this.textBoxAlbum.Name = "textBoxAlbum";
@@ -90,6 +98,9 @@
             // 
             // textBoxObsevacoes
             // 
+            this.textBoxObsevacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxObsevacoes.Enabled = false;
             this.textBoxObsevacoes.Location = new System.Drawing.Point(20, 297);
             this.textBoxObsevacoes.Multiline = true;
@@ -118,6 +129,7 @@
             // 
             // comboBoxMidia
             // 
+            this.comboBoxMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxMidia.Enabled = false;
             this.comboBoxMidia.FormattingEnabled = true;
             this.comboBoxMidia.Items.AddRange(new object[] {
@@ -133,6 +145,7 @@
             // 
             // comboBoxNota
             // 
+            this.comboBoxNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxNota.Enabled = false;
             this.comboBoxNota.FormattingEnabled = true;
             this.comboBoxNota.Items.AddRange(new object[] {
@@ -209,6 +222,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(411, 240);
             this.label7.Name = "label7";
@@ -227,6 +241,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(510, 240);
             this.label9.Name = "label9";
@@ -236,6 +251,7 @@
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSalvar.Image = ((System.Drawing.Image)(resources.GetObject("buttonSalvar.Image")));
             this.buttonSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSalvar.Location = new System.Drawing.Point(319, 363);
@@ -247,6 +263,7 @@
             // 
             // buttonLimpar
             // 
+            this.buttonLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonLimpar.Image = ((System.Drawing.Image)(resources.GetObject("buttonLimpar.Image")));
             this.buttonLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpar.Location = new System.Drawing.Point(481, 363);
@@ -259,6 +276,7 @@
             // 
             // buttonGravar
             // 
+            this.buttonGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGravar.Image = ((System.Drawing.Image)(resources.GetObject("buttonGravar.Image")));
             this.buttonGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonGravar.Location = new System.Drawing.Point(400, 363);
@@ -279,6 +297,8 @@
             // 
             // textBox_nomeMusica
             // 
+            this.textBox_nomeMusica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_nomeMusica.Enabled = false;
             this.textBox_nomeMusica.Location = new System.Drawing.Point(18, 178);
             this.textBox_nomeMusica.Name = "textBox_nomeMusica";
