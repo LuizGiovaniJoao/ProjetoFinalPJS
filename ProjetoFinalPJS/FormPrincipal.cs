@@ -36,7 +36,7 @@ namespace ProjetoFinalPJS
 
             FormCadastrarMidia frm = new FormCadastrarMidia();
             frm.Show();
-       }
+        }
 
         private void inserirMídiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
