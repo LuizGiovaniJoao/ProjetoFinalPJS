@@ -23,6 +23,7 @@ namespace ProjetoFinalPJS
 
         private void radio_Album_CheckedChanged(object sender, EventArgs e)
         {
+            buttonGravar.Enabled = false;
             if (radio_Album.Checked)
             {
                 textBoxInterprete.Enabled = true;
@@ -50,6 +51,7 @@ namespace ProjetoFinalPJS
 
         private void radioButton_Musica_CheckedChanged(object sender, EventArgs e)
         {
+            buttonGravar.Enabled = false;
             if (radioButton_Musica.Checked)
             {
                 textBoxInterprete.Enabled = true;
@@ -72,6 +74,19 @@ namespace ProjetoFinalPJS
                 comboBoxNota.Enabled = false;
                 textBoxObsevacoes.Enabled = false;
             }
+        }
+
+        private void buttonLimpar_Click(object sender, EventArgs e)
+        {
+            textBoxInterprete.Text = null;
+            textBoxAutor.Text = null;
+            textBoxAlbum.Text = null;
+            textBox_nomeMusica.Text = null;
+            textBoxOrigemCompra.Text = null;
+            comboBoxMidia.Text = null;
+            comboBoxNota.Text = null;
+            textBoxObsevacoes.Text = null;
+            textBoxInterprete.Focus();
         }
     }
 }

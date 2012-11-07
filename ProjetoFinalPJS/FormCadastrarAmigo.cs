@@ -15,5 +15,19 @@ namespace ProjetoFinalPJS
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBoxNome.Text = null;
+            textBoxBairro.Text = null;
+            textBoxCidade.Text = null;
+            textBoxEndereco.Text = null;
+            comboBoxUF.Text = null;
+            textBox_Email.Text = null;
+            maskedText_celular.Text = null;
+            maskedTextBoxTelefone.Text = null;
+            textBox_Email.Text = null;
+            textBoxNome.Focus();
+        }
     }
 }

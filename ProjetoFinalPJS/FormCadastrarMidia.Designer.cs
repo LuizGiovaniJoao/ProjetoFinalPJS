@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarMidia));
             this.textBoxInterprete = new System.Windows.Forms.TextBox();
             this.textBoxAutor = new System.Windows.Forms.TextBox();
             this.textBoxOrigemCompra = new System.Windows.Forms.TextBox();
@@ -235,6 +236,8 @@
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.Image = ((System.Drawing.Image)(resources.GetObject("buttonSalvar.Image")));
+            this.buttonSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSalvar.Location = new System.Drawing.Point(319, 363);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
@@ -244,15 +247,20 @@
             // 
             // buttonLimpar
             // 
+            this.buttonLimpar.Image = ((System.Drawing.Image)(resources.GetObject("buttonLimpar.Image")));
+            this.buttonLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpar.Location = new System.Drawing.Point(481, 363);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
             this.buttonLimpar.TabIndex = 19;
             this.buttonLimpar.Text = "Limpar";
             this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // buttonGravar
             // 
+            this.buttonGravar.Image = ((System.Drawing.Image)(resources.GetObject("buttonGravar.Image")));
+            this.buttonGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonGravar.Location = new System.Drawing.Point(400, 363);
             this.buttonGravar.Name = "buttonGravar";
             this.buttonGravar.Size = new System.Drawing.Size(75, 23);
