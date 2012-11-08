@@ -240,6 +240,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Name = "FormCadastrarAmigo";
             this.Text = "Cadatro de Amigo";
+            this.Load += new System.EventHandler(this.FormCadastrarAmigo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

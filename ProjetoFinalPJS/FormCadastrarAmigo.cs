@@ -29,5 +29,10 @@ namespace ProjetoFinalPJS
             textBox_Email.Text = null;
             textBoxNome.Focus();
         }
+
+        private void FormCadastrarAmigo_Load(object sender, EventArgs e)
+        {
+            // 
+        }
     }
 }
