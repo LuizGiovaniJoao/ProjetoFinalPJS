@@ -23,75 +23,75 @@ namespace ProjetoFinalPJS
 
         private void radio_Album_CheckedChanged(object sender, EventArgs e)
         {
-            buttonGravar.Enabled = false;
+            btGravar.Enabled = false;
             
-            if (radio_Album.Checked)
+            if (radioAlbum.Checked)
             {
-                textBoxInterprete.Enabled = true;
-                textBoxAutor.Enabled = true;
-                textBoxAlbum.Enabled = true;
+                tbxInterprete.Enabled = true;
+                tbxAutor.Enabled = true;
+                tbxAlbum.Enabled = true;
                 dateTimePickerAlbum.Enabled = true;
                 dateTimePickerCompra.Enabled = true;
-                textBoxOrigemCompra.Enabled = true;
-                comboBoxMidia.Enabled = true;
-                comboBoxNota.Enabled = true;
-                textBoxObsevacoes.Enabled = true;
+                tbxOrigemCompra.Enabled = true;
+                cbxMidia.Enabled = true;
+                cbxNota.Enabled = true;
+                tbxObsevacoes.Enabled = true;
             }
             else
             {
-                textBoxInterprete.Enabled = false;
-                textBoxAutor.Enabled = false;
-                textBoxAlbum.Enabled = false;
+                tbxInterprete.Enabled = false;
+                tbxAutor.Enabled = false;
+                tbxAlbum.Enabled = false;
                 dateTimePickerAlbum.Enabled = false;
                 dateTimePickerCompra.Enabled = false;
-                textBoxOrigemCompra.Enabled = false;
-                comboBoxMidia.Enabled = false;
-                comboBoxNota.Enabled = false;
+                tbxOrigemCompra.Enabled = false;
+                cbxMidia.Enabled = false;
+                cbxNota.Enabled = false;
             }
-            textBoxInterprete.Focus();
+            tbxInterprete.Focus();
             
         }
 
         private void radioButton_Musica_CheckedChanged(object sender, EventArgs e)
         {
-            buttonGravar.Enabled = false;
+            btGravar.Enabled = false;
             
-            if (radioButton_Musica.Checked)
+            if (radioMusica.Checked)
             {
-                textBoxInterprete.Enabled = true;
-                textBoxAutor.Enabled = true;
-                textBox_nomeMusica.Enabled = true;
+                tbxInterprete.Enabled = true;
+                tbxAutor.Enabled = true;
+                tbxMusica.Enabled = true;
                 dateTimePickerCompra.Enabled = true;
-                textBoxOrigemCompra.Enabled = true;
-                comboBoxMidia.Enabled = true;
-                comboBoxNota.Enabled = true;
-                textBoxObsevacoes.Enabled = true;
+                tbxOrigemCompra.Enabled = true;
+                cbxMidia.Enabled = true;
+                cbxNota.Enabled = true;
+                tbxObsevacoes.Enabled = true;
             }
             else
             {
-                textBoxInterprete.Enabled = false;
-                textBoxAutor.Enabled = false;
-                textBox_nomeMusica.Enabled = false;
+                tbxInterprete.Enabled = false;
+                tbxAutor.Enabled = false;
+                tbxMusica.Enabled = false;
                 dateTimePickerCompra.Enabled = false;
-                textBoxOrigemCompra.Enabled = false;
-                comboBoxMidia.Enabled = false;
-                comboBoxNota.Enabled = false;
-                textBoxObsevacoes.Enabled = false;
+                tbxOrigemCompra.Enabled = false;
+                cbxMidia.Enabled = false;
+                cbxNota.Enabled = false;
+                tbxObsevacoes.Enabled = false;
             }
-            textBoxInterprete.Focus();
+            tbxInterprete.Focus();
         }
 
         private void buttonLimpar_Click(object sender, EventArgs e)
         {
-            textBoxInterprete.Text = null;
-            textBoxAutor.Text = null;
-            textBoxAlbum.Text = null;
-            textBox_nomeMusica.Text = null;
-            textBoxOrigemCompra.Text = null;
-            comboBoxMidia.Text = null;
-            comboBoxNota.Text = null;
-            textBoxObsevacoes.Text = null;
-            textBoxInterprete.Focus();
+            tbxInterprete.Text = null;
+            tbxAutor.Text = null;
+            tbxAlbum.Text = null;
+            tbxMusica.Text = null;
+            tbxOrigemCompra.Text = null;
+            cbxMidia.Text = null;
+            cbxNota.Text = null;
+            tbxObsevacoes.Text = null;
+            tbxInterprete.Focus();
         }
     }
 }

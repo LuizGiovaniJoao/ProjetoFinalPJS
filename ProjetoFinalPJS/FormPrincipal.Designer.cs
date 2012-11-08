@@ -34,7 +34,7 @@
             System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewMidia = new System.Windows.Forms.ListView();
             this.Numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.interprete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,40 +44,40 @@
             this.midia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.obsevacoes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonAlterar = new System.Windows.Forms.Button();
-            this.buttonRemover = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btAlterar = new System.Windows.Forms.Button();
+            this.btRemover = new System.Windows.Forms.Button();
+            this.gpbxFiltro = new System.Windows.Forms.GroupBox();
+            this.lbNota = new System.Windows.Forms.Label();
             this.checkBox_nota = new System.Windows.Forms.CheckBox();
-            this.comboBox_Nota = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox_midia = new System.Windows.Forms.ComboBox();
-            this.dateTime_dataCompra = new System.Windows.Forms.DateTimePicker();
+            this.cbxNota = new System.Windows.Forms.ComboBox();
+            this.lbMidia = new System.Windows.Forms.Label();
+            this.cbxMidia = new System.Windows.Forms.ComboBox();
+            this.dateTimeDataCompra = new System.Windows.Forms.DateTimePicker();
             this.checkBox_midia = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTime_dataAlbum = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbDtCompra = new System.Windows.Forms.Label();
+            this.dateTimeDataAlbum = new System.Windows.Forms.DateTimePicker();
+            this.lbDtAlbum = new System.Windows.Forms.Label();
+            this.lbOrigemCompra = new System.Windows.Forms.Label();
             this.checkBox_dataCompra = new System.Windows.Forms.CheckBox();
-            this.textBox_origemCompra = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_Album = new System.Windows.Forms.TextBox();
+            this.tbxOrigemCompra = new System.Windows.Forms.TextBox();
+            this.lbNomeAlbum = new System.Windows.Forms.Label();
+            this.lbNomeAutor = new System.Windows.Forms.Label();
+            this.tbxAlbum = new System.Windows.Forms.TextBox();
             this.checkBox_dataAlbum = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox_Autor = new System.Windows.Forms.TextBox();
+            this.lbInterprete = new System.Windows.Forms.Label();
+            this.btTodos = new System.Windows.Forms.Button();
+            this.btFiltral = new System.Windows.Forms.Button();
+            this.tbxAutor = new System.Windows.Forms.TextBox();
             this.checkBox_origemCompra = new System.Windows.Forms.CheckBox();
-            this.textBoxInterprete = new System.Windows.Forms.TextBox();
+            this.tbxInterprete = new System.Windows.Forms.TextBox();
             this.checkBox_album = new System.Windows.Forms.CheckBox();
             this.checkBoxInterprete = new System.Windows.Forms.CheckBox();
             this.checkBox_Autor = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btDevolverMidia = new System.Windows.Forms.Button();
+            this.btEmprestarMidia = new System.Windows.Forms.Button();
+            this.btCadAmigo = new System.Windows.Forms.Button();
+            this.btCadMidia = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mídiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,17 +85,17 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emprestarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
+            this.gpbxFiltro.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // listViewMidia
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.listViewMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewMidia.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Numero,
             this.interprete,
             this.autor,
@@ -115,17 +115,17 @@
             listViewGroup4.Name = "DVD";
             listViewGroup5.Header = "Digital";
             listViewGroup5.Name = "Digital";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            this.listViewMidia.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
             listViewGroup1,
             listViewGroup2,
             listViewGroup3,
             listViewGroup4,
             listViewGroup5});
-            this.listView1.Location = new System.Drawing.Point(12, 245);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(867, 296);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewMidia.Location = new System.Drawing.Point(12, 245);
+            this.listViewMidia.Name = "listViewMidia";
+            this.listViewMidia.Size = new System.Drawing.Size(867, 296);
+            this.listViewMidia.TabIndex = 1;
+            this.listViewMidia.UseCompatibleStateImageBehavior = false;
             // 
             // Numero
             // 
@@ -163,80 +163,80 @@
             // 
             this.nota.Text = "Nota";
             // 
-            // buttonAlterar
+            // btAlterar
             // 
-            this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAlterar.Image")));
-            this.buttonAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAlterar.Location = new System.Drawing.Point(723, 547);
-            this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterar.TabIndex = 2;
-            this.buttonAlterar.Text = "Alterar";
-            this.buttonAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btAlterar.Image")));
+            this.btAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btAlterar.Location = new System.Drawing.Point(723, 547);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btAlterar.TabIndex = 2;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btAlterar.UseVisualStyleBackColor = true;
             // 
-            // buttonRemover
+            // btRemover
             // 
-            this.buttonRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRemover.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemover.Image")));
-            this.buttonRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRemover.Location = new System.Drawing.Point(804, 547);
-            this.buttonRemover.Name = "buttonRemover";
-            this.buttonRemover.Size = new System.Drawing.Size(75, 23);
-            this.buttonRemover.TabIndex = 3;
-            this.buttonRemover.Text = "Remover";
-            this.buttonRemover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRemover.UseVisualStyleBackColor = true;
+            this.btRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btRemover.Image = ((System.Drawing.Image)(resources.GetObject("btRemover.Image")));
+            this.btRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btRemover.Location = new System.Drawing.Point(804, 547);
+            this.btRemover.Name = "btRemover";
+            this.btRemover.Size = new System.Drawing.Size(75, 23);
+            this.btRemover.TabIndex = 3;
+            this.btRemover.Text = "Remover";
+            this.btRemover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btRemover.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gpbxFiltro
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gpbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.checkBox_nota);
-            this.groupBox1.Controls.Add(this.comboBox_Nota);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.comboBox_midia);
-            this.groupBox1.Controls.Add(this.dateTime_dataCompra);
-            this.groupBox1.Controls.Add(this.checkBox_midia);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTime_dataAlbum);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.checkBox_dataCompra);
-            this.groupBox1.Controls.Add(this.textBox_origemCompra);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox_Album);
-            this.groupBox1.Controls.Add(this.checkBox_dataAlbum);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox_Autor);
-            this.groupBox1.Controls.Add(this.checkBox_origemCompra);
-            this.groupBox1.Controls.Add(this.textBoxInterprete);
-            this.groupBox1.Controls.Add(this.checkBox_album);
-            this.groupBox1.Controls.Add(this.checkBoxInterprete);
-            this.groupBox1.Controls.Add(this.checkBox_Autor);
-            this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(300, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(579, 198);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtro";
+            this.gpbxFiltro.BackColor = System.Drawing.SystemColors.Control;
+            this.gpbxFiltro.Controls.Add(this.lbNota);
+            this.gpbxFiltro.Controls.Add(this.checkBox_nota);
+            this.gpbxFiltro.Controls.Add(this.cbxNota);
+            this.gpbxFiltro.Controls.Add(this.lbMidia);
+            this.gpbxFiltro.Controls.Add(this.cbxMidia);
+            this.gpbxFiltro.Controls.Add(this.dateTimeDataCompra);
+            this.gpbxFiltro.Controls.Add(this.checkBox_midia);
+            this.gpbxFiltro.Controls.Add(this.lbDtCompra);
+            this.gpbxFiltro.Controls.Add(this.dateTimeDataAlbum);
+            this.gpbxFiltro.Controls.Add(this.lbDtAlbum);
+            this.gpbxFiltro.Controls.Add(this.lbOrigemCompra);
+            this.gpbxFiltro.Controls.Add(this.checkBox_dataCompra);
+            this.gpbxFiltro.Controls.Add(this.tbxOrigemCompra);
+            this.gpbxFiltro.Controls.Add(this.lbNomeAlbum);
+            this.gpbxFiltro.Controls.Add(this.lbNomeAutor);
+            this.gpbxFiltro.Controls.Add(this.tbxAlbum);
+            this.gpbxFiltro.Controls.Add(this.checkBox_dataAlbum);
+            this.gpbxFiltro.Controls.Add(this.lbInterprete);
+            this.gpbxFiltro.Controls.Add(this.btTodos);
+            this.gpbxFiltro.Controls.Add(this.btFiltral);
+            this.gpbxFiltro.Controls.Add(this.tbxAutor);
+            this.gpbxFiltro.Controls.Add(this.checkBox_origemCompra);
+            this.gpbxFiltro.Controls.Add(this.tbxInterprete);
+            this.gpbxFiltro.Controls.Add(this.checkBox_album);
+            this.gpbxFiltro.Controls.Add(this.checkBoxInterprete);
+            this.gpbxFiltro.Controls.Add(this.checkBox_Autor);
+            this.gpbxFiltro.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbxFiltro.Location = new System.Drawing.Point(300, 27);
+            this.gpbxFiltro.Name = "gpbxFiltro";
+            this.gpbxFiltro.Size = new System.Drawing.Size(579, 198);
+            this.gpbxFiltro.TabIndex = 4;
+            this.gpbxFiltro.TabStop = false;
+            this.gpbxFiltro.Text = "Filtro";
             // 
-            // label8
+            // lbNota
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(522, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 16);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Nota";
+            this.lbNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbNota.AutoSize = true;
+            this.lbNota.Location = new System.Drawing.Point(522, 106);
+            this.lbNota.Name = "lbNota";
+            this.lbNota.Size = new System.Drawing.Size(30, 16);
+            this.lbNota.TabIndex = 22;
+            this.lbNota.Text = "Nota";
             // 
             // checkBox_nota
             // 
@@ -249,12 +249,12 @@
             this.checkBox_nota.UseVisualStyleBackColor = true;
             this.checkBox_nota.CheckedChanged += new System.EventHandler(this.checkBox_nota_CheckedChanged);
             // 
-            // comboBox_Nota
+            // cbxNota
             // 
-            this.comboBox_Nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_Nota.Enabled = false;
-            this.comboBox_Nota.FormattingEnabled = true;
-            this.comboBox_Nota.Items.AddRange(new object[] {
+            this.cbxNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxNota.Enabled = false;
+            this.cbxNota.FormattingEnabled = true;
+            this.cbxNota.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -266,47 +266,47 @@
             "08",
             "09",
             "10"});
-            this.comboBox_Nota.Location = new System.Drawing.Point(525, 125);
-            this.comboBox_Nota.Name = "comboBox_Nota";
-            this.comboBox_Nota.Size = new System.Drawing.Size(48, 24);
-            this.comboBox_Nota.TabIndex = 20;
+            this.cbxNota.Location = new System.Drawing.Point(525, 125);
+            this.cbxNota.Name = "cbxNota";
+            this.cbxNota.Size = new System.Drawing.Size(48, 24);
+            this.cbxNota.TabIndex = 20;
             // 
-            // label7
+            // lbMidia
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(436, 106);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 16);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Mídia";
+            this.lbMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMidia.AutoSize = true;
+            this.lbMidia.Location = new System.Drawing.Point(436, 106);
+            this.lbMidia.Name = "lbMidia";
+            this.lbMidia.Size = new System.Drawing.Size(33, 16);
+            this.lbMidia.TabIndex = 5;
+            this.lbMidia.Text = "Mídia";
             // 
-            // comboBox_midia
+            // cbxMidia
             // 
-            this.comboBox_midia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_midia.Enabled = false;
-            this.comboBox_midia.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox_midia.FormattingEnabled = true;
-            this.comboBox_midia.Items.AddRange(new object[] {
+            this.cbxMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxMidia.Enabled = false;
+            this.cbxMidia.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbxMidia.FormattingEnabled = true;
+            this.cbxMidia.Items.AddRange(new object[] {
             "CD",
             "Digital",
             "DVD",
             "K7",
             "Vinil"});
-            this.comboBox_midia.Location = new System.Drawing.Point(439, 125);
-            this.comboBox_midia.Name = "comboBox_midia";
-            this.comboBox_midia.Size = new System.Drawing.Size(59, 24);
-            this.comboBox_midia.TabIndex = 6;
+            this.cbxMidia.Location = new System.Drawing.Point(439, 125);
+            this.cbxMidia.Name = "cbxMidia";
+            this.cbxMidia.Size = new System.Drawing.Size(59, 24);
+            this.cbxMidia.TabIndex = 6;
             // 
-            // dateTime_dataCompra
+            // dateTimeDataCompra
             // 
-            this.dateTime_dataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTime_dataCompra.Enabled = false;
-            this.dateTime_dataCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTime_dataCompra.Location = new System.Drawing.Point(439, 81);
-            this.dateTime_dataCompra.Name = "dateTime_dataCompra";
-            this.dateTime_dataCompra.Size = new System.Drawing.Size(134, 22);
-            this.dateTime_dataCompra.TabIndex = 19;
+            this.dateTimeDataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimeDataCompra.Enabled = false;
+            this.dateTimeDataCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeDataCompra.Location = new System.Drawing.Point(439, 81);
+            this.dateTimeDataCompra.Name = "dateTimeDataCompra";
+            this.dateTimeDataCompra.Size = new System.Drawing.Size(134, 22);
+            this.dateTimeDataCompra.TabIndex = 19;
             // 
             // checkBox_midia
             // 
@@ -319,44 +319,44 @@
             this.checkBox_midia.UseVisualStyleBackColor = true;
             this.checkBox_midia.CheckedChanged += new System.EventHandler(this.checkBox_midia_CheckedChanged);
             // 
-            // label4
+            // lbDtCompra
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(436, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Data da compra";
+            this.lbDtCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbDtCompra.AutoSize = true;
+            this.lbDtCompra.Location = new System.Drawing.Point(436, 62);
+            this.lbDtCompra.Name = "lbDtCompra";
+            this.lbDtCompra.Size = new System.Drawing.Size(83, 16);
+            this.lbDtCompra.TabIndex = 16;
+            this.lbDtCompra.Text = "Data da compra";
             // 
-            // dateTime_dataAlbum
+            // dateTimeDataAlbum
             // 
-            this.dateTime_dataAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTime_dataAlbum.Enabled = false;
-            this.dateTime_dataAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTime_dataAlbum.Location = new System.Drawing.Point(439, 39);
-            this.dateTime_dataAlbum.Name = "dateTime_dataAlbum";
-            this.dateTime_dataAlbum.Size = new System.Drawing.Size(134, 22);
-            this.dateTime_dataAlbum.TabIndex = 18;
+            this.dateTimeDataAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimeDataAlbum.Enabled = false;
+            this.dateTimeDataAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeDataAlbum.Location = new System.Drawing.Point(439, 39);
+            this.dateTimeDataAlbum.Name = "dateTimeDataAlbum";
+            this.dateTimeDataAlbum.Size = new System.Drawing.Size(134, 22);
+            this.dateTimeDataAlbum.TabIndex = 18;
             // 
-            // label6
+            // lbDtAlbum
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(436, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 16);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Data do álbum";
+            this.lbDtAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbDtAlbum.AutoSize = true;
+            this.lbDtAlbum.Location = new System.Drawing.Point(436, 20);
+            this.lbDtAlbum.Name = "lbDtAlbum";
+            this.lbDtAlbum.Size = new System.Drawing.Size(76, 16);
+            this.lbDtAlbum.TabIndex = 17;
+            this.lbDtAlbum.Text = "Data do álbum";
             // 
-            // label5
+            // lbOrigemCompra
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 16);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Origem da compra";
+            this.lbOrigemCompra.AutoSize = true;
+            this.lbOrigemCompra.Location = new System.Drawing.Point(39, 150);
+            this.lbOrigemCompra.Name = "lbOrigemCompra";
+            this.lbOrigemCompra.Size = new System.Drawing.Size(95, 16);
+            this.lbOrigemCompra.TabIndex = 17;
+            this.lbOrigemCompra.Text = "Origem da compra";
             // 
             // checkBox_dataCompra
             // 
@@ -369,43 +369,43 @@
             this.checkBox_dataCompra.UseVisualStyleBackColor = true;
             this.checkBox_dataCompra.CheckedChanged += new System.EventHandler(this.checkBox_dataCompra_CheckedChanged);
             // 
-            // textBox_origemCompra
+            // tbxOrigemCompra
             // 
-            this.textBox_origemCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxOrigemCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_origemCompra.Enabled = false;
-            this.textBox_origemCompra.Location = new System.Drawing.Point(39, 169);
-            this.textBox_origemCompra.Name = "textBox_origemCompra";
-            this.textBox_origemCompra.Size = new System.Drawing.Size(360, 22);
-            this.textBox_origemCompra.TabIndex = 15;
+            this.tbxOrigemCompra.Enabled = false;
+            this.tbxOrigemCompra.Location = new System.Drawing.Point(39, 169);
+            this.tbxOrigemCompra.Name = "tbxOrigemCompra";
+            this.tbxOrigemCompra.Size = new System.Drawing.Size(360, 22);
+            this.tbxOrigemCompra.TabIndex = 15;
             // 
-            // label3
+            // lbNomeAlbum
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Nome do álbum";
+            this.lbNomeAlbum.AutoSize = true;
+            this.lbNomeAlbum.Location = new System.Drawing.Point(39, 106);
+            this.lbNomeAlbum.Name = "lbNomeAlbum";
+            this.lbNomeAlbum.Size = new System.Drawing.Size(82, 16);
+            this.lbNomeAlbum.TabIndex = 14;
+            this.lbNomeAlbum.Text = "Nome do álbum";
             // 
-            // label2
+            // lbNomeAutor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 16);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Nome do autor";
+            this.lbNomeAutor.AutoSize = true;
+            this.lbNomeAutor.Location = new System.Drawing.Point(39, 62);
+            this.lbNomeAutor.Name = "lbNomeAutor";
+            this.lbNomeAutor.Size = new System.Drawing.Size(78, 16);
+            this.lbNomeAutor.TabIndex = 13;
+            this.lbNomeAutor.Text = "Nome do autor";
             // 
-            // textBox_Album
+            // tbxAlbum
             // 
-            this.textBox_Album.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Album.Enabled = false;
-            this.textBox_Album.Location = new System.Drawing.Point(39, 125);
-            this.textBox_Album.Name = "textBox_Album";
-            this.textBox_Album.Size = new System.Drawing.Size(360, 22);
-            this.textBox_Album.TabIndex = 14;
+            this.tbxAlbum.Enabled = false;
+            this.tbxAlbum.Location = new System.Drawing.Point(39, 125);
+            this.tbxAlbum.Name = "tbxAlbum";
+            this.tbxAlbum.Size = new System.Drawing.Size(360, 22);
+            this.tbxAlbum.TabIndex = 14;
             // 
             // checkBox_dataAlbum
             // 
@@ -418,49 +418,49 @@
             this.checkBox_dataAlbum.UseVisualStyleBackColor = true;
             this.checkBox_dataAlbum.CheckedChanged += new System.EventHandler(this.checkBox_dataAlbum_CheckedChanged);
             // 
-            // label1
+            // lbInterprete
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 16);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Nome do intérprete";
+            this.lbInterprete.AutoSize = true;
+            this.lbInterprete.Location = new System.Drawing.Point(39, 18);
+            this.lbInterprete.Name = "lbInterprete";
+            this.lbInterprete.Size = new System.Drawing.Size(98, 16);
+            this.lbInterprete.TabIndex = 12;
+            this.lbInterprete.Text = "Nome do intérprete";
             // 
-            // button1
+            // btTodos
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(417, 169);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Todos";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btTodos.Image = ((System.Drawing.Image)(resources.GetObject("btTodos.Image")));
+            this.btTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btTodos.Location = new System.Drawing.Point(417, 169);
+            this.btTodos.Name = "btTodos";
+            this.btTodos.Size = new System.Drawing.Size(75, 23);
+            this.btTodos.TabIndex = 5;
+            this.btTodos.Text = "Todos";
+            this.btTodos.UseVisualStyleBackColor = true;
+            this.btTodos.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btFiltral
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(498, 169);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Filtrar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btFiltral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btFiltral.Image = ((System.Drawing.Image)(resources.GetObject("btFiltral.Image")));
+            this.btFiltral.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btFiltral.Location = new System.Drawing.Point(498, 169);
+            this.btFiltral.Name = "btFiltral";
+            this.btFiltral.Size = new System.Drawing.Size(75, 23);
+            this.btFiltral.TabIndex = 6;
+            this.btFiltral.Text = "Filtrar";
+            this.btFiltral.UseVisualStyleBackColor = true;
             // 
-            // textBox_Autor
+            // tbxAutor
             // 
-            this.textBox_Autor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Autor.Enabled = false;
-            this.textBox_Autor.Location = new System.Drawing.Point(39, 81);
-            this.textBox_Autor.Name = "textBox_Autor";
-            this.textBox_Autor.Size = new System.Drawing.Size(360, 22);
-            this.textBox_Autor.TabIndex = 12;
+            this.tbxAutor.Enabled = false;
+            this.tbxAutor.Location = new System.Drawing.Point(39, 81);
+            this.tbxAutor.Name = "tbxAutor";
+            this.tbxAutor.Size = new System.Drawing.Size(360, 22);
+            this.tbxAutor.TabIndex = 12;
             // 
             // checkBox_origemCompra
             // 
@@ -472,15 +472,15 @@
             this.checkBox_origemCompra.UseVisualStyleBackColor = true;
             this.checkBox_origemCompra.CheckedChanged += new System.EventHandler(this.checkBox_origemCompra_CheckedChanged);
             // 
-            // textBoxInterprete
+            // tbxInterprete
             // 
-            this.textBoxInterprete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxInterprete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxInterprete.Enabled = false;
-            this.textBoxInterprete.Location = new System.Drawing.Point(39, 37);
-            this.textBoxInterprete.Name = "textBoxInterprete";
-            this.textBoxInterprete.Size = new System.Drawing.Size(360, 22);
-            this.textBoxInterprete.TabIndex = 1;
+            this.tbxInterprete.Enabled = false;
+            this.tbxInterprete.Location = new System.Drawing.Point(39, 37);
+            this.tbxInterprete.Name = "tbxInterprete";
+            this.tbxInterprete.Size = new System.Drawing.Size(360, 22);
+            this.tbxInterprete.TabIndex = 1;
             // 
             // checkBox_album
             // 
@@ -515,10 +515,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btDevolverMidia);
+            this.groupBox2.Controls.Add(this.btEmprestarMidia);
+            this.groupBox2.Controls.Add(this.btCadAmigo);
+            this.groupBox2.Controls.Add(this.btCadMidia);
             this.groupBox2.Location = new System.Drawing.Point(12, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(282, 198);
@@ -526,58 +526,58 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Menu";
             // 
-            // button6
+            // btDevolverMidia
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(144, 106);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(132, 77);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Devolver mídia";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btDevolverMidia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btDevolverMidia.Image = ((System.Drawing.Image)(resources.GetObject("btDevolverMidia.Image")));
+            this.btDevolverMidia.Location = new System.Drawing.Point(144, 106);
+            this.btDevolverMidia.Name = "btDevolverMidia";
+            this.btDevolverMidia.Size = new System.Drawing.Size(132, 77);
+            this.btDevolverMidia.TabIndex = 3;
+            this.btDevolverMidia.Text = "Devolver mídia";
+            this.btDevolverMidia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btDevolverMidia.UseVisualStyleBackColor = true;
+            this.btDevolverMidia.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // btEmprestarMidia
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(6, 106);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(132, 77);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Empretar mídia\r\n";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btEmprestarMidia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btEmprestarMidia.Image = ((System.Drawing.Image)(resources.GetObject("btEmprestarMidia.Image")));
+            this.btEmprestarMidia.Location = new System.Drawing.Point(6, 106);
+            this.btEmprestarMidia.Name = "btEmprestarMidia";
+            this.btEmprestarMidia.Size = new System.Drawing.Size(132, 77);
+            this.btEmprestarMidia.TabIndex = 2;
+            this.btEmprestarMidia.Text = "Emprestar mídia\r\n";
+            this.btEmprestarMidia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btEmprestarMidia.UseVisualStyleBackColor = true;
+            this.btEmprestarMidia.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // btCadAmigo
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(144, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 80);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Amigos";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btCadAmigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btCadAmigo.Image = ((System.Drawing.Image)(resources.GetObject("btCadAmigo.Image")));
+            this.btCadAmigo.Location = new System.Drawing.Point(144, 20);
+            this.btCadAmigo.Name = "btCadAmigo";
+            this.btCadAmigo.Size = new System.Drawing.Size(132, 80);
+            this.btCadAmigo.TabIndex = 1;
+            this.btCadAmigo.Text = "Amigos";
+            this.btCadAmigo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btCadAmigo.UseVisualStyleBackColor = true;
+            this.btCadAmigo.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btCadMidia
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(6, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 80);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Inserir mídia";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btCadMidia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCadMidia.ForeColor = System.Drawing.Color.Black;
+            this.btCadMidia.Image = ((System.Drawing.Image)(resources.GetObject("btCadMidia.Image")));
+            this.btCadMidia.Location = new System.Drawing.Point(6, 20);
+            this.btCadMidia.Name = "btCadMidia";
+            this.btCadMidia.Size = new System.Drawing.Size(132, 80);
+            this.btCadMidia.TabIndex = 0;
+            this.btCadMidia.Text = "Inserir mídia";
+            this.btCadMidia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btCadMidia.UseVisualStyleBackColor = true;
+            this.btCadMidia.Click += new System.EventHandler(this.button3_Click);
             // 
             // menuStrip1
             // 
@@ -605,13 +605,13 @@
             // mídiaToolStripMenuItem
             // 
             this.mídiaToolStripMenuItem.Name = "mídiaToolStripMenuItem";
-            this.mídiaToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.mídiaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mídiaToolStripMenuItem.Text = "Mídia";
             // 
             // amigoToolStripMenuItem
             // 
             this.amigoToolStripMenuItem.Name = "amigoToolStripMenuItem";
-            this.amigoToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.amigoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.amigoToolStripMenuItem.Text = "Amigo";
             // 
             // movimentaçãoToolStripMenuItem
@@ -642,17 +642,17 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(894, 576);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.buttonRemover);
-            this.Controls.Add(this.buttonAlterar);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.gpbxFiltro);
+            this.Controls.Add(this.btRemover);
+            this.Controls.Add(this.btAlterar);
+            this.Controls.Add(this.listViewMidia);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle de acervo musical";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpbxFiltro.ResumeLayout(false);
+            this.gpbxFiltro.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -663,7 +663,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewMidia;
         private System.Windows.Forms.ColumnHeader Numero;
         private System.Windows.Forms.ColumnHeader interprete;
         private System.Windows.Forms.ColumnHeader autor;
@@ -673,40 +673,40 @@
         private System.Windows.Forms.ColumnHeader midia;
         private System.Windows.Forms.ColumnHeader obsevacoes;
         private System.Windows.Forms.ColumnHeader nota;
-        private System.Windows.Forms.Button buttonAlterar;
-        private System.Windows.Forms.Button buttonRemover;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.Button btRemover;
+        private System.Windows.Forms.GroupBox gpbxFiltro;
         private System.Windows.Forms.CheckBox checkBox_origemCompra;
-        private System.Windows.Forms.DateTimePicker dateTime_dataCompra;
+        private System.Windows.Forms.DateTimePicker dateTimeDataCompra;
         private System.Windows.Forms.CheckBox checkBox_midia;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTime_dataAlbum;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbDtCompra;
+        private System.Windows.Forms.DateTimePicker dateTimeDataAlbum;
+        private System.Windows.Forms.Label lbDtAlbum;
+        private System.Windows.Forms.Label lbOrigemCompra;
         private System.Windows.Forms.CheckBox checkBox_dataCompra;
-        private System.Windows.Forms.TextBox textBox_origemCompra;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_Album;
+        private System.Windows.Forms.TextBox tbxOrigemCompra;
+        private System.Windows.Forms.Label lbNomeAlbum;
+        private System.Windows.Forms.Label lbNomeAutor;
+        private System.Windows.Forms.TextBox tbxAlbum;
         private System.Windows.Forms.CheckBox checkBox_dataAlbum;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox_Autor;
-        private System.Windows.Forms.TextBox textBoxInterprete;
+        private System.Windows.Forms.Label lbInterprete;
+        private System.Windows.Forms.Button btTodos;
+        private System.Windows.Forms.Button btFiltral;
+        private System.Windows.Forms.TextBox tbxAutor;
+        private System.Windows.Forms.TextBox tbxInterprete;
         private System.Windows.Forms.CheckBox checkBox_album;
         private System.Windows.Forms.CheckBox checkBoxInterprete;
         private System.Windows.Forms.CheckBox checkBox_Autor;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbNota;
         private System.Windows.Forms.CheckBox checkBox_nota;
-        private System.Windows.Forms.ComboBox comboBox_Nota;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox_midia;
+        private System.Windows.Forms.ComboBox cbxNota;
+        private System.Windows.Forms.Label lbMidia;
+        private System.Windows.Forms.ComboBox cbxMidia;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btDevolverMidia;
+        private System.Windows.Forms.Button btEmprestarMidia;
+        private System.Windows.Forms.Button btCadAmigo;
+        private System.Windows.Forms.Button btCadMidia;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mídiaToolStripMenuItem;

@@ -18,16 +18,16 @@ namespace ProjetoFinalPJS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBoxNome.Text = null;
-            textBoxBairro.Text = null;
-            textBoxCidade.Text = null;
-            textBoxEndereco.Text = null;
-            comboBoxUF.Text = null;
-            textBox_Email.Text = null;
-            maskedText_celular.Text = null;
-            maskedTextBoxTelefone.Text = null;
-            textBox_Email.Text = null;
-            textBoxNome.Focus();
+            tbxNome.Text = null;
+            tbxBairro.Text = null;
+            tbxCidade.Text = null;
+            tbxEndereco.Text = null;
+            cbxUF.Text = null;
+            tbxEmail.Text = null;
+            tbxCelularMasc.Text = null;
+            tbxTelefoneMasc.Text = null;
+            tbxEmail.Text = null;
+            tbxNome.Focus();
         }
 
         private void FormCadastrarAmigo_Load(object sender, EventArgs e)

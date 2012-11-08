@@ -29,85 +29,85 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarMidia));
-            this.textBoxInterprete = new System.Windows.Forms.TextBox();
-            this.textBoxAutor = new System.Windows.Forms.TextBox();
-            this.textBoxOrigemCompra = new System.Windows.Forms.TextBox();
-            this.textBoxAlbum = new System.Windows.Forms.TextBox();
-            this.textBoxObsevacoes = new System.Windows.Forms.TextBox();
+            this.tbxInterprete = new System.Windows.Forms.TextBox();
+            this.tbxAutor = new System.Windows.Forms.TextBox();
+            this.tbxOrigemCompra = new System.Windows.Forms.TextBox();
+            this.tbxAlbum = new System.Windows.Forms.TextBox();
+            this.tbxObsevacoes = new System.Windows.Forms.TextBox();
             this.dateTimePickerAlbum = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerCompra = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxMidia = new System.Windows.Forms.ComboBox();
-            this.comboBoxNota = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.buttonLimpar = new System.Windows.Forms.Button();
-            this.buttonGravar = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox_nomeMusica = new System.Windows.Forms.TextBox();
-            this.radio_Album = new System.Windows.Forms.RadioButton();
-            this.radioButton_Musica = new System.Windows.Forms.RadioButton();
+            this.cbxMidia = new System.Windows.Forms.ComboBox();
+            this.cbxNota = new System.Windows.Forms.ComboBox();
+            this.lbNomeInt = new System.Windows.Forms.Label();
+            this.lbNomeAutor = new System.Windows.Forms.Label();
+            this.lbAlbum = new System.Windows.Forms.Label();
+            this.lbDataAlbum = new System.Windows.Forms.Label();
+            this.lbDataCompra = new System.Windows.Forms.Label();
+            this.lbOriCompra = new System.Windows.Forms.Label();
+            this.lbTipoMidia = new System.Windows.Forms.Label();
+            this.lbObservacoes = new System.Windows.Forms.Label();
+            this.lbNota = new System.Windows.Forms.Label();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.btLimpar = new System.Windows.Forms.Button();
+            this.btGravar = new System.Windows.Forms.Button();
+            this.lbMusica = new System.Windows.Forms.Label();
+            this.tbxMusica = new System.Windows.Forms.TextBox();
+            this.radioAlbum = new System.Windows.Forms.RadioButton();
+            this.radioMusica = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // textBoxInterprete
+            // tbxInterprete
             // 
-            this.textBoxInterprete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxInterprete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxInterprete.Enabled = false;
-            this.textBoxInterprete.Location = new System.Drawing.Point(15, 57);
-            this.textBoxInterprete.Name = "textBoxInterprete";
-            this.textBoxInterprete.Size = new System.Drawing.Size(538, 20);
-            this.textBoxInterprete.TabIndex = 0;
+            this.tbxInterprete.Enabled = false;
+            this.tbxInterprete.Location = new System.Drawing.Point(15, 57);
+            this.tbxInterprete.Name = "tbxInterprete";
+            this.tbxInterprete.Size = new System.Drawing.Size(538, 20);
+            this.tbxInterprete.TabIndex = 0;
             // 
-            // textBoxAutor
+            // tbxAutor
             // 
-            this.textBoxAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAutor.Enabled = false;
-            this.textBoxAutor.Location = new System.Drawing.Point(15, 96);
-            this.textBoxAutor.Name = "textBoxAutor";
-            this.textBoxAutor.Size = new System.Drawing.Size(536, 20);
-            this.textBoxAutor.TabIndex = 1;
+            this.tbxAutor.Enabled = false;
+            this.tbxAutor.Location = new System.Drawing.Point(15, 96);
+            this.tbxAutor.Name = "tbxAutor";
+            this.tbxAutor.Size = new System.Drawing.Size(536, 20);
+            this.tbxAutor.TabIndex = 1;
             // 
-            // textBoxOrigemCompra
+            // tbxOrigemCompra
             // 
-            this.textBoxOrigemCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxOrigemCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxOrigemCompra.Enabled = false;
-            this.textBoxOrigemCompra.Location = new System.Drawing.Point(20, 256);
-            this.textBoxOrigemCompra.Name = "textBoxOrigemCompra";
-            this.textBoxOrigemCompra.Size = new System.Drawing.Size(390, 20);
-            this.textBoxOrigemCompra.TabIndex = 2;
+            this.tbxOrigemCompra.Enabled = false;
+            this.tbxOrigemCompra.Location = new System.Drawing.Point(20, 256);
+            this.tbxOrigemCompra.Name = "tbxOrigemCompra";
+            this.tbxOrigemCompra.Size = new System.Drawing.Size(390, 20);
+            this.tbxOrigemCompra.TabIndex = 2;
             // 
-            // textBoxAlbum
+            // tbxAlbum
             // 
-            this.textBoxAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAlbum.Enabled = false;
-            this.textBoxAlbum.Location = new System.Drawing.Point(15, 135);
-            this.textBoxAlbum.Name = "textBoxAlbum";
-            this.textBoxAlbum.Size = new System.Drawing.Size(536, 20);
-            this.textBoxAlbum.TabIndex = 3;
+            this.tbxAlbum.Enabled = false;
+            this.tbxAlbum.Location = new System.Drawing.Point(15, 135);
+            this.tbxAlbum.Name = "tbxAlbum";
+            this.tbxAlbum.Size = new System.Drawing.Size(536, 20);
+            this.tbxAlbum.TabIndex = 3;
             // 
-            // textBoxObsevacoes
+            // tbxObsevacoes
             // 
-            this.textBoxObsevacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.tbxObsevacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxObsevacoes.Enabled = false;
-            this.textBoxObsevacoes.Location = new System.Drawing.Point(20, 297);
-            this.textBoxObsevacoes.Multiline = true;
-            this.textBoxObsevacoes.Name = "textBoxObsevacoes";
-            this.textBoxObsevacoes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxObsevacoes.Size = new System.Drawing.Size(536, 60);
-            this.textBoxObsevacoes.TabIndex = 4;
+            this.tbxObsevacoes.Enabled = false;
+            this.tbxObsevacoes.Location = new System.Drawing.Point(20, 297);
+            this.tbxObsevacoes.Multiline = true;
+            this.tbxObsevacoes.Name = "tbxObsevacoes";
+            this.tbxObsevacoes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbxObsevacoes.Size = new System.Drawing.Size(536, 60);
+            this.tbxObsevacoes.TabIndex = 4;
             // 
             // dateTimePickerAlbum
             // 
@@ -127,28 +127,28 @@
             this.dateTimePickerCompra.Size = new System.Drawing.Size(121, 20);
             this.dateTimePickerCompra.TabIndex = 6;
             // 
-            // comboBoxMidia
+            // cbxMidia
             // 
-            this.comboBoxMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxMidia.Enabled = false;
-            this.comboBoxMidia.FormattingEnabled = true;
-            this.comboBoxMidia.Items.AddRange(new object[] {
+            this.cbxMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxMidia.Enabled = false;
+            this.cbxMidia.FormattingEnabled = true;
+            this.cbxMidia.Items.AddRange(new object[] {
             "Vinil",
             "K7",
             "CD",
             "DVD",
             "Digital"});
-            this.comboBoxMidia.Location = new System.Drawing.Point(416, 256);
-            this.comboBoxMidia.Name = "comboBoxMidia";
-            this.comboBoxMidia.Size = new System.Drawing.Size(91, 21);
-            this.comboBoxMidia.TabIndex = 7;
+            this.cbxMidia.Location = new System.Drawing.Point(416, 256);
+            this.cbxMidia.Name = "cbxMidia";
+            this.cbxMidia.Size = new System.Drawing.Size(91, 21);
+            this.cbxMidia.TabIndex = 7;
             // 
-            // comboBoxNota
+            // cbxNota
             // 
-            this.comboBoxNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxNota.Enabled = false;
-            this.comboBoxNota.FormattingEnabled = true;
-            this.comboBoxNota.Items.AddRange(new object[] {
+            this.cbxNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxNota.Enabled = false;
+            this.cbxNota.FormattingEnabled = true;
+            this.cbxNota.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -160,205 +160,205 @@
             "08",
             "09",
             "10"});
-            this.comboBoxNota.Location = new System.Drawing.Point(513, 256);
-            this.comboBoxNota.Name = "comboBoxNota";
-            this.comboBoxNota.Size = new System.Drawing.Size(43, 21);
-            this.comboBoxNota.TabIndex = 8;
-            this.comboBoxNota.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cbxNota.Location = new System.Drawing.Point(513, 256);
+            this.cbxNota.Name = "cbxNota";
+            this.cbxNota.Size = new System.Drawing.Size(43, 21);
+            this.cbxNota.TabIndex = 8;
+            this.cbxNota.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // label1
+            // lbNomeInt
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Nome do intérprete";
+            this.lbNomeInt.AutoSize = true;
+            this.lbNomeInt.Location = new System.Drawing.Point(12, 41);
+            this.lbNomeInt.Name = "lbNomeInt";
+            this.lbNomeInt.Size = new System.Drawing.Size(97, 13);
+            this.lbNomeInt.TabIndex = 9;
+            this.lbNomeInt.Text = "Nome do intérprete";
             // 
-            // label2
+            // lbNomeAutor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Nome do Autor";
+            this.lbNomeAutor.AutoSize = true;
+            this.lbNomeAutor.Location = new System.Drawing.Point(12, 80);
+            this.lbNomeAutor.Name = "lbNomeAutor";
+            this.lbNomeAutor.Size = new System.Drawing.Size(78, 13);
+            this.lbNomeAutor.TabIndex = 10;
+            this.lbNomeAutor.Text = "Nome do Autor";
             // 
-            // label3
+            // lbAlbum
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Nome do álbum";
+            this.lbAlbum.AutoSize = true;
+            this.lbAlbum.Location = new System.Drawing.Point(12, 119);
+            this.lbAlbum.Name = "lbAlbum";
+            this.lbAlbum.Size = new System.Drawing.Size(81, 13);
+            this.lbAlbum.TabIndex = 11;
+            this.lbAlbum.Text = "Nome do álbum";
             // 
-            // label4
+            // lbDataAlbum
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Data do álbum";
+            this.lbDataAlbum.AutoSize = true;
+            this.lbDataAlbum.Location = new System.Drawing.Point(17, 201);
+            this.lbDataAlbum.Name = "lbDataAlbum";
+            this.lbDataAlbum.Size = new System.Drawing.Size(76, 13);
+            this.lbDataAlbum.TabIndex = 12;
+            this.lbDataAlbum.Text = "Data do álbum";
             // 
-            // label5
+            // lbDataCompra
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(157, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Data da Compra";
+            this.lbDataCompra.AutoSize = true;
+            this.lbDataCompra.Location = new System.Drawing.Point(157, 201);
+            this.lbDataCompra.Name = "lbDataCompra";
+            this.lbDataCompra.Size = new System.Drawing.Size(84, 13);
+            this.lbDataCompra.TabIndex = 13;
+            this.lbDataCompra.Text = "Data da Compra";
             // 
-            // label6
+            // lbOriCompra
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 240);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Origem da compra";
+            this.lbOriCompra.AutoSize = true;
+            this.lbOriCompra.Location = new System.Drawing.Point(17, 240);
+            this.lbOriCompra.Name = "lbOriCompra";
+            this.lbOriCompra.Size = new System.Drawing.Size(93, 13);
+            this.lbOriCompra.TabIndex = 14;
+            this.lbOriCompra.Text = "Origem da compra";
             // 
-            // label7
+            // lbTipoMidia
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(411, 240);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Tipo de mídia";
+            this.lbTipoMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTipoMidia.AutoSize = true;
+            this.lbTipoMidia.Location = new System.Drawing.Point(411, 240);
+            this.lbTipoMidia.Name = "lbTipoMidia";
+            this.lbTipoMidia.Size = new System.Drawing.Size(72, 13);
+            this.lbTipoMidia.TabIndex = 15;
+            this.lbTipoMidia.Text = "Tipo de mídia";
             // 
-            // label8
+            // lbObservacoes
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 281);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Observações\r\n";
+            this.lbObservacoes.AutoSize = true;
+            this.lbObservacoes.Location = new System.Drawing.Point(17, 281);
+            this.lbObservacoes.Name = "lbObservacoes";
+            this.lbObservacoes.Size = new System.Drawing.Size(70, 13);
+            this.lbObservacoes.TabIndex = 16;
+            this.lbObservacoes.Text = "Observações\r\n";
             // 
-            // label9
+            // lbNota
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(510, 240);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Nota";
+            this.lbNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbNota.AutoSize = true;
+            this.lbNota.Location = new System.Drawing.Point(510, 240);
+            this.lbNota.Name = "lbNota";
+            this.lbNota.Size = new System.Drawing.Size(30, 13);
+            this.lbNota.TabIndex = 17;
+            this.lbNota.Text = "Nota";
             // 
-            // buttonSalvar
+            // btSalvar
             // 
-            this.buttonSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSalvar.Image = ((System.Drawing.Image)(resources.GetObject("buttonSalvar.Image")));
-            this.buttonSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSalvar.Location = new System.Drawing.Point(319, 363);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalvar.TabIndex = 18;
-            this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
+            this.btSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btSalvar.Location = new System.Drawing.Point(319, 363);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btSalvar.TabIndex = 18;
+            this.btSalvar.Text = "Salvar";
+            this.btSalvar.UseVisualStyleBackColor = true;
             // 
-            // buttonLimpar
+            // btLimpar
             // 
-            this.buttonLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLimpar.Image = ((System.Drawing.Image)(resources.GetObject("buttonLimpar.Image")));
-            this.buttonLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonLimpar.Location = new System.Drawing.Point(481, 363);
-            this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
-            this.buttonLimpar.TabIndex = 19;
-            this.buttonLimpar.Text = "Limpar";
-            this.buttonLimpar.UseVisualStyleBackColor = true;
-            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
+            this.btLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btLimpar.Image")));
+            this.btLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btLimpar.Location = new System.Drawing.Point(481, 363);
+            this.btLimpar.Name = "btLimpar";
+            this.btLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btLimpar.TabIndex = 19;
+            this.btLimpar.Text = "Limpar";
+            this.btLimpar.UseVisualStyleBackColor = true;
+            this.btLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
-            // buttonGravar
+            // btGravar
             // 
-            this.buttonGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonGravar.Image = ((System.Drawing.Image)(resources.GetObject("buttonGravar.Image")));
-            this.buttonGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonGravar.Location = new System.Drawing.Point(400, 363);
-            this.buttonGravar.Name = "buttonGravar";
-            this.buttonGravar.Size = new System.Drawing.Size(75, 23);
-            this.buttonGravar.TabIndex = 20;
-            this.buttonGravar.Text = "Gravar";
-            this.buttonGravar.UseVisualStyleBackColor = true;
+            this.btGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btGravar.Image = ((System.Drawing.Image)(resources.GetObject("btGravar.Image")));
+            this.btGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btGravar.Location = new System.Drawing.Point(400, 363);
+            this.btGravar.Name = "btGravar";
+            this.btGravar.Size = new System.Drawing.Size(75, 23);
+            this.btGravar.TabIndex = 20;
+            this.btGravar.Text = "Gravar";
+            this.btGravar.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // lbMusica
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 162);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Nome da música";
+            this.lbMusica.AutoSize = true;
+            this.lbMusica.Location = new System.Drawing.Point(15, 162);
+            this.lbMusica.Name = "lbMusica";
+            this.lbMusica.Size = new System.Drawing.Size(86, 13);
+            this.lbMusica.TabIndex = 21;
+            this.lbMusica.Text = "Nome da música";
             // 
-            // textBox_nomeMusica
+            // tbxMusica
             // 
-            this.textBox_nomeMusica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxMusica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_nomeMusica.Enabled = false;
-            this.textBox_nomeMusica.Location = new System.Drawing.Point(18, 178);
-            this.textBox_nomeMusica.Name = "textBox_nomeMusica";
-            this.textBox_nomeMusica.Size = new System.Drawing.Size(535, 20);
-            this.textBox_nomeMusica.TabIndex = 22;
+            this.tbxMusica.Enabled = false;
+            this.tbxMusica.Location = new System.Drawing.Point(18, 178);
+            this.tbxMusica.Name = "tbxMusica";
+            this.tbxMusica.Size = new System.Drawing.Size(535, 20);
+            this.tbxMusica.TabIndex = 22;
             // 
-            // radio_Album
+            // radioAlbum
             // 
-            this.radio_Album.AutoSize = true;
-            this.radio_Album.Location = new System.Drawing.Point(15, 13);
-            this.radio_Album.Name = "radio_Album";
-            this.radio_Album.Size = new System.Drawing.Size(54, 17);
-            this.radio_Album.TabIndex = 23;
-            this.radio_Album.TabStop = true;
-            this.radio_Album.Text = "Álbum";
-            this.radio_Album.UseVisualStyleBackColor = true;
-            this.radio_Album.CheckedChanged += new System.EventHandler(this.radio_Album_CheckedChanged);
+            this.radioAlbum.AutoSize = true;
+            this.radioAlbum.Location = new System.Drawing.Point(15, 13);
+            this.radioAlbum.Name = "radioAlbum";
+            this.radioAlbum.Size = new System.Drawing.Size(54, 17);
+            this.radioAlbum.TabIndex = 23;
+            this.radioAlbum.TabStop = true;
+            this.radioAlbum.Text = "Álbum";
+            this.radioAlbum.UseVisualStyleBackColor = true;
+            this.radioAlbum.CheckedChanged += new System.EventHandler(this.radio_Album_CheckedChanged);
             // 
-            // radioButton_Musica
+            // radioMusica
             // 
-            this.radioButton_Musica.AutoSize = true;
-            this.radioButton_Musica.Location = new System.Drawing.Point(75, 13);
-            this.radioButton_Musica.Name = "radioButton_Musica";
-            this.radioButton_Musica.Size = new System.Drawing.Size(59, 17);
-            this.radioButton_Musica.TabIndex = 24;
-            this.radioButton_Musica.TabStop = true;
-            this.radioButton_Musica.Text = "Música";
-            this.radioButton_Musica.UseVisualStyleBackColor = true;
-            this.radioButton_Musica.CheckedChanged += new System.EventHandler(this.radioButton_Musica_CheckedChanged);
+            this.radioMusica.AutoSize = true;
+            this.radioMusica.Location = new System.Drawing.Point(75, 13);
+            this.radioMusica.Name = "radioMusica";
+            this.radioMusica.Size = new System.Drawing.Size(59, 17);
+            this.radioMusica.TabIndex = 24;
+            this.radioMusica.TabStop = true;
+            this.radioMusica.Text = "Música";
+            this.radioMusica.UseVisualStyleBackColor = true;
+            this.radioMusica.CheckedChanged += new System.EventHandler(this.radioButton_Musica_CheckedChanged);
             // 
             // FormCadastrarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 395);
-            this.Controls.Add(this.radioButton_Musica);
-            this.Controls.Add(this.radio_Album);
-            this.Controls.Add(this.textBox_nomeMusica);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.buttonGravar);
-            this.Controls.Add(this.buttonLimpar);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBoxNota);
-            this.Controls.Add(this.comboBoxMidia);
+            this.Controls.Add(this.radioMusica);
+            this.Controls.Add(this.radioAlbum);
+            this.Controls.Add(this.tbxMusica);
+            this.Controls.Add(this.lbMusica);
+            this.Controls.Add(this.btGravar);
+            this.Controls.Add(this.btLimpar);
+            this.Controls.Add(this.btSalvar);
+            this.Controls.Add(this.lbNota);
+            this.Controls.Add(this.lbObservacoes);
+            this.Controls.Add(this.lbTipoMidia);
+            this.Controls.Add(this.lbOriCompra);
+            this.Controls.Add(this.lbDataCompra);
+            this.Controls.Add(this.lbDataAlbum);
+            this.Controls.Add(this.lbAlbum);
+            this.Controls.Add(this.lbNomeAutor);
+            this.Controls.Add(this.lbNomeInt);
+            this.Controls.Add(this.cbxNota);
+            this.Controls.Add(this.cbxMidia);
             this.Controls.Add(this.dateTimePickerCompra);
             this.Controls.Add(this.dateTimePickerAlbum);
-            this.Controls.Add(this.textBoxObsevacoes);
-            this.Controls.Add(this.textBoxAlbum);
-            this.Controls.Add(this.textBoxOrigemCompra);
-            this.Controls.Add(this.textBoxAutor);
-            this.Controls.Add(this.textBoxInterprete);
+            this.Controls.Add(this.tbxObsevacoes);
+            this.Controls.Add(this.tbxAlbum);
+            this.Controls.Add(this.tbxOrigemCompra);
+            this.Controls.Add(this.tbxAutor);
+            this.Controls.Add(this.tbxInterprete);
             this.Name = "FormCadastrarMidia";
             this.Text = "Cadastrar Mídia";
             this.ResumeLayout(false);
@@ -368,30 +368,30 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxInterprete;
-        private System.Windows.Forms.TextBox textBoxAutor;
-        private System.Windows.Forms.TextBox textBoxOrigemCompra;
-        private System.Windows.Forms.TextBox textBoxAlbum;
-        private System.Windows.Forms.TextBox textBoxObsevacoes;
+        private System.Windows.Forms.TextBox tbxInterprete;
+        private System.Windows.Forms.TextBox tbxAutor;
+        private System.Windows.Forms.TextBox tbxOrigemCompra;
+        private System.Windows.Forms.TextBox tbxAlbum;
+        private System.Windows.Forms.TextBox tbxObsevacoes;
         private System.Windows.Forms.DateTimePicker dateTimePickerAlbum;
         private System.Windows.Forms.DateTimePicker dateTimePickerCompra;
-        private System.Windows.Forms.ComboBox comboBoxMidia;
-        private System.Windows.Forms.ComboBox comboBoxNota;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button buttonSalvar;
-        private System.Windows.Forms.Button buttonLimpar;
-        private System.Windows.Forms.Button buttonGravar;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox_nomeMusica;
-        private System.Windows.Forms.RadioButton radio_Album;
-        private System.Windows.Forms.RadioButton radioButton_Musica;
+        private System.Windows.Forms.ComboBox cbxMidia;
+        private System.Windows.Forms.ComboBox cbxNota;
+        private System.Windows.Forms.Label lbNomeInt;
+        private System.Windows.Forms.Label lbNomeAutor;
+        private System.Windows.Forms.Label lbAlbum;
+        private System.Windows.Forms.Label lbDataAlbum;
+        private System.Windows.Forms.Label lbDataCompra;
+        private System.Windows.Forms.Label lbOriCompra;
+        private System.Windows.Forms.Label lbTipoMidia;
+        private System.Windows.Forms.Label lbObservacoes;
+        private System.Windows.Forms.Label lbNota;
+        private System.Windows.Forms.Button btSalvar;
+        private System.Windows.Forms.Button btLimpar;
+        private System.Windows.Forms.Button btGravar;
+        private System.Windows.Forms.Label lbMusica;
+        private System.Windows.Forms.TextBox tbxMusica;
+        private System.Windows.Forms.RadioButton radioAlbum;
+        private System.Windows.Forms.RadioButton radioMusica;
     }
 }
