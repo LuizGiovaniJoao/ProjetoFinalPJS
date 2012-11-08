@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassSQL.cs" />
     <Compile Include="FormCadastrarAmigo.cs">
       <SubType>Form</SubType>
     </Compile>
