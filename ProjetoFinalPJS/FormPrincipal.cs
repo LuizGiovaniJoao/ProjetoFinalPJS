@@ -74,88 +74,95 @@ namespace ProjetoFinalPJS
         private void checkBox_Autor_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_Autor.Checked)
-                textBox_Autor.Enabled = true;
+                tbxAutor.Enabled = true;
             else
             {
-                textBox_Autor.Enabled = false;
-                textBox_Autor.Text = null;
+                tbxAutor.Enabled = false;
+                tbxAutor.Text = null;
             }
         }
 
         private void checkBox_album_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_album.Checked)
-                textBox_Album.Enabled = true;
+                tbxAlbum.Enabled = true;
             else
             {
-                textBox_Album.Enabled = false;
-                textBox_Album.Text = null;
+                tbxAlbum.Enabled = false;
+                tbxAlbum.Text = null;
             }
         }
 
         private void checkBoxInterprete_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxInterprete.Checked)
-                textBoxInterprete.Enabled = true;
+                tbxInterprete.Enabled = true;
             else
             {
-                textBoxInterprete.Enabled = false;
-                textBoxInterprete.Text = null;
+                tbxInterprete.Enabled = false;
+                tbxInterprete.Text = null;
             }
         }
 
         private void checkBox_origemCompra_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_origemCompra.Checked)
-                textBox_origemCompra.Enabled = true;
+                tbxOrigemCompra.Enabled = true;
             else
             {
-                textBox_origemCompra.Enabled = false;
-                textBox_origemCompra.Text = null;
+                tbxOrigemCompra.Enabled = false;
+                tbxOrigemCompra.Text = null;
             }
         }
 
         private void checkBox_dataAlbum_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_dataAlbum.Checked)
-                dateTime_dataAlbum.Enabled = true;
+                dateTimeDataAlbum.Enabled = true;
             else
-                dateTime_dataAlbum.Enabled = false;
+                dateTimeDataAlbum.Enabled = false;
         }
 
         private void checkBox_dataCompra_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_dataCompra.Checked)
-                dateTime_dataCompra.Enabled = true;
+                dateTimeDataCompra.Enabled = true;
             else
-                dateTime_dataCompra.Enabled = false;
+                dateTimeDataCompra.Enabled = false;
         }
 
         private void checkBox_midia_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_midia.Checked)
-                comboBox_midia.Enabled = true;
+                cbxMidia.Enabled = true;
             else
             {
-                comboBox_midia.Enabled = false;
-                comboBox_midia.Text = null;
+                cbxMidia.Enabled = false;
+                cbxMidia.Text = null;
             }
         }
 
         private void checkBox_nota_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_nota.Checked)
-                comboBox_Nota.Enabled = true;
+                cbxNota.Enabled = true;
             else
             {
-                comboBox_Nota.Enabled = false;
-                comboBox_Nota.Text = null;
+                cbxNota.Enabled = false;
+                cbxNota.Text = null;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             checkBoxInterprete.Checked = false;
+            checkBox_album.Checked = false;
+            checkBox_Autor.Checked = false;
+            checkBox_origemCompra.Checked = false;
+            checkBox_dataCompra.Checked = false;
+            checkBox_dataAlbum.Checked = false;
+            checkBox_midia.Checked = false;
+            checkBox_nota.Checked = false;
         }
     }
 }

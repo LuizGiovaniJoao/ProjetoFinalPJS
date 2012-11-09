@@ -20,16 +20,16 @@ namespace ProjetoFinalPJS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBoxNome.Text = null;
-            textBoxBairro.Text = null;
-            textBoxCidade.Text = null;
-            textBoxEndereco.Text = null;
-            comboBoxUF.Text = null;
-            textBox_Email.Text = null;
-            maskedText_celular.Text = null;
-            maskedTextBoxTelefone.Text = null;
-            textBox_Email.Text = null;
-            textBoxNome.Focus();
+            tbxNome.Text = null;
+            tbxBairro.Text = null;
+            tbxCidade.Text = null;
+            tbxEndereco.Text = null;
+            cbxUF.Text = null;
+            tbxEmail.Text = null;
+            tbxCelularMasc.Text = null;
+            tbxTelefoneMasc.Text = null;
+            tbxEmail.Text = null;
+            tbxNome.Focus();
         }
 
         private void FormCadastrarAmigo_Load(object sender, EventArgs e)
@@ -37,20 +37,20 @@ namespace ProjetoFinalPJS
 
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        private void btSalvar_Click(object sender, EventArgs e)
         {
             ClassSQL InserirAmigo = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
 
-            objArrayList.Add(textBox_Apelido.Text);
-            objArrayList.Add(textBoxNome.Text);
-            objArrayList.Add(textBoxEndereco.Text);
-            objArrayList.Add(textBoxBairro.Text);
-            objArrayList.Add(textBoxCidade.Text);
-            objArrayList.Add(comboBoxUF.Text);
-            objArrayList.Add(maskedTextBoxTelefone.Text);
-            objArrayList.Add(maskedText_celular.Text);
-            objArrayList.Add(textBox_Email.Text);
+            objArrayList.Add(tbxApelido.Text);
+            objArrayList.Add(tbxNome.Text);
+            objArrayList.Add(tbxEndereco.Text);
+            objArrayList.Add(tbxBairro.Text);
+            objArrayList.Add(tbxCidade.Text);
+            objArrayList.Add(cbxUF.Text);
+            objArrayList.Add(tbxTelefoneMasc.Text);
+            objArrayList.Add(tbxCelularMasc.Text);
+            objArrayList.Add(tbxEmail.Text);
 
 
 
@@ -62,12 +62,6 @@ namespace ProjetoFinalPJS
             {
                 MessageBox.Show("Não deu");
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-            
         }
     }
 }
