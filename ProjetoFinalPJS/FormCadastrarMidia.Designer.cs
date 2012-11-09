@@ -54,6 +54,7 @@
             this.textBox_nomeMusica = new System.Windows.Forms.TextBox();
             this.radio_Album = new System.Windows.Forms.RadioButton();
             this.radioButton_Musica = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxInterprete
@@ -329,11 +330,21 @@
             this.radioButton_Musica.UseVisualStyleBackColor = true;
             this.radioButton_Musica.CheckedChanged += new System.EventHandler(this.radioButton_Musica_CheckedChanged);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(442, 15);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "( * ) Campo obrigatório";
+            // 
             // FormCadastrarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 395);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.radioButton_Musica);
             this.Controls.Add(this.radio_Album);
             this.Controls.Add(this.textBox_nomeMusica);
@@ -393,5 +404,6 @@
         private System.Windows.Forms.TextBox textBox_nomeMusica;
         private System.Windows.Forms.RadioButton radio_Album;
         private System.Windows.Forms.RadioButton radioButton_Musica;
+        private System.Windows.Forms.Label label11;
     }
 }
