@@ -121,6 +121,7 @@
             this.btRemover.Text = "Remover";
             this.btRemover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btRemover.UseVisualStyleBackColor = true;
+            this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
             // 
             // btAdicionar
             // 

@@ -20,6 +20,7 @@ namespace ProjetoFinalPJS
 
         private void button3_Click(object sender, EventArgs e)
         {
+            tbxApelido.Text = null;
             tbxNome.Text = null;
             tbxBairro.Text = null;
             tbxCidade.Text = null;

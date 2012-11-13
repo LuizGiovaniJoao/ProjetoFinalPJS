@@ -10,9 +10,12 @@ namespace ProjetoFinalPJS
 {
     class ClassSQL
     {
-        private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=AcervoMusical;User ID=FamiliaFurlan;Password=12345";
-        private string stringComando = string.Empty;
+        //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=AcervoMusical;User ID=FamiliaFurlan;Password=12345";
+        private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=AcervoMusical; Integrated Security=SSPI";
+        
         SqlConnection ObjConexao = null;
+        //DataSet dados = new DataSet();
+        //SqlDataAdapter adaptador = new SqlDataAdapter();
 
         #region "Metodos de conexão e desconexão"
         public bool conectar()
@@ -28,7 +31,7 @@ namespace ProjetoFinalPJS
             catch
             {
                 return false;
-                
+
             }
 
         }
@@ -52,6 +55,11 @@ namespace ProjetoFinalPJS
         #region "Metodos manipulação de dados"
         public bool Insert(ArrayList Insert)
         {
+            string stringComando = string.Empty;
+            //SqlCommand cmdSelecao = new SqlCommand("Select * from Amigo", ObjConexao);
+            //adaptador.SelectCommand = cmdSelecao;
+            //adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            //adaptador.Fill(dados, "InsercaoAmigo");
             stringComando = "INSERT INTO Amigo VALUES (@APELIDO, @NOME, @ENDERECO,@BAIRRO, @CIDADE, @UF, @TELEFONE,@CELULAR,@EMAIL)";
           
             SqlCommand ObjComando = new SqlCommand();
@@ -71,15 +79,20 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@TELEFONE", Insert[6]));
                     ObjComando.Parameters.Add(new SqlParameter("@CELULAR", Insert[7]));
                     ObjComando.Parameters.Add(new SqlParameter("@EMAIL", Insert[8]));
+                    //adaptador.InsertCommand = ObjComando;
 
-                    ObjComando.ExecuteNonQuery();
-                    DataSet dados = new DataSet();
-                    SqlDataAdapter adaptador = new SqlDataAdapter(); 
-                    adaptador.InsertCommand = ObjComando;
-                    ObjComando.CommandText = "SELECT * FROM Amigo";
-                    adaptador.SelectCommand = ObjComando;
-                    adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                    adaptador.Fill(dados, "ProcessosCompleta");
+                    //DataTable InsereAmigo = dados.Tables["InsercaoAmigo"];
+                    //DataRow novo = InsereAmigo.NewRow();
+                    //novo["Apelido"] = "@APELIDO";
+                    //novo["Nome"] = "@NOME";
+                    //novo["Endereco"] = "@ENDERECO";
+                    //novo["Bairro"] = "@BAIRRO";
+                    //novo["Cidade"] = "@CIDADE";
+                    //novo["UF"] = "@UF";
+                    //novo["Telefone"] = "@TELEFONE";
+                    //novo["Celular"] = "@CELULAR";
+                    //novo["Email"] = "@EMAIL";
+                    //adaptador.Update(dados, "InsercaoAmigo");
                     ObjComando.ExecuteNonQuery();
                    
                     return true;
@@ -105,9 +118,37 @@ namespace ProjetoFinalPJS
 
         //}
 
-        //public bool Delete()
-        //{
-        //}
+        public bool Delete(string Apelido)
+        {
+            string stringComando = string.Empty;
+            stringComando = "DELETE FROM Amigo WHERE Apelido = @APELIDO";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.AddWithValue("@APELIDO", Apelido);
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
         #endregion
     }
 }

@@ -26,5 +26,23 @@ namespace ProjetoFinalPJS
         {
             
         }
+
+        private void btRemover_Click(object sender, EventArgs e)
+        {
+            ClassSQL DeletarAmigo = new ClassSQL();
+
+            string Apelido = txtPesquisaNome.Text;
+          
+
+
+            if (DeletarAmigo.Delete(Apelido))
+            {
+                MessageBox.Show("Legaaallll");
+            }
+            else
+            {
+                MessageBox.Show("Não deu");
+            }
+        }
     }
 }
