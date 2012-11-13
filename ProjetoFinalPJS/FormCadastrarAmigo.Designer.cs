@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarAmigo));
             this.tbxNome = new System.Windows.Forms.TextBox();
             this.tbxEndereco = new System.Windows.Forms.TextBox();
@@ -50,6 +51,8 @@
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.lbApelido = new System.Windows.Forms.Label();
             this.tbxApelido = new System.Windows.Forms.TextBox();
+            this.errorProviderAmigo = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAmigo)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxNome
@@ -233,6 +236,11 @@
             this.tbxApelido.Size = new System.Drawing.Size(486, 20);
             this.tbxApelido.TabIndex = 22;
             // 
+            // errorProviderAmigo
+            // 
+            this.errorProviderAmigo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderAmigo.ContainerControl = this;
+            // 
             // FormCadastrarAmigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +270,7 @@
             this.Name = "FormCadastrarAmigo";
             this.Text = "Cadatro de Amigo";
             this.Load += new System.EventHandler(this.FormCadastrarAmigo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAmigo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +299,6 @@
         private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.Label lbApelido;
         private System.Windows.Forms.TextBox tbxApelido;
+        private System.Windows.Forms.ErrorProvider errorProviderAmigo;
     }
 }

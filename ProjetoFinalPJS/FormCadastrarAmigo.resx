@@ -139,7 +139,7 @@
   <data name="btGravar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAOhSURBVDhPPZLrT9NXGMd/25L9
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAOhSURBVDhPPZLrT9NXGMd/25L9
         AVv2wrFke4Oy+MIthDd7o6ZKZhGZmRMXMiA62KRUu2LlYsBAVKAXKKHcB70AA1poof21v7a0UKB01UkM
         w6J2BBa57OKKCpu9/747/S3Zi+95Tp48389zznkOBeBNorcBNoPENBb48tn2Dmu/1Riarq8PuRvqQxbJ
         9dBDjycWBesgNTyi94n4REcosrxGlIqcCODcH+vroK+IMH9VBJ9IBHNhEVYsNGJscpbUZKY8yWTyDRJf
@@ -174,4 +174,7 @@
         m01ClYJopwCqPE4XKrJJKs8iSS65Iovor4Dd/ETZu6uvLAN+AUcRzO6DOQD2AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="errorProviderAmigo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
