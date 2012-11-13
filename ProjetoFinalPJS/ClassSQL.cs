@@ -53,8 +53,7 @@ namespace ProjetoFinalPJS
         public bool Insert(ArrayList Insert)
         {
             stringComando = "INSERT INTO Amigo VALUES (@APELIDO, @NOME, @ENDERECO,@BAIRRO, @CIDADE, @UF, @TELEFONE,@CELULAR,@EMAIL)";
-           // DataSet dados = new DataSet();
-           // SqlDataAdapter adaptador = new SqlDataAdapter();
+          
             SqlCommand ObjComando = new SqlCommand();
             
             if (this.conectar())
@@ -73,10 +72,14 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@CELULAR", Insert[7]));
                     ObjComando.Parameters.Add(new SqlParameter("@EMAIL", Insert[8]));
 
-                    
-                   // adaptador.InsertCommand = ObjComando;
-                   // adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                  //  adaptador.Fill(dados, "ProcessosCompleta");
+                    ObjComando.ExecuteNonQuery();
+                    DataSet dados = new DataSet();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(); 
+                    adaptador.InsertCommand = ObjComando;
+                    ObjComando.CommandText = "SELECT * FROM Amigo";
+                    adaptador.SelectCommand = ObjComando;
+                    adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    adaptador.Fill(dados, "ProcessosCompleta");
                     ObjComando.ExecuteNonQuery();
                    
                     return true;
