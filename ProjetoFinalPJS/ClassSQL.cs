@@ -10,7 +10,8 @@ namespace ProjetoFinalPJS
 {
     class ClassSQL
     {
-        private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=AcervoMusical;User ID=FamiliaFurlan;Password=12345";
+        private const string conexao = @"Data Source=(Local);Initial Catalog=AcervoMusical;Integrated Security=SSPI";
+        
         private string stringComando = string.Empty;
         SqlConnection ObjConexao = null;
 

@@ -37,6 +37,10 @@ namespace ProjetoFinalPJS
 
         }
 
+        public void limpar()
+        {
+        }
+
         private void btSalvar_Click(object sender, EventArgs e)
         {
             if (tbxApelido.Text != "" && tbxNome.Text != "" && tbxCidade.Text != "" && cbxUF.Text != "")
@@ -56,6 +60,7 @@ namespace ProjetoFinalPJS
 
                 if (InserirAmigo.Insert(objArrayList))
                 {
+                    limpar();
                     MessageBox.Show("Legaaallll");
                 }
                 else
