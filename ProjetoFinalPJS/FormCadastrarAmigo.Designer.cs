@@ -60,14 +60,14 @@
             this.tbxNome.Location = new System.Drawing.Point(12, 63);
             this.tbxNome.Name = "tbxNome";
             this.tbxNome.Size = new System.Drawing.Size(483, 20);
-            this.tbxNome.TabIndex = 0;
+            this.tbxNome.TabIndex = 2;
             // 
             // tbxEndereco
             // 
             this.tbxEndereco.Location = new System.Drawing.Point(12, 102);
             this.tbxEndereco.Name = "tbxEndereco";
             this.tbxEndereco.Size = new System.Drawing.Size(483, 20);
-            this.tbxEndereco.TabIndex = 1;
+            this.tbxEndereco.TabIndex = 3;
             // 
             // tbxBairro
             // 
@@ -135,7 +135,7 @@
             this.btSalvar.Location = new System.Drawing.Point(258, 264);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btSalvar.TabIndex = 11;
+            this.btSalvar.TabIndex = 10;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -147,7 +147,7 @@
             this.btGravar.Location = new System.Drawing.Point(339, 264);
             this.btGravar.Name = "btGravar";
             this.btGravar.Size = new System.Drawing.Size(75, 23);
-            this.btGravar.TabIndex = 12;
+            this.btGravar.TabIndex = 11;
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = true;
             // 
@@ -158,7 +158,7 @@
             this.btLimpar.Location = new System.Drawing.Point(420, 264);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(75, 23);
-            this.btLimpar.TabIndex = 13;
+            this.btLimpar.TabIndex = 12;
             this.btLimpar.Text = "Limpar";
             this.btLimpar.UseVisualStyleBackColor = true;
             this.btLimpar.Click += new System.EventHandler(this.button3_Click);
@@ -178,7 +178,7 @@
             this.tbxTelefoneMasc.Name = "tbxTelefoneMasc";
             this.tbxTelefoneMasc.PromptChar = '0';
             this.tbxTelefoneMasc.Size = new System.Drawing.Size(100, 20);
-            this.tbxTelefoneMasc.TabIndex = 15;
+            this.tbxTelefoneMasc.TabIndex = 8;
             // 
             // cbxUF
             // 
@@ -186,14 +186,14 @@
             this.cbxUF.Location = new System.Drawing.Point(445, 179);
             this.cbxUF.Name = "cbxUF";
             this.cbxUF.Size = new System.Drawing.Size(50, 21);
-            this.cbxUF.TabIndex = 16;
+            this.cbxUF.TabIndex = 6;
             // 
             // tbxCelularMasc
             // 
             this.tbxCelularMasc.Location = new System.Drawing.Point(119, 267);
             this.tbxCelularMasc.Name = "tbxCelularMasc";
             this.tbxCelularMasc.Size = new System.Drawing.Size(100, 20);
-            this.tbxCelularMasc.TabIndex = 17;
+            this.tbxCelularMasc.TabIndex = 9;
             // 
             // lbCelular
             // 
@@ -218,7 +218,7 @@
             this.tbxEmail.Location = new System.Drawing.Point(15, 224);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(480, 20);
-            this.tbxEmail.TabIndex = 20;
+            this.tbxEmail.TabIndex = 7;
             // 
             // lbApelido
             // 
@@ -234,7 +234,7 @@
             this.tbxApelido.Location = new System.Drawing.Point(12, 25);
             this.tbxApelido.Name = "tbxApelido";
             this.tbxApelido.Size = new System.Drawing.Size(486, 20);
-            this.tbxApelido.TabIndex = 22;
+            this.tbxApelido.TabIndex = 1;
             // 
             // errorProviderAmigo
             // 

@@ -39,6 +39,16 @@ namespace ProjetoFinalPJS
 
         public void limpar()
         {
+            tbxApelido.Clear();
+            tbxBairro.Clear();
+            tbxCelularMasc.Clear();
+            tbxCidade.Clear();
+            tbxEmail.Clear();
+            tbxEndereco.Clear();
+            tbxNome.Clear();
+            tbxTelefoneMasc.Clear();
+            cbxUF.Text = "";
+            tbxApelido.Focus();
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
@@ -57,7 +67,7 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxTelefoneMasc.Text);
                 objArrayList.Add(tbxCelularMasc.Text);
                 objArrayList.Add(tbxEmail.Text);
-
+                
                 if (InserirAmigo.Insert(objArrayList))
                 {
                     limpar();
