@@ -9,6 +9,8 @@ using System.Windows.Forms;
 
 namespace ProjetoFinalPJS
 {
+
+
     public partial class FormListaAmigos : Form
     {
         public FormListaAmigos()
@@ -24,7 +26,12 @@ namespace ProjetoFinalPJS
 
         private void FormListaAmigos_Load(object sender, EventArgs e)
         {
+            ClassSQL PesquisaAmigo = new ClassSQL();
+            string Apelido = txtPesquisaNome.Text;
+            PesquisaAmigo.SelectAmigo(Apelido);
             
+            
+
         }
 
         private void btRemover_Click(object sender, EventArgs e)
@@ -32,8 +39,6 @@ namespace ProjetoFinalPJS
             ClassSQL DeletarAmigo = new ClassSQL();
 
             string Apelido = txtPesquisaNome.Text;
-          
-
 
             if (DeletarAmigo.Delete(Apelido))
             {
@@ -44,5 +49,15 @@ namespace ProjetoFinalPJS
                 MessageBox.Show("Não deu");
             }
         }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            FormCadastrarAmigo frm = new FormCadastrarAmigo();
+            frm.Show();
+
+
+        }
+
+
     }
 }

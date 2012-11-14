@@ -53,13 +53,10 @@ namespace ProjetoFinalPJS
         #endregion
 
         #region "Metodos manipulação de dados"
+
         public bool Insert(ArrayList Insert)
         {
             string stringComando = string.Empty;
-            //SqlCommand cmdSelecao = new SqlCommand("Select * from Amigo", ObjConexao);
-            //adaptador.SelectCommand = cmdSelecao;
-            //adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            //adaptador.Fill(dados, "InsercaoAmigo");
             stringComando = "INSERT INTO Amigo VALUES (@APELIDO, @NOME, @ENDERECO,@BAIRRO, @CIDADE, @UF, @TELEFONE,@CELULAR,@EMAIL)";
           
             SqlCommand ObjComando = new SqlCommand();
@@ -79,20 +76,7 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@TELEFONE", Insert[6]));
                     ObjComando.Parameters.Add(new SqlParameter("@CELULAR", Insert[7]));
                     ObjComando.Parameters.Add(new SqlParameter("@EMAIL", Insert[8]));
-                    //adaptador.InsertCommand = ObjComando;
-
-                    //DataTable InsereAmigo = dados.Tables["InsercaoAmigo"];
-                    //DataRow novo = InsereAmigo.NewRow();
-                    //novo["Apelido"] = "@APELIDO";
-                    //novo["Nome"] = "@NOME";
-                    //novo["Endereco"] = "@ENDERECO";
-                    //novo["Bairro"] = "@BAIRRO";
-                    //novo["Cidade"] = "@CIDADE";
-                    //novo["UF"] = "@UF";
-                    //novo["Telefone"] = "@TELEFONE";
-                    //novo["Celular"] = "@CELULAR";
-                    //novo["Email"] = "@EMAIL";
-                    //adaptador.Update(dados, "InsercaoAmigo");
+                   
                     ObjComando.ExecuteNonQuery();
                    
                     return true;
@@ -113,10 +97,47 @@ namespace ProjetoFinalPJS
 
         }
 
-        //public bool Update()
-        //{
+        public bool Update(ArrayList Update)
+        {
+            string stringComando = string.Empty;
+            stringComando = "UPDATE FROM Amigo SET Apelido =@APELIDO, Nome = @NOME, Endereco = @ENDERECO, Bairro = @BAIRRO, Cidade = @CIDADE, UF = @UF,Telefone = @TELEFONE, Celular = @CELULAR, email = @EMAIL)";
 
-        //}
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@APELIDO", Update[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@NOME", Update[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ENDERECO", Update[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@BAIRRO", Update[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@CIDADE", Update[4]));
+                    ObjComando.Parameters.Add(new SqlParameter("@UF", Update[5]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TELEFONE", Update[6]));
+                    ObjComando.Parameters.Add(new SqlParameter("@CELULAR", Update[7]));
+                    ObjComando.Parameters.Add(new SqlParameter("@EMAIL", Update[8]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public bool Delete(string Apelido)
         {
@@ -132,6 +153,39 @@ namespace ProjetoFinalPJS
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
                     ObjComando.Parameters.AddWithValue("@APELIDO", Apelido);
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool SelectAmigo(string Apelido)
+        {
+            string stringComando = string.Empty;
+            stringComando = "SELECT * FROM Amigo WHERE Apelido = @APELIDO";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
                     ObjComando.ExecuteNonQuery();
 
                     return true;

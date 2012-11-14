@@ -108,6 +108,7 @@
             this.btAlterar.TabIndex = 3;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btRemover
             // 
@@ -132,8 +133,7 @@
             this.btAdicionar.Name = "btAdicionar";
             this.btAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btAdicionar.TabIndex = 5;
-            this.btAdicionar.Text = "Adicionar";
-            this.btAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btAdicionar.Text = "Novo";
             this.btAdicionar.UseVisualStyleBackColor = true;
             this.btAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 

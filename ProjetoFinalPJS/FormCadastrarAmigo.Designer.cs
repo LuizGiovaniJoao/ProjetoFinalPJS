@@ -136,7 +136,8 @@
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
             this.btSalvar.TabIndex = 11;
-            this.btSalvar.Text = "Salvar";
+            this.btSalvar.Text = "Adicionar";
+            this.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
