@@ -11,7 +11,7 @@ namespace ProjetoFinalPJS
     class ClassSQL
     {
         //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=AcervoMusical;User ID=FamiliaFurlan;Password=12345";
-        private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=AcervoMusical; Integrated Security=SSPI";
+        private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
         
         SqlConnection ObjConexao = null;
         //DataSet dados = new DataSet();
@@ -132,6 +132,8 @@ namespace ProjetoFinalPJS
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
                     ObjComando.Parameters.AddWithValue("@APELIDO", Apelido);
+                    ObjComando.ExecuteNonQuery();
+
                     return true;
                 }
                 catch (SqlException erro)
