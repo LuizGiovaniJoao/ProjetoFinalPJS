@@ -73,14 +73,14 @@
             // 
             this.tbxBairro.Location = new System.Drawing.Point(12, 141);
             this.tbxBairro.Name = "tbxBairro";
-            this.tbxBairro.Size = new System.Drawing.Size(483, 20);
+            this.tbxBairro.Size = new System.Drawing.Size(220, 20);
             this.tbxBairro.TabIndex = 4;
             // 
             // tbxCidade
             // 
-            this.tbxCidade.Location = new System.Drawing.Point(12, 180);
+            this.tbxCidade.Location = new System.Drawing.Point(242, 141);
             this.tbxCidade.Name = "tbxCidade";
-            this.tbxCidade.Size = new System.Drawing.Size(427, 20);
+            this.tbxCidade.Size = new System.Drawing.Size(183, 20);
             this.tbxCidade.TabIndex = 5;
             // 
             // lbNome
@@ -113,7 +113,7 @@
             // lbCidade
             // 
             this.lbCidade.AutoSize = true;
-            this.lbCidade.Location = new System.Drawing.Point(9, 164);
+            this.lbCidade.Location = new System.Drawing.Point(239, 125);
             this.lbCidade.Name = "lbCidade";
             this.lbCidade.Size = new System.Drawing.Size(40, 13);
             this.lbCidade.TabIndex = 9;
@@ -121,8 +121,9 @@
             // 
             // lbUf
             // 
+            this.lbUf.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbUf.AutoSize = true;
-            this.lbUf.Location = new System.Drawing.Point(442, 164);
+            this.lbUf.Location = new System.Drawing.Point(431, 124);
             this.lbUf.Name = "lbUf";
             this.lbUf.Size = new System.Drawing.Size(21, 13);
             this.lbUf.TabIndex = 10;
@@ -132,7 +133,7 @@
             // 
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
             this.btSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btSalvar.Location = new System.Drawing.Point(258, 264);
+            this.btSalvar.Location = new System.Drawing.Point(258, 218);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
             this.btSalvar.TabIndex = 10;
@@ -144,7 +145,7 @@
             // 
             this.btGravar.Image = ((System.Drawing.Image)(resources.GetObject("btGravar.Image")));
             this.btGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btGravar.Location = new System.Drawing.Point(339, 264);
+            this.btGravar.Location = new System.Drawing.Point(339, 218);
             this.btGravar.Name = "btGravar";
             this.btGravar.Size = new System.Drawing.Size(75, 23);
             this.btGravar.TabIndex = 11;
@@ -155,7 +156,7 @@
             // 
             this.btLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btLimpar.Image")));
             this.btLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btLimpar.Location = new System.Drawing.Point(420, 264);
+            this.btLimpar.Location = new System.Drawing.Point(420, 218);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(75, 23);
             this.btLimpar.TabIndex = 12;
@@ -166,7 +167,7 @@
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(10, 251);
+            this.lbTelefone.Location = new System.Drawing.Point(10, 205);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(49, 13);
             this.lbTelefone.TabIndex = 14;
@@ -174,7 +175,7 @@
             // 
             // tbxTelefoneMasc
             // 
-            this.tbxTelefoneMasc.Location = new System.Drawing.Point(13, 267);
+            this.tbxTelefoneMasc.Location = new System.Drawing.Point(13, 221);
             this.tbxTelefoneMasc.Name = "tbxTelefoneMasc";
             this.tbxTelefoneMasc.PromptChar = '0';
             this.tbxTelefoneMasc.Size = new System.Drawing.Size(100, 20);
@@ -182,15 +183,16 @@
             // 
             // cbxUF
             // 
+            this.cbxUF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbxUF.FormattingEnabled = true;
-            this.cbxUF.Location = new System.Drawing.Point(445, 179);
+            this.cbxUF.Location = new System.Drawing.Point(434, 140);
             this.cbxUF.Name = "cbxUF";
-            this.cbxUF.Size = new System.Drawing.Size(50, 21);
+            this.cbxUF.Size = new System.Drawing.Size(61, 21);
             this.cbxUF.TabIndex = 6;
             // 
             // tbxCelularMasc
             // 
-            this.tbxCelularMasc.Location = new System.Drawing.Point(119, 267);
+            this.tbxCelularMasc.Location = new System.Drawing.Point(119, 221);
             this.tbxCelularMasc.Name = "tbxCelularMasc";
             this.tbxCelularMasc.Size = new System.Drawing.Size(100, 20);
             this.tbxCelularMasc.TabIndex = 9;
@@ -198,7 +200,7 @@
             // lbCelular
             // 
             this.lbCelular.AutoSize = true;
-            this.lbCelular.Location = new System.Drawing.Point(116, 252);
+            this.lbCelular.Location = new System.Drawing.Point(116, 206);
             this.lbCelular.Name = "lbCelular";
             this.lbCelular.Size = new System.Drawing.Size(39, 13);
             this.lbCelular.TabIndex = 18;
@@ -207,17 +209,17 @@
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(12, 207);
+            this.lbEmail.Location = new System.Drawing.Point(9, 164);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(41, 13);
+            this.lbEmail.Size = new System.Drawing.Size(32, 13);
             this.lbEmail.TabIndex = 19;
-            this.lbEmail.Text = "E - mail";
+            this.lbEmail.Text = "Email";
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(15, 224);
+            this.tbxEmail.Location = new System.Drawing.Point(12, 181);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(480, 20);
+            this.tbxEmail.Size = new System.Drawing.Size(483, 20);
             this.tbxEmail.TabIndex = 7;
             // 
             // lbApelido
@@ -233,7 +235,7 @@
             // 
             this.tbxApelido.Location = new System.Drawing.Point(12, 25);
             this.tbxApelido.Name = "tbxApelido";
-            this.tbxApelido.Size = new System.Drawing.Size(486, 20);
+            this.tbxApelido.Size = new System.Drawing.Size(207, 20);
             this.tbxApelido.TabIndex = 1;
             // 
             // errorProviderAmigo
@@ -245,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 319);
+            this.ClientSize = new System.Drawing.Size(511, 260);
             this.Controls.Add(this.tbxApelido);
             this.Controls.Add(this.lbApelido);
             this.Controls.Add(this.tbxEmail);
