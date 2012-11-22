@@ -97,10 +97,10 @@ namespace ProjetoFinalPJS
 
         }
 
-        public bool Update(ArrayList Update)
+        public bool Update(ArrayList Update, string Apelido)
         {
             string stringComando = string.Empty;
-            stringComando = "UPDATE FROM Amigo SET Apelido =@APELIDO, Nome = @NOME, Endereco = @ENDERECO, Bairro = @BAIRRO, Cidade = @CIDADE, UF = @UF,Telefone = @TELEFONE, Celular = @CELULAR, email = @EMAIL)";
+            stringComando = "UPDATE Amigo SET  Nome = @NOME, Endereco = @ENDERECO, Bairro = @BAIRRO, Cidade = @CIDADE, UF = @UF,Telefone = @TELEFONE, Celular = @CELULAR, email = @EMAIL WHERE Apelido = @APELIDO";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -110,15 +110,15 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.Add(new SqlParameter("@APELIDO", Update[0]));
-                    ObjComando.Parameters.Add(new SqlParameter("@NOME", Update[1]));
-                    ObjComando.Parameters.Add(new SqlParameter("@ENDERECO", Update[2]));
-                    ObjComando.Parameters.Add(new SqlParameter("@BAIRRO", Update[3]));
-                    ObjComando.Parameters.Add(new SqlParameter("@CIDADE", Update[4]));
-                    ObjComando.Parameters.Add(new SqlParameter("@UF", Update[5]));
-                    ObjComando.Parameters.Add(new SqlParameter("@TELEFONE", Update[6]));
-                    ObjComando.Parameters.Add(new SqlParameter("@CELULAR", Update[7]));
-                    ObjComando.Parameters.Add(new SqlParameter("@EMAIL", Update[8]));
+                    ObjComando.Parameters.Add(new SqlParameter("@NOME", Update[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ENDERECO", Update[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@BAIRRO", Update[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@CIDADE", Update[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@UF", Update[4]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TELEFONE", Update[5]));
+                    ObjComando.Parameters.Add(new SqlParameter("@CELULAR", Update[6]));
+                    ObjComando.Parameters.Add(new SqlParameter("@EMAIL", Update[7]));
+                    ObjComando.Parameters.Add(new SqlParameter("@APELIDO", Apelido));
 
                     ObjComando.ExecuteNonQuery();
 
@@ -173,10 +173,15 @@ namespace ProjetoFinalPJS
 
         }
 
-        public bool SelectAmigo(string Apelido)
+
+        #endregion
+
+        # region "Apresentação dos Dados Armazenados no Banco"
+
+        public DataTable Listar()
         {
             string stringComando = string.Empty;
-            stringComando = "SELECT * FROM Amigo WHERE Apelido = @APELIDO";
+            stringComando = "SELECT  [Nome], [Apelido],[Endereco] AS Endereço, [Bairro], [Cidade], [UF], [Telefone], [Celular], [Email] FROM AMIGO";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -186,9 +191,11 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.ExecuteNonQuery();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(ObjComando);
+                    DataTable dtListar = new DataTable();
+                    adaptador.Fill(dtListar);
 
-                    return true;
+                    return dtListar;
                 }
                 catch (SqlException erro)
                 {
@@ -201,10 +208,47 @@ namespace ProjetoFinalPJS
             }
             else
             {
-                return false;
+                return null;
             }
 
         }
+
+        public DataTable Pesquisar(string Nome)
+        {
+            string stringComando = string.Empty;
+            stringComando = "SELECT [Nome], [Apelido] ,[Endereco] AS Endereço , [Bairro], [Cidade], [UF], [Telefone], [Celular], [Email] FROM AMIGO WHERE NOME LIKE @NOME";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@NOME",Nome));
+                    SqlDataAdapter adaptador = new SqlDataAdapter(ObjComando);
+                    DataTable dtPesquisar = new DataTable();
+                    adaptador.Fill(dtPesquisar);
+
+                    return dtPesquisar;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
         #endregion
     }
 }

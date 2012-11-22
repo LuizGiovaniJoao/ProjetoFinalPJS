@@ -44,12 +44,15 @@
             // 
             // dGridViewListaNomes
             // 
+            this.dGridViewListaNomes.AllowUserToAddRows = false;
+            this.dGridViewListaNomes.AllowUserToDeleteRows = false;
             this.dGridViewListaNomes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dGridViewListaNomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGridViewListaNomes.Location = new System.Drawing.Point(12, 81);
             this.dGridViewListaNomes.Name = "dGridViewListaNomes";
+            this.dGridViewListaNomes.ReadOnly = true;
             this.dGridViewListaNomes.Size = new System.Drawing.Size(705, 309);
             this.dGridViewListaNomes.TabIndex = 0;
             // 
@@ -87,6 +90,7 @@
             this.txtPesquisaNome.Name = "txtPesquisaNome";
             this.txtPesquisaNome.Size = new System.Drawing.Size(690, 20);
             this.txtPesquisaNome.TabIndex = 1;
+            this.txtPesquisaNome.TextChanged += new System.EventHandler(this.txtPesquisaNome_TextChanged);
             // 
             // lbPesquisaNome
             // 

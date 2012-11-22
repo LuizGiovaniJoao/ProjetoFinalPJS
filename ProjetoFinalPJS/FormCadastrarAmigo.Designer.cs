@@ -151,6 +151,7 @@
             this.btGravar.TabIndex = 12;
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = true;
+            this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
             // 
             // btLimpar
             // 
@@ -188,6 +189,7 @@
             this.cbxUF.Name = "cbxUF";
             this.cbxUF.Size = new System.Drawing.Size(50, 21);
             this.cbxUF.TabIndex = 16;
+            this.cbxUF.SelectedIndexChanged += new System.EventHandler(this.cbxUF_SelectedIndexChanged);
             // 
             // tbxCelularMasc
             // 
@@ -270,6 +272,7 @@
             this.Controls.Add(this.tbxNome);
             this.Name = "FormCadastrarAmigo";
             this.Text = "Cadatro de Amigo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastrarAmigo_FormClosing);
             this.Load += new System.EventHandler(this.FormCadastrarAmigo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAmigo)).EndInit();
             this.ResumeLayout(false);

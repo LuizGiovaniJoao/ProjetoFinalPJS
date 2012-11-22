@@ -20,16 +20,17 @@ namespace ProjetoFinalPJS
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            FormCadastrarAmigo frm = new FormCadastrarAmigo();
+            bool Verifica = true;
+            
+            FormCadastrarAmigo frm = new FormCadastrarAmigo(Verifica);
             frm.ShowDialog();
+
         }
 
         private void FormListaAmigos_Load(object sender, EventArgs e)
         {
-            ClassSQL PesquisaAmigo = new ClassSQL();
-            string Apelido = txtPesquisaNome.Text;
-            PesquisaAmigo.SelectAmigo(Apelido);
-            
+            ClassSQL ApresentaAmigos = new ClassSQL();
+            dGridViewListaNomes.DataSource = ApresentaAmigos.Listar();
             
 
         }
@@ -38,24 +39,38 @@ namespace ProjetoFinalPJS
         {
             ClassSQL DeletarAmigo = new ClassSQL();
 
-            string Apelido = txtPesquisaNome.Text;
+            string Apelido = dGridViewListaNomes.CurrentRow.Cells[1].Value.ToString();
+            
 
             if (DeletarAmigo.Delete(Apelido))
             {
-                MessageBox.Show("Legaaallll");
+                dGridViewListaNomes.Rows.RemoveAt(dGridViewListaNomes.CurrentRow.Index);
+                MessageBox.Show("Removido");
             }
             else
             {
-                MessageBox.Show("Não deu");
+                MessageBox.Show("Não Removeu");
             }
         }
 
         private void btAlterar_Click(object sender, EventArgs e)
         {
-            FormCadastrarAmigo frm = new FormCadastrarAmigo();
-            frm.Show();
+            
+            string[] dadosDGV = new string[10];
+            for (int I = 0; I < dGridViewListaNomes.ColumnCount; I++)
+            {
+                 dadosDGV[I] = dGridViewListaNomes.CurrentRow.Cells[I].Value.ToString();
+            }
+                FormCadastrarAmigo frm = new FormCadastrarAmigo(dadosDGV);
+                frm.Show();
+                
 
+        }
 
+        private void txtPesquisaNome_TextChanged(object sender, EventArgs e)
+        {
+            ClassSQL PesquisaAmigos = new ClassSQL();
+            dGridViewListaNomes.DataSource = PesquisaAmigos.Pesquisar("%" +txtPesquisaNome.Text+ "%");
         }
 
 
