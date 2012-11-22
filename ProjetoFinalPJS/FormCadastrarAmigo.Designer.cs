@@ -137,7 +137,8 @@
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
             this.btSalvar.TabIndex = 10;
-            this.btSalvar.Text = "Salvar";
+            this.btSalvar.Text = "Adicionar";
+            this.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
@@ -151,6 +152,7 @@
             this.btGravar.TabIndex = 11;
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = true;
+            this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
             // 
             // btLimpar
             // 
@@ -235,7 +237,7 @@
             // 
             this.tbxApelido.Location = new System.Drawing.Point(12, 25);
             this.tbxApelido.Name = "tbxApelido";
-            this.tbxApelido.Size = new System.Drawing.Size(207, 20);
+            this.tbxApelido.Size = new System.Drawing.Size(483, 20);
             this.tbxApelido.TabIndex = 1;
             // 
             // errorProviderAmigo
@@ -271,7 +273,7 @@
             this.Controls.Add(this.tbxNome);
             this.Name = "FormCadastrarAmigo";
             this.Text = "Cadatro de Amigo";
-            this.Load += new System.EventHandler(this.FormCadastrarAmigo_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastrarAmigo_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAmigo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
