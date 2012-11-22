@@ -13,7 +13,7 @@ namespace ProjetoFinalPJS
         // String do João
         //private const string conexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
         // String do Giovani
-        //private const string conexao = @"Data Source=(Local);Initial Catalog=AcervoMusical;Integrated Security=SSPI";
+        private const string conexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
         // String do Marcos
         
 
