@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace ProjetoFinalPJS
 {
     class ClassSQL
     {
-        //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=AcervoMusical;User ID=FamiliaFurlan;Password=12345";
+       
         private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
         
         SqlConnection ObjConexao = null;
@@ -52,7 +53,7 @@ namespace ProjetoFinalPJS
         }
         #endregion
 
-        #region "Metodos manipulação de dados"
+        #region "Metodos manipulação de dados do formulário Amigos"
 
         public bool Insert(ArrayList Insert)
         {
@@ -250,5 +251,96 @@ namespace ProjetoFinalPJS
         }
 
         #endregion
+
+        # region Métodos manipulação de dados do formulário Midias
+        public bool InsertMidia(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "INSERT INTO Midias VALUES (@INTERPRETE, @AUTOR,@ALBUM, @MUSICA, @DATAALBUM, @DATAAQUISICAO, @ORIGEMCOMPRA, @TIPO, @OBSERVACOES, @NOTA)";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@INTERPRETE", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@AUTOR", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ALBUM", Insert[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Insert[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DATAALBUM", Insert[4]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DATAAQUISICAO", Insert[5]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ORIGEMCOMPRA", Insert[6]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TIPO", Insert[7]));
+                    ObjComando.Parameters.Add(new SqlParameter("@OBSERVACOES", Insert[8]));
+                    ObjComando.Parameters.Add(new SqlParameter("@NOTA", Insert[9]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public bool UpdateMidia(ArrayList Update, string Apelido)
+        {
+            string stringComando = string.Empty;
+            stringComando = "UPDATE Midias SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observações = @OBSERVACOES, Nota = @NOTA WHERE Interprete = @INTERPRETE AND Autor = @AUTOR";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@INTERPRETE", Update[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@AUTOR", Update[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ALBUM", Update[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Update[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DATAALBUM", Update[4]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DATAAQUISICAO", Update[5]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ORIGEMCOMPRA", Update[6]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TIPO", Update[7]));
+                    ObjComando.Parameters.Add(new SqlParameter("@OBSERVACOES", Update[8]));
+                    ObjComando.Parameters.Add(new SqlParameter("@NOTA", Update[9]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+        # endregion
     }
 }

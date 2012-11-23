@@ -260,6 +260,7 @@
             this.btSalvar.TabIndex = 18;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btLimpar
             // 
@@ -285,6 +286,7 @@
             this.btGravar.TabIndex = 20;
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = true;
+            this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
             // 
             // lbMusica
             // 
@@ -328,14 +330,12 @@
             this.radioMusica.Text = "Música";
             this.radioMusica.UseVisualStyleBackColor = true;
             this.radioMusica.CheckedChanged += new System.EventHandler(this.radioButton_Musica_CheckedChanged);
-            
             // 
             // FormCadastrarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 395);
-
             this.Controls.Add(this.radioMusica);
             this.Controls.Add(this.radioAlbum);
             this.Controls.Add(this.tbxMusica);
@@ -354,7 +354,6 @@
             this.Controls.Add(this.lbNomeInt);
             this.Controls.Add(this.cbxNota);
             this.Controls.Add(this.cbxMidia);
-
             this.Controls.Add(this.dateTimePickerCompra);
             this.Controls.Add(this.dateTimePickerAlbum);
             this.Controls.Add(this.tbxObsevacoes);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -24,7 +25,7 @@ namespace ProjetoFinalPJS
         private void radio_Album_CheckedChanged(object sender, EventArgs e)
         {
             btGravar.Enabled = false;
-            
+
             if (radioAlbum.Checked)
             {
                 tbxInterprete.Enabled = true;
@@ -49,13 +50,13 @@ namespace ProjetoFinalPJS
                 cbxNota.Enabled = false;
             }
             tbxInterprete.Focus();
-            
+
         }
 
         private void radioButton_Musica_CheckedChanged(object sender, EventArgs e)
         {
             btGravar.Enabled = false;
-            
+
             if (radioMusica.Checked)
             {
                 tbxInterprete.Enabled = true;
@@ -93,5 +94,67 @@ namespace ProjetoFinalPJS
             tbxObsevacoes.Text = null;
             tbxInterprete.Focus();
         }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+
+
+            ClassSQL InserirMidia = new ClassSQL();
+            ArrayList objArrayList = new ArrayList();
+
+            objArrayList.Add(tbxInterprete.Text);
+            objArrayList.Add(tbxAutor.Text);
+            objArrayList.Add(tbxAlbum.Text);
+            objArrayList.Add(tbxMusica.Text);
+            objArrayList.Add(dateTimePickerAlbum.Value);
+            objArrayList.Add(dateTimePickerCompra.Value);
+            objArrayList.Add(tbxOrigemCompra.Text);
+            objArrayList.Add(cbxMidia.Text);
+            objArrayList.Add(tbxObsevacoes.Text);
+            objArrayList.Add(cbxNota.Text);
+
+            if (InserirMidia.InsertMidia(objArrayList))
+            {
+                MessageBox.Show("Legaaallll");
+            }
+            else
+            {
+                MessageBox.Show("Não deu");
+            }
+        }
+
+        private void btGravar_Click(object sender, EventArgs e)
+        {
+            if (tbxAutor.Text != "" && cbxMidia.Text != "")
+            {
+                ClassSQL AtualizarAmigo = new ClassSQL();
+                ArrayList objArrayList = new ArrayList();
+
+                string Apelido = tbxInterprete.Text;
+                objArrayList.Add(tbxAutor.Text);
+                objArrayList.Add(tbxAlbum.Text);
+                objArrayList.Add(tbxMusica.Text);
+                objArrayList.Add(dateTimePickerAlbum.Value);
+                objArrayList.Add(dateTimePickerCompra.Value);
+                objArrayList.Add(tbxOrigemCompra.Text);
+                objArrayList.Add(cbxMidia.Text);
+                objArrayList.Add(tbxObsevacoes.Text);
+                objArrayList.Add(cbxNota.Text);
+
+                if (AtualizarAmigo.Update(objArrayList, Apelido))
+                {
+                    MessageBox.Show("Legaaallll");
+
+                }
+                else
+                {
+                    MessageBox.Show("Não deu");
+                }
+            }
+
+        }
     }
+
 }
+
+
