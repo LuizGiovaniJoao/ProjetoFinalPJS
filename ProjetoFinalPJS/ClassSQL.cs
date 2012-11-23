@@ -55,12 +55,12 @@ namespace ProjetoFinalPJS
             return;
         }
 
-        public void ListaCidades(SqlCommand comandoListCidades, DataTable dtTabelaCidade)
+        public void ListaCidades(SqlCommand comandoListCidades, DataTable dtTabelaCidade, string estSelecionado)
         {
             //define a conexao
             SqlConnection objetoConexao = new SqlConnection(conexao);
             //criar um adaptador
-            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM cidades", conexao);
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT C.cidade FROM cidades C INNER JOIN estados E ON C.id_estado = E.id_estado WHERE E.uf = '"+estSelecionado+"' ", conexao);
             //preenche o DataTable
             adaptador.Fill(dtTabelaCidade);
 

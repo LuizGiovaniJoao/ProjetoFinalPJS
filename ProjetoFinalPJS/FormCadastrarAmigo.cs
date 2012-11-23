@@ -168,6 +168,20 @@ namespace ProjetoFinalPJS
             FormListaAmigos frm = new FormListaAmigos();
         }
 
+        public void ListaCid()
+        {
+            ClassSQL ListaDados = new ClassSQL();
+            //Bloco para listagem de Cidades no cbxCidades
+            SqlCommand comandoListCidades = new SqlCommand();
+            DataTable dtTabelaCidade = new DataTable();
+            string estSelecionado = cbxUF.Text;
+            ListaDados.ListaCidades(comandoListCidades, dtTabelaCidade, estSelecionado);
+            cbxCidade.DataSource = dtTabelaCidade;
+            cbxCidade.DisplayMember = "cidade";
+            cbxCidade.ValueMember = "cidade";
+            return;
+        }
+
         private void FormCadastrarAmigo_Load(object sender, EventArgs e)
         {
             ClassSQL ListaDados = new ClassSQL();
@@ -179,16 +193,14 @@ namespace ProjetoFinalPJS
             cbxUF.DataSource = dtTabelaEstado;
             cbxUF.DisplayMember = "Uf";
             cbxUF.ValueMember = "Uf";
-            ////
 
-            //Bloco para listagem de Cidades no cbxCidades
-            SqlCommand comandoListCidades = new SqlCommand();
-            DataTable dtTabelaCidade = new DataTable();
-            ListaDados.ListaCidades(comandoListCidades, dtTabelaCidade);
-            cbxCidade.DataSource = dtTabelaCidade;
-            cbxCidade.DisplayMember = "cidade";
-            cbxCidade.ValueMember = "cidade";
-            //
+            ListaCid();
+        }
+
+        private void cbxUF_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ClassSQL ListaDados = new ClassSQL();
+            ListaCid();
         }
     }
 }
