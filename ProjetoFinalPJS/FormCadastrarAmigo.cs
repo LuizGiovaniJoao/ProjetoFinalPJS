@@ -31,37 +31,36 @@ namespace ProjetoFinalPJS
             tbxApelido.Text = dadosDGV[1];
             tbxEndereco.Text = dadosDGV[2];
             tbxBairro.Text = dadosDGV[3];
-            tbxCidade.Text = dadosDGV[4];
+            cbxCidade.Text = dadosDGV[4];
             cbxUF.Text = dadosDGV[5];
             tbxTelefoneMasc.Text = dadosDGV[6];
             tbxCelularMasc.Text = dadosDGV[7];
-            tbxEmail.Text = dadosDGV[8];
-            
-           
+            tbxEmail.Text = dadosDGV[8];           
         }
-        private void button3_Click(object sender, EventArgs e)
+
+        public void Limpar()
         {
             tbxApelido.Text = null;
             tbxNome.Text = null;
             tbxBairro.Text = null;
-            tbxCidade.Text = null;
+            cbxCidade.Text = null;
             tbxEndereco.Text = null;
             cbxUF.Text = null;
             tbxEmail.Text = null;
             tbxCelularMasc.Text = null;
             tbxTelefoneMasc.Text = null;
             tbxEmail.Text = null;
-            tbxNome.Focus();
+            tbxApelido.Focus();
         }
 
-        private void FormCadastrarAmigo_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            Limpar();
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            if (tbxApelido.Text != "" && tbxNome.Text != "" && tbxCidade.Text != "" && cbxUF.Text != "")
+            if (tbxApelido.Text != "" && tbxNome.Text != "" && cbxCidade.Text != "" && cbxUF.Text != "")
             {
                 ClassSQL InserirAmigo = new ClassSQL();
                 ArrayList objArrayList = new ArrayList();
@@ -70,7 +69,7 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxNome.Text);
                 objArrayList.Add(tbxEndereco.Text);
                 objArrayList.Add(tbxBairro.Text);
-                objArrayList.Add(tbxCidade.Text);
+                objArrayList.Add(cbxCidade.Text);
                 objArrayList.Add(cbxUF.Text);
                 objArrayList.Add(tbxTelefoneMasc.Text);
                 objArrayList.Add(tbxCelularMasc.Text);
@@ -78,6 +77,7 @@ namespace ProjetoFinalPJS
 
                 if (InserirAmigo.Insert(objArrayList))
                 {
+                    Limpar();
                     MessageBox.Show("Legaaallll");
                 }
                 else
@@ -97,7 +97,7 @@ namespace ProjetoFinalPJS
                     errorProviderAmigo.SetError(lbNome, tooltip);
                 else
                     errorProviderAmigo.SetError(lbNome, "");
-                if (tbxCidade.Text == "")
+                if (cbxCidade.Text == "")
                     errorProviderAmigo.SetError(lbCidade, tooltip);
                 else
                     errorProviderAmigo.SetError(lbCidade, "");
@@ -110,7 +110,7 @@ namespace ProjetoFinalPJS
 
         private void btGravar_Click(object sender, EventArgs e)
         {
-            if (tbxApelido.Text != "" && tbxNome.Text != "" && tbxCidade.Text != "" && cbxUF.Text != "")
+            if (tbxApelido.Text != "" && tbxNome.Text != "" && cbxCidade.Text != "" && cbxUF.Text != "")
             {
                 ClassSQL AtualizarAmigo = new ClassSQL();
                 ArrayList objArrayList = new ArrayList();
@@ -119,7 +119,7 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxNome.Text);
                 objArrayList.Add(tbxEndereco.Text);
                 objArrayList.Add(tbxBairro.Text);
-                objArrayList.Add(tbxCidade.Text);
+                objArrayList.Add(cbxCidade.Text);
                 objArrayList.Add(cbxUF.Text);
                 objArrayList.Add(tbxTelefoneMasc.Text);
                 objArrayList.Add(tbxCelularMasc.Text);
@@ -147,7 +147,7 @@ namespace ProjetoFinalPJS
                     errorProviderAmigo.SetError(lbNome, tooltip);
                 else
                     errorProviderAmigo.SetError(lbNome, "");
-                if (tbxCidade.Text == "")
+                if (cbxCidade.Text == "")
                     errorProviderAmigo.SetError(lbCidade, tooltip);
                 else
                     errorProviderAmigo.SetError(lbCidade, "");
@@ -166,12 +166,29 @@ namespace ProjetoFinalPJS
         private void FormCadastrarAmigo_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormListaAmigos frm = new FormListaAmigos();
-            
+        }
 
-            //FormListaAmigos frm2 = new FormListaAmigos();
-            //frm2.ShowDialog();
-            //FormListaAmigos frm = new FormListaAmigos();
-            //frm.ShowDialog();
+        private void FormCadastrarAmigo_Load(object sender, EventArgs e)
+        {
+            ClassSQL ListaDados = new ClassSQL();
+            
+            //Bloco para listagem de estados no cbxEstados
+            SqlCommand comandoListEstados = new SqlCommand();
+            DataTable dtTabelaEstado = new DataTable();
+            ListaDados.ListaEstados(comandoListEstados, dtTabelaEstado);
+            cbxUF.DataSource = dtTabelaEstado;
+            cbxUF.DisplayMember = "Uf";
+            cbxUF.ValueMember = "Uf";
+            ////
+
+            //Bloco para listagem de Cidades no cbxCidades
+            SqlCommand comandoListCidades = new SqlCommand();
+            DataTable dtTabelaCidade = new DataTable();
+            ListaDados.ListaCidades(comandoListCidades, dtTabelaCidade);
+            cbxCidade.DataSource = dtTabelaCidade;
+            cbxCidade.DisplayMember = "cidade";
+            cbxCidade.ValueMember = "cidade";
+            //
         }
     }
 }

@@ -11,9 +11,14 @@ namespace ProjetoFinalPJS
 {
     class ClassSQL
     {
-       
         private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
-        
+        // String do João
+        //private const string conexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
+        // String do Giovani
+        //private const string conexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
+        // String do Marcos
+        //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
+
         SqlConnection ObjConexao = null;
         //DataSet dados = new DataSet();
         //SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -37,6 +42,35 @@ namespace ProjetoFinalPJS
 
         }
 
+        #region "Métodos de listagem de Cidades e Estados"
+
+        public void ListaEstados(SqlCommand comandoListEstados, DataTable dtTabelaEstado)
+        {
+            //define a conexão
+            SqlConnection objetoConexao = new SqlConnection(conexao);
+            //cria um adaptador
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM estados", conexao);
+            //preenche o dataTable
+            adaptador.Fill(dtTabelaEstado);
+
+            return;
+        }
+
+        public void ListaCidades(SqlCommand comandoListCidades, DataTable dtTabelaCidade)
+        {
+            //define a conexao
+            SqlConnection objetoConexao = new SqlConnection(conexao);
+            //criar um adaptador
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM cidades", conexao);
+            //preenche o DataTable
+            adaptador.Fill(dtTabelaCidade);
+
+            return;
+        }
+
+        #endregion
+
+
         private bool desconectar()
         {
             if (ObjConexao.State != ConnectionState.Closed)
@@ -51,17 +85,19 @@ namespace ProjetoFinalPJS
                 return false;
             }
         }
+
         #endregion
 
         #region "Metodos manipulação de dados do formulário Amigos"
 
+        #region "Metodos manipulação de dados"
         public bool Insert(ArrayList Insert)
         {
             string stringComando = string.Empty;
             stringComando = "INSERT INTO Amigo VALUES (@APELIDO, @NOME, @ENDERECO,@BAIRRO, @CIDADE, @UF, @TELEFONE,@CELULAR,@EMAIL)";
-          
+
             SqlCommand ObjComando = new SqlCommand();
-            
+
             if (this.conectar())
             {
 
@@ -77,9 +113,9 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@TELEFONE", Insert[6]));
                     ObjComando.Parameters.Add(new SqlParameter("@CELULAR", Insert[7]));
                     ObjComando.Parameters.Add(new SqlParameter("@EMAIL", Insert[8]));
-                   
+
                     ObjComando.ExecuteNonQuery();
-                   
+
                     return true;
                 }
                 catch (SqlException erro)
@@ -227,7 +263,7 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.Add(new SqlParameter("@NOME",Nome));
+                    ObjComando.Parameters.Add(new SqlParameter("@NOME", Nome));
                     SqlDataAdapter adaptador = new SqlDataAdapter(ObjComando);
                     DataTable dtPesquisar = new DataTable();
                     adaptador.Fill(dtPesquisar);
@@ -340,7 +376,7 @@ namespace ProjetoFinalPJS
         }
 
 
-
+        # endregion
         # endregion
     }
 }
