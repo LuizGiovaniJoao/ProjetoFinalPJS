@@ -33,7 +33,6 @@
             this.tbxNome = new System.Windows.Forms.TextBox();
             this.tbxEndereco = new System.Windows.Forms.TextBox();
             this.tbxBairro = new System.Windows.Forms.TextBox();
-            this.tbxCidade = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
             this.lbEndereco = new System.Windows.Forms.Label();
             this.lbBairro = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.lbApelido = new System.Windows.Forms.Label();
             this.tbxApelido = new System.Windows.Forms.TextBox();
             this.errorProviderAmigo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbxCidade = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAmigo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,13 +75,6 @@
             this.tbxBairro.Name = "tbxBairro";
             this.tbxBairro.Size = new System.Drawing.Size(220, 20);
             this.tbxBairro.TabIndex = 4;
-            // 
-            // tbxCidade
-            // 
-            this.tbxCidade.Location = new System.Drawing.Point(242, 141);
-            this.tbxCidade.Name = "tbxCidade";
-            this.tbxCidade.Size = new System.Drawing.Size(183, 20);
-            this.tbxCidade.TabIndex = 5;
             // 
             // lbNome
             // 
@@ -245,11 +238,20 @@
             this.errorProviderAmigo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderAmigo.ContainerControl = this;
             // 
+            // cbxCidade
+            // 
+            this.cbxCidade.FormattingEnabled = true;
+            this.cbxCidade.Location = new System.Drawing.Point(242, 141);
+            this.cbxCidade.Name = "cbxCidade";
+            this.cbxCidade.Size = new System.Drawing.Size(186, 21);
+            this.cbxCidade.TabIndex = 22;
+            // 
             // FormCadastrarAmigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 260);
+            this.Controls.Add(this.cbxCidade);
             this.Controls.Add(this.tbxApelido);
             this.Controls.Add(this.lbApelido);
             this.Controls.Add(this.tbxEmail);
@@ -267,13 +269,13 @@
             this.Controls.Add(this.lbBairro);
             this.Controls.Add(this.lbEndereco);
             this.Controls.Add(this.lbNome);
-            this.Controls.Add(this.tbxCidade);
             this.Controls.Add(this.tbxBairro);
             this.Controls.Add(this.tbxEndereco);
             this.Controls.Add(this.tbxNome);
             this.Name = "FormCadastrarAmigo";
             this.Text = "Cadatro de Amigo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastrarAmigo_FormClosing);
+            this.Load += new System.EventHandler(this.FormCadastrarAmigo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAmigo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -285,7 +287,6 @@
         private System.Windows.Forms.TextBox tbxNome;
         private System.Windows.Forms.TextBox tbxEndereco;
         private System.Windows.Forms.TextBox tbxBairro;
-        private System.Windows.Forms.TextBox tbxCidade;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbEndereco;
         private System.Windows.Forms.Label lbBairro;
@@ -304,5 +305,6 @@
         private System.Windows.Forms.Label lbApelido;
         private System.Windows.Forms.TextBox tbxApelido;
         private System.Windows.Forms.ErrorProvider errorProviderAmigo;
+        private System.Windows.Forms.ComboBox cbxCidade;
     }
 }

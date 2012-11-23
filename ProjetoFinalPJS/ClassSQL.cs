@@ -10,7 +10,6 @@ namespace ProjetoFinalPJS
 {
     class ClassSQL
     {
-
         // String do João
         //private const string conexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
         // String do Giovani
@@ -42,6 +41,35 @@ namespace ProjetoFinalPJS
 
         }
 
+        #region "Métodos de listagem de Cidades e Estados"
+
+        public void ListaEstados(SqlCommand comandoListEstados, DataTable dtTabelaEstado)
+        {
+            //define a conexão
+            SqlConnection objetoConexao = new SqlConnection(conexao);
+            //cria um adaptador
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM estados", conexao);
+            //preenche o dataTable
+            adaptador.Fill(dtTabelaEstado);
+
+            return;
+        }
+
+        public void ListaCidades(SqlCommand comandoListCidades, DataTable dtTabelaCidade)
+        {
+            //define a conexao
+            SqlConnection objetoConexao = new SqlConnection(conexao);
+            //criar um adaptador
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM cidades", conexao);
+            //preenche o DataTable
+            adaptador.Fill(dtTabelaCidade);
+
+            return;
+        }
+
+        #endregion
+
+
         private bool desconectar()
         {
             if (ObjConexao.State != ConnectionState.Closed)
@@ -56,10 +84,10 @@ namespace ProjetoFinalPJS
                 return false;
             }
         }
+
         #endregion
 
         #region "Metodos manipulação de dados"
-
         public bool Insert(ArrayList Insert)
         {
             string stringComando = string.Empty;
