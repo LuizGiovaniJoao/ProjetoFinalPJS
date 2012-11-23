@@ -11,11 +11,11 @@ namespace ProjetoFinalPJS
 {
     class ClassSQL
     {
-        private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
+        //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
         // String do João
         //private const string conexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
         // String do Giovani
-        //private const string conexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
+        private const string conexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
         // String do Marcos
         //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
 
