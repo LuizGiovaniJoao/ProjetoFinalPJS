@@ -106,7 +106,7 @@
             // lbCidade
             // 
             this.lbCidade.AutoSize = true;
-            this.lbCidade.Location = new System.Drawing.Point(239, 125);
+            this.lbCidade.Location = new System.Drawing.Point(302, 125);
             this.lbCidade.Name = "lbCidade";
             this.lbCidade.Size = new System.Drawing.Size(40, 13);
             this.lbCidade.TabIndex = 9;
@@ -116,7 +116,7 @@
             // 
             this.lbUf.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbUf.AutoSize = true;
-            this.lbUf.Location = new System.Drawing.Point(431, 124);
+            this.lbUf.Location = new System.Drawing.Point(239, 125);
             this.lbUf.Name = "lbUf";
             this.lbUf.Size = new System.Drawing.Size(21, 13);
             this.lbUf.TabIndex = 10;
@@ -180,10 +180,11 @@
             // 
             this.cbxUF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbxUF.FormattingEnabled = true;
-            this.cbxUF.Location = new System.Drawing.Point(434, 140);
+            this.cbxUF.Location = new System.Drawing.Point(238, 141);
             this.cbxUF.Name = "cbxUF";
             this.cbxUF.Size = new System.Drawing.Size(61, 21);
             this.cbxUF.TabIndex = 6;
+            this.cbxUF.SelectedIndexChanged += new System.EventHandler(this.cbxUF_SelectedIndexChanged_1);
             // 
             // tbxCelularMasc
             // 
@@ -241,9 +242,9 @@
             // cbxCidade
             // 
             this.cbxCidade.FormattingEnabled = true;
-            this.cbxCidade.Location = new System.Drawing.Point(242, 141);
+            this.cbxCidade.Location = new System.Drawing.Point(305, 141);
             this.cbxCidade.Name = "cbxCidade";
-            this.cbxCidade.Size = new System.Drawing.Size(186, 21);
+            this.cbxCidade.Size = new System.Drawing.Size(190, 21);
             this.cbxCidade.TabIndex = 22;
             // 
             // FormCadastrarAmigo
