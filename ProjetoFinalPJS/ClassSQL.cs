@@ -20,8 +20,6 @@ namespace ProjetoFinalPJS
         //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
 
         SqlConnection ObjConexao = null;
-        //DataSet dados = new DataSet();
-        //SqlDataAdapter adaptador = new SqlDataAdapter();
 
         #region "Metodos de conexão e desconexão"
         public bool conectar()
@@ -90,7 +88,6 @@ namespace ProjetoFinalPJS
 
         #region "Metodos manipulação de dados do formulário Amigos"
 
-        #region "Metodos manipulação de dados"
         public bool Insert(ArrayList Insert)
         {
             string stringComando = string.Empty;
@@ -292,7 +289,7 @@ namespace ProjetoFinalPJS
         public bool InsertMidia(ArrayList Insert)
         {
             string stringComando = string.Empty;
-            stringComando = "INSERT INTO Midias VALUES (@INTERPRETE, @AUTOR,@ALBUM, @MUSICA, @DATAALBUM, @DATAAQUISICAO, @ORIGEMCOMPRA, @TIPO, @OBSERVACOES, @NOTA)";
+            stringComando = "INSERT INTO Midia VALUES (@INTERPRETE, @AUTOR,@ALBUM, @MUSICA, @DATAALBUM, @DATAAQUISICAO, @ORIGEMCOMPRA, @TIPO, @OBSERVACOES, @NOTA)";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -335,7 +332,7 @@ namespace ProjetoFinalPJS
         public bool UpdateMidia(ArrayList Update, string Apelido)
         {
             string stringComando = string.Empty;
-            stringComando = "UPDATE Midias SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observações = @OBSERVACOES, Nota = @NOTA WHERE Interprete = @INTERPRETE AND Autor = @AUTOR";
+            stringComando = "UPDATE Midia SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observações = @OBSERVACOES, Nota = @NOTA WHERE Interprete = @INTERPRETE AND Album = @ALBUM OR Interprete = @INTERPRETE AND Musica = @MUSICA ";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -374,9 +371,44 @@ namespace ProjetoFinalPJS
                 return false;
             }
         }
+        public bool DeleteMidia(ArrayList Deleta)
+        {
+            string stringComando = string.Empty;
+            stringComando = "DELETE FROM Midia WHERE  Interprete = @INTERPRETE AND Album = @ALBUM OR  Interprete = @INTERPRETE AND Musica = @MUSICA";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.AddWithValue("@INTERPRETE", Deleta[0]);
+                    ObjComando.Parameters.AddWithValue("@ALBUM", Deleta[1]);
+                    ObjComando.Parameters.AddWithValue("@MUSICA", Deleta[1]);
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
 
         # endregion
-        # endregion
+
     }
 }
