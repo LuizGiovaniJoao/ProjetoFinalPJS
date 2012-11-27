@@ -31,8 +31,6 @@ namespace ProjetoFinalPJS
         {
             ClassSQL ApresentaAmigos = new ClassSQL();
             dGridViewListaNomes.DataSource = ApresentaAmigos.Listar();
-            
-
         }
 
         private void btRemover_Click(object sender, EventArgs e)
@@ -72,7 +70,5 @@ namespace ProjetoFinalPJS
             ClassSQL PesquisaAmigos = new ClassSQL();
             dGridViewListaNomes.DataSource = PesquisaAmigos.Pesquisar("%" +txtPesquisaNome.Text+ "%");
         }
-
-
     }
 }
