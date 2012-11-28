@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjetoFinalPJS
 {
@@ -14,6 +16,7 @@ namespace ProjetoFinalPJS
         public FormPrincipal()
         {
             InitializeComponent();
+            Exibicao_ListViewMidia();
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -163,6 +166,53 @@ namespace ProjetoFinalPJS
             checkBox_dataAlbum.Checked = false;
             checkBox_midia.Checked = false;
             checkBox_nota.Checked = false;
+
+            Exibicao_ListViewMidia();
+        }
+        private void Exibicao_ListViewMidia()
+        {
+            //abre ligacao
+            ClassSQL conexao = new ClassSQL();
+            conexao.conectar();
+            SqlConnection conn = new SqlConnection(conexao.stringConexao);
+            conn.Open();
+            //pesquisa na BD
+
+            //limpa o listview
+            listViewMidia.Items.Clear();
+
+            SqlCommand cmd = new SqlCommand("SELECT [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAqusicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota] FROM [Midia] ", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            ListViewItem item;
+            
+            //percorre o sqldatareader para obter os dados
+            while (dr.Read())
+            {
+                item = new ListViewItem();
+                item.Text = dr.GetValue(0).ToString();
+
+                //preenche o listview com itens
+                for (int i = 1; i < dr.FieldCount; i++)
+                {
+                    item.SubItems.Add(dr.GetValue(i).ToString());
+                }
+                listViewMidia.Items.Add(item);
+                foreach (ListViewItem itemx in listViewMidia.Items)
+                {
+                    if ((item.Index % 2) == 0)
+                    {
+                        item.BackColor = Color.Gainsboro;
+                    }
+                    else
+                    {
+                        item.BackColor = Color.WhiteSmoke;
+                    }
+                }
+
+            }
+            conn.Close();
+
         }
     }
 }

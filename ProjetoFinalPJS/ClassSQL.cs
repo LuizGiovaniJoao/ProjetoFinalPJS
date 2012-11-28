@@ -11,11 +11,11 @@ namespace ProjetoFinalPJS
 {
     class ClassSQL
     {
-        //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
+        //private public string stringConexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
         // String do João
-        //private const string conexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
+        public string stringConexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
         // String do Giovani
-        private const string conexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
+        //private public string stringConexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
         // String do Marcos
         //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
 
@@ -24,7 +24,7 @@ namespace ProjetoFinalPJS
         #region "Metodos de conexão e desconexão"
         public bool conectar()
         {
-            ObjConexao = new SqlConnection(conexao);
+            ObjConexao = new SqlConnection(stringConexao);
 
             try
             {
@@ -45,9 +45,9 @@ namespace ProjetoFinalPJS
         public void ListaEstados(SqlCommand comandoListEstados, DataTable dtTabelaEstado)
         {
             //define a conexão
-            SqlConnection objetoConexao = new SqlConnection(conexao);
+            SqlConnection objetoConexao = new SqlConnection(stringConexao);
             //cria um adaptador
-            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM estados", conexao);
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM estados", stringConexao);
             //preenche o dataTable
             adaptador.Fill(dtTabelaEstado);
 
@@ -57,9 +57,9 @@ namespace ProjetoFinalPJS
         public void ListaCidades(SqlCommand comandoListCidades, DataTable dtTabelaCidade, string estSelecionado)
         {
             //define a conexao
-            SqlConnection objetoConexao = new SqlConnection(conexao);
+            SqlConnection objetoConexao = new SqlConnection(stringConexao);
             //criar um adaptador
-            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT C.cidade FROM cidades C INNER JOIN estados E ON C.id_estado = E.id_estado WHERE E.uf = '"+estSelecionado+"' ", conexao);
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT C.cidade FROM cidades C INNER JOIN estados E ON C.id_estado = E.id_estado WHERE E.uf = '" + estSelecionado + "' ", stringConexao);
             //preenche o DataTable
             adaptador.Fill(dtTabelaCidade);
 
