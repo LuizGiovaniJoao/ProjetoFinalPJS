@@ -35,14 +35,17 @@
             System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
-            this.Interprete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Interprete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataAlbum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.origemCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.midia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.obsevacoes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.midia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.situacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btAlterar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.gpbxFiltro = new System.Windows.Forms.GroupBox();
@@ -84,9 +87,6 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emprestarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cituacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dataAlbum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gpbxFiltro.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -108,7 +108,8 @@
             this.obsevacoes,
             this.midia,
             this.nota,
-            this.cituacao});
+            this.situacao});
+            this.listViewMidia.FullRowSelect = true;
             this.listViewMidia.GridLines = true;
             listViewGroup1.Header = "Vinil";
             listViewGroup1.Name = "Vinil";
@@ -134,17 +135,25 @@
             this.listViewMidia.UseCompatibleStateImageBehavior = false;
             this.listViewMidia.View = System.Windows.Forms.View.Details;
             // 
-            // Interprete
+            // Musica
             // 
-            this.Interprete.Text = "Intérprete";
+            this.Musica.Text = "Música";
+            // 
+            // album
+            // 
+            this.album.Text = "Álbum";
             // 
             // Autor
             // 
             this.Autor.Text = "Autor";
             // 
-            // album
+            // Interprete
             // 
-            this.album.Text = "Álbum";
+            this.Interprete.Text = "Intérprete";
+            // 
+            // dataAlbum
+            // 
+            this.dataAlbum.Text = "Data do Álbum";
             // 
             // dataCompra
             // 
@@ -154,17 +163,21 @@
             // 
             this.origemCompra.Text = "Origem da Compra";
             // 
-            // midia
-            // 
-            this.midia.Text = "Tipo de Mídia";
-            // 
             // obsevacoes
             // 
             this.obsevacoes.Text = "Observações";
             // 
+            // midia
+            // 
+            this.midia.Text = "Tipo de Mídia";
+            // 
             // nota
             // 
             this.nota.Text = "Nota";
+            // 
+            // situacao
+            // 
+            this.situacao.Text = "Situação";
             // 
             // btAlterar
             // 
@@ -178,6 +191,7 @@
             this.btAlterar.Text = "Alterar";
             this.btAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btRemover
             // 
@@ -638,18 +652,6 @@
             this.devolverToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.devolverToolStripMenuItem.Text = "Devolver";
             // 
-            // Musica
-            // 
-            this.Musica.Text = "Música";
-            // 
-            // cituacao
-            // 
-            this.cituacao.Text = "Cituação";
-            // 
-            // dataAlbum
-            // 
-            this.dataAlbum.Text = "Data do Álbum";
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -729,7 +731,7 @@
         private System.Windows.Forms.ColumnHeader obsevacoes;
         private System.Windows.Forms.ColumnHeader nota;
         private System.Windows.Forms.ColumnHeader Musica;
-        private System.Windows.Forms.ColumnHeader cituacao;
+        private System.Windows.Forms.ColumnHeader situacao;
         private System.Windows.Forms.ColumnHeader dataAlbum;
 
     }

@@ -53,6 +53,7 @@
             this.dGridViewListaNomes.Location = new System.Drawing.Point(12, 81);
             this.dGridViewListaNomes.Name = "dGridViewListaNomes";
             this.dGridViewListaNomes.ReadOnly = true;
+            this.dGridViewListaNomes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGridViewListaNomes.Size = new System.Drawing.Size(705, 309);
             this.dGridViewListaNomes.TabIndex = 0;
             // 
