@@ -35,6 +35,15 @@
             System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
+            this.Numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.interprete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.origemCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.midia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.obsevacoes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btAlterar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.gpbxFiltro = new System.Windows.Forms.GroupBox();
@@ -76,15 +85,6 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emprestarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.interprete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dataCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.origemCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.midia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.obsevacoes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gpbxFiltro.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -126,6 +126,42 @@
             this.listViewMidia.Size = new System.Drawing.Size(867, 296);
             this.listViewMidia.TabIndex = 1;
             this.listViewMidia.UseCompatibleStateImageBehavior = false;
+            // 
+            // Numero
+            // 
+            this.Numero.Text = "Número";
+            // 
+            // interprete
+            // 
+            this.interprete.Text = "Intérprete";
+            // 
+            // autor
+            // 
+            this.autor.Text = "Autor";
+            // 
+            // album
+            // 
+            this.album.Text = "Álbum";
+            // 
+            // dataCompra
+            // 
+            this.dataCompra.Text = "Data da Compra";
+            // 
+            // origemCompra
+            // 
+            this.origemCompra.Text = "Origem da Compra";
+            // 
+            // midia
+            // 
+            this.midia.Text = "Tipo de Mídia";
+            // 
+            // obsevacoes
+            // 
+            this.obsevacoes.Text = "Observações";
+            // 
+            // nota
+            // 
+            this.nota.Text = "Nota";
             // 
             // btAlterar
             // 
@@ -440,6 +476,8 @@
             // 
             this.tbxInterprete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxInterprete.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbxInterprete.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxInterprete.Enabled = false;
             this.tbxInterprete.Location = new System.Drawing.Point(39, 37);
             this.tbxInterprete.Name = "tbxInterprete";
@@ -598,42 +636,6 @@
             this.devolverToolStripMenuItem.Name = "devolverToolStripMenuItem";
             this.devolverToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.devolverToolStripMenuItem.Text = "Devolver";
-            // 
-            // Numero
-            // 
-            this.Numero.Text = "Número";
-            // 
-            // interprete
-            // 
-            this.interprete.Text = "Intérprete";
-            // 
-            // autor
-            // 
-            this.autor.Text = "Autor";
-            // 
-            // album
-            // 
-            this.album.Text = "Álbum";
-            // 
-            // dataCompra
-            // 
-            this.dataCompra.Text = "Data da Compra";
-            // 
-            // origemCompra
-            // 
-            this.origemCompra.Text = "Origem da Compra";
-            // 
-            // midia
-            // 
-            this.midia.Text = "Tipo de Mídia";
-            // 
-            // obsevacoes
-            // 
-            this.obsevacoes.Text = "Observações";
-            // 
-            // nota
-            // 
-            this.nota.Text = "Nota";
             // 
             // FormPrincipal
             // 

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjetoFinalPJS
 {
@@ -18,7 +19,8 @@ namespace ProjetoFinalPJS
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            AutoCompletar("SELECT Apelido FROM Amigo", "Apelido", tbxInterprete);
+            AutoCompletar("SELECT Nome FROM Amigo", "Nome", tbxAutor);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -163,6 +165,29 @@ namespace ProjetoFinalPJS
             checkBox_dataAlbum.Checked = false;
             checkBox_midia.Checked = false;
             checkBox_nota.Checked = false;
+        }
+
+        public void AtualizaAutoCompletar()
+        {
+            AutoCompletar("SELECT Apelido FROM Amigo", "Apelido", tbxInterprete);
+            AutoCompletar("SELECT Nome FROM Amigo", "Nome", tbxAutor);
+        }
+
+        public void AutoCompletar(string ComandoSQL, string Campo, TextBox CaixaTexto)
+        {
+            MessageBox.Show("", "");
+            AutoCompleteStringCollection colecao = new AutoCompleteStringCollection();
+            SqlConnection conexao = new SqlConnection((new ClassSQL()).conexao);
+            SqlCommand cmd = new SqlCommand(ComandoSQL, conexao);
+            conexao.Open();
+            SqlDataReader leitor = cmd.ExecuteReader();
+            while (leitor.Read())
+                colecao.Add(leitor[Campo].ToString());
+            CaixaTexto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            CaixaTexto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            CaixaTexto.AutoCompleteCustomSource = colecao;
+            leitor.Close();
+            conexao.Close();
         }
     }
 }

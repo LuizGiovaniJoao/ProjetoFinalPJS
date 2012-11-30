@@ -78,8 +78,9 @@ namespace ProjetoFinalPJS
                 if (InserirAmigo.Insert(objArrayList))
                 {
                     Limpar();
-
                     MessageBox.Show("Legaaallll");
+                    FormPrincipal teste = new FormPrincipal();
+                    teste.AtualizaAutoCompletar();
                 }
                 else
                 {
