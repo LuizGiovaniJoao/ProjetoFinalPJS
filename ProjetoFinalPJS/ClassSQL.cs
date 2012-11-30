@@ -289,7 +289,7 @@ namespace ProjetoFinalPJS
         public bool InsertMidia(ArrayList Insert)
         {
             string stringComando = string.Empty;
-            stringComando = "INSERT INTO Midia VALUES (@INTERPRETE, @AUTOR,@ALBUM, @MUSICA, @DATAALBUM, @DATAAQUISICAO, @ORIGEMCOMPRA, @TIPO, @OBSERVACOES, @NOTA)";
+            stringComando = "INSERT INTO Midia VALUES (@INTERPRETE, @AUTOR, @ALBUM, @MUSICA, @DATAALBUM, @DATAAQUISICAO, @ORIGEMCOMPRA, @TIPO, @OBSERVACOES, @NOTA, @SITUACAO)";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -309,6 +309,7 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@TIPO", Insert[7]));
                     ObjComando.Parameters.Add(new SqlParameter("@OBSERVACOES", Insert[8]));
                     ObjComando.Parameters.Add(new SqlParameter("@NOTA", Insert[9]));
+                    ObjComando.Parameters.Add(new SqlParameter("@SITUACAO", Insert[10]));
 
                     ObjComando.ExecuteNonQuery();
 

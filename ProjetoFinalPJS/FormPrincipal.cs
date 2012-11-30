@@ -169,7 +169,7 @@ namespace ProjetoFinalPJS
 
             Exibicao_ListViewMidia();
         }
-        private void Exibicao_ListViewMidia()
+        public void Exibicao_ListViewMidia()
         {
             //abre ligacao
             ClassSQL conexao = new ClassSQL();

@@ -130,7 +130,7 @@ namespace ProjetoFinalPJS
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-
+            string situacao = " ";
 
             ClassSQL InserirMidia = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
@@ -145,6 +145,7 @@ namespace ProjetoFinalPJS
             objArrayList.Add(cbxMidia.Text);
             objArrayList.Add(tbxObsevacoes.Text);
             objArrayList.Add(cbxNota.Text);
+            objArrayList.Add(situacao);
 
             if (InserirMidia.InsertMidia(objArrayList))
             {
@@ -154,6 +155,7 @@ namespace ProjetoFinalPJS
             {
                 MessageBox.Show("Não deu");
             }
+            
         }
 
         private void btGravar_Click(object sender, EventArgs e)
