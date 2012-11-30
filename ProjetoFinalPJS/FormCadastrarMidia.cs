@@ -16,6 +16,39 @@ namespace ProjetoFinalPJS
         {
             InitializeComponent();
         }
+        public FormCadastrarMidia(string[] dadosLV)
+        {
+            InitializeComponent();
+            //tbxApelido.Enabled = false;
+            //btSalvar.Enabled = false;
+            if (dadosLV[1] == "")
+            {
+                radioMusica.Checked = true;
+                radioAlbum.Checked = false;
+            }
+            else
+            {
+                radioAlbum.Checked = true;
+                radioMusica.Checked = false;
+            }
+
+            tbxMusica.Text = dadosLV[0];
+            tbxAlbum.Text = dadosLV[1];
+            tbxAutor.Text = dadosLV[2];
+            tbxInterprete.Text = dadosLV[3];          
+            dateTimePickerAlbum.Text = dadosLV[4];
+            dateTimePickerCompra.Text = dadosLV[5];
+            tbxOrigemCompra.Text = dadosLV[6];
+            tbxObsevacoes.Text = dadosLV[7];
+            cbxMidia.Text = dadosLV[8];
+            cbxNota.Text = dadosLV[9];
+
+            radioAlbum.Enabled = false;
+            radioMusica.Enabled = false;
+            btSalvar.Enabled = false;
+            btGravar.Enabled = true;
+
+        }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -97,7 +130,7 @@ namespace ProjetoFinalPJS
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-
+            string situacao = " ";
 
             ClassSQL InserirMidia = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
@@ -112,6 +145,7 @@ namespace ProjetoFinalPJS
             objArrayList.Add(cbxMidia.Text);
             objArrayList.Add(tbxObsevacoes.Text);
             objArrayList.Add(cbxNota.Text);
+            objArrayList.Add(situacao);
 
             if (InserirMidia.InsertMidia(objArrayList))
             {
@@ -121,6 +155,7 @@ namespace ProjetoFinalPJS
             {
                 MessageBox.Show("Não deu");
             }
+            
         }
 
         private void btGravar_Click(object sender, EventArgs e)
@@ -151,6 +186,11 @@ namespace ProjetoFinalPJS
                     MessageBox.Show("Não deu");
                 }
             }
+
+        }
+
+        private void FormCadastrarMidia_Load(object sender, EventArgs e)
+        {
 
         }
     }

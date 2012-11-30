@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -15,6 +16,7 @@ namespace ProjetoFinalPJS
         public FormPrincipal()
         {
             InitializeComponent();
+            Exibicao_ListViewMidia();
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -165,6 +167,176 @@ namespace ProjetoFinalPJS
             checkBox_dataAlbum.Checked = false;
             checkBox_midia.Checked = false;
             checkBox_nota.Checked = false;
+
+            Exibicao_ListViewMidia();
+        }
+        public void Exibicao_ListViewMidia()
+        {
+            //abre ligacao
+            ClassSQL conexao = new ClassSQL();
+            conexao.conectar();
+            SqlConnection conn = new SqlConnection(conexao.stringConexao);
+            conn.Open();
+            //pesquisa na BD
+
+            //limpa o listview
+            listViewMidia.Items.Clear();
+
+            SqlCommand cmd = new SqlCommand("SELECT [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota] FROM [Midia] ", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            ListViewItem item;
+            
+            //percorre o sqldatareader para obter os dados
+            while (dr.Read())
+            {
+                item = new ListViewItem();
+                item.Text = dr.GetValue(0).ToString();
+
+                //preenche o listview com itens
+                for (int i = 1; i < dr.FieldCount; i++)
+                {
+                    item.SubItems.Add(dr.GetValue(i).ToString());
+                }
+                listViewMidia.Items.Add(item);
+                foreach (ListViewItem itemx in listViewMidia.Items)
+                {
+                    if ((item.Index % 2) == 0)
+                    {
+                        item.BackColor = Color.Gainsboro;
+                    }
+                    else
+                    {
+                        item.BackColor = Color.WhiteSmoke;
+                    }
+                }
+
+            }
+            conn.Close();
+
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            string[] dadosLV = new string[13];
+
+            //percorre todo o ListView pra achar iten selecionado
+            foreach (ListViewItem listViewItem in listViewMidia.SelectedItems)
+            {
+                if (listViewItem.Selected)
+                {
+                    // Os campos serão iguais aos itens e subitens selecionado
+                    dadosLV[0] = listViewItem.Text;
+                    dadosLV[1] = listViewItem.SubItems[1].Text;
+                    dadosLV[2] = listViewItem.SubItems[2].Text;
+                    dadosLV[3] = listViewItem.SubItems[3].Text;
+                    dadosLV[4] = listViewItem.SubItems[4].Text;
+                    dadosLV[5] = listViewItem.SubItems[5].Text;
+                    dadosLV[6] = listViewItem.SubItems[6].Text;
+                    dadosLV[7] = listViewItem.SubItems[7].Text;
+                    dadosLV[8] = listViewItem.SubItems[8].Text;
+                    dadosLV[9] = listViewItem.SubItems[9].Text;
+                }
+            }
+            FormCadastrarMidia frm = new FormCadastrarMidia(dadosLV);
+            frm.Show();
+        }
+
+        private void btFiltral_Click(object sender, EventArgs e)
+        {
+            ClassSQL conexao = new ClassSQL();
+            //conexao.conectar();
+            SqlConnection conn = new SqlConnection(conexao.stringConexao);
+            conn.Open();
+
+            DataSet DataSetFiltro = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("Select * from Midia", conn);
+            da.Fill(DataSetFiltro, "Midias");
+            conn.Close();
+
+            if (checkBoxInterprete.Checked == true)
+            {
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro["Interprete"].ToString() != tbxInterprete.Text)
+                        registro.Delete();
+
+                }
+            }
+            if (checkBox_Autor.Checked == true)
+            {
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro["Autor"] != tbxAutor.Text)
+                        registro.Delete();
+                }
+            }
+            if (checkBox_album.Checked == true)
+            {
+
+            }
+            if (checkBox_origemCompra.Checked)
+            {
+
+            }
+            if (checkBox_dataAlbum.Checked)
+            {
+
+            }
+            if (checkBox_dataCompra.Checked)
+            {
+
+            }
+            if (checkBox_midia.Checked)
+            {
+
+            }
+            if (checkBox_nota.Checked)
+            {
+
+            }
+
+            //foreach (DataRow RegistroRestante in DataSetFiltro.Tables["Midias"].Rows)
+            DataTable TabelaDataSet = DataSetFiltro.Tables["Midias"];
+            listViewMidia.Items.Clear();
+
+            for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
+            {
+                DataRow LinhaRegistro = TabelaDataSet.Rows[i];
+
+                // Somente as linhas que não foram deletadas
+                if (LinhaRegistro.RowState != DataRowState.Deleted)
+                {
+                    // Define os itens da lista
+                    ListViewItem item = new ListViewItem(LinhaRegistro["Musica"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Album"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Autor"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
+                    item.SubItems.Add(LinhaRegistro["DataAlbum"].ToString());
+                   // item.SubItems.Add(LinhaRegistro["DataCompra"].ToString());
+                   // item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Nota"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Situacao"].ToString());
+
+                    // Inclui os itens no ListView
+                    listViewMidia.Items.Add(item);
+                }
+            }
+
+
+            foreach (ListViewItem item in listViewMidia.Items)
+            {
+                if ((item.Index % 2) == 0)
+                {
+                    item.BackColor = Color.Gainsboro;
+                }
+                else
+                {
+                    item.BackColor = Color.WhiteSmoke;
+                }
+            }
         }
 
         public void AtualizaAutoCompletar()
@@ -177,7 +349,7 @@ namespace ProjetoFinalPJS
         {
             MessageBox.Show("", "");
             AutoCompleteStringCollection colecao = new AutoCompleteStringCollection();
-            SqlConnection conexao = new SqlConnection((new ClassSQL()).conexao);
+            SqlConnection conexao = new SqlConnection((new ClassSQL()).stringConexao);
             SqlCommand cmd = new SqlCommand(ComandoSQL, conexao);
             conexao.Open();
             SqlDataReader leitor = cmd.ExecuteReader();
