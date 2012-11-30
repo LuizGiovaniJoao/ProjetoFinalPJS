@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
 
 namespace ProjetoFinalPJS
 {
@@ -13,11 +12,11 @@ namespace ProjetoFinalPJS
     {
         //private public string stringConexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
         // String do João
-        public string stringConexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
+        //public string stringConexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
         // String do Giovani
         //private public string stringConexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
         // String do Marcos
-        //private const string conexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
+        public string stringConexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
 
         SqlConnection ObjConexao = null;
 
@@ -387,7 +386,7 @@ namespace ProjetoFinalPJS
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
                     ObjComando.Parameters.AddWithValue("@INTERPRETE", Deleta[0]);
                     ObjComando.Parameters.AddWithValue("@ALBUM", Deleta[1]);
-                    ObjComando.Parameters.AddWithValue("@MUSICA", Deleta[1]);
+                    ObjComando.Parameters.AddWithValue("@MUSICA", Deleta[2]);
                     ObjComando.ExecuteNonQuery();
 
                     return true;

@@ -154,6 +154,7 @@
             // dataAlbum
             // 
             this.dataAlbum.Text = "Data do Álbum";
+            this.dataAlbum.Width = 90;
             // 
             // dataCompra
             // 
@@ -468,6 +469,7 @@
             this.btFiltral.TabIndex = 6;
             this.btFiltral.Text = "Filtrar";
             this.btFiltral.UseVisualStyleBackColor = true;
+            this.btFiltral.Click += new System.EventHandler(this.btFiltral_Click);
             // 
             // tbxAutor
             // 
