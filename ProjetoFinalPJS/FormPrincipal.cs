@@ -21,7 +21,8 @@ namespace ProjetoFinalPJS
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            AutoCompletar("SELECT Apelido FROM Amigo", "Apelido", tbxInterprete);
+            AutoCompletar("SELECT Nome FROM Amigo", "Nome", tbxAutor);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -247,6 +248,126 @@ namespace ProjetoFinalPJS
         private void btRemover_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btFiltral_Click(object sender, EventArgs e)
+        {
+            ClassSQL conexao = new ClassSQL();
+            //conexao.conectar();
+            SqlConnection conn = new SqlConnection(conexao.stringConexao);
+            conn.Open();
+
+            DataSet DataSetFiltro = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("Select * from Midia", conn);
+            da.Fill(DataSetFiltro, "Midias");
+            conn.Close();
+
+            if (checkBoxInterprete.Checked == true)
+            {
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro["Interprete"].ToString() != tbxInterprete.Text)
+                        registro.Delete();
+
+                }
+            }
+            if (checkBox_Autor.Checked == true)
+            {
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro["Autor"] != tbxAutor.Text)
+                        registro.Delete();
+                }
+            }
+            if (checkBox_album.Checked == true)
+            {
+
+            }
+            if (checkBox_origemCompra.Checked)
+            {
+
+            }
+            if (checkBox_dataAlbum.Checked)
+            {
+
+            }
+            if (checkBox_dataCompra.Checked)
+            {
+
+            }
+            if (checkBox_midia.Checked)
+            {
+
+            }
+            if (checkBox_nota.Checked)
+            {
+
+            }
+
+            //foreach (DataRow RegistroRestante in DataSetFiltro.Tables["Midias"].Rows)
+            DataTable TabelaDataSet = DataSetFiltro.Tables["Midias"];
+            listViewMidia.Items.Clear();
+
+            for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
+            {
+                DataRow LinhaRegistro = TabelaDataSet.Rows[i];
+
+                // Somente as linhas que não foram deletadas
+                if (LinhaRegistro.RowState != DataRowState.Deleted)
+                {
+                    // Define os itens da lista
+                    ListViewItem item = new ListViewItem(LinhaRegistro["Musica"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Album"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Autor"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
+                    item.SubItems.Add(LinhaRegistro["DataAlbum"].ToString());
+                   // item.SubItems.Add(LinhaRegistro["DataCompra"].ToString());
+                   // item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Nota"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Situacao"].ToString());
+
+                    // Inclui os itens no ListView
+                    listViewMidia.Items.Add(item);
+                }
+            }
+
+
+            foreach (ListViewItem item in listViewMidia.Items)
+            {
+                if ((item.Index % 2) == 0)
+                {
+                    item.BackColor = Color.Gainsboro;
+                }
+                else
+                {
+                    item.BackColor = Color.WhiteSmoke;
+                }
+            }
+        }
+
+        public void AtualizaAutoCompletar()
+        {
+            AutoCompletar("SELECT Apelido FROM Amigo", "Apelido", tbxInterprete);
+            AutoCompletar("SELECT Nome FROM Amigo", "Nome", tbxAutor);
+        }
+
+        public void AutoCompletar(string ComandoSQL, string Campo, TextBox CaixaTexto)
+        {
+            MessageBox.Show("", "");
+            AutoCompleteStringCollection colecao = new AutoCompleteStringCollection();
+            SqlConnection conexao = new SqlConnection((new ClassSQL()).stringConexao);
+            SqlCommand cmd = new SqlCommand(ComandoSQL, conexao);
+            conexao.Open();
+            SqlDataReader leitor = cmd.ExecuteReader();
+            while (leitor.Read())
+                colecao.Add(leitor[Campo].ToString());
+            CaixaTexto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            CaixaTexto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            CaixaTexto.AutoCompleteCustomSource = colecao;
+            leitor.Close();
+            conexao.Close();
         }
     }
 }
