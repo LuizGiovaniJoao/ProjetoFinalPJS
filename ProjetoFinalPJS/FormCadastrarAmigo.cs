@@ -79,8 +79,6 @@ namespace ProjetoFinalPJS
                 {
                     Limpar();
                     MessageBox.Show("Legaaallll");
-                    FormPrincipal teste = new FormPrincipal();
-                    teste.AtualizaAutoCompletar();
                 }
                 else
                 {

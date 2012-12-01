@@ -21,8 +21,7 @@ namespace ProjetoFinalPJS
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            AutoCompletar("SELECT Apelido FROM Amigo", "Apelido", tbxInterprete);
-            AutoCompletar("SELECT Nome FROM Amigo", "Nome", tbxAutor);
+            AtualizaAutoCompletar();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -313,8 +312,8 @@ namespace ProjetoFinalPJS
                     item.SubItems.Add(LinhaRegistro["Autor"].ToString());
                     item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
                     item.SubItems.Add(LinhaRegistro["DataAlbum"].ToString());
-                   // item.SubItems.Add(LinhaRegistro["DataCompra"].ToString());
-                   // item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
+                    item.SubItems.Add(LinhaRegistro["DataAquisicao"].ToString());
+                    item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
                     item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
                     item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
                     item.SubItems.Add(LinhaRegistro["Nota"].ToString());
@@ -341,13 +340,12 @@ namespace ProjetoFinalPJS
 
         public void AtualizaAutoCompletar()
         {
-            AutoCompletar("SELECT Apelido FROM Amigo", "Apelido", tbxInterprete);
-            AutoCompletar("SELECT Nome FROM Amigo", "Nome", tbxAutor);
+            AutoCompletar("SELECT Interprete FROM Midia", "Interprete", tbxInterprete);
+            AutoCompletar("SELECT Autor FROM Midia", "Autor", tbxAutor);
         }
 
         public void AutoCompletar(string ComandoSQL, string Campo, TextBox CaixaTexto)
         {
-            MessageBox.Show("", "");
             AutoCompleteStringCollection colecao = new AutoCompleteStringCollection();
             SqlConnection conexao = new SqlConnection((new ClassSQL()).stringConexao);
             SqlCommand cmd = new SqlCommand(ComandoSQL, conexao);
