@@ -54,6 +54,7 @@
             this.tbxMusica = new System.Windows.Forms.TextBox();
             this.radioAlbum = new System.Windows.Forms.RadioButton();
             this.radioMusica = new System.Windows.Forms.RadioButton();
+            this.label_ID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbxInterprete
@@ -331,11 +332,22 @@
             this.radioMusica.UseVisualStyleBackColor = true;
             this.radioMusica.CheckedChanged += new System.EventHandler(this.radioButton_Musica_CheckedChanged);
             // 
+            // label_ID
+            // 
+            this.label_ID.AutoSize = true;
+            this.label_ID.Location = new System.Drawing.Point(502, 17);
+            this.label_ID.Name = "label_ID";
+            this.label_ID.Size = new System.Drawing.Size(51, 13);
+            this.label_ID.TabIndex = 25;
+            this.label_ID.Text = "recebeID";
+            this.label_ID.Visible = false;
+            // 
             // FormCadastrarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 395);
+            this.Controls.Add(this.label_ID);
             this.Controls.Add(this.radioMusica);
             this.Controls.Add(this.radioAlbum);
             this.Controls.Add(this.tbxMusica);
@@ -397,6 +409,7 @@
         private System.Windows.Forms.TextBox tbxMusica;
         private System.Windows.Forms.RadioButton radioAlbum;
         private System.Windows.Forms.RadioButton radioMusica;
+        private System.Windows.Forms.Label label_ID;
 
     }
 }

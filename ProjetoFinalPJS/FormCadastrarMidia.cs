@@ -42,6 +42,8 @@ namespace ProjetoFinalPJS
             tbxObsevacoes.Text = dadosLV[7];
             cbxMidia.Text = dadosLV[8];
             cbxNota.Text = dadosLV[9];
+            // ID chave primária
+            label_ID.Text = dadosLV[10];
 
             radioAlbum.Enabled = false;
             radioMusica.Enabled = false;
@@ -158,14 +160,17 @@ namespace ProjetoFinalPJS
             
         }
 
-        private void btGravar_Click(object sender, EventArgs e)
+        public void btGravar_Click(object sender, EventArgs e)
         {
+            FormPrincipal frm = new FormPrincipal();
+            
             if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
-                ClassSQL AtualizarAmigo = new ClassSQL();
+                ClassSQL AtualizarMidia = new ClassSQL();
                 ArrayList objArrayList = new ArrayList();
 
-                string Apelido = tbxInterprete.Text;
+                int ID = Convert.ToInt32(label_ID.Text);
+                objArrayList.Add(tbxInterprete.Text);
                 objArrayList.Add(tbxAutor.Text);
                 objArrayList.Add(tbxAlbum.Text);
                 objArrayList.Add(tbxMusica.Text);
@@ -176,7 +181,7 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxObsevacoes.Text);
                 objArrayList.Add(cbxNota.Text);
 
-                if (AtualizarAmigo.Update(objArrayList, Apelido))
+                if (AtualizarMidia.UpdateMidia(objArrayList, ID))
                 {
                     MessageBox.Show("Legaaallll");
 

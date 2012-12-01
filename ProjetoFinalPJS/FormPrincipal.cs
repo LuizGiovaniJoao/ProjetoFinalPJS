@@ -181,7 +181,7 @@ namespace ProjetoFinalPJS
             //limpa o listview
             listViewMidia.Items.Clear();
 
-            SqlCommand cmd = new SqlCommand("SELECT [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota] FROM [Midia] ", conn);
+            SqlCommand cmd = new SqlCommand("SELECT [ID], [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota] FROM [Midia] ", conn);
             SqlDataReader dr = cmd.ExecuteReader();
 
             ListViewItem item;
@@ -225,20 +225,28 @@ namespace ProjetoFinalPJS
                 if (listViewItem.Selected)
                 {
                     // Os campos serão iguais aos itens e subitens selecionado
-                    dadosLV[0] = listViewItem.Text;
-                    dadosLV[1] = listViewItem.SubItems[1].Text;
-                    dadosLV[2] = listViewItem.SubItems[2].Text;
-                    dadosLV[3] = listViewItem.SubItems[3].Text;
-                    dadosLV[4] = listViewItem.SubItems[4].Text;
-                    dadosLV[5] = listViewItem.SubItems[5].Text;
-                    dadosLV[6] = listViewItem.SubItems[6].Text;
-                    dadosLV[7] = listViewItem.SubItems[7].Text;
-                    dadosLV[8] = listViewItem.SubItems[8].Text;
-                    dadosLV[9] = listViewItem.SubItems[9].Text;
+                    dadosLV[0] = listViewItem.SubItems[1].Text;
+                    dadosLV[1] = listViewItem.SubItems[2].Text;
+                    dadosLV[2] = listViewItem.SubItems[3].Text;
+                    dadosLV[3] = listViewItem.SubItems[4].Text;
+                    dadosLV[4] = listViewItem.SubItems[5].Text;
+                    dadosLV[5] = listViewItem.SubItems[6].Text;
+                    dadosLV[6] = listViewItem.SubItems[7].Text;
+                    dadosLV[7] = listViewItem.SubItems[8].Text;
+                    dadosLV[8] = listViewItem.SubItems[9].Text;
+                    dadosLV[9] = listViewItem.SubItems[10].Text;
+                    // passar ID pra o Label invisivel
+                    dadosLV[10] = listViewItem.Text;
                 }
             }
             FormCadastrarMidia frm = new FormCadastrarMidia(dadosLV);
             frm.Show();
+            
+        }
+
+        private void btRemover_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

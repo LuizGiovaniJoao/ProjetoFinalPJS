@@ -35,6 +35,7 @@
             System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -98,6 +99,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewMidia.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
             this.Musica,
             this.album,
             this.Autor,
@@ -134,6 +136,10 @@
             this.listViewMidia.TabIndex = 1;
             this.listViewMidia.UseCompatibleStateImageBehavior = false;
             this.listViewMidia.View = System.Windows.Forms.View.Details;
+            // 
+            // Id
+            // 
+            this.Id.Text = "ID";
             // 
             // Musica
             // 
@@ -205,6 +211,7 @@
             this.btRemover.Text = "Remover";
             this.btRemover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btRemover.UseVisualStyleBackColor = true;
+            this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
             // 
             // gpbxFiltro
             // 
@@ -733,6 +740,7 @@
         private System.Windows.Forms.ColumnHeader Musica;
         private System.Windows.Forms.ColumnHeader situacao;
         private System.Windows.Forms.ColumnHeader dataAlbum;
+        private System.Windows.Forms.ColumnHeader Id;
 
     }
 }
