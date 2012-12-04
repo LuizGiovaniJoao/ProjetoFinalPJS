@@ -21,7 +21,7 @@ namespace ProjetoFinalPJS
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            AtualizaAutoCompletar();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -390,6 +390,28 @@ namespace ProjetoFinalPJS
                     item.BackColor = Color.WhiteSmoke;
                 }
             }
+        }
+
+        public void AtualizaAutoCompletar()
+        {
+            AutoCompletar("SELECT Interprete FROM Midia", "Interprete", tbxInterprete);
+            AutoCompletar("SELECT Autor FROM Midia", "Autor", tbxAutor);
+        }
+
+        public void AutoCompletar(string ComandoSQL, string Campo, TextBox CaixaTexto)
+        {
+            AutoCompleteStringCollection colecao = new AutoCompleteStringCollection();
+            SqlConnection conexao = new SqlConnection((new ClassSQL()).stringConexao);
+            SqlCommand cmd = new SqlCommand(ComandoSQL, conexao);
+            conexao.Open();
+            SqlDataReader leitor = cmd.ExecuteReader();
+            while (leitor.Read())
+                colecao.Add(leitor[Campo].ToString());
+            CaixaTexto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            CaixaTexto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            CaixaTexto.AutoCompleteCustomSource = colecao;
+            leitor.Close();
+            conexao.Close();
         }
     }
 }

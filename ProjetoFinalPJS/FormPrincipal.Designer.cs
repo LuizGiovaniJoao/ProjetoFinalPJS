@@ -35,6 +35,17 @@
             System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
+//<<<<<<< HEAD
+//            this.Numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//            this.interprete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//            this.autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//            this.album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//            this.dataCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//            this.origemCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//            this.midia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//            this.obsevacoes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//            this.nota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//=======
             this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Autor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,6 +57,7 @@
             this.midia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.situacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+//>>>>>>> origin/master
             this.btAlterar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.gpbxFiltro = new System.Windows.Forms.GroupBox();
@@ -186,6 +198,30 @@
             // situacao
             // 
             this.situacao.Text = "Situação";
+            // 
+            // Numero
+            // 
+            this.album.Text = "Álbum";
+            // 
+            // dataCompra
+            // 
+            this.dataCompra.Text = "Data da Compra";
+            // 
+            // origemCompra
+            // 
+            this.origemCompra.Text = "Origem da Compra";
+            // 
+            // midia
+            // 
+            this.midia.Text = "Tipo de Mídia";
+            // 
+            // obsevacoes
+            // 
+            this.obsevacoes.Text = "Observações";
+            // 
+            // nota
+            // 
+            this.nota.Text = "Nota";
             // 
             // btAlterar
             // 
@@ -504,6 +540,8 @@
             // 
             this.tbxInterprete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxInterprete.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbxInterprete.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxInterprete.Enabled = false;
             this.tbxInterprete.Location = new System.Drawing.Point(39, 37);
             this.tbxInterprete.Name = "tbxInterprete";

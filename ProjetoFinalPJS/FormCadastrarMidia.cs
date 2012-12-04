@@ -150,6 +150,8 @@ namespace ProjetoFinalPJS
             if (InserirMidia.InsertMidia(objArrayList))
             {
                 MessageBox.Show("Legaaallll");
+                FormPrincipal teste = new FormPrincipal();
+                teste.AtualizaAutoCompletar();
             }
             else
             {
@@ -179,7 +181,8 @@ namespace ProjetoFinalPJS
                 if (AtualizarAmigo.UpdateMidia(objArrayList))
                 {
                     MessageBox.Show("Legaaallll");
-
+                    FormPrincipal teste = new FormPrincipal();
+                    teste.AtualizaAutoCompletar();
                 }
                 else
                 {
