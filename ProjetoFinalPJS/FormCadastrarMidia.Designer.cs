@@ -113,20 +113,22 @@
             // dateTimePickerAlbum
             // 
             this.dateTimePickerAlbum.Enabled = false;
-            this.dateTimePickerAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerAlbum.Location = new System.Drawing.Point(20, 217);
             this.dateTimePickerAlbum.Name = "dateTimePickerAlbum";
             this.dateTimePickerAlbum.Size = new System.Drawing.Size(121, 20);
             this.dateTimePickerAlbum.TabIndex = 5;
+            this.dateTimePickerAlbum.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
             // 
             // dateTimePickerCompra
             // 
             this.dateTimePickerCompra.Enabled = false;
-            this.dateTimePickerCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerCompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerCompra.Location = new System.Drawing.Point(160, 217);
             this.dateTimePickerCompra.Name = "dateTimePickerCompra";
             this.dateTimePickerCompra.Size = new System.Drawing.Size(121, 20);
             this.dateTimePickerCompra.TabIndex = 6;
+            this.dateTimePickerCompra.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
             // 
             // cbxMidia
             // 

@@ -246,7 +246,26 @@ namespace ProjetoFinalPJS
 
         private void btRemover_Click(object sender, EventArgs e)
         {
+            ClassSQL DeletarMidia = new ClassSQL();
+            ArrayList objArrayList = new ArrayList();
+  
+            foreach (ListViewItem listViewItem in listViewMidia.SelectedItems)
+            {
+                if (listViewItem.Selected)
+                {
+                    if (DeletarMidia.DeleteMidia(listViewItem.Text))
+                    {
+                        MessageBox.Show("Removido");
+                        listViewItem.Remove();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não Removeu");
+                    }
+                }
+            }
+            
         }
 
         private void btFiltral_Click(object sender, EventArgs e)

@@ -134,6 +134,12 @@ namespace ProjetoFinalPJS
         {
             string situacao = " ";
 
+            DateTime DataAlbum = DateTime.Now;
+            string DataAlbumFormatada = DataAlbum.ToString("dd/MM/yyyy");
+            DateTime DataCompra = DateTime.Now;
+            string DataCompraFormatada = DataCompra.ToString("dd/MM/yyyy");
+            Convert.ToDateTime("dd/MM/yyyy");
+
             ClassSQL InserirMidia = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
 
@@ -141,7 +147,7 @@ namespace ProjetoFinalPJS
             objArrayList.Add(tbxAutor.Text);
             objArrayList.Add(tbxAlbum.Text);
             objArrayList.Add(tbxMusica.Text);
-            objArrayList.Add(dateTimePickerAlbum.Value);
+            objArrayList.Add(dateTimePickerAlbum.Text);
             objArrayList.Add(dateTimePickerCompra.Value);
             objArrayList.Add(tbxOrigemCompra.Text);
             objArrayList.Add(cbxMidia.Text);
@@ -171,7 +177,6 @@ namespace ProjetoFinalPJS
                 ClassSQL AtualizarMidia = new ClassSQL();
                 ArrayList objArrayList = new ArrayList();
 
-                int ID = Convert.ToInt32(label_ID.Text);
                 objArrayList.Add(tbxInterprete.Text);
                 objArrayList.Add(tbxAutor.Text);
                 objArrayList.Add(tbxAlbum.Text);
@@ -183,7 +188,7 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxObsevacoes.Text);
                 objArrayList.Add(cbxNota.Text);
 
-                if (AtualizarMidia.UpdateMidia(objArrayList, ID))
+                if (AtualizarMidia.UpdateMidia(objArrayList, label_ID.Text))
                 {
                     MessageBox.Show("Legaaallll");
                     FormPrincipal teste = new FormPrincipal();

@@ -328,7 +328,7 @@ namespace ProjetoFinalPJS
             }
 
         }
-        public bool UpdateMidia(ArrayList Update, int Id)
+        public bool UpdateMidia(ArrayList Update, string Id)
         {
             string stringComando = string.Empty;
             stringComando = "UPDATE Midia SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observacoes = @OBSERVACOES, Nota = @NOTA WHERE Id = @ID ";
@@ -371,10 +371,10 @@ namespace ProjetoFinalPJS
                 return false;
             }
         }
-        public bool DeleteMidia(ArrayList Deleta)
+        public bool DeleteMidia(string Id)
         {
             string stringComando = string.Empty;
-            stringComando = "DELETE FROM Midia WHERE  Interprete = @INTERPRETE AND Album = @ALBUM OR  Interprete = @INTERPRETE AND Musica = @MUSICA";
+            stringComando = "DELETE FROM Midia WHERE  Id = @ID";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -384,9 +384,7 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.AddWithValue("@INTERPRETE", Deleta[0]);
-                    ObjComando.Parameters.AddWithValue("@ALBUM", Deleta[1]);
-                    ObjComando.Parameters.AddWithValue("@MUSICA", Deleta[2]);
+                    ObjComando.Parameters.AddWithValue("@ID", Id);
                     ObjComando.ExecuteNonQuery();
 
                     return true;
