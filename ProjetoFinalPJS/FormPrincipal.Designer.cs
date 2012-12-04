@@ -138,6 +138,7 @@
             // Musica
             // 
             this.Musica.Text = "Música";
+            this.Musica.Width = 80;
             // 
             // album
             // 
@@ -146,10 +147,12 @@
             // Autor
             // 
             this.Autor.Text = "Autor";
+            this.Autor.Width = 75;
             // 
             // Interprete
             // 
             this.Interprete.Text = "Intérprete";
+            this.Interprete.Width = 85;
             // 
             // dataAlbum
             // 
@@ -159,18 +162,22 @@
             // dataCompra
             // 
             this.dataCompra.Text = "Data da Compra";
+            this.dataCompra.Width = 93;
             // 
             // origemCompra
             // 
             this.origemCompra.Text = "Origem da Compra";
+            this.origemCompra.Width = 107;
             // 
             // obsevacoes
             // 
             this.obsevacoes.Text = "Observações";
+            this.obsevacoes.Width = 80;
             // 
             // midia
             // 
             this.midia.Text = "Tipo de Mídia";
+            this.midia.Width = 87;
             // 
             // nota
             // 
@@ -325,6 +332,7 @@
             this.dateTimeDataCompra.Name = "dateTimeDataCompra";
             this.dateTimeDataCompra.Size = new System.Drawing.Size(134, 22);
             this.dateTimeDataCompra.TabIndex = 19;
+            this.dateTimeDataCompra.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
             // 
             // checkBox_midia
             // 
@@ -356,6 +364,7 @@
             this.dateTimeDataAlbum.Name = "dateTimeDataAlbum";
             this.dateTimeDataAlbum.Size = new System.Drawing.Size(134, 22);
             this.dateTimeDataAlbum.TabIndex = 18;
+            this.dateTimeDataAlbum.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
             // 
             // lbDtAlbum
             // 

@@ -117,6 +117,7 @@
             this.dateTimePickerAlbum.Name = "dateTimePickerAlbum";
             this.dateTimePickerAlbum.Size = new System.Drawing.Size(121, 20);
             this.dateTimePickerAlbum.TabIndex = 5;
+            this.dateTimePickerAlbum.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
             // 
             // dateTimePickerCompra
             // 
@@ -126,6 +127,7 @@
             this.dateTimePickerCompra.Name = "dateTimePickerCompra";
             this.dateTimePickerCompra.Size = new System.Drawing.Size(121, 20);
             this.dateTimePickerCompra.TabIndex = 6;
+            this.dateTimePickerCompra.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
             // 
             // cbxMidia
             // 
@@ -363,7 +365,6 @@
             this.Controls.Add(this.tbxInterprete);
             this.Name = "FormCadastrarMidia";
             this.Text = "Cadastrar Mídia";
-            this.Load += new System.EventHandler(this.FormCadastrarMidia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

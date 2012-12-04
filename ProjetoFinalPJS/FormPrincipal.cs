@@ -196,6 +196,7 @@ namespace ProjetoFinalPJS
                 for (int i = 1; i < dr.FieldCount; i++)
                 {
                     item.SubItems.Add(dr.GetValue(i).ToString());
+                    
                 }
                 listViewMidia.Items.Add(item);
                 foreach (ListViewItem itemx in listViewMidia.Items)
@@ -252,51 +253,104 @@ namespace ProjetoFinalPJS
             SqlDataAdapter da = new SqlDataAdapter("Select * from Midia", conn);
             da.Fill(DataSetFiltro, "Midias");
             conn.Close();
+            DataTable TabelaDataSet = DataSetFiltro.Tables["Midias"];
 
-            if (checkBoxInterprete.Checked == true)
+            if (checkBoxInterprete.Checked)
             {
                 foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                 {
                     if (registro["Interprete"].ToString() != tbxInterprete.Text)
-                        registro.Delete();
-
+                            registro.Delete();
                 }
             }
-            if (checkBox_Autor.Checked == true)
+
+            if (checkBox_Autor.Checked)
             {
                 foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                 {
-                    if (registro["Autor"] != tbxAutor.Text)
-                        registro.Delete();
+                    if (registro.RowState != DataRowState.Deleted)
+                    {
+                        if (registro["Autor"].ToString() != tbxAutor.Text)
+                            registro.Delete();
+                    }
+
+                }
+            }     
+
+            if (checkBox_album.Checked)
+            {
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro.RowState != DataRowState.Deleted)
+                    {
+                        if (registro["Album"].ToString() != tbxAlbum.Text && registro["Musica"].ToString() != tbxAlbum.Text)
+                            registro.Delete();
+                    }
                 }
             }
-            if (checkBox_album.Checked == true)
-            {
 
-            }
             if (checkBox_origemCompra.Checked)
             {
-
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro.RowState != DataRowState.Deleted)
+                    {
+                        if (registro["OrigemCompra"].ToString() != tbxOrigemCompra.Text)
+                            registro.Delete();
+                    }
+                }
             }
+
             if (checkBox_dataAlbum.Checked)
             {
 
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro.RowState != DataRowState.Deleted)
+                    {
+                        if (registro["DataAlbum"].ToString() != dateTimeDataAlbum.Value.ToShortDateString().ToString())
+                            registro.Delete();
+                    }
+                }
             }
+
             if (checkBox_dataCompra.Checked)
             {
-
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro.RowState != DataRowState.Deleted)
+                    {
+                        if (registro["DataAquisicao"].ToString() != dateTimeDataCompra.Value.ToShortDateString().ToString())
+                            registro.Delete();
+                    }
+                } 
             }
+
             if (checkBox_midia.Checked)
             {
-
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro.RowState != DataRowState.Deleted)
+                    {
+                        if (registro["Tipo"].ToString() != cbxMidia.Text)
+                            registro.Delete();
+                    }
+                }
             }
+
             if (checkBox_nota.Checked)
             {
-
+                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                {
+                    if (registro.RowState != DataRowState.Deleted)
+                    {
+                        if (registro["Nota"].ToString() != cbxNota.Text)
+                            registro.Delete();
+                    }
+                }
             }
 
-            //foreach (DataRow RegistroRestante in DataSetFiltro.Tables["Midias"].Rows)
-            DataTable TabelaDataSet = DataSetFiltro.Tables["Midias"];
+            
             listViewMidia.Items.Clear();
 
             for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
@@ -312,8 +366,8 @@ namespace ProjetoFinalPJS
                     item.SubItems.Add(LinhaRegistro["Autor"].ToString());
                     item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
                     item.SubItems.Add(LinhaRegistro["DataAlbum"].ToString());
-                   // item.SubItems.Add(LinhaRegistro["DataCompra"].ToString());
-                   // item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
+                    item.SubItems.Add(LinhaRegistro["DataAquisicao"].ToString());
+                    item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
                     item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
                     item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
                     item.SubItems.Add(LinhaRegistro["Nota"].ToString());

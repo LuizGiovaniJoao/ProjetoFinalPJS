@@ -139,8 +139,8 @@ namespace ProjetoFinalPJS
             objArrayList.Add(tbxAutor.Text);
             objArrayList.Add(tbxAlbum.Text);
             objArrayList.Add(tbxMusica.Text);
-            objArrayList.Add(dateTimePickerAlbum.Value);
-            objArrayList.Add(dateTimePickerCompra.Value);
+            objArrayList.Add(dateTimePickerAlbum.Value.ToShortDateString());
+            objArrayList.Add(dateTimePickerCompra.Value.ToShortDateString());
             objArrayList.Add(tbxOrigemCompra.Text);
             objArrayList.Add(cbxMidia.Text);
             objArrayList.Add(tbxObsevacoes.Text);
@@ -165,18 +165,18 @@ namespace ProjetoFinalPJS
                 ClassSQL AtualizarAmigo = new ClassSQL();
                 ArrayList objArrayList = new ArrayList();
 
-                string Apelido = tbxInterprete.Text;
+                objArrayList.Add(tbxInterprete.Text);
                 objArrayList.Add(tbxAutor.Text);
                 objArrayList.Add(tbxAlbum.Text);
                 objArrayList.Add(tbxMusica.Text);
-                objArrayList.Add(dateTimePickerAlbum.Value);
-                objArrayList.Add(dateTimePickerCompra.Value);
+                objArrayList.Add(dateTimePickerAlbum.Value.ToShortDateString());
+                objArrayList.Add(dateTimePickerCompra.Value.ToShortDateString());
                 objArrayList.Add(tbxOrigemCompra.Text);
                 objArrayList.Add(cbxMidia.Text);
                 objArrayList.Add(tbxObsevacoes.Text);
                 objArrayList.Add(cbxNota.Text);
 
-                if (AtualizarAmigo.Update(objArrayList, Apelido))
+                if (AtualizarAmigo.UpdateMidia(objArrayList))
                 {
                     MessageBox.Show("Legaaallll");
 
@@ -189,10 +189,6 @@ namespace ProjetoFinalPJS
 
         }
 
-        private void FormCadastrarMidia_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
