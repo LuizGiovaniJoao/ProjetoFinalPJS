@@ -130,7 +130,6 @@ namespace ProjetoFinalPJS
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            string situacao = " ";
 
             ClassSQL InserirMidia = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
@@ -145,7 +144,7 @@ namespace ProjetoFinalPJS
             objArrayList.Add(cbxMidia.Text);
             objArrayList.Add(tbxObsevacoes.Text);
             objArrayList.Add(cbxNota.Text);
-            objArrayList.Add(situacao);
+            objArrayList.Add("Disponível");
 
             if (InserirMidia.InsertMidia(objArrayList))
             {
@@ -164,7 +163,7 @@ namespace ProjetoFinalPJS
         {
             if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
-                ClassSQL AtualizarAmigo = new ClassSQL();
+                ClassSQL InserirMidia = new ClassSQL();
                 ArrayList objArrayList = new ArrayList();
 
                 objArrayList.Add(tbxInterprete.Text);
@@ -178,7 +177,7 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxObsevacoes.Text);
                 objArrayList.Add(cbxNota.Text);
 
-                if (AtualizarAmigo.UpdateMidia(objArrayList))
+                if (InserirMidia.UpdateMidia(objArrayList))
                 {
                     MessageBox.Show("Legaaallll");
                     FormPrincipal teste = new FormPrincipal();
