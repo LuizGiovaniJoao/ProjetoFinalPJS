@@ -36,8 +36,8 @@ namespace ProjetoFinalPJS
 
         private void button3_Click(object sender, EventArgs e)
         {
-
             FormCadastrarMidia frm = new FormCadastrarMidia();
+            frm.FormularioPrincipal = this;
             frm.Show();
         }
 
@@ -181,7 +181,7 @@ namespace ProjetoFinalPJS
             //limpa o listview
             listViewMidia.Items.Clear();
 
-            SqlCommand cmd = new SqlCommand("SELECT [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota] FROM [Midia] ", conn);
+            SqlCommand cmd = new SqlCommand("SELECT [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota], [Situacao] FROM [Midia] ", conn);
             SqlDataReader dr = cmd.ExecuteReader();
 
             ListViewItem item;
@@ -342,6 +342,8 @@ namespace ProjetoFinalPJS
         {
             AutoCompletar("SELECT Interprete FROM Midia", "Interprete", tbxInterprete);
             AutoCompletar("SELECT Autor FROM Midia", "Autor", tbxAutor);
+            AutoCompletar("SELECT Album FROM Midia", "Album", tbxAlbum);
+            AutoCompletar("SELECT OrigemCompra FROM Midia", "OrigemCompra", tbxOrigemCompra);
         }
 
         public void AutoCompletar(string ComandoSQL, string Campo, TextBox CaixaTexto)

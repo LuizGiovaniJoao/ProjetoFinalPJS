@@ -35,23 +35,21 @@ CREATE TABLE Amigo
 
 CREATE TABLE Emprestimo
 (
-	Id int not null primary key,
-	Nome_Amigo varchar(50) not null,
+	Id int identity primary key,
+	Apelido VARCHAR(50) FOREIGN KEY REFERENCES Amigo(Apelido),
 	Endereco_Amigo varchar(70) not null,
 	DataEmprestimo datetime not null,
-	
 );
 
 CREATE TABLE ItemEmprestimo
 (
-	Id int not null primary key,
-        FOREIGN KEY (Id) REFERENCES Emprestimo(Id),
-	FOREIGN KEY (Id) REFERENCES Midia(Id),
+	IdItem int identity primary key,
+    IdEmprestimo INT FOREIGN KEY REFERENCES Midia(ID),
 	Album varchar(50),
 	TipoMidia varchar(20),
 	DataDevolucao datetime
-	
 );
+
 CREATE  TABLE estados (
   id_estado INT NOT NULL ,
   uf VARCHAR(2) NOT NULL ,

@@ -16,6 +16,9 @@ namespace ProjetoFinalPJS
         {
             InitializeComponent();
         }
+
+        public FormPrincipal FormularioPrincipal;
+
         public FormCadastrarMidia(string[] dadosLV)
         {
             InitializeComponent();
@@ -83,6 +86,7 @@ namespace ProjetoFinalPJS
                 cbxNota.Enabled = false;
             }
             tbxInterprete.Focus();
+            tbxAlbum.TabIndex = 3;
 
         }
 
@@ -113,6 +117,7 @@ namespace ProjetoFinalPJS
                 tbxObsevacoes.Enabled = false;
             }
             tbxInterprete.Focus();
+            tbxMusica.TabIndex = 3;
         }
 
         private void buttonLimpar_Click(object sender, EventArgs e)
@@ -130,34 +135,48 @@ namespace ProjetoFinalPJS
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            string situacao = " ";
-
-            ClassSQL InserirMidia = new ClassSQL();
-            ArrayList objArrayList = new ArrayList();
-
-            objArrayList.Add(tbxInterprete.Text);
-            objArrayList.Add(tbxAutor.Text);
-            objArrayList.Add(tbxAlbum.Text);
-            objArrayList.Add(tbxMusica.Text);
-            objArrayList.Add(dateTimePickerAlbum.Value);
-            objArrayList.Add(dateTimePickerCompra.Value);
-            objArrayList.Add(tbxOrigemCompra.Text);
-            objArrayList.Add(cbxMidia.Text);
-            objArrayList.Add(tbxObsevacoes.Text);
-            objArrayList.Add(cbxNota.Text);
-            objArrayList.Add(situacao);
-
-            if (InserirMidia.InsertMidia(objArrayList))
+            if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
-                MessageBox.Show("Legaaallll");
-                FormPrincipal teste = new FormPrincipal();
-                teste.AtualizaAutoCompletar();
+                //string situacao = "v";
+
+                ClassSQL InserirMidia = new ClassSQL();
+                ArrayList objArrayList = new ArrayList();
+
+                objArrayList.Add(tbxInterprete.Text);
+                objArrayList.Add(tbxAutor.Text);
+                objArrayList.Add(tbxAlbum.Text);
+                objArrayList.Add(tbxMusica.Text);
+                objArrayList.Add(dateTimePickerAlbum.Value);
+                objArrayList.Add(dateTimePickerCompra.Value);
+                objArrayList.Add(tbxOrigemCompra.Text);
+                objArrayList.Add(cbxMidia.Text);
+                objArrayList.Add(tbxObsevacoes.Text);
+                objArrayList.Add(cbxNota.Text);
+                objArrayList.Add("Disponível");
+
+                if (InserirMidia.InsertMidia(objArrayList))
+                {
+                    MessageBox.Show("Legaaallll");
+                    FormularioPrincipal.AtualizaAutoCompletar();
+                }
+                else
+                {
+                    MessageBox.Show("Não deu");
+                }
             }
             else
             {
-                MessageBox.Show("Não deu");
+                string tootip = "Este campo é obrigatório";
+
+                if (tbxAutor.Text == "")
+                    errorProviderMidia.SetError(lbNomeAutor, tootip);
+                else
+                    errorProviderMidia.SetError(lbNomeAutor, "");
+                if (cbxMidia.Text == "")
+                    errorProviderMidia.SetError(lbTipoMidia, tootip);
+                else
+                    errorProviderMidia.SetError(lbTipoMidia, "");
             }
-            
         }
 
         private void btGravar_Click(object sender, EventArgs e)
