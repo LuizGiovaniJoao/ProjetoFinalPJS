@@ -328,10 +328,10 @@ namespace ProjetoFinalPJS
             }
 
         }
-        public bool UpdateMidia(ArrayList Update, string Apelido)
+        public bool UpdateMidia(ArrayList Update)
         {
             string stringComando = string.Empty;
-            stringComando = "UPDATE Midia SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observações = @OBSERVACOES, Nota = @NOTA WHERE Interprete = @INTERPRETE AND Album = @ALBUM OR Interprete = @INTERPRETE AND Musica = @MUSICA ";
+            stringComando = "UPDATE Midia SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observacoes = @OBSERVACOES, Nota = @NOTA WHERE Interprete = @INTERPRETE AND Album = @ALBUM OR Interprete = @INTERPRETE AND Musica = @MUSICA ";
 
             SqlCommand ObjComando = new SqlCommand();
 
