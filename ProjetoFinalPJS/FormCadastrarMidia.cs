@@ -16,6 +16,9 @@ namespace ProjetoFinalPJS
         {
             InitializeComponent();
         }
+
+        public FormPrincipal FormularioPrincipal;
+
         public FormCadastrarMidia(string[] dadosLV)
         {
             InitializeComponent();
@@ -83,6 +86,7 @@ namespace ProjetoFinalPJS
                 cbxNota.Enabled = false;
             }
             tbxInterprete.Focus();
+            tbxAlbum.TabIndex = 3;
 
         }
 
@@ -113,6 +117,7 @@ namespace ProjetoFinalPJS
                 tbxObsevacoes.Enabled = false;
             }
             tbxInterprete.Focus();
+            tbxMusica.TabIndex = 3;
         }
 
         private void buttonLimpar_Click(object sender, EventArgs e)
@@ -130,6 +135,8 @@ namespace ProjetoFinalPJS
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
+            if (tbxAutor.Text != "" && cbxMidia.Text != "")
+            {
 
             ClassSQL InserirMidia = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
@@ -149,14 +156,26 @@ namespace ProjetoFinalPJS
             if (InserirMidia.InsertMidia(objArrayList))
             {
                 MessageBox.Show("Legaaallll");
-                FormPrincipal teste = new FormPrincipal();
-                teste.AtualizaAutoCompletar();
+                FormularioPrincipal.AtualizaAutoCompletar();
             }
             else
             {
                 MessageBox.Show("Não deu");
             }
-            
+            }
+            else
+            {
+                string tootip = "Este campo é obrigatório";
+
+                if (tbxAutor.Text == "")
+                    errorProviderMidia.SetError(lbNomeAutor, tootip);
+                else
+                    errorProviderMidia.SetError(lbNomeAutor, "");
+                if (cbxMidia.Text == "")
+                    errorProviderMidia.SetError(lbTipoMidia, tootip);
+                else
+                    errorProviderMidia.SetError(lbTipoMidia, "");
+            }
         }
 
         private void btGravar_Click(object sender, EventArgs e)
