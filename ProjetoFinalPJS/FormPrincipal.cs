@@ -195,7 +195,17 @@ namespace ProjetoFinalPJS
                 //preenche o listview com itens
                 for (int i = 1; i < dr.FieldCount; i++)
                 {
-                    item.SubItems.Add(dr.GetValue(i).ToString());
+                    if (i == 4 || i == 5)
+                    {
+                        string PegaData = dr.GetValue(i).ToString();
+                        DateTime DataAlbum = Convert.ToDateTime(PegaData).Date;
+                        item.SubItems.Add(DataAlbum.ToString("dd/MM/yy"));
+                    }
+                    else
+                    {
+                        item.SubItems.Add(dr.GetValue(i).ToString());
+                    }
+                    
                     
                 }
                 listViewMidia.Items.Add(item);
