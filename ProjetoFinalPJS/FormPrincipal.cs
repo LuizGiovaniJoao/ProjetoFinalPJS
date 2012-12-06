@@ -450,6 +450,50 @@ namespace ProjetoFinalPJS
                     }
                 }
             }
+
+            listViewMidia.Items.Clear();
+
+            for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
+            {
+                DataRow LinhaRegistro = TabelaDataSet.Rows[i];
+
+                // Somente as linhas que não foram deletadas
+                if (LinhaRegistro.RowState != DataRowState.Deleted)
+                {
+                    // Define os itens da lista
+                    ListViewItem item = new ListViewItem(LinhaRegistro["Musica"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Album"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Autor"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
+                    string PegaDataAlbum = LinhaRegistro["DataAlbum"].ToString();
+                    DateTime DataAlbum = Convert.ToDateTime(PegaDataAlbum).Date;
+                    item.SubItems.Add(DataAlbum.ToString("dd/MM/yy"));
+                    string PegaDataAquisicao = LinhaRegistro["DataAlbum"].ToString();
+                    DateTime DataAquisicao = Convert.ToDateTime(PegaDataAquisicao).Date;
+                    item.SubItems.Add(DataAquisicao.ToString("dd/MM/yy"));
+                    item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Nota"].ToString());
+                    item.SubItems.Add(LinhaRegistro["Situacao"].ToString());
+
+                    // Inclui os itens no ListView
+                    listViewMidia.Items.Add(item);
+                }
+            }
+
+
+            foreach (ListViewItem item in listViewMidia.Items)
+            {
+                if ((item.Index % 2) == 0)
+                {
+                    item.BackColor = Color.Gainsboro;
+                }
+                else
+                {
+                    item.BackColor = Color.WhiteSmoke;
+                }
+            }
         }
 
 
