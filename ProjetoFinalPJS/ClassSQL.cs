@@ -328,10 +328,10 @@ namespace ProjetoFinalPJS
             }
 
         }
-        public bool UpdateMidia(ArrayList Update, string Id)
+        public bool UpdateMidia(ArrayList Update)
         {
             string stringComando = string.Empty;
-            stringComando = "UPDATE Midia SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observacoes = @OBSERVACOES, Nota = @NOTA WHERE Id = @ID ";
+            stringComando = "UPDATE Midia SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observacoes = @OBSERVACOES, Nota = @NOTA WHERE Interprete = @INTERPRETE AND Album = @ALBUM OR Interprete = @INTERPRETE AND Musica = @MUSICA ";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -351,7 +351,6 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@TIPO", Update[7]));
                     ObjComando.Parameters.Add(new SqlParameter("@OBSERVACOES", Update[8]));
                     ObjComando.Parameters.Add(new SqlParameter("@NOTA", Update[9]));
-                    ObjComando.Parameters.Add(new SqlParameter("@ID", Id));
 
                     ObjComando.ExecuteNonQuery();
 
@@ -371,10 +370,10 @@ namespace ProjetoFinalPJS
                 return false;
             }
         }
-        public bool DeleteMidia(string Id)
+        public bool DeleteMidia(string interprete, string album, string musica)
         {
             string stringComando = string.Empty;
-            stringComando = "DELETE FROM Midia WHERE  Id = @ID";
+            stringComando = "DELETE FROM Midia WHERE  Interprete = @INTERPRETE AND Album = @ALBUM OR Musica = @MUSICA AND Interprete = @INTERPRETE";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -384,7 +383,9 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.AddWithValue("@ID", Id);
+                    ObjComando.Parameters.AddWithValue("@INTERPRETE", interprete);
+                    ObjComando.Parameters.AddWithValue("@ALBUM", album); 
+                    ObjComando.Parameters.AddWithValue("@MUSICA", musica);
                     ObjComando.ExecuteNonQuery();
 
                     return true;

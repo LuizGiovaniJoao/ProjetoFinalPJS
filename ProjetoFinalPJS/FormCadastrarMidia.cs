@@ -42,8 +42,6 @@ namespace ProjetoFinalPJS
             tbxObsevacoes.Text = dadosLV[7];
             cbxMidia.Text = dadosLV[8];
             cbxNota.Text = dadosLV[9];
-            // ID chave primária
-            label_ID.Text = dadosLV[10];
 
             radioAlbum.Enabled = false;
             radioMusica.Enabled = false;
@@ -134,12 +132,6 @@ namespace ProjetoFinalPJS
         {
             string situacao = " ";
 
-            DateTime DataAlbum = DateTime.Now;
-            string DataAlbumFormatada = DataAlbum.ToString("dd/MM/yyyy");
-            DateTime DataCompra = DateTime.Now;
-            string DataCompraFormatada = DataCompra.ToString("dd/MM/yyyy");
-            Convert.ToDateTime("dd/MM/yyyy");
-
             ClassSQL InserirMidia = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
 
@@ -147,7 +139,7 @@ namespace ProjetoFinalPJS
             objArrayList.Add(tbxAutor.Text);
             objArrayList.Add(tbxAlbum.Text);
             objArrayList.Add(tbxMusica.Text);
-            objArrayList.Add(dateTimePickerAlbum.Text);
+            objArrayList.Add(dateTimePickerAlbum.Value);
             objArrayList.Add(dateTimePickerCompra.Value);
             objArrayList.Add(tbxOrigemCompra.Text);
             objArrayList.Add(cbxMidia.Text);
@@ -181,14 +173,14 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxAutor.Text);
                 objArrayList.Add(tbxAlbum.Text);
                 objArrayList.Add(tbxMusica.Text);
-                objArrayList.Add(dateTimePickerAlbum.Value);
-                objArrayList.Add(dateTimePickerCompra.Value);
+                objArrayList.Add(dateTimePickerAlbum.Value.ToShortDateString());
+                objArrayList.Add(dateTimePickerCompra.Value.ToShortDateString());
                 objArrayList.Add(tbxOrigemCompra.Text);
                 objArrayList.Add(cbxMidia.Text);
                 objArrayList.Add(tbxObsevacoes.Text);
                 objArrayList.Add(cbxNota.Text);
 
-                if (AtualizarMidia.UpdateMidia(objArrayList, label_ID.Text))
+                if (AtualizarMidia.UpdateMidia(objArrayList))
                 {
                     MessageBox.Show("Legaaallll");
                     FormPrincipal teste = new FormPrincipal();
@@ -202,10 +194,6 @@ namespace ProjetoFinalPJS
 
         }
 
-        private void FormCadastrarMidia_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

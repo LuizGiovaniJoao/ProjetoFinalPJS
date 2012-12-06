@@ -77,7 +77,12 @@ namespace ProjetoFinalPJS
         private void checkBox_Autor_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_Autor.Checked)
+            {
                 tbxAutor.Enabled = true;
+                btFiltral.Enabled = true;
+                tbxAutor.Focus();
+            }
+
             else
             {
                 tbxAutor.Enabled = false;
@@ -88,7 +93,11 @@ namespace ProjetoFinalPJS
         private void checkBox_album_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_album.Checked)
+            {
                 tbxAlbum.Enabled = true;
+                btFiltral.Enabled = true;
+                tbxAlbum.Focus();
+            }
             else
             {
                 tbxAlbum.Enabled = false;
@@ -99,7 +108,11 @@ namespace ProjetoFinalPJS
         private void checkBoxInterprete_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxInterprete.Checked)
+            {
+                btFiltral.Enabled = true;
                 tbxInterprete.Enabled = true;
+                tbxInterprete.Focus();
+            }
             else
             {
                 tbxInterprete.Enabled = false;
@@ -110,7 +123,11 @@ namespace ProjetoFinalPJS
         private void checkBox_origemCompra_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_origemCompra.Checked)
+            {
+                btFiltral.Enabled = true;
                 tbxOrigemCompra.Enabled = true;
+                tbxOrigemCompra.Focus();
+            }
             else
             {
                 tbxOrigemCompra.Enabled = false;
@@ -121,23 +138,36 @@ namespace ProjetoFinalPJS
         private void checkBox_dataAlbum_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_dataAlbum.Checked)
+            {
+                btFiltral.Enabled = true;
                 dateTimeDataAlbum.Enabled = true;
+            }
             else
+            {
                 dateTimeDataAlbum.Enabled = false;
+            }
         }
 
         private void checkBox_dataCompra_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_dataCompra.Checked)
+            {
+                btFiltral.Enabled = true;
                 dateTimeDataCompra.Enabled = true;
+            }
             else
+            {
                 dateTimeDataCompra.Enabled = false;
+            }
         }
 
         private void checkBox_midia_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_midia.Checked)
+            {
+                btFiltral.Enabled = true;
                 cbxMidia.Enabled = true;
+            }
             else
             {
                 cbxMidia.Enabled = false;
@@ -148,7 +178,10 @@ namespace ProjetoFinalPJS
         private void checkBox_nota_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_nota.Checked)
+            {
+                btFiltral.Enabled = true;
                 cbxNota.Enabled = true;
+            }
             else
             {
                 cbxNota.Enabled = false;
@@ -166,6 +199,9 @@ namespace ProjetoFinalPJS
             checkBox_dataAlbum.Checked = false;
             checkBox_midia.Checked = false;
             checkBox_nota.Checked = false;
+            checkBoxDataCompra1.Checked = false;
+            checkBox_dataAlbum1.Checked = false;
+            checkBoxSituacao.Checked = false;
 
             Exibicao_ListViewMidia();
         }
@@ -181,7 +217,7 @@ namespace ProjetoFinalPJS
             //limpa o listview
             listViewMidia.Items.Clear();
 
-            SqlCommand cmd = new SqlCommand("SELECT [ID], [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota] FROM [Midia] ", conn);
+            SqlCommand cmd = new SqlCommand("SELECT [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota] FROM [Midia] ", conn);
             SqlDataReader dr = cmd.ExecuteReader();
 
             ListViewItem item;
@@ -225,18 +261,17 @@ namespace ProjetoFinalPJS
                 if (listViewItem.Selected)
                 {
                     // Os campos serão iguais aos itens e subitens selecionado
-                    dadosLV[0] = listViewItem.SubItems[1].Text;
-                    dadosLV[1] = listViewItem.SubItems[2].Text;
-                    dadosLV[2] = listViewItem.SubItems[3].Text;
-                    dadosLV[3] = listViewItem.SubItems[4].Text;
-                    dadosLV[4] = listViewItem.SubItems[5].Text;
-                    dadosLV[5] = listViewItem.SubItems[6].Text;
-                    dadosLV[6] = listViewItem.SubItems[7].Text;
-                    dadosLV[7] = listViewItem.SubItems[8].Text;
-                    dadosLV[8] = listViewItem.SubItems[9].Text;
-                    dadosLV[9] = listViewItem.SubItems[10].Text;
-                    // passar ID pra o Label invisivel
-                    dadosLV[10] = listViewItem.Text;
+                    dadosLV[0] = listViewItem.Text;
+                    dadosLV[1] = listViewItem.SubItems[1].Text;
+                    dadosLV[2] = listViewItem.SubItems[2].Text;
+                    dadosLV[3] = listViewItem.SubItems[3].Text;
+                    dadosLV[4] = listViewItem.SubItems[4].Text;
+                    dadosLV[5] = listViewItem.SubItems[5].Text;
+                    dadosLV[6] = listViewItem.SubItems[6].Text;
+                    dadosLV[7] = listViewItem.SubItems[7].Text;
+                    dadosLV[8] = listViewItem.SubItems[8].Text;
+                    dadosLV[9] = listViewItem.SubItems[9].Text;
+
                 }
             }
             FormCadastrarMidia frm = new FormCadastrarMidia(dadosLV);
@@ -253,7 +288,7 @@ namespace ProjetoFinalPJS
             {
                 if (listViewItem.Selected)
                 {
-                    if (DeletarMidia.DeleteMidia(listViewItem.Text))
+                    if (DeletarMidia.DeleteMidia(listViewItem.SubItems[3].Text, listViewItem.SubItems[1].Text, listViewItem.Text))
                     {
                         MessageBox.Show("Removido");
                         listViewItem.Remove();
@@ -279,91 +314,165 @@ namespace ProjetoFinalPJS
             SqlDataAdapter da = new SqlDataAdapter("Select * from Midia", conn);
             da.Fill(DataSetFiltro, "Midias");
             conn.Close();
-
-            if (checkBoxInterprete.Checked == true)
-            {
-                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                {
-                    if (registro["Interprete"].ToString() != tbxInterprete.Text)
-                        registro.Delete();
-
-                }
-            }
-            if (checkBox_Autor.Checked == true)
-            {
-                foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                {
-                    if (registro["Autor"] != tbxAutor.Text)
-                        registro.Delete();
-                }
-            }
-            if (checkBox_album.Checked == true)
-            {
-
-            }
-            if (checkBox_origemCompra.Checked)
-            {
-
-            }
-            if (checkBox_dataAlbum.Checked)
-            {
-
-            }
-            if (checkBox_dataCompra.Checked)
-            {
-
-            }
-            if (checkBox_midia.Checked)
-            {
-
-            }
-            if (checkBox_nota.Checked)
-            {
-
-            }
-
-            //foreach (DataRow RegistroRestante in DataSetFiltro.Tables["Midias"].Rows)
             DataTable TabelaDataSet = DataSetFiltro.Tables["Midias"];
-            listViewMidia.Items.Clear();
 
-            for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
+            if (checkBoxInterprete.Checked || checkBox_Autor.Checked || checkBox_album.Checked || checkBox_origemCompra.Checked ||
+                checkBox_dataAlbum.Checked || checkBox_dataCompra.Checked || checkBox_midia.Checked || checkBox_nota.Checked)
             {
-                DataRow LinhaRegistro = TabelaDataSet.Rows[i];
-
-                // Somente as linhas que não foram deletadas
-                if (LinhaRegistro.RowState != DataRowState.Deleted)
+                
+                if (checkBoxInterprete.Checked)
                 {
-                    // Define os itens da lista
-                    ListViewItem item = new ListViewItem(LinhaRegistro["Musica"].ToString());
-                    item.SubItems.Add(LinhaRegistro["Album"].ToString());
-                    item.SubItems.Add(LinhaRegistro["Autor"].ToString());
-                    item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
-                    item.SubItems.Add(LinhaRegistro["DataAlbum"].ToString());
-                    item.SubItems.Add(LinhaRegistro["DataAquisicao"].ToString());
-                    item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
-                    item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
-                    item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
-                    item.SubItems.Add(LinhaRegistro["Nota"].ToString());
-                    item.SubItems.Add(LinhaRegistro["Situacao"].ToString());
-
-                    // Inclui os itens no ListView
-                    listViewMidia.Items.Add(item);
+                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    {
+                        if (registro["Interprete"].ToString() != tbxInterprete.Text)
+                            registro.Delete();
+                    }
                 }
-            }
 
-
-            foreach (ListViewItem item in listViewMidia.Items)
-            {
-                if ((item.Index % 2) == 0)
+                if (checkBox_Autor.Checked)
                 {
-                    item.BackColor = Color.Gainsboro;
+                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    {
+                        if (registro.RowState != DataRowState.Deleted)
+                        {
+                            if (registro["Autor"].ToString() != tbxAutor.Text)
+                                registro.Delete();
+                        }
+
+                    }
                 }
-                else
+
+                if (checkBox_album.Checked)
                 {
-                    item.BackColor = Color.WhiteSmoke;
+                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    {
+                        if (registro.RowState != DataRowState.Deleted)
+                        {
+                            if (registro["Album"].ToString() != tbxAlbum.Text && registro["Musica"].ToString() != tbxAlbum.Text)
+                                registro.Delete();
+                        }
+                    }
+                }
+
+                if (checkBox_origemCompra.Checked)
+                {
+                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    {
+                        if (registro.RowState != DataRowState.Deleted)
+                        {
+                            if (registro["OrigemCompra"].ToString() != tbxOrigemCompra.Text)
+                                registro.Delete();
+                        }
+                    }
+                }
+
+                // Filtra pela Data do Album
+                if (checkBox_dataAlbum.Checked)
+                {
+
+                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    {
+                        DateTime DataAlbum = Convert.ToDateTime(registro["DataAlbum"]);
+                        if (checkBox_dataAlbum1.Checked == false)
+                        {
+                            if (registro.RowState != DataRowState.Deleted)
+                            {
+                                if (DataAlbum != dateTimeDataAlbum.Value)
+                                    registro.Delete();
+                            }
+                        }
+                        else if (DataAlbum < dateTimeDataAlbum.Value || DataAlbum > dateTimePickerDataAlbum1.Value)
+                            registro.Delete();
+                    }
+                }
+
+                //Filtra pela Data da compra
+                if (checkBox_dataCompra.Checked)
+                {
+                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    {
+                        DateTime DataCompra = Convert.ToDateTime(registro["DataAquisicao"]);
+                        if (checkBoxDataCompra1.Checked == false)
+                        {
+                            if (registro.RowState != DataRowState.Deleted)
+                            {
+                                if (DataCompra != dateTimeDataCompra.Value)
+                                    registro.Delete();
+                            }
+                        }
+                        else if (DataCompra < dateTimeDataCompra.Value || DataCompra > dateTimePickerDataCompra1.Value)
+                            registro.Delete();
+
+                    }
+                }
+
+                if (checkBox_midia.Checked)
+                {
+                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    {
+                        if (registro.RowState != DataRowState.Deleted)
+                        {
+                            if (registro["Tipo"].ToString() != cbxMidia.Text)
+                                registro.Delete();
+                        }
+                    }
+                }
+
+                if (checkBox_nota.Checked)
+                {
+                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    {
+                        if (registro.RowState != DataRowState.Deleted)
+                        {
+                            if (registro["Nota"].ToString() != cbxNota.Text)
+                                registro.Delete();
+                        }
+                    }
+                }
+
+
+                listViewMidia.Items.Clear();
+
+                for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
+                {
+                    DataRow LinhaRegistro = TabelaDataSet.Rows[i];
+
+                    // Somente as linhas que não foram deletadas
+                    if (LinhaRegistro.RowState != DataRowState.Deleted)
+                    {
+                        // Define os itens da lista
+                        ListViewItem item = new ListViewItem(LinhaRegistro["Musica"].ToString());
+                        item.SubItems.Add(LinhaRegistro["Album"].ToString());
+                        item.SubItems.Add(LinhaRegistro["Autor"].ToString());
+                        item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
+                        item.SubItems.Add(LinhaRegistro["DataAlbum"].ToString());
+                        item.SubItems.Add(LinhaRegistro["DataAquisicao"].ToString());
+                        item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
+                        item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
+                        item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
+                        item.SubItems.Add(LinhaRegistro["Nota"].ToString());
+                        item.SubItems.Add(LinhaRegistro["Situacao"].ToString());
+
+                        // Inclui os itens no ListView
+                        listViewMidia.Items.Add(item);
+                    }
+                }
+
+
+                foreach (ListViewItem item in listViewMidia.Items)
+                {
+                    if ((item.Index % 2) == 0)
+                    {
+                        item.BackColor = Color.Gainsboro;
+                    }
+                    else
+                    {
+                        item.BackColor = Color.WhiteSmoke;
+                    }
                 }
             }
         }
+
 
         public void AtualizaAutoCompletar()
         {
@@ -385,6 +494,43 @@ namespace ProjetoFinalPJS
             CaixaTexto.AutoCompleteCustomSource = colecao;
             leitor.Close();
             conexao.Close();
+        }
+
+        private void cbxNota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpbxFiltro_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxSituacao_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxSituacao.Checked)
+                comboBoxSituacao.Enabled = true;
+            else
+            {
+                comboBoxSituacao.Enabled = false;
+                comboBoxSituacao.Text = null;
+            }
+        }
+
+        private void checkBox_dataAlbum1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_dataAlbum1.Checked)
+                dateTimePickerDataAlbum1.Enabled = true;
+            else
+                dateTimePickerDataAlbum1.Enabled = false;
+        }
+
+        private void checkBoxDataCompra1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxDataCompra1.Checked)
+                dateTimePickerDataCompra1.Enabled = true;
+            else
+                dateTimePickerDataCompra1.Enabled = false;
         }
     }
 }

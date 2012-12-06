@@ -377,7 +377,6 @@
             this.Controls.Add(this.tbxInterprete);
             this.Name = "FormCadastrarMidia";
             this.Text = "Cadastrar Mídia";
-            this.Load += new System.EventHandler(this.FormCadastrarMidia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
