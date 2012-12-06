@@ -375,8 +375,12 @@ namespace ProjetoFinalPJS
                     item.SubItems.Add(LinhaRegistro["Album"].ToString());
                     item.SubItems.Add(LinhaRegistro["Autor"].ToString());
                     item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
-                    item.SubItems.Add(LinhaRegistro["DataAlbum"].ToString());
-                    item.SubItems.Add(LinhaRegistro["DataAquisicao"].ToString());
+                    string PegaDataAlbum = LinhaRegistro["DataAlbum"].ToString();
+                    DateTime DataAlbum = Convert.ToDateTime(PegaDataAlbum).Date;
+                    item.SubItems.Add(DataAlbum.ToString("dd/MM/yy"));
+                    string PegaDataAquisicao = LinhaRegistro["DataAlbum"].ToString();
+                    DateTime DataAquisicao = Convert.ToDateTime(PegaDataAquisicao).Date;
+                    item.SubItems.Add(DataAquisicao.ToString("dd/MM/yy"));
                     item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
                     item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
                     item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
