@@ -198,6 +198,7 @@
             // 
             this.situacao.Text = "Situação";
             this.situacao.Width = 58;
+
             // 
             // btAlterar
             // 
@@ -747,7 +748,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1038, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
-            // 
+            //
             // inserirToolStripMenuItem
             // 
             this.inserirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {

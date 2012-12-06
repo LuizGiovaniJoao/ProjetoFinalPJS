@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarMidia));
             this.tbxInterprete = new System.Windows.Forms.TextBox();
             this.tbxAutor = new System.Windows.Forms.TextBox();
@@ -54,7 +55,10 @@
             this.tbxMusica = new System.Windows.Forms.TextBox();
             this.radioAlbum = new System.Windows.Forms.RadioButton();
             this.radioMusica = new System.Windows.Forms.RadioButton();
-            this.label_ID = new System.Windows.Forms.Label();
+
+            this.errorProviderMidia = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMidia)).BeginInit();
+
             this.SuspendLayout();
             // 
             // tbxInterprete
@@ -85,7 +89,7 @@
             this.tbxOrigemCompra.Location = new System.Drawing.Point(20, 256);
             this.tbxOrigemCompra.Name = "tbxOrigemCompra";
             this.tbxOrigemCompra.Size = new System.Drawing.Size(390, 20);
-            this.tbxOrigemCompra.TabIndex = 2;
+            this.tbxOrigemCompra.TabIndex = 6;
             // 
             // tbxAlbum
             // 
@@ -108,7 +112,7 @@
             this.tbxObsevacoes.Name = "tbxObsevacoes";
             this.tbxObsevacoes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tbxObsevacoes.Size = new System.Drawing.Size(536, 60);
-            this.tbxObsevacoes.TabIndex = 4;
+            this.tbxObsevacoes.TabIndex = 9;
             // 
             // dateTimePickerAlbum
             // 
@@ -260,7 +264,7 @@
             this.btSalvar.Location = new System.Drawing.Point(319, 363);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btSalvar.TabIndex = 18;
+            this.btSalvar.TabIndex = 10;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -273,7 +277,7 @@
             this.btLimpar.Location = new System.Drawing.Point(481, 363);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(75, 23);
-            this.btLimpar.TabIndex = 19;
+            this.btLimpar.TabIndex = 12;
             this.btLimpar.Text = "Limpar";
             this.btLimpar.UseVisualStyleBackColor = true;
             this.btLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
@@ -286,7 +290,7 @@
             this.btGravar.Location = new System.Drawing.Point(400, 363);
             this.btGravar.Name = "btGravar";
             this.btGravar.Size = new System.Drawing.Size(75, 23);
-            this.btGravar.TabIndex = 20;
+            this.btGravar.TabIndex = 11;
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = true;
             this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
@@ -334,22 +338,16 @@
             this.radioMusica.UseVisualStyleBackColor = true;
             this.radioMusica.CheckedChanged += new System.EventHandler(this.radioButton_Musica_CheckedChanged);
             // 
-            // label_ID
+            // errorProviderMidia
             // 
-            this.label_ID.AutoSize = true;
-            this.label_ID.Location = new System.Drawing.Point(502, 17);
-            this.label_ID.Name = "label_ID";
-            this.label_ID.Size = new System.Drawing.Size(51, 13);
-            this.label_ID.TabIndex = 25;
-            this.label_ID.Text = "recebeID";
-            this.label_ID.Visible = false;
+            this.errorProviderMidia.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderMidia.ContainerControl = this;
             // 
             // FormCadastrarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 395);
-            this.Controls.Add(this.label_ID);
             this.Controls.Add(this.radioMusica);
             this.Controls.Add(this.radioAlbum);
             this.Controls.Add(this.tbxMusica);
@@ -410,7 +408,8 @@
         private System.Windows.Forms.TextBox tbxMusica;
         private System.Windows.Forms.RadioButton radioAlbum;
         private System.Windows.Forms.RadioButton radioMusica;
-        private System.Windows.Forms.Label label_ID;
+        private System.Windows.Forms.ErrorProvider errorProviderMidia;
+
 
     }
 }

@@ -39,8 +39,8 @@ CREATE TABLE Amigo
 
 CREATE TABLE Emprestimo
 (
-	Id int not null primary key,
-	Nome_Amigo varchar(50) not null,
+	Id int IDENTITY primary key,
+	Apelido varchar(50) not null foreign key references Amigo(Apelido),
 	Endereco_Amigo varchar(70) not null,
 	DataEmprestimo date not null,
 	
@@ -48,13 +48,20 @@ CREATE TABLE Emprestimo
 
 CREATE TABLE ItemEmprestimo
 (
-	Id int not null primary key,
-    FOREIGN KEY (Id) REFERENCES Emprestimo(Id),
-	FOREIGN KEY (Id) REFERENCES Midia(Id),
+	IdItem int identity primary key,
+	IdEmprestimo int not null foreign key references Midia(Id), 
 	Album varchar(50),
 	TipoMidia varchar(20),
 	DataDevolucao date
 	
+);
+CREATE TABLE Devolucao
+( 
+	Id int identity primary key,
+	IdEmprestimo int not null foreign key references Emprestimo(Id),
+	IdItem int not null foreign key references ItemEmprestimo(IdItem),
+	DataDevolucao date
+
 );
 CREATE  TABLE estados (
   id_estado INT NOT NULL ,

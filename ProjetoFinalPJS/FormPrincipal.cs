@@ -36,8 +36,8 @@ namespace ProjetoFinalPJS
 
         private void button3_Click(object sender, EventArgs e)
         {
-
             FormCadastrarMidia frm = new FormCadastrarMidia();
+            frm.FormularioPrincipal = this;
             frm.Show();
         }
 
@@ -217,7 +217,7 @@ namespace ProjetoFinalPJS
             //limpa o listview
             listViewMidia.Items.Clear();
 
-            SqlCommand cmd = new SqlCommand("SELECT [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota] FROM [Midia] ", conn);
+            SqlCommand cmd = new SqlCommand("SELECT [Musica], [Album], [Autor], [Interprete], [DataAlbum], [DataAquisicao], [OrigemCompra], [Observacoes], [Tipo],  [Nota], [Situacao] FROM [Midia] ", conn);
             SqlDataReader dr = cmd.ExecuteReader();
 
             ListViewItem item;
@@ -231,9 +231,19 @@ namespace ProjetoFinalPJS
                 //preenche o listview com itens
                 for (int i = 1; i < dr.FieldCount; i++)
                 {
-                    item.SubItems.Add(dr.GetValue(i).ToString());
+                    if (i == 4 || i == 5)
+                    {
+                        string PegaData = dr.GetValue(i).ToString();
+                        DateTime DataAlbum = Convert.ToDateTime(PegaData).Date;
+                        item.SubItems.Add(DataAlbum.ToString("dd/MM/yy"));
+                    }
+                    else
+                    {
+                        item.SubItems.Add(dr.GetValue(i).ToString());
+                    }
                 }
                 listViewMidia.Items.Add(item);
+
                 foreach (ListViewItem itemx in listViewMidia.Items)
                 {
                     if ((item.Index % 2) == 0)
@@ -321,115 +331,84 @@ namespace ProjetoFinalPJS
             {
                 
                 if (checkBoxInterprete.Checked)
-                {
                     foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                    {
-                        if (registro["Interprete"].ToString() != tbxInterprete.Text)
+                        if (registro.RowState != DataRowState.Deleted && registro["Interprete"].ToString() != tbxInterprete.Text)
                             registro.Delete();
-                    }
-                }
 
                 if (checkBox_Autor.Checked)
-                {
                     foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                    {
-                        if (registro.RowState != DataRowState.Deleted)
-                        {
-                            if (registro["Autor"].ToString() != tbxAutor.Text)
-                                registro.Delete();
-                        }
+                        if (registro.RowState != DataRowState.Deleted && registro["Autor"].ToString() != tbxAutor.Text)
+                            registro.Delete();
 
-                    }
-                }
 
                 if (checkBox_album.Checked)
-                {
                     foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                    {
-                        if (registro.RowState != DataRowState.Deleted)
-                        {
-                            if (registro["Album"].ToString() != tbxAlbum.Text && registro["Musica"].ToString() != tbxAlbum.Text)
-                                registro.Delete();
-                        }
-                    }
-                }
+                        if (registro.RowState != DataRowState.Deleted && registro["Album"].ToString() != tbxAlbum.Text && registro["Musica"].ToString() != tbxAlbum.Text)
+                             registro.Delete();
 
                 if (checkBox_origemCompra.Checked)
-                {
                     foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                        if (registro.RowState != DataRowState.Deleted && registro["OrigemCompra"].ToString() != tbxOrigemCompra.Text)
+                            registro.Delete();
+   
+                if (checkBox_dataAlbum.Checked || checkBox_dataCompra.Checked)
+                {
+                    // Filtra pela Data do Album e pela data da compra
+                    if (checkBox_dataAlbum.Checked && checkBox_dataCompra.Checked && checkBoxDataCompra1.Checked && checkBox_dataAlbum1.Checked)
                     {
-                        if (registro.RowState != DataRowState.Deleted)
+                        foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                         {
-                            if (registro["OrigemCompra"].ToString() != tbxOrigemCompra.Text)
+                            DateTime DataAlbum = Convert.ToDateTime(registro["DataAlbum"]);
+                            DateTime DataCompra = Convert.ToDateTime(registro["DataAquisicao"]);
+
+                            if (registro.RowState != DataRowState.Deleted
+                                && DataAlbum < dateTimeDataAlbum.Value || DataAlbum > dateTimePickerDataAlbum1.Value
+                                && DataCompra < dateTimeDataCompra.Value || DataCompra > dateTimePickerDataCompra1.Value)
                                 registro.Delete();
                         }
                     }
-                }
-
-                // Filtra pela Data do Album
-                if (checkBox_dataAlbum.Checked)
-                {
-
-                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
+                    else
                     {
-                        DateTime DataAlbum = Convert.ToDateTime(registro["DataAlbum"]);
-                        if (checkBox_dataAlbum1.Checked == false)
+                        // Filtra pela Data do Album
+                        if (checkBox_dataAlbum.Checked)
                         {
-                            if (registro.RowState != DataRowState.Deleted)
+                            foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                             {
-                                if (DataAlbum != dateTimeDataAlbum.Value)
+                                DateTime DataAlbum = Convert.ToDateTime(registro["DataAlbum"]);
+                                if (checkBox_dataAlbum1.Checked == false)
+                                    if (registro.RowState != DataRowState.Deleted && DataAlbum != dateTimeDataAlbum.Value)
+                                        registro.Delete();
+
+                                else if (registro.RowState != DataRowState.Deleted && DataAlbum < dateTimeDataAlbum.Value || DataAlbum > dateTimePickerDataAlbum1.Value)
                                     registro.Delete();
                             }
                         }
-                        else if (DataAlbum < dateTimeDataAlbum.Value || DataAlbum > dateTimePickerDataAlbum1.Value)
-                            registro.Delete();
-                    }
-                }
-
-                //Filtra pela Data da compra
-                if (checkBox_dataCompra.Checked)
-                {
-                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                    {
-                        DateTime DataCompra = Convert.ToDateTime(registro["DataAquisicao"]);
-                        if (checkBoxDataCompra1.Checked == false)
+                        //Filtra pela Data da compra
+                        if (checkBox_dataCompra.Checked)
                         {
-                            if (registro.RowState != DataRowState.Deleted)
+                            foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                             {
-                                if (DataCompra != dateTimeDataCompra.Value)
+                                DateTime DataCompra = Convert.ToDateTime(registro["DataAquisicao"]);
+                                if (checkBoxDataCompra1.Checked == false)
+                                    if (registro.RowState != DataRowState.Deleted && DataCompra != dateTimeDataCompra.Value)
+                                        registro.Delete();
+
+                                else if (registro.RowState != DataRowState.Deleted && DataCompra < dateTimeDataCompra.Value || DataCompra > dateTimePickerDataCompra1.Value)
                                     registro.Delete();
                             }
                         }
-                        else if (DataCompra < dateTimeDataCompra.Value || DataCompra > dateTimePickerDataCompra1.Value)
-                            registro.Delete();
-
-                    }
+                    }      
                 }
 
                 if (checkBox_midia.Checked)
-                {
                     foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                    {
-                        if (registro.RowState != DataRowState.Deleted)
-                        {
-                            if (registro["Tipo"].ToString() != cbxMidia.Text)
-                                registro.Delete();
-                        }
-                    }
-                }
+                        if (registro.RowState != DataRowState.Deleted && registro["Tipo"].ToString() != cbxMidia.Text)
+                              registro.Delete();
 
                 if (checkBox_nota.Checked)
-                {
                     foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                    {
-                        if (registro.RowState != DataRowState.Deleted)
-                        {
-                            if (registro["Nota"].ToString() != cbxNota.Text)
-                                registro.Delete();
-                        }
-                    }
-                }
-
+                        if (registro.RowState != DataRowState.Deleted && registro["Nota"].ToString() != cbxNota.Text)
+                             registro.Delete();        
 
                 listViewMidia.Items.Clear();
 
@@ -478,6 +457,8 @@ namespace ProjetoFinalPJS
         {
             AutoCompletar("SELECT Interprete FROM Midia", "Interprete", tbxInterprete);
             AutoCompletar("SELECT Autor FROM Midia", "Autor", tbxAutor);
+            AutoCompletar("SELECT Album FROM Midia", "Album", tbxAlbum);
+            AutoCompletar("SELECT OrigemCompra FROM Midia", "OrigemCompra", tbxOrigemCompra);
         }
 
         public void AutoCompletar(string ComandoSQL, string Campo, TextBox CaixaTexto)
