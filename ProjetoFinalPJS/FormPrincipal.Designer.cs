@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup41 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup42 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup43 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup44 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup45 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
             this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,30 +54,21 @@
             this.checkBox_dataAlbum1 = new System.Windows.Forms.CheckBox();
             this.btTodos = new System.Windows.Forms.Button();
             this.dateTimePickerDataAlbum1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbOrigemCompra = new System.Windows.Forms.Label();
             this.dateTimeDataAlbum = new System.Windows.Forms.DateTimePicker();
-            this.lbDtAlbum = new System.Windows.Forms.Label();
             this.comboBoxSituacao = new System.Windows.Forms.ComboBox();
             this.dateTimeDataCompra = new System.Windows.Forms.DateTimePicker();
             this.tbxOrigemCompra = new System.Windows.Forms.TextBox();
-            this.lbDtCompra = new System.Windows.Forms.Label();
             this.checkBoxSituacao = new System.Windows.Forms.CheckBox();
             this.checkBox_dataAlbum = new System.Windows.Forms.CheckBox();
-            this.lbNomeAlbum = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox_midia = new System.Windows.Forms.CheckBox();
             this.checkBoxDataCompra1 = new System.Windows.Forms.CheckBox();
             this.cbxMidia = new System.Windows.Forms.ComboBox();
             this.checkBox_dataCompra = new System.Windows.Forms.CheckBox();
-            this.lbNomeAutor = new System.Windows.Forms.Label();
-            this.lbMidia = new System.Windows.Forms.Label();
             this.tbxAlbum = new System.Windows.Forms.TextBox();
-            this.lbNota = new System.Windows.Forms.Label();
             this.cbxNota = new System.Windows.Forms.ComboBox();
             this.checkBox_nota = new System.Windows.Forms.CheckBox();
-            this.lbInterprete = new System.Windows.Forms.Label();
             this.tbxAutor = new System.Windows.Forms.TextBox();
             this.checkBox_origemCompra = new System.Windows.Forms.CheckBox();
             this.tbxInterprete = new System.Windows.Forms.TextBox();
@@ -96,6 +87,7 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emprestarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gpbxFiltro.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -120,22 +112,22 @@
             this.situacao});
             this.listViewMidia.FullRowSelect = true;
             this.listViewMidia.GridLines = true;
-            listViewGroup1.Header = "Vinil";
-            listViewGroup1.Name = "Vinil";
-            listViewGroup2.Header = "K7";
-            listViewGroup2.Name = "K7";
-            listViewGroup3.Header = "CD";
-            listViewGroup3.Name = "CD";
-            listViewGroup4.Header = "DVD";
-            listViewGroup4.Name = "DVD";
-            listViewGroup5.Header = "Digital";
-            listViewGroup5.Name = "Digital";
+            listViewGroup41.Header = "Vinil";
+            listViewGroup41.Name = "Vinil";
+            listViewGroup42.Header = "K7";
+            listViewGroup42.Name = "K7";
+            listViewGroup43.Header = "CD";
+            listViewGroup43.Name = "CD";
+            listViewGroup44.Header = "DVD";
+            listViewGroup44.Name = "DVD";
+            listViewGroup45.Header = "Digital";
+            listViewGroup45.Name = "Digital";
             this.listViewMidia.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3,
-            listViewGroup4,
-            listViewGroup5});
+            listViewGroup41,
+            listViewGroup42,
+            listViewGroup43,
+            listViewGroup44,
+            listViewGroup45});
             this.listViewMidia.Location = new System.Drawing.Point(12, 245);
             this.listViewMidia.Name = "listViewMidia";
             this.listViewMidia.ShowGroups = false;
@@ -198,7 +190,6 @@
             // 
             this.situacao.Text = "Situação";
             this.situacao.Width = 58;
-
             // 
             // btAlterar
             // 
@@ -238,36 +229,28 @@
             this.gpbxFiltro.Controls.Add(this.checkBox_dataAlbum1);
             this.gpbxFiltro.Controls.Add(this.btTodos);
             this.gpbxFiltro.Controls.Add(this.dateTimePickerDataAlbum1);
-            this.gpbxFiltro.Controls.Add(this.label3);
             this.gpbxFiltro.Controls.Add(this.label1);
-            this.gpbxFiltro.Controls.Add(this.lbOrigemCompra);
             this.gpbxFiltro.Controls.Add(this.dateTimeDataAlbum);
-            this.gpbxFiltro.Controls.Add(this.lbDtAlbum);
             this.gpbxFiltro.Controls.Add(this.comboBoxSituacao);
             this.gpbxFiltro.Controls.Add(this.dateTimeDataCompra);
             this.gpbxFiltro.Controls.Add(this.tbxOrigemCompra);
-            this.gpbxFiltro.Controls.Add(this.lbDtCompra);
             this.gpbxFiltro.Controls.Add(this.checkBoxSituacao);
             this.gpbxFiltro.Controls.Add(this.checkBox_dataAlbum);
-            this.gpbxFiltro.Controls.Add(this.lbNomeAlbum);
             this.gpbxFiltro.Controls.Add(this.label2);
             this.gpbxFiltro.Controls.Add(this.checkBox_midia);
             this.gpbxFiltro.Controls.Add(this.checkBoxDataCompra1);
             this.gpbxFiltro.Controls.Add(this.cbxMidia);
             this.gpbxFiltro.Controls.Add(this.checkBox_dataCompra);
-            this.gpbxFiltro.Controls.Add(this.lbNomeAutor);
-            this.gpbxFiltro.Controls.Add(this.lbMidia);
             this.gpbxFiltro.Controls.Add(this.tbxAlbum);
-            this.gpbxFiltro.Controls.Add(this.lbNota);
             this.gpbxFiltro.Controls.Add(this.cbxNota);
             this.gpbxFiltro.Controls.Add(this.checkBox_nota);
-            this.gpbxFiltro.Controls.Add(this.lbInterprete);
             this.gpbxFiltro.Controls.Add(this.tbxAutor);
             this.gpbxFiltro.Controls.Add(this.checkBox_origemCompra);
             this.gpbxFiltro.Controls.Add(this.tbxInterprete);
             this.gpbxFiltro.Controls.Add(this.checkBox_album);
             this.gpbxFiltro.Controls.Add(this.checkBoxInterprete);
             this.gpbxFiltro.Controls.Add(this.checkBox_Autor);
+            this.gpbxFiltro.Controls.Add(this.groupBox1);
             this.gpbxFiltro.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbxFiltro.Location = new System.Drawing.Point(300, 27);
             this.gpbxFiltro.Name = "gpbxFiltro";
@@ -282,7 +265,7 @@
             this.dateTimePickerDataCompra1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerDataCompra1.Enabled = false;
             this.dateTimePickerDataCompra1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataCompra1.Location = new System.Drawing.Point(620, 124);
+            this.dateTimePickerDataCompra1.Location = new System.Drawing.Point(618, 124);
             this.dateTimePickerDataCompra1.Name = "dateTimePickerDataCompra1";
             this.dateTimePickerDataCompra1.Size = new System.Drawing.Size(97, 22);
             this.dateTimePickerDataCompra1.TabIndex = 28;
@@ -305,7 +288,7 @@
             // 
             this.checkBox_dataAlbum1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataAlbum1.AutoSize = true;
-            this.checkBox_dataAlbum1.Location = new System.Drawing.Point(599, 84);
+            this.checkBox_dataAlbum1.Location = new System.Drawing.Point(618, 64);
             this.checkBox_dataAlbum1.Name = "checkBox_dataAlbum1";
             this.checkBox_dataAlbum1.Size = new System.Drawing.Size(15, 14);
             this.checkBox_dataAlbum1.TabIndex = 23;
@@ -330,39 +313,20 @@
             this.dateTimePickerDataAlbum1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerDataAlbum1.Enabled = false;
             this.dateTimePickerDataAlbum1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataAlbum1.Location = new System.Drawing.Point(620, 82);
+            this.dateTimePickerDataAlbum1.Location = new System.Drawing.Point(618, 81);
             this.dateTimePickerDataAlbum1.Name = "dateTimePickerDataAlbum1";
             this.dateTimePickerDataAlbum1.Size = new System.Drawing.Size(97, 22);
             this.dateTimePickerDataAlbum1.TabIndex = 24;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(617, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Situação";
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(571, 82);
+            this.label1.Location = new System.Drawing.Point(590, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 16);
             this.label1.TabIndex = 25;
             this.label1.Text = "até";
-            // 
-            // lbOrigemCompra
-            // 
-            this.lbOrigemCompra.AutoSize = true;
-            this.lbOrigemCompra.Location = new System.Drawing.Point(39, 150);
-            this.lbOrigemCompra.Name = "lbOrigemCompra";
-            this.lbOrigemCompra.Size = new System.Drawing.Size(95, 16);
-            this.lbOrigemCompra.TabIndex = 17;
-            this.lbOrigemCompra.Text = "Origem da compra";
             // 
             // dateTimeDataAlbum
             // 
@@ -370,21 +334,11 @@
             this.dateTimeDataAlbum.CustomFormat = "";
             this.dateTimeDataAlbum.Enabled = false;
             this.dateTimeDataAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeDataAlbum.Location = new System.Drawing.Point(468, 81);
+            this.dateTimeDataAlbum.Location = new System.Drawing.Point(487, 81);
             this.dateTimeDataAlbum.Name = "dateTimeDataAlbum";
             this.dateTimeDataAlbum.Size = new System.Drawing.Size(97, 22);
             this.dateTimeDataAlbum.TabIndex = 18;
             this.dateTimeDataAlbum.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
-            // 
-            // lbDtAlbum
-            // 
-            this.lbDtAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbDtAlbum.AutoSize = true;
-            this.lbDtAlbum.Location = new System.Drawing.Point(465, 62);
-            this.lbDtAlbum.Name = "lbDtAlbum";
-            this.lbDtAlbum.Size = new System.Drawing.Size(76, 16);
-            this.lbDtAlbum.TabIndex = 17;
-            this.lbDtAlbum.Text = "Data do álbum";
             // 
             // comboBoxSituacao
             // 
@@ -395,7 +349,7 @@
             this.comboBoxSituacao.Items.AddRange(new object[] {
             "Emprestado",
             "Disponivel"});
-            this.comboBoxSituacao.Location = new System.Drawing.Point(620, 37);
+            this.comboBoxSituacao.Location = new System.Drawing.Point(618, 35);
             this.comboBoxSituacao.Name = "comboBoxSituacao";
             this.comboBoxSituacao.Size = new System.Drawing.Size(97, 24);
             this.comboBoxSituacao.TabIndex = 30;
@@ -405,7 +359,7 @@
             this.dateTimeDataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimeDataCompra.Enabled = false;
             this.dateTimeDataCompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeDataCompra.Location = new System.Drawing.Point(467, 125);
+            this.dateTimeDataCompra.Location = new System.Drawing.Point(486, 125);
             this.dateTimeDataCompra.Name = "dateTimeDataCompra";
             this.dateTimeDataCompra.Size = new System.Drawing.Size(97, 22);
             this.dateTimeDataCompra.TabIndex = 19;
@@ -416,29 +370,20 @@
             this.tbxOrigemCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxOrigemCompra.Enabled = false;
-            this.tbxOrigemCompra.Location = new System.Drawing.Point(39, 169);
+            this.tbxOrigemCompra.Location = new System.Drawing.Point(7, 170);
             this.tbxOrigemCompra.Name = "tbxOrigemCompra";
-            this.tbxOrigemCompra.Size = new System.Drawing.Size(401, 22);
+            this.tbxOrigemCompra.Size = new System.Drawing.Size(445, 22);
             this.tbxOrigemCompra.TabIndex = 15;
-            // 
-            // lbDtCompra
-            // 
-            this.lbDtCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbDtCompra.AutoSize = true;
-            this.lbDtCompra.Location = new System.Drawing.Point(465, 106);
-            this.lbDtCompra.Name = "lbDtCompra";
-            this.lbDtCompra.Size = new System.Drawing.Size(83, 16);
-            this.lbDtCompra.TabIndex = 16;
-            this.lbDtCompra.Text = "Data da compra";
             // 
             // checkBoxSituacao
             // 
             this.checkBoxSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxSituacao.AutoSize = true;
-            this.checkBoxSituacao.Location = new System.Drawing.Point(599, 42);
+            this.checkBoxSituacao.Location = new System.Drawing.Point(624, 14);
             this.checkBoxSituacao.Name = "checkBoxSituacao";
-            this.checkBoxSituacao.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxSituacao.Size = new System.Drawing.Size(67, 20);
             this.checkBoxSituacao.TabIndex = 29;
+            this.checkBoxSituacao.Text = "Situação";
             this.checkBoxSituacao.UseVisualStyleBackColor = true;
             this.checkBoxSituacao.CheckedChanged += new System.EventHandler(this.checkBoxSituacao_CheckedChanged);
             // 
@@ -446,27 +391,19 @@
             // 
             this.checkBox_dataAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataAlbum.AutoSize = true;
-            this.checkBox_dataAlbum.Location = new System.Drawing.Point(447, 84);
+            this.checkBox_dataAlbum.Location = new System.Drawing.Point(486, 61);
             this.checkBox_dataAlbum.Name = "checkBox_dataAlbum";
-            this.checkBox_dataAlbum.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_dataAlbum.Size = new System.Drawing.Size(95, 20);
             this.checkBox_dataAlbum.TabIndex = 8;
+            this.checkBox_dataAlbum.Text = "Data do álbum";
             this.checkBox_dataAlbum.UseVisualStyleBackColor = true;
             this.checkBox_dataAlbum.CheckedChanged += new System.EventHandler(this.checkBox_dataAlbum_CheckedChanged);
-            // 
-            // lbNomeAlbum
-            // 
-            this.lbNomeAlbum.AutoSize = true;
-            this.lbNomeAlbum.Location = new System.Drawing.Point(39, 106);
-            this.lbNomeAlbum.Name = "lbNomeAlbum";
-            this.lbNomeAlbum.Size = new System.Drawing.Size(123, 16);
-            this.lbNomeAlbum.TabIndex = 14;
-            this.lbNomeAlbum.Text = "Nome do álbum / música";
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(571, 124);
+            this.label2.Location = new System.Drawing.Point(590, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 16);
             this.label2.TabIndex = 26;
@@ -476,10 +413,11 @@
             // 
             this.checkBox_midia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_midia.AutoSize = true;
-            this.checkBox_midia.Location = new System.Drawing.Point(447, 42);
+            this.checkBox_midia.Location = new System.Drawing.Point(486, 14);
             this.checkBox_midia.Name = "checkBox_midia";
-            this.checkBox_midia.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_midia.Size = new System.Drawing.Size(52, 20);
             this.checkBox_midia.TabIndex = 11;
+            this.checkBox_midia.Text = "Mídia";
             this.checkBox_midia.UseVisualStyleBackColor = true;
             this.checkBox_midia.CheckedChanged += new System.EventHandler(this.checkBox_midia_CheckedChanged);
             // 
@@ -487,7 +425,7 @@
             // 
             this.checkBoxDataCompra1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxDataCompra1.AutoSize = true;
-            this.checkBoxDataCompra1.Location = new System.Drawing.Point(599, 126);
+            this.checkBoxDataCompra1.Location = new System.Drawing.Point(618, 108);
             this.checkBoxDataCompra1.Name = "checkBoxDataCompra1";
             this.checkBoxDataCompra1.Size = new System.Drawing.Size(15, 14);
             this.checkBoxDataCompra1.TabIndex = 27;
@@ -507,60 +445,32 @@
             "DVD",
             "K7",
             "Vinil"});
-            this.cbxMidia.Location = new System.Drawing.Point(468, 35);
+            this.cbxMidia.Location = new System.Drawing.Point(487, 35);
             this.cbxMidia.Name = "cbxMidia";
-            this.cbxMidia.Size = new System.Drawing.Size(56, 24);
+            this.cbxMidia.Size = new System.Drawing.Size(76, 24);
             this.cbxMidia.TabIndex = 6;
             // 
             // checkBox_dataCompra
             // 
             this.checkBox_dataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataCompra.AutoSize = true;
-            this.checkBox_dataCompra.Location = new System.Drawing.Point(446, 126);
+            this.checkBox_dataCompra.Location = new System.Drawing.Point(486, 105);
             this.checkBox_dataCompra.Name = "checkBox_dataCompra";
-            this.checkBox_dataCompra.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_dataCompra.Size = new System.Drawing.Size(102, 20);
             this.checkBox_dataCompra.TabIndex = 10;
+            this.checkBox_dataCompra.Text = "Data da compra";
             this.checkBox_dataCompra.UseVisualStyleBackColor = true;
             this.checkBox_dataCompra.CheckedChanged += new System.EventHandler(this.checkBox_dataCompra_CheckedChanged);
-            // 
-            // lbNomeAutor
-            // 
-            this.lbNomeAutor.AutoSize = true;
-            this.lbNomeAutor.Location = new System.Drawing.Point(39, 62);
-            this.lbNomeAutor.Name = "lbNomeAutor";
-            this.lbNomeAutor.Size = new System.Drawing.Size(78, 16);
-            this.lbNomeAutor.TabIndex = 13;
-            this.lbNomeAutor.Text = "Nome do autor";
-            // 
-            // lbMidia
-            // 
-            this.lbMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbMidia.AutoSize = true;
-            this.lbMidia.Location = new System.Drawing.Point(465, 16);
-            this.lbMidia.Name = "lbMidia";
-            this.lbMidia.Size = new System.Drawing.Size(33, 16);
-            this.lbMidia.TabIndex = 5;
-            this.lbMidia.Text = "Mídia";
             // 
             // tbxAlbum
             // 
             this.tbxAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxAlbum.Enabled = false;
-            this.tbxAlbum.Location = new System.Drawing.Point(39, 125);
+            this.tbxAlbum.Location = new System.Drawing.Point(6, 126);
             this.tbxAlbum.Name = "tbxAlbum";
-            this.tbxAlbum.Size = new System.Drawing.Size(401, 22);
+            this.tbxAlbum.Size = new System.Drawing.Size(447, 22);
             this.tbxAlbum.TabIndex = 14;
-            // 
-            // lbNota
-            // 
-            this.lbNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbNota.AutoSize = true;
-            this.lbNota.Location = new System.Drawing.Point(547, 18);
-            this.lbNota.Name = "lbNota";
-            this.lbNota.Size = new System.Drawing.Size(30, 16);
-            this.lbNota.TabIndex = 22;
-            this.lbNota.Text = "Nota";
             // 
             // cbxNota
             // 
@@ -580,9 +490,9 @@
             "08",
             "09",
             "10"});
-            this.cbxNota.Location = new System.Drawing.Point(550, 37);
+            this.cbxNota.Location = new System.Drawing.Point(571, 35);
             this.cbxNota.Name = "cbxNota";
-            this.cbxNota.Size = new System.Drawing.Size(43, 24);
+            this.cbxNota.Size = new System.Drawing.Size(41, 24);
             this.cbxNota.TabIndex = 20;
             this.cbxNota.SelectedIndexChanged += new System.EventHandler(this.cbxNota_SelectedIndexChanged);
             // 
@@ -590,39 +500,32 @@
             // 
             this.checkBox_nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_nota.AutoSize = true;
-            this.checkBox_nota.Location = new System.Drawing.Point(529, 42);
+            this.checkBox_nota.Location = new System.Drawing.Point(571, 14);
             this.checkBox_nota.Name = "checkBox_nota";
-            this.checkBox_nota.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_nota.Size = new System.Drawing.Size(49, 20);
             this.checkBox_nota.TabIndex = 21;
+            this.checkBox_nota.Text = "Nota";
             this.checkBox_nota.UseVisualStyleBackColor = true;
             this.checkBox_nota.CheckedChanged += new System.EventHandler(this.checkBox_nota_CheckedChanged);
-            // 
-            // lbInterprete
-            // 
-            this.lbInterprete.AutoSize = true;
-            this.lbInterprete.Location = new System.Drawing.Point(39, 18);
-            this.lbInterprete.Name = "lbInterprete";
-            this.lbInterprete.Size = new System.Drawing.Size(98, 16);
-            this.lbInterprete.TabIndex = 12;
-            this.lbInterprete.Text = "Nome do intérprete";
             // 
             // tbxAutor
             // 
             this.tbxAutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxAutor.Enabled = false;
-            this.tbxAutor.Location = new System.Drawing.Point(39, 81);
+            this.tbxAutor.Location = new System.Drawing.Point(7, 82);
             this.tbxAutor.Name = "tbxAutor";
-            this.tbxAutor.Size = new System.Drawing.Size(402, 22);
+            this.tbxAutor.Size = new System.Drawing.Size(446, 22);
             this.tbxAutor.TabIndex = 12;
             // 
             // checkBox_origemCompra
             // 
             this.checkBox_origemCompra.AutoSize = true;
-            this.checkBox_origemCompra.Location = new System.Drawing.Point(18, 169);
+            this.checkBox_origemCompra.Location = new System.Drawing.Point(7, 150);
             this.checkBox_origemCompra.Name = "checkBox_origemCompra";
-            this.checkBox_origemCompra.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_origemCompra.Size = new System.Drawing.Size(114, 20);
             this.checkBox_origemCompra.TabIndex = 0;
+            this.checkBox_origemCompra.Text = "Origem da compra";
             this.checkBox_origemCompra.UseVisualStyleBackColor = true;
             this.checkBox_origemCompra.CheckedChanged += new System.EventHandler(this.checkBox_origemCompra_CheckedChanged);
             // 
@@ -633,38 +536,41 @@
             this.tbxInterprete.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxInterprete.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxInterprete.Enabled = false;
-            this.tbxInterprete.Location = new System.Drawing.Point(39, 37);
+            this.tbxInterprete.Location = new System.Drawing.Point(6, 37);
             this.tbxInterprete.Name = "tbxInterprete";
-            this.tbxInterprete.Size = new System.Drawing.Size(402, 22);
+            this.tbxInterprete.Size = new System.Drawing.Size(447, 22);
             this.tbxInterprete.TabIndex = 1;
             // 
             // checkBox_album
             // 
             this.checkBox_album.AutoSize = true;
-            this.checkBox_album.Location = new System.Drawing.Point(18, 130);
+            this.checkBox_album.Location = new System.Drawing.Point(6, 105);
             this.checkBox_album.Name = "checkBox_album";
-            this.checkBox_album.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_album.Size = new System.Drawing.Size(142, 20);
             this.checkBox_album.TabIndex = 9;
+            this.checkBox_album.Text = "Nome do álbum / música";
             this.checkBox_album.UseVisualStyleBackColor = true;
             this.checkBox_album.CheckedChanged += new System.EventHandler(this.checkBox_album_CheckedChanged);
             // 
             // checkBoxInterprete
             // 
             this.checkBoxInterprete.AutoSize = true;
-            this.checkBoxInterprete.Location = new System.Drawing.Point(18, 42);
+            this.checkBoxInterprete.Location = new System.Drawing.Point(6, 14);
             this.checkBoxInterprete.Name = "checkBoxInterprete";
-            this.checkBoxInterprete.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxInterprete.Size = new System.Drawing.Size(117, 20);
             this.checkBoxInterprete.TabIndex = 0;
+            this.checkBoxInterprete.Text = "Nome do intérprete";
             this.checkBoxInterprete.UseVisualStyleBackColor = true;
             this.checkBoxInterprete.CheckedChanged += new System.EventHandler(this.checkBoxInterprete_CheckedChanged);
             // 
             // checkBox_Autor
             // 
             this.checkBox_Autor.AutoSize = true;
-            this.checkBox_Autor.Location = new System.Drawing.Point(18, 86);
+            this.checkBox_Autor.Location = new System.Drawing.Point(6, 61);
             this.checkBox_Autor.Name = "checkBox_Autor";
-            this.checkBox_Autor.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Autor.Size = new System.Drawing.Size(97, 20);
             this.checkBox_Autor.TabIndex = 7;
+            this.checkBox_Autor.Text = "Nome do autor";
             this.checkBox_Autor.UseVisualStyleBackColor = true;
             this.checkBox_Autor.CheckedChanged += new System.EventHandler(this.checkBox_Autor_CheckedChanged);
             // 
@@ -737,7 +643,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -748,7 +654,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1038, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
-            //
+            // 
             // inserirToolStripMenuItem
             // 
             this.inserirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -791,6 +697,15 @@
             this.devolverToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.devolverToolStripMenuItem.Text = "Devolver";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Location = new System.Drawing.Point(469, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(254, 198);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -826,17 +741,11 @@
         private System.Windows.Forms.CheckBox checkBox_origemCompra;
         private System.Windows.Forms.DateTimePicker dateTimeDataCompra;
         private System.Windows.Forms.CheckBox checkBox_midia;
-        private System.Windows.Forms.Label lbDtCompra;
         private System.Windows.Forms.DateTimePicker dateTimeDataAlbum;
-        private System.Windows.Forms.Label lbDtAlbum;
-        private System.Windows.Forms.Label lbOrigemCompra;
         private System.Windows.Forms.CheckBox checkBox_dataCompra;
         private System.Windows.Forms.TextBox tbxOrigemCompra;
-        private System.Windows.Forms.Label lbNomeAlbum;
-        private System.Windows.Forms.Label lbNomeAutor;
         private System.Windows.Forms.TextBox tbxAlbum;
         private System.Windows.Forms.CheckBox checkBox_dataAlbum;
-        private System.Windows.Forms.Label lbInterprete;
         private System.Windows.Forms.Button btTodos;
         private System.Windows.Forms.Button btFiltral;
         private System.Windows.Forms.TextBox tbxAutor;
@@ -844,10 +753,8 @@
         private System.Windows.Forms.CheckBox checkBox_album;
         private System.Windows.Forms.CheckBox checkBoxInterprete;
         private System.Windows.Forms.CheckBox checkBox_Autor;
-        private System.Windows.Forms.Label lbNota;
         private System.Windows.Forms.CheckBox checkBox_nota;
         private System.Windows.Forms.ComboBox cbxNota;
-        private System.Windows.Forms.Label lbMidia;
         private System.Windows.Forms.ComboBox cbxMidia;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btDevolverMidia;
@@ -880,7 +787,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerDataAlbum1;
         private System.Windows.Forms.CheckBox checkBox_dataAlbum1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
 
     }
 }

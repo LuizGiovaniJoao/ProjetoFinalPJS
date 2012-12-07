@@ -235,7 +235,7 @@ namespace ProjetoFinalPJS
                     {
                         string PegaData = dr.GetValue(i).ToString();
                         DateTime DataAlbum = Convert.ToDateTime(PegaData).Date;
-                        item.SubItems.Add(DataAlbum.ToString("dd/MM/yy"));
+                        item.SubItems.Add(DataAlbum.ToString("dd/MM/yyyy"));
                     }
                     else
                     {
@@ -316,7 +316,6 @@ namespace ProjetoFinalPJS
         private void btFiltral_Click(object sender, EventArgs e)
         {
             ClassSQL conexao = new ClassSQL();
-            //conexao.conectar();
             SqlConnection conn = new SqlConnection(conexao.stringConexao);
             conn.Open();
 
@@ -326,96 +325,62 @@ namespace ProjetoFinalPJS
             conn.Close();
             DataTable TabelaDataSet = DataSetFiltro.Tables["Midias"];
 
-            if (checkBoxInterprete.Checked || checkBox_Autor.Checked || checkBox_album.Checked || checkBox_origemCompra.Checked ||
-                checkBox_dataAlbum.Checked || checkBox_dataCompra.Checked || checkBox_midia.Checked || checkBox_nota.Checked)
+            
+            foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
             {
-                
+                DateTime DataAlbum = Convert.ToDateTime(registro["DataAlbum"]);
+                DateTime DataCompra = Convert.ToDateTime(registro["DataAquisicao"]);
+
                 if (checkBoxInterprete.Checked)
-                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                         if (registro.RowState != DataRowState.Deleted && registro["Interprete"].ToString() != tbxInterprete.Text)
                             registro.Delete();
 
                 if (checkBox_Autor.Checked)
-                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                         if (registro.RowState != DataRowState.Deleted && registro["Autor"].ToString() != tbxAutor.Text)
                             registro.Delete();
 
-
                 if (checkBox_album.Checked)
-                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                         if (registro.RowState != DataRowState.Deleted && registro["Album"].ToString() != tbxAlbum.Text && registro["Musica"].ToString() != tbxAlbum.Text)
-                             registro.Delete();
+                            registro.Delete();
 
                 if (checkBox_origemCompra.Checked)
-                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                         if (registro.RowState != DataRowState.Deleted && registro["OrigemCompra"].ToString() != tbxOrigemCompra.Text)
                             registro.Delete();
-   
-                if (checkBox_dataAlbum.Checked || checkBox_dataCompra.Checked)
-                {
-                    // Filtra pela Data do Album e pela data da compra
-                    if (checkBox_dataAlbum.Checked && checkBox_dataCompra.Checked && checkBoxDataCompra1.Checked && checkBox_dataAlbum1.Checked)
-                    {
-                        foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                        {
-                            DateTime DataAlbum = Convert.ToDateTime(registro["DataAlbum"]);
-                            DateTime DataCompra = Convert.ToDateTime(registro["DataAquisicao"]);
-
-                            if (registro.RowState != DataRowState.Deleted
-                                && DataAlbum < dateTimeDataAlbum.Value || DataAlbum > dateTimePickerDataAlbum1.Value
-                                && DataCompra < dateTimeDataCompra.Value || DataCompra > dateTimePickerDataCompra1.Value)
-                                registro.Delete();
-                        }
-                    }
-                    else
-                    {
-                        // Filtra pela Data do Album
-                        if (checkBox_dataAlbum.Checked)
-                        {
-                            foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                            {
-                                DateTime DataAlbum = Convert.ToDateTime(registro["DataAlbum"]);
-                                if (checkBox_dataAlbum1.Checked == false)
-                                    if (registro.RowState != DataRowState.Deleted && DataAlbum != dateTimeDataAlbum.Value)
-                                        registro.Delete();
-
-                                else if (registro.RowState != DataRowState.Deleted && DataAlbum < dateTimeDataAlbum.Value || DataAlbum > dateTimePickerDataAlbum1.Value)
-                                    registro.Delete();
-                            }
-                        }
-                        //Filtra pela Data da compra
-                        if (checkBox_dataCompra.Checked)
-                        {
-                            foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
-                            {
-                                DateTime DataCompra = Convert.ToDateTime(registro["DataAquisicao"]);
-                                if (checkBoxDataCompra1.Checked == false)
-                                    if (registro.RowState != DataRowState.Deleted && DataCompra != dateTimeDataCompra.Value)
-                                        registro.Delete();
-
-                                else if (registro.RowState != DataRowState.Deleted && DataCompra < dateTimeDataCompra.Value || DataCompra > dateTimePickerDataCompra1.Value)
-                                    registro.Delete();
-                            }
-                        }
-                    }      
-                }
 
                 if (checkBox_midia.Checked)
-                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                         if (registro.RowState != DataRowState.Deleted && registro["Tipo"].ToString() != cbxMidia.Text)
-                              registro.Delete();
+                            registro.Delete();
 
                 if (checkBox_nota.Checked)
-                    foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
                         if (registro.RowState != DataRowState.Deleted && registro["Nota"].ToString() != cbxNota.Text)
-                             registro.Delete();        
+                            registro.Delete();
 
+                    //Superior a data de album
+                if (checkBox_dataAlbum.Checked)
+                    if (registro.RowState != DataRowState.Deleted && DataAlbum < dateTimeDataAlbum.Value)
+                        registro.Delete();
+
+                    //Inferior a data de album
+                if (checkBox_dataAlbum1.Checked)
+                    if (registro.RowState != DataRowState.Deleted && DataAlbum > dateTimePickerDataAlbum1.Value)
+                        registro.Delete();
+
+                    //Superior a data da compra
+                if (checkBox_dataCompra.Checked)
+                    if (registro.RowState != DataRowState.Deleted && DataCompra < dateTimeDataCompra.Value)
+                        registro.Delete();
+
+                    //Inferior a data de album
+                if (checkBoxDataCompra1.Checked)
+                    if (registro.RowState != DataRowState.Deleted && DataCompra > dateTimePickerDataCompra1.Value)
+                        registro.Delete();
+            }
+                
                 listViewMidia.Items.Clear();
 
                 for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
                 {
                     DataRow LinhaRegistro = TabelaDataSet.Rows[i];
-
                     // Somente as linhas que não foram deletadas
                     if (LinhaRegistro.RowState != DataRowState.Deleted)
                     {
@@ -437,7 +402,6 @@ namespace ProjetoFinalPJS
                     }
                 }
 
-
                 foreach (ListViewItem item in listViewMidia.Items)
                 {
                     if ((item.Index % 2) == 0)
@@ -449,7 +413,6 @@ namespace ProjetoFinalPJS
                         item.BackColor = Color.WhiteSmoke;
                     }
                 }
-            }
 
             listViewMidia.Items.Clear();
 
@@ -460,17 +423,19 @@ namespace ProjetoFinalPJS
                 // Somente as linhas que não foram deletadas
                 if (LinhaRegistro.RowState != DataRowState.Deleted)
                 {
+                    string PegaDataAlbum = LinhaRegistro["DataAlbum"].ToString();
+                    DateTime DataAlbum = Convert.ToDateTime(PegaDataAlbum).Date;
+
+                    string PegaDataAquisicao = LinhaRegistro["DataAquisicao"].ToString();
+                    DateTime DataAquisicao = Convert.ToDateTime(PegaDataAquisicao).Date;
+
                     // Define os itens da lista
                     ListViewItem item = new ListViewItem(LinhaRegistro["Musica"].ToString());
                     item.SubItems.Add(LinhaRegistro["Album"].ToString());
                     item.SubItems.Add(LinhaRegistro["Autor"].ToString());
                     item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
-                    string PegaDataAlbum = LinhaRegistro["DataAlbum"].ToString();
-                    DateTime DataAlbum = Convert.ToDateTime(PegaDataAlbum).Date;
-                    item.SubItems.Add(DataAlbum.ToString("dd/MM/yy"));
-                    string PegaDataAquisicao = LinhaRegistro["DataAlbum"].ToString();
-                    DateTime DataAquisicao = Convert.ToDateTime(PegaDataAquisicao).Date;
-                    item.SubItems.Add(DataAquisicao.ToString("dd/MM/yy"));
+                    item.SubItems.Add(DataAlbum.ToString("dd/MM/yyyy"));
+                    item.SubItems.Add(DataAquisicao.ToString("dd/MM/yyyy"));
                     item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
                     item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
                     item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
