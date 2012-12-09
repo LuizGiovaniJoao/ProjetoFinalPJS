@@ -145,7 +145,10 @@ namespace ProjetoFinalPJS
             objArrayList.Add(tbxAutor.Text);
             objArrayList.Add(tbxAlbum.Text);
             objArrayList.Add(tbxMusica.Text);
-            objArrayList.Add(dateTimePickerAlbum.Value);
+            if(dateTimePickerAlbum.Enabled == true)
+                objArrayList.Add(dateTimePickerAlbum.Value);
+            else
+                objArrayList.Add(null);
             objArrayList.Add(dateTimePickerCompra.Value);
             objArrayList.Add(tbxOrigemCompra.Text);
             objArrayList.Add(cbxMidia.Text);
@@ -192,7 +195,11 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxAutor.Text);
                 objArrayList.Add(tbxAlbum.Text);
                 objArrayList.Add(tbxMusica.Text);
-                objArrayList.Add(dateTimePickerAlbum.Value.ToShortDateString());
+                if(dateTimePickerAlbum.Enabled == true)
+                    objArrayList.Add(dateTimePickerAlbum.Value.ToShortDateString());
+                else
+                    objArrayList.Add(null);
+
                 objArrayList.Add(dateTimePickerCompra.Value.ToShortDateString());
                 objArrayList.Add(tbxOrigemCompra.Text);
                 objArrayList.Add(cbxMidia.Text);

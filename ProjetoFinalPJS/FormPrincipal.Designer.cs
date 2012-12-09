@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup41 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup42 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup43 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup44 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup45 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup51 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup52 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup53 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup54 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup55 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
             this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -112,22 +112,22 @@
             this.situacao});
             this.listViewMidia.FullRowSelect = true;
             this.listViewMidia.GridLines = true;
-            listViewGroup41.Header = "Vinil";
-            listViewGroup41.Name = "Vinil";
-            listViewGroup42.Header = "K7";
-            listViewGroup42.Name = "K7";
-            listViewGroup43.Header = "CD";
-            listViewGroup43.Name = "CD";
-            listViewGroup44.Header = "DVD";
-            listViewGroup44.Name = "DVD";
-            listViewGroup45.Header = "Digital";
-            listViewGroup45.Name = "Digital";
+            listViewGroup51.Header = "Vinil";
+            listViewGroup51.Name = "Vinil";
+            listViewGroup52.Header = "K7";
+            listViewGroup52.Name = "K7";
+            listViewGroup53.Header = "CD";
+            listViewGroup53.Name = "CD";
+            listViewGroup54.Header = "DVD";
+            listViewGroup54.Name = "DVD";
+            listViewGroup55.Header = "Digital";
+            listViewGroup55.Name = "Digital";
             this.listViewMidia.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup41,
-            listViewGroup42,
-            listViewGroup43,
-            listViewGroup44,
-            listViewGroup45});
+            listViewGroup51,
+            listViewGroup52,
+            listViewGroup53,
+            listViewGroup54,
+            listViewGroup55});
             this.listViewMidia.Location = new System.Drawing.Point(12, 245);
             this.listViewMidia.Name = "listViewMidia";
             this.listViewMidia.ShowGroups = false;
@@ -338,7 +338,7 @@
             this.dateTimeDataAlbum.Name = "dateTimeDataAlbum";
             this.dateTimeDataAlbum.Size = new System.Drawing.Size(97, 22);
             this.dateTimeDataAlbum.TabIndex = 18;
-            this.dateTimeDataAlbum.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
+            this.dateTimeDataAlbum.Value = new System.DateTime(2012, 12, 7, 0, 19, 0, 0);
             // 
             // comboBoxSituacao
             // 
@@ -363,7 +363,7 @@
             this.dateTimeDataCompra.Name = "dateTimeDataCompra";
             this.dateTimeDataCompra.Size = new System.Drawing.Size(97, 22);
             this.dateTimeDataCompra.TabIndex = 19;
-            this.dateTimeDataCompra.Value = new System.DateTime(2012, 12, 1, 0, 0, 0, 0);
+            this.dateTimeDataCompra.Value = new System.DateTime(2012, 12, 7, 0, 19, 0, 0);
             // 
             // tbxOrigemCompra
             // 
