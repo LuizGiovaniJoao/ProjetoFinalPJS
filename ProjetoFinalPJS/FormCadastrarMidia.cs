@@ -137,6 +137,7 @@ namespace ProjetoFinalPJS
         {
             if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
+
             ClassSQL InserirMidia = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
 
@@ -144,8 +145,8 @@ namespace ProjetoFinalPJS
             objArrayList.Add(tbxAutor.Text);
             objArrayList.Add(tbxAlbum.Text);
             objArrayList.Add(tbxMusica.Text);
-            objArrayList.Add(dateTimePickerAlbum.Value.ToShortDateString());
-            objArrayList.Add(dateTimePickerCompra.Value.ToShortDateString());
+            objArrayList.Add(dateTimePickerAlbum.Value);
+            objArrayList.Add(dateTimePickerCompra.Value);
             objArrayList.Add(tbxOrigemCompra.Text);
             objArrayList.Add(cbxMidia.Text);
             objArrayList.Add(tbxObsevacoes.Text);
@@ -178,11 +179,14 @@ namespace ProjetoFinalPJS
             }
         }
 
-        private void btGravar_Click(object sender, EventArgs e)
+        public void btGravar_Click(object sender, EventArgs e)
         {
+            FormPrincipal frm = new FormPrincipal();
+            
             if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
-                ClassSQL AtualizarAmigo = new ClassSQL();
+
+                ClassSQL InserirMidia = new ClassSQL();
                 ArrayList objArrayList = new ArrayList();
 
                 objArrayList.Add(tbxInterprete.Text);
@@ -196,7 +200,7 @@ namespace ProjetoFinalPJS
                 objArrayList.Add(tbxObsevacoes.Text);
                 objArrayList.Add(cbxNota.Text);
 
-                if (AtualizarAmigo.UpdateMidia(objArrayList))
+                if (InserirMidia.UpdateMidia(objArrayList))
                 {
                     MessageBox.Show("Legaaallll");
                     FormPrincipal teste = new FormPrincipal();

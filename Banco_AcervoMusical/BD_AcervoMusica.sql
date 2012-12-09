@@ -35,15 +35,20 @@ CREATE TABLE Amigo
 
 CREATE TABLE Emprestimo
 (
-	Id int identity primary key,
-	Apelido VARCHAR(50) FOREIGN KEY REFERENCES Amigo(Apelido),
+	Id int IDENTITY primary key,
+	Apelido varchar(50) not null foreign key references Amigo(Apelido),
 	Endereco_Amigo varchar(70) not null,
 	DataEmprestimo date not null,
+<<<<<<< HEAD
+=======
+	
+>>>>>>> origin/master
 );
 
 drop TABLE ItemEmprestimo
 (
 	IdItem int identity primary key,
+<<<<<<< HEAD
     IdEmprestimo INT FOREIGN KEY REFERENCES Midia(ID),
 	Album varchar(50),
 	Musica varchar(50),
@@ -59,9 +64,26 @@ CREATE TABLE Devolucao
 	IdEmprestimo int not null FOREIGN KEY REFERENCES Emprestimo(Id),
 	IdItem INT NOT NULL FOREIGN KEY REFERENCES ItemEmprestimo(IdItem),
 	DataDevolucao date
+=======
+	IdEmprestimo int not null foreign key references Midia(Id), 
+	Album varchar(50),
+	TipoMidia varchar(20),
+	DataDevolucao date
+	
+>>>>>>> origin/master
 );
+CREATE TABLE Devolucao
+( 
+	Id int identity primary key,
+	IdEmprestimo int not null foreign key references Emprestimo(Id),
+	IdItem int not null foreign key references ItemEmprestimo(IdItem),
+	DataDevolucao date
 
+<<<<<<< HEAD
 
+=======
+);
+>>>>>>> origin/master
 CREATE  TABLE estados (
   id_estado INT NOT NULL ,
   uf VARCHAR(2) NOT NULL ,

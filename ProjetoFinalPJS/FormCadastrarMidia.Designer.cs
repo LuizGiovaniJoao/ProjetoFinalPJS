@@ -55,8 +55,10 @@
             this.tbxMusica = new System.Windows.Forms.TextBox();
             this.radioAlbum = new System.Windows.Forms.RadioButton();
             this.radioMusica = new System.Windows.Forms.RadioButton();
+
             this.errorProviderMidia = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMidia)).BeginInit();
+
             this.SuspendLayout();
             // 
             // tbxInterprete
@@ -115,7 +117,7 @@
             // dateTimePickerAlbum
             // 
             this.dateTimePickerAlbum.Enabled = false;
-            this.dateTimePickerAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerAlbum.Location = new System.Drawing.Point(20, 217);
             this.dateTimePickerAlbum.Name = "dateTimePickerAlbum";
             this.dateTimePickerAlbum.Size = new System.Drawing.Size(121, 20);
@@ -125,7 +127,7 @@
             // dateTimePickerCompra
             // 
             this.dateTimePickerCompra.Enabled = false;
-            this.dateTimePickerCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerCompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerCompra.Location = new System.Drawing.Point(160, 217);
             this.dateTimePickerCompra.Name = "dateTimePickerCompra";
             this.dateTimePickerCompra.Size = new System.Drawing.Size(121, 20);
@@ -408,6 +410,7 @@
         private System.Windows.Forms.RadioButton radioAlbum;
         private System.Windows.Forms.RadioButton radioMusica;
         private System.Windows.Forms.ErrorProvider errorProviderMidia;
+
 
     }
 }

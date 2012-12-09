@@ -10,7 +10,7 @@ namespace ProjetoFinalPJS
 {
     class ClassSQL
     {
-        //private public string stringConexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
+        //public string stringConexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
         // String do João
         //public string stringConexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
         // String do Giovani
@@ -369,10 +369,10 @@ namespace ProjetoFinalPJS
                 return false;
             }
         }
-        public bool DeleteMidia(ArrayList Deleta)
+        public bool DeleteMidia(string interprete, string album, string musica)
         {
             string stringComando = string.Empty;
-            stringComando = "DELETE FROM Midia WHERE  Interprete = @INTERPRETE AND Album = @ALBUM OR  Interprete = @INTERPRETE AND Musica = @MUSICA";
+            stringComando = "DELETE FROM Midia WHERE  Interprete = @INTERPRETE AND Album = @ALBUM OR Musica = @MUSICA AND Interprete = @INTERPRETE";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -382,9 +382,9 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.AddWithValue("@INTERPRETE", Deleta[0]);
-                    ObjComando.Parameters.AddWithValue("@ALBUM", Deleta[1]);
-                    ObjComando.Parameters.AddWithValue("@MUSICA", Deleta[2]);
+                    ObjComando.Parameters.AddWithValue("@INTERPRETE", interprete);
+                    ObjComando.Parameters.AddWithValue("@ALBUM", album); 
+                    ObjComando.Parameters.AddWithValue("@MUSICA", musica);
                     ObjComando.ExecuteNonQuery();
 
                     return true;
@@ -479,5 +479,121 @@ namespace ProjetoFinalPJS
         }
 
         # endregion
+
+        #region Métodos para emprestar e devolver
+
+        public bool InsertEmprestar(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "INSERT INTO Emprestimo VALUES (@APELIDO, @ENDERECO_AMIGO, @DATAEMPRESTIMO)";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@APELIDO", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ENDERECO_AMIGO", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DATAEMPRESTIMO", Insert[2]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool InsertItemEmprestimo(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "INSERT INTO ItemEmprestimo VALUES (@IDEMPRESTIMO, @ALBUM, @MUSICA, @TIPOMIDIA, @DATADEVOLUCAO)";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@IDEMPRESTIMO", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ALBUM", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Insert[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TIPOMIDIA", Insert[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DATADEVOLUCAO", Insert[4]));
+                  
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool InsertDevolucao(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "INSERT INTO Devolucao VALUES (@IDEMPRESTIMO, @IDITEM, @DATADEVOLUCAO)";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@IDEMPRESTIMO", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@IDITEM", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DATADEVOLUCAO", Insert[2]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        #endregion
     }
 }
