@@ -3,9 +3,6 @@ CREATE DATABASE BD_AcervoMusical
 USE BD_AcervoMusical
 GO
 
-create database BD_AcervoMusical
-go
-
 
 CREATE TABLE Midia
 (	
@@ -21,7 +18,6 @@ CREATE TABLE Midia
 	Observacoes varchar (200),
 	Nota varchar(3),
 	Situacao varchar(20),
-
 );
 
 CREATE TABLE Amigo
@@ -42,32 +38,29 @@ CREATE TABLE Emprestimo
 	Id int identity primary key,
 	Apelido VARCHAR(50) FOREIGN KEY REFERENCES Amigo(Apelido),
 	Endereco_Amigo varchar(70) not null,
-<<<<<<< HEAD
-	DataEmprestimo datetime not null,
-=======
 	DataEmprestimo date not null,
-	
->>>>>>> origin/master
 );
 
-CREATE TABLE ItemEmprestimo
+drop TABLE ItemEmprestimo
 (
-<<<<<<< HEAD
 	IdItem int identity primary key,
     IdEmprestimo INT FOREIGN KEY REFERENCES Midia(ID),
 	Album varchar(50),
-	TipoMidia varchar(20),
-	DataDevolucao datetime
-=======
-	Id int not null primary key,
-    FOREIGN KEY (Id) REFERENCES Emprestimo(Id),
-	FOREIGN KEY (Id) REFERENCES Midia(Id),
-	Album varchar(50),
-	TipoMidia varchar(20),
-	DataDevolucao date
-	
->>>>>>> origin/master
+	Musica varchar(50),
+	TipoMidia varchar(20)
 );
+
+--ALTER TABLE table_name
+--DROP COLUMN column_name
+
+CREATE TABLE Devolucao
+(
+	ID INT IDENTITY PRIMARY KEY,
+	IdEmprestimo int not null FOREIGN KEY REFERENCES Emprestimo(Id),
+	IdItem INT NOT NULL FOREIGN KEY REFERENCES ItemEmprestimo(IdItem),
+	DataDevolucao date
+);
+
 
 CREATE  TABLE estados (
   id_estado INT NOT NULL ,

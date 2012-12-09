@@ -293,7 +293,6 @@ namespace ProjetoFinalPJS
 
             if (this.conectar())
             {
-
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
@@ -406,6 +405,78 @@ namespace ProjetoFinalPJS
 
         }
 
+        public bool ItemEmprestar(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "INSERT INTO ItemEmprestimo VALUES (@IdEmprestimo, @ALBUM, @MUSICA, @TIPOMIDIA)";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@IdEmprestimo", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ALBUM", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Insert[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TIPOMIDIA", Insert[3]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool Emprestimo(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "INSERT INTO Emprestimo VALUES (@Apelido, @Endereco, @DataEmprestimo)";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@Apelido", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Endereco", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DataEmprestimo", Insert[2]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
         # endregion
     }
