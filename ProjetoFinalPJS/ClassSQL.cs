@@ -481,47 +481,41 @@ namespace ProjetoFinalPJS
 
         }
 
-        //public bool AtualizaDisponibilidade(ArrayList Update)
-        //{
-        //    string stringComando = string.Empty;
-        //    stringComando = "UPDATE Midia SET Situacao = 'Emprestado' WHERE Interprete = @INTERPRETE AND Album = @ALBUM OR Interprete = @INTERPRETE AND Musica = @MUSICA ";
+        public bool AtualizaDisponibilidade(ArrayList Update)
+        {
+            string stringComando = string.Empty;
+            stringComando = "UPDATE Midia SET Situacao = @Situacao WHERE Interprete = @INTERPRETE AND Album = @ALBUM AND MUSICA = @MUSICA";
 
-        //    SqlCommand ObjComando = new SqlCommand();
+            SqlCommand ObjComando = new SqlCommand();
 
-        //    if (this.conectar())
-        //    {
-        //        try
-        //        {
-        //            ObjComando = new SqlCommand(stringComando, ObjConexao);
-        //            ObjComando.Parameters.Add(new SqlParameter("@INTERPRETE", Update[0]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@AUTOR", Update[1]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@ALBUM", Update[2]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Update[3]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@DATAALBUM", Update[4]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@DATAAQUISICAO", Update[5]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@ORIGEMCOMPRA", Update[6]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@TIPO", Update[7]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@OBSERVACOES", Update[8]));
-        //            ObjComando.Parameters.Add(new SqlParameter("@NOTA", Update[9]));
+            if (this.conectar())
+            {
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@Situacao", Update[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Interprete", Update[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@ALBum", Update[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Update[3]));
 
-        //            ObjComando.ExecuteNonQuery();
+                    ObjComando.ExecuteNonQuery();
 
-        //            return true;
-        //        }
-        //        catch (SqlException erro)
-        //        {
-        //            throw erro;
-        //        }
-        //        finally
-        //        {
-        //            this.desconectar();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         # endregion
 

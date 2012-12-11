@@ -45,8 +45,8 @@ namespace ProjetoFinalPJS
         private void radioAlbum_CheckedChanged(object sender, EventArgs e)
         {
             listar("SELECT Musica FROM MIDIA WHERE NOT Album = ''", cbxMusica, "Musica");
-            listar("SELECT Interprete FROM MIDIA WHERE NOT Album = '' ORDER BY Interprete", cbxInterprete, "interprete");
-            listar("SELECT Album FROM MIDIA WHERE Interprete = '"+cbxInterprete.Text+"'", cbxAlbum, "Album");
+            listar("SELECT Interprete FROM MIDIA WHERE NOT Album = '' AND SITUACAO = 'Disponível' ORDER BY Interprete", cbxInterprete, "interprete");
+            listar("SELECT Album FROM MIDIA WHERE Interprete = '" + cbxInterprete.Text + "'AND (Situacao = 'Disponível')", cbxAlbum, "Album");
             if (radioAlbum.Checked)
             {
                 cbxInterprete.Enabled = true;
@@ -103,7 +103,7 @@ namespace ProjetoFinalPJS
             }
             else if (radioAlbum.Checked)
             {
-                listar("SELECT Album FROM Midia WHERE INTERPRETE = '" + cbxInterprete.Text + "'", cbxAlbum, "Album");
+                listar("SELECT Album FROM MIDIA WHERE Interprete = '" + cbxInterprete.Text + "'AND (Situacao = 'Disponível')", cbxAlbum, "Album");
                 listar("SELECT Tipo FROM Midia WHERE Album = '" + cbxAlbum.Text + "'", cbxMidia, "Tipo");
             }
         }
@@ -213,6 +213,18 @@ namespace ProjetoFinalPJS
                     if (Emprestar.ItemEmprestar(objArrayList))
                     {
                         MessageBox.Show("Legaaallll Item");
+                        ///////////////////////////////////////////////////////////////////////
+                        ArrayList objArrayDisponibilidade = new ArrayList();
+                        objArrayDisponibilidade.Add("Emprestado");
+                        objArrayDisponibilidade.Add(dadosListView[0]);  //Intérprete
+                        objArrayDisponibilidade.Add(dadosListView[1]);  //Álbum
+                        objArrayDisponibilidade.Add(dadosListView[2]);  //Música
+
+                        if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
+                        {
+                            MessageBox.Show("Update", "");
+                        }
+                        ////////////////////////////////////////////////////////////////////////
                         listViewItem.Remove();
                     }
                     else
