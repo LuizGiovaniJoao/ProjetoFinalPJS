@@ -410,7 +410,7 @@ namespace ProjetoFinalPJS
         public bool ItemEmprestar(ArrayList Insert)
         {
             string stringComando = string.Empty;
-            stringComando = "INSERT INTO ItemEmprestimo VALUES ( @Interprete, @IdItem, @IdEmprestimo, @Album, @Musica, @TipoMidia)";
+            stringComando = "INSERT INTO ItemEmprestimo VALUES (@IdEmprestimo, @Interprete, @Album, @Musica, @TipoMidia)";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -443,7 +443,6 @@ namespace ProjetoFinalPJS
             {
                 return false;
             }
-
         }
 
         public bool Emprestimo(ArrayList Insert)

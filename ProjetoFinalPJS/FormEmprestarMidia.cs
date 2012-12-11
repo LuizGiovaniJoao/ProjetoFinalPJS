@@ -126,15 +126,9 @@ namespace ProjetoFinalPJS
 
                 if (verifica == false)
                 {
-                    int I = Convert.ToInt32(tbxIdItem.Text);
-                    I = I + 1;
-                    string pega = Convert.ToString(I);
-                    tbxIdItem.Text = pega;
-            
                     Lista = new ListViewItem(cbxInterprete.Text);
 
                     ListViewEmprestimos.Items.Add(Lista);
-                    Lista.SubItems.Add(tbxIdItem.Text);
                     Lista.SubItems.Add(cbxAlbum.Text);
                     Lista.SubItems.Add(cbxMusica.Text);
                     Lista.SubItems.Add(cbxMidia.Text);
@@ -198,15 +192,13 @@ namespace ProjetoFinalPJS
             }
 
             //Item Empréstimo
-            foreach (ListViewItem listViewItem in ListViewEmprestimos.SelectedItems)
-            {
-               
+            foreach (ListViewItem listViewItem in ListViewEmprestimos.Items)
+            {   
                 dadosListView[0] = listViewItem.Text;//.................Intérprete
-                dadosListView[1] = listViewItem.SubItems[1].Text;
-                dadosListView[2] = listViewItem.SubItems[2].Text;//....Álbum
-                dadosListView[3] = listViewItem.SubItems[3].Text;//....Música
-                dadosListView[4] = listViewItem.SubItems[4].Text;//....Mídia
-                dadosListView[5] = listViewItem.SubItems[5].Text;//....Data Empréstimo
+                dadosListView[1] = listViewItem.SubItems[1].Text;//....Álbum
+                dadosListView[2] = listViewItem.SubItems[2].Text;//....Música
+                dadosListView[3] = listViewItem.SubItems[3].Text;//....Mídia
+                dadosListView[4] = listViewItem.SubItems[4].Text;//....Data Empréstimo
 
                 objArrayList.Add(dadosListView[0]);//.................Intérprete
                 objArrayList.Add(dadosListView[1]);//.................IdItem
@@ -217,21 +209,11 @@ namespace ProjetoFinalPJS
 
                 if (cbxApelido.Text != "" && cbxEndereco.Text != "")
                 {
+                    listViewItem.Selected = true;
                     if (Emprestar.ItemEmprestar(objArrayList))
                     {
                         MessageBox.Show("Legaaallll Item");
-                        //listaItem();
-                        //ArrayList objArrayDisponibilidade = new ArrayList();
-                        //objArrayDisponibilidade.Add("Emprestado");
-                        //objArrayDisponibilidade.Add(dadosListView[0]);  //Intérprete
-                        //objArrayDisponibilidade.Add(dadosListView[1]);  //Álbum
-                        //objArrayDisponibilidade.Add(dadosListView[2]);  //Música
-                        //objArrayDisponibilidade.Add(dadosListView[4]);  //Data Empréstimo
-
-                        //if (Emprestar.AtualizaDisponibilidade())
-                        //{
-
-                        //}
+                        listViewItem.Remove();
                     }
                     else
                     {
@@ -259,6 +241,11 @@ namespace ProjetoFinalPJS
                 {
                     listViewItem.Remove();
                 }
+            }
+
+            if (ListViewEmprestimos.Items.Count == 0)
+            {
+                btEmprestar.Enabled = false;
             }
         }
     }
