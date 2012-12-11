@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
             this.lblApelido = new System.Windows.Forms.Label();
             this.lbInterprete = new System.Windows.Forms.Label();
             this.cbxInterprete = new System.Windows.Forms.ComboBox();
@@ -58,6 +58,9 @@
             this.btEmprestar = new System.Windows.Forms.Button();
             this.errorProviderEmprestimo = new System.Windows.Forms.ErrorProvider(this.components);
             this.btRemover = new System.Windows.Forms.Button();
+            this.tbxIdEmprestimo = new System.Windows.Forms.TextBox();
+            this.tbxIdItem = new System.Windows.Forms.TextBox();
+            this.LVTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmprestimo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,18 +237,19 @@
             // 
             this.ListViewEmprestimos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.LVInterprete,
+            this.LVTotal,
             this.LVAlbum,
             this.LVMusica,
             this.LVMidia,
             this.LVDTEmpres});
             this.ListViewEmprestimos.FullRowSelect = true;
-            listViewGroup3.Header = "Musica";
-            listViewGroup3.Name = "Músicas";
-            listViewGroup4.Header = "Album";
-            listViewGroup4.Name = "Álbum";
+            listViewGroup1.Header = "Musica";
+            listViewGroup1.Name = "Músicas";
+            listViewGroup2.Header = "Album";
+            listViewGroup2.Name = "Álbum";
             this.ListViewEmprestimos.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup1,
+            listViewGroup2});
             this.ListViewEmprestimos.Location = new System.Drawing.Point(12, 184);
             this.ListViewEmprestimos.Name = "ListViewEmprestimos";
             this.ListViewEmprestimos.Size = new System.Drawing.Size(468, 173);
@@ -256,7 +260,7 @@
             // LVInterprete
             // 
             this.LVInterprete.Text = "Intéprete";
-            this.LVInterprete.Width = 108;
+            this.LVInterprete.Width = 84;
             // 
             // LVAlbum
             // 
@@ -276,7 +280,7 @@
             // LVDTEmpres
             // 
             this.LVDTEmpres.Text = "Data Empréstimo";
-            this.LVDTEmpres.Width = 115;
+            this.LVDTEmpres.Width = 89;
             // 
             // lbApelido
             // 
@@ -305,7 +309,7 @@
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(405, 362);
+            this.btRemover.Location = new System.Drawing.Point(405, 363);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(75, 23);
             this.btRemover.TabIndex = 56;
@@ -313,11 +317,34 @@
             this.btRemover.UseVisualStyleBackColor = true;
             this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
             // 
+            // tbxIdEmprestimo
+            // 
+            this.tbxIdEmprestimo.Location = new System.Drawing.Point(12, 363);
+            this.tbxIdEmprestimo.Name = "tbxIdEmprestimo";
+            this.tbxIdEmprestimo.Size = new System.Drawing.Size(30, 20);
+            this.tbxIdEmprestimo.TabIndex = 57;
+            this.tbxIdEmprestimo.Text = "1";
+            // 
+            // tbxIdItem
+            // 
+            this.tbxIdItem.Location = new System.Drawing.Point(48, 363);
+            this.tbxIdItem.Name = "tbxIdItem";
+            this.tbxIdItem.Size = new System.Drawing.Size(30, 20);
+            this.tbxIdItem.TabIndex = 58;
+            this.tbxIdItem.Text = "0";
+            // 
+            // LVTotal
+            // 
+            this.LVTotal.Text = "Total";
+            this.LVTotal.Width = 40;
+            // 
             // FormEmprestarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 397);
+            this.Controls.Add(this.tbxIdItem);
+            this.Controls.Add(this.tbxIdEmprestimo);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btEmprestar);
             this.Controls.Add(this.lbApelido);
@@ -378,5 +405,8 @@
         private System.Windows.Forms.Button btEmprestar;
         private System.Windows.Forms.ErrorProvider errorProviderEmprestimo;
         private System.Windows.Forms.Button btRemover;
+        private System.Windows.Forms.TextBox tbxIdEmprestimo;
+        private System.Windows.Forms.TextBox tbxIdItem;
+        private System.Windows.Forms.ColumnHeader LVTotal;
     }
 }

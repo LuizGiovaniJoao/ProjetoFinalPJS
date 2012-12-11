@@ -25,6 +25,7 @@ namespace ProjetoFinalPJS
         {
             listar("SELECT Apelido FROM AMIGO order by Apelido", cbxApelido, "Apelido");
             listar("SELECT Endereco FROM Amigo WHERE APELIDO = '" + cbxApelido.Text + "'", cbxEndereco, "Endereco");
+            listaIdEmprestimo();
         }
 
         private void listar(string Codigo, ComboBox caixaTexto, string Campo)
@@ -109,6 +110,8 @@ namespace ProjetoFinalPJS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listaIdEmprestimo();
+
             if (cbxApelido.Text != "" && cbxEndereco.Text != "" && cbxInterprete.Text != "" && (cbxAlbum.Text != "" || cbxMusica.Text != "") && cbxMidia.Text != "")
             {
                 bool verifica = false;
@@ -123,9 +126,15 @@ namespace ProjetoFinalPJS
 
                 if (verifica == false)
                 {
+                    int I = Convert.ToInt32(tbxIdItem.Text);
+                    I = I + 1;
+                    string pega = Convert.ToString(I);
+                    tbxIdItem.Text = pega;
+            
                     Lista = new ListViewItem(cbxInterprete.Text);
 
                     ListViewEmprestimos.Items.Add(Lista);
+                    Lista.SubItems.Add(tbxIdItem.Text);
                     Lista.SubItems.Add(cbxAlbum.Text);
                     Lista.SubItems.Add(cbxMusica.Text);
                     Lista.SubItems.Add(cbxMidia.Text);
@@ -149,48 +158,86 @@ namespace ProjetoFinalPJS
             }
         }
 
+        public void listaIdEmprestimo()
+        {
+            ClassSQL conexao = new ClassSQL();
+            conexao.conectar();
+            SqlConnection conn = new SqlConnection(conexao.stringConexao);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT MAX(IdEmprestimo + 1) FROM EMPRESTIMO", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            tbxIdEmprestimo.Text = "";
+            while (dr.Read())
+            {
+                tbxIdEmprestimo.Text = dr[0].ToString();
+            }
+
+            if (tbxIdEmprestimo.Text == "")
+            {
+                tbxIdEmprestimo.Text = "1";
+            }
+        }
+
         private void btEmprestar_Click(object sender, EventArgs e)
         {
-            string[] dadosLV = new string[13];
-            
+            string[] dadosListView = new string[6];
             ClassSQL Emprestar = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
             ArrayList objArrayListEmprestimo = new ArrayList();
             
-            foreach (ListViewItem listViewItem in ListViewEmprestimos.Items)
-            {
-                int I = 1;
-                dadosLV[0] = listViewItem.Text;                 //Intérprete
-                dadosLV[1] = listViewItem.SubItems[1].Text;     //Álbum
-                dadosLV[2] = listViewItem.SubItems[2].Text;     //Música
-                dadosLV[3] = listViewItem.SubItems[3].Text;     //Mídia
-                dadosLV[4] = listViewItem.SubItems[4].Text;     //Data Empréstimo     
+            //Empréstimo
+            objArrayListEmprestimo.Add(cbxApelido.Text); //.............Apelido
+            objArrayListEmprestimo.Add(cbxEndereco.Text);//.............Endereço
+            objArrayListEmprestimo.Add(DtEmprestimo.Text);//............Data de empréstimo
 
-                objArrayList.Add(I);
-                objArrayList.Add(dadosLV[1]);
-                objArrayList.Add(dadosLV[2]);
-                objArrayList.Add(dadosLV[3]);
+            if (Emprestar.Emprestimo(objArrayListEmprestimo))
+            {
+                MessageBox.Show("Legaaallll Empréstimo");
+            }
+
+            //Item Empréstimo
+            foreach (ListViewItem listViewItem in ListViewEmprestimos.SelectedItems)
+            {
+               
+                dadosListView[0] = listViewItem.Text;//.................Intérprete
+                dadosListView[1] = listViewItem.SubItems[1].Text;
+                dadosListView[2] = listViewItem.SubItems[2].Text;//....Álbum
+                dadosListView[3] = listViewItem.SubItems[3].Text;//....Música
+                dadosListView[4] = listViewItem.SubItems[4].Text;//....Mídia
+                dadosListView[5] = listViewItem.SubItems[5].Text;//....Data Empréstimo
+
+                objArrayList.Add(dadosListView[0]);//.................Intérprete
+                objArrayList.Add(dadosListView[1]);//.................IdItem
+                objArrayList.Add(tbxIdEmprestimo.Text);//.............Id do empréstimo
+                objArrayList.Add(dadosListView[2]);//..................Álbum
+                objArrayList.Add(dadosListView[3]);//..................Música
+                objArrayList.Add(dadosListView[4]);//..................Mídia
 
                 if (cbxApelido.Text != "" && cbxEndereco.Text != "")
                 {
                     if (Emprestar.ItemEmprestar(objArrayList))
                     {
                         MessageBox.Show("Legaaallll Item");
-                        I++;
+                        //listaItem();
+                        //ArrayList objArrayDisponibilidade = new ArrayList();
+                        //objArrayDisponibilidade.Add("Emprestado");
+                        //objArrayDisponibilidade.Add(dadosListView[0]);  //Intérprete
+                        //objArrayDisponibilidade.Add(dadosListView[1]);  //Álbum
+                        //objArrayDisponibilidade.Add(dadosListView[2]);  //Música
+                        //objArrayDisponibilidade.Add(dadosListView[4]);  //Data Empréstimo
+
+                        //if (Emprestar.AtualizaDisponibilidade())
+                        //{
+
+                        //}
                     }
                     else
                     {
                         MessageBox.Show("Não deu");
                     }
                 }
-            }
-
-            objArrayListEmprestimo.Add(cbxApelido.Text);
-            objArrayListEmprestimo.Add(cbxEndereco.Text);
-            objArrayListEmprestimo.Add(dadosLV[4]);
-            if (Emprestar.Emprestimo(objArrayListEmprestimo))
-            {
-                MessageBox.Show("Legaaallll Empréstimo");
             }
         }
 

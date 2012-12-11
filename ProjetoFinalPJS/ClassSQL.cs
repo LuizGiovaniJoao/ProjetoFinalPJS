@@ -383,7 +383,7 @@ namespace ProjetoFinalPJS
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
                     ObjComando.Parameters.AddWithValue("@INTERPRETE", interprete);
-                    ObjComando.Parameters.AddWithValue("@ALBUM", album); 
+                    ObjComando.Parameters.AddWithValue("@ALBUM", album);
                     ObjComando.Parameters.AddWithValue("@MUSICA", musica);
                     ObjComando.ExecuteNonQuery();
 
@@ -404,11 +404,13 @@ namespace ProjetoFinalPJS
             }
 
         }
+        # endregion
 
+        # region Métodos manipulação de Emprestimo
         public bool ItemEmprestar(ArrayList Insert)
         {
             string stringComando = string.Empty;
-            stringComando = "INSERT INTO ItemEmprestimo VALUES (@IdEmprestimo, @ALBUM, @MUSICA, @TIPOMIDIA)";
+            stringComando = "INSERT INTO ItemEmprestimo VALUES ( @Interprete, @IdItem, @IdEmprestimo, @Album, @Musica, @TipoMidia)";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -417,10 +419,12 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.Add(new SqlParameter("@IdEmprestimo", Insert[0]));
-                    ObjComando.Parameters.Add(new SqlParameter("@ALBUM", Insert[1]));
-                    ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Insert[2]));
-                    ObjComando.Parameters.Add(new SqlParameter("@TIPOMIDIA", Insert[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Interprete", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@IdItem", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@IdEmprestimo", Insert[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Album", Insert[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Musica", Insert[4]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TipoMidia", Insert[5]));
 
                     ObjComando.ExecuteNonQuery();
 
@@ -445,7 +449,7 @@ namespace ProjetoFinalPJS
         public bool Emprestimo(ArrayList Insert)
         {
             string stringComando = string.Empty;
-            stringComando = "INSERT INTO Emprestimo VALUES (@Apelido, @Endereco, @DataEmprestimo)";
+            stringComando = "INSERT INTO Emprestimo VALUES (@Apelido, @EnderecoAmigo, @DataEmprestimo)";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -455,7 +459,7 @@ namespace ProjetoFinalPJS
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
                     ObjComando.Parameters.Add(new SqlParameter("@Apelido", Insert[0]));
-                    ObjComando.Parameters.Add(new SqlParameter("@Endereco", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@EnderecoAmigo", Insert[1]));
                     ObjComando.Parameters.Add(new SqlParameter("@DataEmprestimo", Insert[2]));
 
                     ObjComando.ExecuteNonQuery();
@@ -477,6 +481,48 @@ namespace ProjetoFinalPJS
             }
 
         }
+
+        //public bool AtualizaDisponibilidade(ArrayList Update)
+        //{
+        //    string stringComando = string.Empty;
+        //    stringComando = "UPDATE Midia SET Situacao = 'Emprestado' WHERE Interprete = @INTERPRETE AND Album = @ALBUM OR Interprete = @INTERPRETE AND Musica = @MUSICA ";
+
+        //    SqlCommand ObjComando = new SqlCommand();
+
+        //    if (this.conectar())
+        //    {
+        //        try
+        //        {
+        //            ObjComando = new SqlCommand(stringComando, ObjConexao);
+        //            ObjComando.Parameters.Add(new SqlParameter("@INTERPRETE", Update[0]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@AUTOR", Update[1]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@ALBUM", Update[2]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Update[3]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@DATAALBUM", Update[4]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@DATAAQUISICAO", Update[5]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@ORIGEMCOMPRA", Update[6]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@TIPO", Update[7]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@OBSERVACOES", Update[8]));
+        //            ObjComando.Parameters.Add(new SqlParameter("@NOTA", Update[9]));
+
+        //            ObjComando.ExecuteNonQuery();
+
+        //            return true;
+        //        }
+        //        catch (SqlException erro)
+        //        {
+        //            throw erro;
+        //        }
+        //        finally
+        //        {
+        //            this.desconectar();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
         # endregion
 
@@ -537,7 +583,7 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Insert[2]));
                     ObjComando.Parameters.Add(new SqlParameter("@TIPOMIDIA", Insert[3]));
                     ObjComando.Parameters.Add(new SqlParameter("@DATADEVOLUCAO", Insert[4]));
-                  
+
                     ObjComando.ExecuteNonQuery();
 
                     return true;
