@@ -138,31 +138,15 @@ namespace ProjetoFinalPJS
             if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
 
-            ClassSQL InserirMidia = new ClassSQL();
-            ArrayList objArrayList = new ArrayList();
-
-            objArrayList.Add(tbxInterprete.Text);
-            objArrayList.Add(tbxAutor.Text);
-            objArrayList.Add(tbxAlbum.Text);
-            objArrayList.Add(tbxMusica.Text);
-            objArrayList.Add(dateTimePickerAlbum.Value);
-            objArrayList.Add(dateTimePickerCompra.Value);
-            objArrayList.Add(tbxOrigemCompra.Text);
-            objArrayList.Add(cbxMidia.Text);
-            objArrayList.Add(tbxObsevacoes.Text);
-            objArrayList.Add(cbxNota.Text);
-            objArrayList.Add("Disponível");
-
-            if (InserirMidia.InsertMidia(objArrayList))
-            {
-                MessageBox.Show("Legaaallll");
-                FormularioPrincipal.AtualizaAutoCompletar();
-            }
-            else
-            {
-                MessageBox.Show("Não deu");
-            }
-
+                ClassSQL InserirMidia = new ClassSQL();
+                
+                if (InserirMidia.InsertMidia(Salvar_Gravar_Midia()))
+                {
+                    MessageBox.Show("Legaaallll");
+                    FormularioPrincipal.AtualizaAutoCompletar();
+                }
+                else
+                    MessageBox.Show("Não deu");
             }
             else
             {
@@ -185,22 +169,9 @@ namespace ProjetoFinalPJS
             
             if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
-
                 ClassSQL InserirMidia = new ClassSQL();
-                ArrayList objArrayList = new ArrayList();
 
-                objArrayList.Add(tbxInterprete.Text);
-                objArrayList.Add(tbxAutor.Text);
-                objArrayList.Add(tbxAlbum.Text);
-                objArrayList.Add(tbxMusica.Text);
-                objArrayList.Add(dateTimePickerAlbum.Value.ToShortDateString());
-                objArrayList.Add(dateTimePickerCompra.Value.ToShortDateString());
-                objArrayList.Add(tbxOrigemCompra.Text);
-                objArrayList.Add(cbxMidia.Text);
-                objArrayList.Add(tbxObsevacoes.Text);
-                objArrayList.Add(cbxNota.Text);
-
-                if (InserirMidia.UpdateMidia(objArrayList))
+                if (InserirMidia.UpdateMidia(Salvar_Gravar_Midia()))
                 {
                     MessageBox.Show("Legaaallll");
                     FormPrincipal teste = new FormPrincipal();
@@ -214,6 +185,24 @@ namespace ProjetoFinalPJS
 
         }
 
+        public ArrayList Salvar_Gravar_Midia()
+        {
+            ArrayList objArrayList = new ArrayList();
+
+            objArrayList.Add(tbxInterprete.Text);//.................... Interprete
+            objArrayList.Add(tbxAutor.Text);//......................... Autor
+            objArrayList.Add(tbxAlbum.Text);//......................... Album
+            objArrayList.Add(tbxMusica.Text);//........................ Música
+            objArrayList.Add(dateTimePickerAlbum.Value.ToString());//.. Data do Album
+            objArrayList.Add(dateTimePickerCompra.Value.ToString());//. Data da Compra
+            objArrayList.Add(tbxOrigemCompra.Text);//.................. Origem da Compra
+            objArrayList.Add(cbxMidia.Text);//......................... Tipo de Mídia
+            objArrayList.Add(tbxObsevacoes.Text);//.................... Observações
+            objArrayList.Add(cbxNota.Text);//.......................... Nota
+            objArrayList.Add("Disponível");//.......................... Situação
+
+            return(objArrayList);
+       }
     }
 
 }
