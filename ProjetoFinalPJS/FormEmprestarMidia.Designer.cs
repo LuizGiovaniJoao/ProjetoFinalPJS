@@ -58,6 +58,7 @@
             this.btEmprestar = new System.Windows.Forms.Button();
             this.errorProviderEmprestimo = new System.Windows.Forms.ErrorProvider(this.components);
             this.btRemover = new System.Windows.Forms.Button();
+            this.tbxIdEmprestimo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmprestimo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +96,7 @@
             this.cbxApelido.Location = new System.Drawing.Point(12, 25);
             this.cbxApelido.Name = "cbxApelido";
             this.cbxApelido.Size = new System.Drawing.Size(225, 21);
-            this.cbxApelido.TabIndex = 4;
+            this.cbxApelido.TabIndex = 1;
             this.cbxApelido.SelectedIndexChanged += new System.EventHandler(this.cbxApelido_SelectedIndexChanged);
             // 
             // radioMusica
@@ -104,7 +105,7 @@
             this.radioMusica.Location = new System.Drawing.Point(72, 52);
             this.radioMusica.Name = "radioMusica";
             this.radioMusica.Size = new System.Drawing.Size(59, 17);
-            this.radioMusica.TabIndex = 44;
+            this.radioMusica.TabIndex = 4;
             this.radioMusica.TabStop = true;
             this.radioMusica.Text = "Música";
             this.radioMusica.UseVisualStyleBackColor = true;
@@ -116,7 +117,7 @@
             this.radioAlbum.Location = new System.Drawing.Point(12, 52);
             this.radioAlbum.Name = "radioAlbum";
             this.radioAlbum.Size = new System.Drawing.Size(54, 17);
-            this.radioAlbum.TabIndex = 43;
+            this.radioAlbum.TabIndex = 3;
             this.radioAlbum.TabStop = true;
             this.radioAlbum.Text = "Álbum";
             this.radioAlbum.UseVisualStyleBackColor = true;
@@ -157,7 +158,7 @@
             this.cbxMidia.Location = new System.Drawing.Point(243, 127);
             this.cbxMidia.Name = "cbxMidia";
             this.cbxMidia.Size = new System.Drawing.Size(140, 21);
-            this.cbxMidia.TabIndex = 31;
+            this.cbxMidia.TabIndex = 8;
             // 
             // cbxAlbum
             // 
@@ -169,7 +170,7 @@
             this.cbxAlbum.Location = new System.Drawing.Point(243, 88);
             this.cbxAlbum.Name = "cbxAlbum";
             this.cbxAlbum.Size = new System.Drawing.Size(237, 21);
-            this.cbxAlbum.TabIndex = 45;
+            this.cbxAlbum.TabIndex = 6;
             this.cbxAlbum.SelectedIndexChanged += new System.EventHandler(this.cbxAlbum_SelectedIndexChanged);
             // 
             // cbxMusica
@@ -180,7 +181,7 @@
             this.cbxMusica.Location = new System.Drawing.Point(12, 128);
             this.cbxMusica.Name = "cbxMusica";
             this.cbxMusica.Size = new System.Drawing.Size(225, 21);
-            this.cbxMusica.TabIndex = 46;
+            this.cbxMusica.TabIndex = 7;
             this.cbxMusica.SelectedIndexChanged += new System.EventHandler(this.cbxMusica_SelectedIndexChanged);
             // 
             // lbDataEmprestimo
@@ -217,15 +218,15 @@
             this.cbxEndereco.Location = new System.Drawing.Point(243, 25);
             this.cbxEndereco.Name = "cbxEndereco";
             this.cbxEndereco.Size = new System.Drawing.Size(237, 21);
-            this.cbxEndereco.TabIndex = 50;
+            this.cbxEndereco.TabIndex = 2;
             // 
             // btAdicionar
             // 
             this.btAdicionar.Enabled = false;
-            this.btAdicionar.Location = new System.Drawing.Point(292, 155);
+            this.btAdicionar.Location = new System.Drawing.Point(405, 155);
             this.btAdicionar.Name = "btAdicionar";
-            this.btAdicionar.Size = new System.Drawing.Size(91, 23);
-            this.btAdicionar.TabIndex = 51;
+            this.btAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btAdicionar.TabIndex = 10;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = true;
             this.btAdicionar.Click += new System.EventHandler(this.button1_Click);
@@ -256,7 +257,7 @@
             // LVInterprete
             // 
             this.LVInterprete.Text = "Intéprete";
-            this.LVInterprete.Width = 108;
+            this.LVInterprete.Width = 84;
             // 
             // LVAlbum
             // 
@@ -276,7 +277,7 @@
             // LVDTEmpres
             // 
             this.LVDTEmpres.Text = "Data Empréstimo";
-            this.LVDTEmpres.Width = 115;
+            this.LVDTEmpres.Width = 89;
             // 
             // lbApelido
             // 
@@ -290,10 +291,10 @@
             // btEmprestar
             // 
             this.btEmprestar.Enabled = false;
-            this.btEmprestar.Location = new System.Drawing.Point(389, 155);
+            this.btEmprestar.Location = new System.Drawing.Point(405, 363);
             this.btEmprestar.Name = "btEmprestar";
-            this.btEmprestar.Size = new System.Drawing.Size(91, 23);
-            this.btEmprestar.TabIndex = 55;
+            this.btEmprestar.Size = new System.Drawing.Size(75, 23);
+            this.btEmprestar.TabIndex = 12;
             this.btEmprestar.Text = "Emprestar";
             this.btEmprestar.UseVisualStyleBackColor = true;
             this.btEmprestar.Click += new System.EventHandler(this.btEmprestar_Click);
@@ -305,19 +306,29 @@
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(405, 362);
+            this.btRemover.Location = new System.Drawing.Point(324, 363);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(75, 23);
-            this.btRemover.TabIndex = 56;
+            this.btRemover.TabIndex = 11;
             this.btRemover.Text = "Remover";
             this.btRemover.UseVisualStyleBackColor = true;
             this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
+            // 
+            // tbxIdEmprestimo
+            // 
+            this.tbxIdEmprestimo.Location = new System.Drawing.Point(12, 366);
+            this.tbxIdEmprestimo.Name = "tbxIdEmprestimo";
+            this.tbxIdEmprestimo.Size = new System.Drawing.Size(0, 20);
+            this.tbxIdEmprestimo.TabIndex = 57;
+            this.tbxIdEmprestimo.Text = "1";
+            this.tbxIdEmprestimo.Visible = false;
             // 
             // FormEmprestarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 397);
+            this.Controls.Add(this.tbxIdEmprestimo);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btEmprestar);
             this.Controls.Add(this.lbApelido);
@@ -378,5 +389,6 @@
         private System.Windows.Forms.Button btEmprestar;
         private System.Windows.Forms.ErrorProvider errorProviderEmprestimo;
         private System.Windows.Forms.Button btRemover;
+        private System.Windows.Forms.TextBox tbxIdEmprestimo;
     }
 }

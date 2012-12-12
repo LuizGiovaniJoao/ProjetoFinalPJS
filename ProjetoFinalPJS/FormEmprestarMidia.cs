@@ -25,6 +25,7 @@ namespace ProjetoFinalPJS
         {
             listar("SELECT Apelido FROM AMIGO order by Apelido", cbxApelido, "Apelido");
             listar("SELECT Endereco FROM Amigo WHERE APELIDO = '" + cbxApelido.Text + "'", cbxEndereco, "Endereco");
+            listaIdEmprestimo();
         }
 
         private void listar(string Codigo, ComboBox caixaTexto, string Campo)
@@ -44,8 +45,8 @@ namespace ProjetoFinalPJS
         private void radioAlbum_CheckedChanged(object sender, EventArgs e)
         {
             listar("SELECT Musica FROM MIDIA WHERE NOT Album = ''", cbxMusica, "Musica");
-            listar("SELECT Interprete FROM MIDIA WHERE NOT Album = '' ORDER BY Interprete", cbxInterprete, "interprete");
-            listar("SELECT Album FROM MIDIA WHERE Interprete = '"+cbxInterprete.Text+"'", cbxAlbum, "Album");
+            listar("SELECT Interprete FROM MIDIA WHERE NOT Album = '' AND SITUACAO = 'Disponível' ORDER BY Interprete", cbxInterprete, "interprete");
+            listar("SELECT Album FROM MIDIA WHERE Interprete = '" + cbxInterprete.Text + "'AND (Situacao = 'Disponível')", cbxAlbum, "Album");
             if (radioAlbum.Checked)
             {
                 cbxInterprete.Enabled = true;
@@ -102,13 +103,15 @@ namespace ProjetoFinalPJS
             }
             else if (radioAlbum.Checked)
             {
-                listar("SELECT Album FROM Midia WHERE INTERPRETE = '" + cbxInterprete.Text + "'", cbxAlbum, "Album");
+                listar("SELECT Album FROM MIDIA WHERE Interprete = '" + cbxInterprete.Text + "'AND (Situacao = 'Disponível')", cbxAlbum, "Album");
                 listar("SELECT Tipo FROM Midia WHERE Album = '" + cbxAlbum.Text + "'", cbxMidia, "Tipo");
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listaIdEmprestimo();
+
             if (cbxApelido.Text != "" && cbxEndereco.Text != "" && cbxInterprete.Text != "" && (cbxAlbum.Text != "" || cbxMusica.Text != "") && cbxMidia.Text != "")
             {
                 bool verifica = false;
@@ -149,48 +152,86 @@ namespace ProjetoFinalPJS
             }
         }
 
+        public void listaIdEmprestimo()
+        {
+            ClassSQL conexao = new ClassSQL();
+            conexao.conectar();
+            SqlConnection conn = new SqlConnection(conexao.stringConexao);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT MAX(IdEmprestimo + 1) FROM EMPRESTIMO", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            tbxIdEmprestimo.Text = "";
+            while (dr.Read())
+            {
+                tbxIdEmprestimo.Text = dr[0].ToString();
+            }
+
+            if (tbxIdEmprestimo.Text == "")
+            {
+                tbxIdEmprestimo.Text = "1";
+            }
+        }
+
         private void btEmprestar_Click(object sender, EventArgs e)
         {
-            string[] dadosLV = new string[13];
-            
+            string[] dadosListView = new string[6];
             ClassSQL Emprestar = new ClassSQL();
             ArrayList objArrayList = new ArrayList();
             ArrayList objArrayListEmprestimo = new ArrayList();
             
-            foreach (ListViewItem listViewItem in ListViewEmprestimos.Items)
-            {
-                int I = 1;
-                dadosLV[0] = listViewItem.Text;                 //Intérprete
-                dadosLV[1] = listViewItem.SubItems[1].Text;     //Álbum
-                dadosLV[2] = listViewItem.SubItems[2].Text;     //Música
-                dadosLV[3] = listViewItem.SubItems[3].Text;     //Mídia
-                dadosLV[4] = listViewItem.SubItems[4].Text;     //Data Empréstimo     
+            //Empréstimo
+            objArrayListEmprestimo.Add(cbxApelido.Text); //.............Apelido
+            objArrayListEmprestimo.Add(cbxEndereco.Text);//.............Endereço
+            objArrayListEmprestimo.Add(DtEmprestimo.Text);//............Data de empréstimo
 
-                objArrayList.Add(I);
-                objArrayList.Add(dadosLV[1]);
-                objArrayList.Add(dadosLV[2]);
-                objArrayList.Add(dadosLV[3]);
+            if (Emprestar.Emprestimo(objArrayListEmprestimo))
+            {
+                MessageBox.Show("Legaaallll Empréstimo");
+            }
+
+            //Item Empréstimo
+            foreach (ListViewItem listViewItem in ListViewEmprestimos.Items)
+            {   
+                dadosListView[0] = listViewItem.Text;//.................Intérprete
+                dadosListView[1] = listViewItem.SubItems[1].Text;//....Álbum
+                dadosListView[2] = listViewItem.SubItems[2].Text;//....Música
+                dadosListView[3] = listViewItem.SubItems[3].Text;//....Mídia
+                dadosListView[4] = listViewItem.SubItems[4].Text;//....Data Empréstimo
+
+                objArrayList.Add(dadosListView[0]);//.................Intérprete
+                objArrayList.Add(dadosListView[1]);//.................IdItem
+                objArrayList.Add(tbxIdEmprestimo.Text);//.............Id do empréstimo
+                objArrayList.Add(dadosListView[2]);//..................Álbum
+                objArrayList.Add(dadosListView[3]);//..................Música
+                objArrayList.Add(dadosListView[4]);//..................Mídia
 
                 if (cbxApelido.Text != "" && cbxEndereco.Text != "")
                 {
+                    listViewItem.Selected = true;
                     if (Emprestar.ItemEmprestar(objArrayList))
                     {
                         MessageBox.Show("Legaaallll Item");
-                        I++;
+                        ///////////////////////////////////////////////////////////////////////
+                        ArrayList objArrayDisponibilidade = new ArrayList();
+                        objArrayDisponibilidade.Add("Emprestado");
+                        objArrayDisponibilidade.Add(dadosListView[0]);  //Intérprete
+                        objArrayDisponibilidade.Add(dadosListView[1]);  //Álbum
+                        objArrayDisponibilidade.Add(dadosListView[2]);  //Música
+
+                        if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
+                        {
+                            MessageBox.Show("Update", "");
+                        }
+                        ////////////////////////////////////////////////////////////////////////
+                        listViewItem.Remove();
                     }
                     else
                     {
                         MessageBox.Show("Não deu");
                     }
                 }
-            }
-
-            objArrayListEmprestimo.Add(cbxApelido.Text);
-            objArrayListEmprestimo.Add(cbxEndereco.Text);
-            objArrayListEmprestimo.Add(dadosLV[4]);
-            if (Emprestar.Emprestimo(objArrayListEmprestimo))
-            {
-                MessageBox.Show("Legaaallll Empréstimo");
             }
         }
 
@@ -212,6 +253,11 @@ namespace ProjetoFinalPJS
                 {
                     listViewItem.Remove();
                 }
+            }
+
+            if (ListViewEmprestimos.Items.Count == 0)
+            {
+                btEmprestar.Enabled = false;
             }
         }
     }
