@@ -13,6 +13,9 @@ namespace ProjetoFinalPJS
 {
     public partial class FormPrincipal : Form
     {
+        //abre ligacao
+        ClassSQL conexao = new ClassSQL();
+
         public FormPrincipal()
         {
             InitializeComponent();
@@ -207,9 +210,7 @@ namespace ProjetoFinalPJS
         }
         public void Exibicao_ListViewMidia()
         {
-            //abre ligacao
-            ClassSQL conexao = new ClassSQL();
-            conexao.conectar();
+            //SqlConnection conn = new SqlConnection(conexao.stringConexao);
             SqlConnection conn = new SqlConnection(conexao.stringConexao);
             conn.Open();
             //pesquisa na BD
@@ -269,21 +270,22 @@ namespace ProjetoFinalPJS
                 if (listViewItem.Selected)
                 {
                     // Os campos serão iguais aos itens e subitens selecionado
-                    dadosLV[0] = listViewItem.Text;
-                    dadosLV[1] = listViewItem.SubItems[1].Text;
-                    dadosLV[2] = listViewItem.SubItems[2].Text;
-                    dadosLV[3] = listViewItem.SubItems[3].Text;
-                    dadosLV[4] = listViewItem.SubItems[4].Text;
-                    dadosLV[5] = listViewItem.SubItems[5].Text;
-                    dadosLV[6] = listViewItem.SubItems[6].Text;
-                    dadosLV[7] = listViewItem.SubItems[7].Text;
-                    dadosLV[8] = listViewItem.SubItems[8].Text;
-                    dadosLV[9] = listViewItem.SubItems[9].Text;
+                    dadosLV[0] = listViewItem.Text;//............... Música
+                    dadosLV[1] = listViewItem.SubItems[1].Text;//... Álbum
+                    dadosLV[2] = listViewItem.SubItems[2].Text;//... Autor
+                    dadosLV[3] = listViewItem.SubItems[3].Text;//... Intérprete
+                    dadosLV[4] = listViewItem.SubItems[4].Text;//... Data do Album
+                    dadosLV[5] = listViewItem.SubItems[5].Text;//... Data da Compra
+                    dadosLV[6] = listViewItem.SubItems[6].Text;//... Origem da Compra
+                    dadosLV[7] = listViewItem.SubItems[7].Text;//... Observações
+                    dadosLV[8] = listViewItem.SubItems[8].Text;//... Tipo de Mídia
+                    dadosLV[9] = listViewItem.SubItems[9].Text;//... Nota
+
+                    FormCadastrarMidia frm = new FormCadastrarMidia(dadosLV);
+                    frm.Show();
 
                 }
             }
-            FormCadastrarMidia frm = new FormCadastrarMidia(dadosLV);
-            frm.Show();
             
         }
 
@@ -313,7 +315,6 @@ namespace ProjetoFinalPJS
 
         private void btFiltral_Click(object sender, EventArgs e)
         {
-            ClassSQL conexao = new ClassSQL();
             SqlConnection conn = new SqlConnection(conexao.stringConexao);
             conn.Open();
 
@@ -374,44 +375,6 @@ namespace ProjetoFinalPJS
                         registro.Delete();
             }
                 
-                listViewMidia.Items.Clear();
-
-                for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
-                {
-                    DataRow LinhaRegistro = TabelaDataSet.Rows[i];
-                    // Somente as linhas que não foram deletadas
-                    if (LinhaRegistro.RowState != DataRowState.Deleted)
-                    {
-                        // Define os itens da lista
-                        ListViewItem item = new ListViewItem(LinhaRegistro["Musica"].ToString());
-                        item.SubItems.Add(LinhaRegistro["Album"].ToString());
-                        item.SubItems.Add(LinhaRegistro["Autor"].ToString());
-                        item.SubItems.Add(LinhaRegistro["Interprete"].ToString());
-                        item.SubItems.Add(LinhaRegistro["DataAlbum"].ToString());
-                        item.SubItems.Add(LinhaRegistro["DataAquisicao"].ToString());
-                        item.SubItems.Add(LinhaRegistro["OrigemCompra"].ToString());
-                        item.SubItems.Add(LinhaRegistro["Observacoes"].ToString());
-                        item.SubItems.Add(LinhaRegistro["Tipo"].ToString());
-                        item.SubItems.Add(LinhaRegistro["Nota"].ToString());
-                        item.SubItems.Add(LinhaRegistro["Situacao"].ToString());
-
-                        // Inclui os itens no ListView
-                        listViewMidia.Items.Add(item);
-                    }
-                }
-
-                foreach (ListViewItem item in listViewMidia.Items)
-                {
-                    if ((item.Index % 2) == 0)
-                    {
-                        item.BackColor = Color.Gainsboro;
-                    }
-                    else
-                    {
-                        item.BackColor = Color.WhiteSmoke;
-                    }
-                }
-
             listViewMidia.Items.Clear();
 
             for (int i = 0; i < TabelaDataSet.Rows.Count; i++)

@@ -258,7 +258,7 @@
             this.gpbxFiltro.TabIndex = 4;
             this.gpbxFiltro.TabStop = false;
             this.gpbxFiltro.Text = "Filtro";
-            this.gpbxFiltro.Enter += new System.EventHandler(this.gpbxFiltro_Enter);
+            
             // 
             // dateTimePickerDataCompra1
             // 
@@ -494,7 +494,7 @@
             this.cbxNota.Name = "cbxNota";
             this.cbxNota.Size = new System.Drawing.Size(41, 24);
             this.cbxNota.TabIndex = 20;
-            this.cbxNota.SelectedIndexChanged += new System.EventHandler(this.cbxNota_SelectedIndexChanged);
+            
             // 
             // checkBox_nota
             // 
