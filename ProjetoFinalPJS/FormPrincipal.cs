@@ -24,36 +24,11 @@ namespace ProjetoFinalPJS
             AtualizaAutoCompletar();
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             FormCadastrarMidia frm = new FormCadastrarMidia();
             frm.FormularioPrincipal = this;
             frm.Show();
-        }
-
-        private void inserirMídiaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button4_Click(object sender, EventArgs e)
