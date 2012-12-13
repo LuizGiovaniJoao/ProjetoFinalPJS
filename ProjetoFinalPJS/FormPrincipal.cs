@@ -208,8 +208,11 @@ namespace ProjetoFinalPJS
 
             Exibicao_ListViewMidia();
         }
+
+        // Exibe M´didias cadastradas no ListView
         public void Exibicao_ListViewMidia()
         {
+
             //SqlConnection conn = new SqlConnection(conexao.stringConexao);
             SqlConnection conn = new SqlConnection(conexao.stringConexao);
             conn.Open();
@@ -235,27 +238,32 @@ namespace ProjetoFinalPJS
                     if (i == 4 || i == 5)
                     {
                         string PegaData = dr.GetValue(i).ToString();
-                        DateTime DataAlbum = Convert.ToDateTime(PegaData).Date;
-                        item.SubItems.Add(DataAlbum.ToString("dd/MM/yyyy"));
+                        DateTime Data = Convert.ToDateTime(PegaData).Date;
+                        item.SubItems.Add(Data.ToString("dd/MM/yyyy"));
                     }
                     else
                     {
                         item.SubItems.Add(dr.GetValue(i).ToString());
                     }
+                    if (i == 8)
+                    {
+                        string Midia = dr.GetValue(i).ToString();
+                        for (int x = 0; x < 5; x++)
+                        {        
+                            if (Midia == listViewMidia.Groups[x].ToString())
+                                item.Group = listViewMidia.Groups[Midia];
+                        }
+                    }
+                    if (i == 10)
+                    {
+                        string Situacao = dr.GetValue(i).ToString();
+                        if(Situacao == "Emprestado")
+                            item.ForeColor = Color.DarkRed;
+                    }
                 }
                 listViewMidia.Items.Add(item);
 
-                foreach (ListViewItem itemx in listViewMidia.Items)
-                {
-                    if ((item.Index % 2) == 0)
-                    {
-                        item.BackColor = Color.Gainsboro;
-                    }
-                    else
-                    {
-                        item.BackColor = Color.WhiteSmoke;
-                    }
-                }
+                Cor_ListViewMidia();
             }
             conn.Close();
         }
@@ -280,6 +288,7 @@ namespace ProjetoFinalPJS
                     dadosLV[7] = listViewItem.SubItems[7].Text;//... Observações
                     dadosLV[8] = listViewItem.SubItems[8].Text;//... Tipo de Mídia
                     dadosLV[9] = listViewItem.SubItems[9].Text;//... Nota
+                    dadosLV[10] = listViewItem.SubItems[10].Text;//. Situação
 
                     FormCadastrarMidia frm = new FormCadastrarMidia(dadosLV);
                     frm.Show();
@@ -308,6 +317,7 @@ namespace ProjetoFinalPJS
                     {
                         MessageBox.Show("Não Removeu");
                     }
+                    Cor_ListViewMidia();
                 }
             }
             
@@ -316,8 +326,6 @@ namespace ProjetoFinalPJS
         private void btFiltral_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(conexao.stringConexao);
-            conn.Open();
-
             DataSet DataSetFiltro = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter("Select * from Midia", conn);
             da.Fill(DataSetFiltro, "Midias");
@@ -354,8 +362,12 @@ namespace ProjetoFinalPJS
                         if (registro.RowState != DataRowState.Deleted && registro["Nota"].ToString() != cbxNota.Text)
                             registro.Delete();
 
+                if(checkBoxSituacao.Checked)
+                    if (registro.RowState != DataRowState.Deleted && registro["Situacao"].ToString() != comboBoxSituacao.Text)
+                        registro.Delete();
+
                     //Superior a data de album
-                if (checkBox_dataAlbum.Checked)
+                    if (checkBox_dataAlbum.Checked)
                     if (registro.RowState != DataRowState.Deleted && DataAlbum < dateTimeDataAlbum.Value)
                         registro.Delete();
 
@@ -403,23 +415,22 @@ namespace ProjetoFinalPJS
                     item.SubItems.Add(LinhaRegistro["Nota"].ToString());
                     item.SubItems.Add(LinhaRegistro["Situacao"].ToString());
 
+                    string Midia = LinhaRegistro["Tipo"].ToString();
+                    for (int x = 0; x < 5; x++)
+                    {
+                        if (Midia == listViewMidia.Groups[x].ToString())
+                            item.Group = listViewMidia.Groups[Midia];
+                    }
+
+                    string Situacao = LinhaRegistro["Situacao"].ToString();
+                    if (Situacao == "Emprestado")
+                        item.ForeColor = Color.DarkRed;
                     // Inclui os itens no ListView
                     listViewMidia.Items.Add(item);
+                    Cor_ListViewMidia();//.................... Cor na Linha do ListviewMidia
                 }
             }
 
-
-            foreach (ListViewItem item in listViewMidia.Items)
-            {
-                if ((item.Index % 2) == 0)
-                {
-                    item.BackColor = Color.Gainsboro;
-                }
-                else
-                {
-                    item.BackColor = Color.WhiteSmoke;
-                }
-            }
         }
 
 
@@ -482,6 +493,20 @@ namespace ProjetoFinalPJS
                 dateTimePickerDataCompra1.Enabled = true;
             else
                 dateTimePickerDataCompra1.Enabled = false;
+        }
+        private void Cor_ListViewMidia()
+        {
+            foreach (ListViewItem item in listViewMidia.Items)
+            {
+                if ((item.Index % 2) == 0)
+                {
+                    item.BackColor = Color.WhiteSmoke;
+                }
+                else
+                {
+                    item.BackColor = Color.Gainsboro;
+                }
+            }
         }
     }
 }
