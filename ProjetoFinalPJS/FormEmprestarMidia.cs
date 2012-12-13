@@ -45,8 +45,8 @@ namespace ProjetoFinalPJS
         private void radioAlbum_CheckedChanged(object sender, EventArgs e)
         {
             listar("SELECT Musica FROM MIDIA WHERE NOT Album = ''", cbxMusica, "Musica");
-            listar("SELECT Interprete FROM MIDIA WHERE NOT Album = '' AND SITUACAO = 'Disponível' ORDER BY Interprete", cbxInterprete, "interprete");
-            listar("SELECT Album FROM MIDIA WHERE Interprete = '" + cbxInterprete.Text + "'AND (Situacao = 'Disponível')", cbxAlbum, "Album");
+            listar("SELECT DISTINCT Interprete FROM MIDIA WHERE NOT Album = '' AND SITUACAO = 'Disponível' ORDER BY Interprete", cbxInterprete, "interprete");
+            listar("SELECT Album FROM MIDIA WHERE Interprete = '" + cbxInterprete.Text + "'AND (Situacao = 'Disponível') AND (NOT Tipo = 'Digital')", cbxAlbum, "Album");
             if (radioAlbum.Checked)
             {
                 cbxInterprete.Enabled = true;
@@ -66,9 +66,9 @@ namespace ProjetoFinalPJS
 
         private void radioMusica_CheckedChanged(object sender, EventArgs e)
         {
-            listar("SELECT Album FROM MIDIA WHERE not Musica = '' ", cbxMusica, "Album");
-            listar("SELECT Interprete FROM MIDIA WHERE NOT Musica = '' ORDER BY Interprete", cbxInterprete, "interprete");
-            listar("SELECT ALBUM FROM MIDIA WHERE '" + cbxAlbum.Text + "' = ''", cbxAlbum, "Album");
+            listar("SELECT Album FROM MIDIA WHERE Album = '' ", cbxAlbum, "Album");
+            listar("SELECT DISTINCT Interprete FROM MIDIA WHERE NOT Musica = '' ORDER BY Interprete", cbxInterprete, "interprete");
+            listar("SELECT Musica FROM MIDIA WHERE Not Tipo = 'Digital'", cbxMusica, "Musica");
             if (radioMusica.Checked)
             {
                 cbxInterprete.Enabled = true;
@@ -146,10 +146,10 @@ namespace ProjetoFinalPJS
                         errorProviderEmprestimo.SetError(lbMusica, "Item já adicionado á lista de empréstimos");
                 }
             }
+            if (cbxMidia.Text == "Digital")
+                errorProviderEmprestimo.SetError(lbTipoMidia, "Não se pode emprestar mídias não físicas");
             else
-            {
-                MessageBox.Show("", "");
-            }
+                errorProviderEmprestimo.SetError(lbTipoMidia, "");
         }
 
         public void listaIdEmprestimo()
@@ -178,59 +178,63 @@ namespace ProjetoFinalPJS
         {
             string[] dadosListView = new string[6];
             ClassSQL Emprestar = new ClassSQL();
-            ArrayList objArrayList = new ArrayList();
             ArrayList objArrayListEmprestimo = new ArrayList();
-            
+
+            string DataConvertida = DtEmprestimo.Text;
+            char X;
+            char[] Data_ConvertidaArray = DataConvertida.ToCharArray();
+            X = Data_ConvertidaArray[0];
+            Data_ConvertidaArray[0] = Data_ConvertidaArray[3];
+            Data_ConvertidaArray[3] = X;
+            X = Data_ConvertidaArray[1];
+            Data_ConvertidaArray[1] = Data_ConvertidaArray[4];
+            Data_ConvertidaArray[4] = X;
+            DataConvertida = new string(Data_ConvertidaArray);
+
             //Empréstimo
             objArrayListEmprestimo.Add(cbxApelido.Text); //.............Apelido
             objArrayListEmprestimo.Add(cbxEndereco.Text);//.............Endereço
-            objArrayListEmprestimo.Add(DtEmprestimo.Text);//............Data de empréstimo
+            objArrayListEmprestimo.Add(DataConvertida);//............Data de empréstimo
 
             if (Emprestar.Emprestimo(objArrayListEmprestimo))
             {
-                MessageBox.Show("Legaaallll Empréstimo");
             }
 
             //Item Empréstimo
             foreach (ListViewItem listViewItem in ListViewEmprestimos.Items)
-            {   
+            {
+                ArrayList objArrayList = new ArrayList();
                 dadosListView[0] = listViewItem.Text;//.................Intérprete
                 dadosListView[1] = listViewItem.SubItems[1].Text;//....Álbum
                 dadosListView[2] = listViewItem.SubItems[2].Text;//....Música
                 dadosListView[3] = listViewItem.SubItems[3].Text;//....Mídia
                 dadosListView[4] = listViewItem.SubItems[4].Text;//....Data Empréstimo
 
-                objArrayList.Add(dadosListView[0]);//.................Intérprete
-                objArrayList.Add(dadosListView[1]);//.................IdItem
                 objArrayList.Add(tbxIdEmprestimo.Text);//.............Id do empréstimo
-                objArrayList.Add(dadosListView[2]);//..................Álbum
-                objArrayList.Add(dadosListView[3]);//..................Música
-                objArrayList.Add(dadosListView[4]);//..................Mídia
+                objArrayList.Add(dadosListView[0]);//.................Intérprete
+                objArrayList.Add(dadosListView[1]);//.................Álbum
+                objArrayList.Add(dadosListView[2]);//..................Música
+                objArrayList.Add(dadosListView[3]);//..................Mídia5
 
-                if (cbxApelido.Text != "" && cbxEndereco.Text != "")
+                if (Emprestar.ItemEmprestar(objArrayList))
                 {
                     listViewItem.Selected = true;
-                    if (Emprestar.ItemEmprestar(objArrayList))
-                    {
-                        MessageBox.Show("Legaaallll Item");
-                        ///////////////////////////////////////////////////////////////////////
-                        ArrayList objArrayDisponibilidade = new ArrayList();
-                        objArrayDisponibilidade.Add("Emprestado");
-                        objArrayDisponibilidade.Add(dadosListView[0]);  //Intérprete
-                        objArrayDisponibilidade.Add(dadosListView[1]);  //Álbum
-                        objArrayDisponibilidade.Add(dadosListView[2]);  //Música
+                    ///////////////////////////////////////////////////////////////////////
+                    ArrayList objArrayDisponibilidade = new ArrayList();
+                    objArrayDisponibilidade.Add("Emprestado");
+                    objArrayDisponibilidade.Add(dadosListView[0]);  //Intérprete
+                    objArrayDisponibilidade.Add(dadosListView[1]);  //Álbum
+                    objArrayDisponibilidade.Add(dadosListView[2]);  //Música
 
-                        if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
-                        {
-                            MessageBox.Show("Update", "");
-                        }
-                        ////////////////////////////////////////////////////////////////////////
-                        listViewItem.Remove();
-                    }
-                    else
+                    if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
                     {
-                        MessageBox.Show("Não deu");
                     }
+                    ////////////////////////////////////////////////////////////////////////
+                    listViewItem.Remove();
+                }
+                else
+                {
+                    MessageBox.Show("Não deu");
                 }
             }
         }

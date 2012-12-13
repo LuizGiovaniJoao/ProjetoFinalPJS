@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup51 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup52 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup53 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup54 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup55 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
             this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -75,6 +75,7 @@
             this.checkBox_album = new System.Windows.Forms.CheckBox();
             this.checkBoxInterprete = new System.Windows.Forms.CheckBox();
             this.checkBox_Autor = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btDevolverMidia = new System.Windows.Forms.Button();
             this.btEmprestarMidia = new System.Windows.Forms.Button();
@@ -87,7 +88,6 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emprestarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gpbxFiltro.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -112,22 +112,22 @@
             this.situacao});
             this.listViewMidia.FullRowSelect = true;
             this.listViewMidia.GridLines = true;
-            listViewGroup51.Header = "Vinil";
-            listViewGroup51.Name = "Vinil";
-            listViewGroup52.Header = "K7";
-            listViewGroup52.Name = "K7";
-            listViewGroup53.Header = "CD";
-            listViewGroup53.Name = "CD";
-            listViewGroup54.Header = "DVD";
-            listViewGroup54.Name = "DVD";
-            listViewGroup55.Header = "Digital";
-            listViewGroup55.Name = "Digital";
+            listViewGroup1.Header = "Vinil";
+            listViewGroup1.Name = "Vinil";
+            listViewGroup2.Header = "K7";
+            listViewGroup2.Name = "K7";
+            listViewGroup3.Header = "CD";
+            listViewGroup3.Name = "CD";
+            listViewGroup4.Header = "DVD";
+            listViewGroup4.Name = "DVD";
+            listViewGroup5.Header = "Digital";
+            listViewGroup5.Name = "Digital";
             this.listViewMidia.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup51,
-            listViewGroup52,
-            listViewGroup53,
-            listViewGroup54,
-            listViewGroup55});
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3,
+            listViewGroup4,
+            listViewGroup5});
             this.listViewMidia.Location = new System.Drawing.Point(12, 245);
             this.listViewMidia.Name = "listViewMidia";
             this.listViewMidia.ShowGroups = false;
@@ -139,22 +139,22 @@
             // Musica
             // 
             this.Musica.Text = "Música";
-            this.Musica.Width = 160;
+            this.Musica.Width = 91;
             // 
             // album
             // 
             this.album.Text = "Álbum";
-            this.album.Width = 160;
+            this.album.Width = 87;
             // 
             // Autor
             // 
             this.Autor.Text = "Autor";
-            this.Autor.Width = 155;
+            this.Autor.Width = 69;
             // 
             // Interprete
             // 
             this.Interprete.Text = "Intérprete";
-            this.Interprete.Width = 155;
+            this.Interprete.Width = 74;
             // 
             // dataAlbum
             // 
@@ -258,7 +258,6 @@
             this.gpbxFiltro.TabIndex = 4;
             this.gpbxFiltro.TabStop = false;
             this.gpbxFiltro.Text = "Filtro";
-            
             // 
             // dateTimePickerDataCompra1
             // 
@@ -494,7 +493,6 @@
             this.cbxNota.Name = "cbxNota";
             this.cbxNota.Size = new System.Drawing.Size(41, 24);
             this.cbxNota.TabIndex = 20;
-            
             // 
             // checkBox_nota
             // 
@@ -573,6 +571,15 @@
             this.checkBox_Autor.Text = "Nome do autor";
             this.checkBox_Autor.UseVisualStyleBackColor = true;
             this.checkBox_Autor.CheckedChanged += new System.EventHandler(this.checkBox_Autor_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Location = new System.Drawing.Point(469, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(254, 198);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -696,15 +703,6 @@
             this.devolverToolStripMenuItem.Name = "devolverToolStripMenuItem";
             this.devolverToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.devolverToolStripMenuItem.Text = "Devolver";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Location = new System.Drawing.Point(469, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 198);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
             // 
             // FormPrincipal
             // 

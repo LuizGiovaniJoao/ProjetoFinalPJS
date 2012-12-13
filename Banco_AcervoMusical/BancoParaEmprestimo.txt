@@ -47,8 +47,8 @@ GO
 CREATE TABLE ItemEmprestimo
 (
 	IdItem INT IDENTITY,
-        IdEmprestimo INT NOT NULL FOREIGN KEY REFERENCES Emprestimo(IdEmprestimo),
-        Interprete varchar(50),
+    IdEmprestimo INT NOT NULL FOREIGN KEY REFERENCES Emprestimo(IdEmprestimo),
+    Interprete varchar(50),
 	Album varchar(50),
 	Musica varchar(50),
 	TipoMidia varchar(20),

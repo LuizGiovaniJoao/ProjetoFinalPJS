@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
             this.lblApelido = new System.Windows.Forms.Label();
             this.lbInterprete = new System.Windows.Forms.Label();
             this.cbxInterprete = new System.Windows.Forms.ComboBox();
@@ -195,7 +195,6 @@
             // 
             // DtEmprestimo
             // 
-            this.DtEmprestimo.Enabled = false;
             this.DtEmprestimo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DtEmprestimo.Location = new System.Drawing.Point(389, 129);
             this.DtEmprestimo.Name = "DtEmprestimo";
@@ -240,13 +239,13 @@
             this.LVMidia,
             this.LVDTEmpres});
             this.ListViewEmprestimos.FullRowSelect = true;
-            listViewGroup3.Header = "Musica";
-            listViewGroup3.Name = "Músicas";
-            listViewGroup4.Header = "Album";
-            listViewGroup4.Name = "Álbum";
+            listViewGroup5.Header = "Musica";
+            listViewGroup5.Name = "Músicas";
+            listViewGroup6.Header = "Album";
+            listViewGroup6.Name = "Álbum";
             this.ListViewEmprestimos.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup5,
+            listViewGroup6});
             this.ListViewEmprestimos.Location = new System.Drawing.Point(12, 184);
             this.ListViewEmprestimos.Name = "ListViewEmprestimos";
             this.ListViewEmprestimos.Size = new System.Drawing.Size(468, 173);
@@ -277,7 +276,7 @@
             // LVDTEmpres
             // 
             this.LVDTEmpres.Text = "Data Empréstimo";
-            this.LVDTEmpres.Width = 89;
+            this.LVDTEmpres.Width = 64;
             // 
             // lbApelido
             // 

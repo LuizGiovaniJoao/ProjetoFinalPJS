@@ -420,12 +420,11 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.Add(new SqlParameter("@Interprete", Insert[0]));
-                    ObjComando.Parameters.Add(new SqlParameter("@IdItem", Insert[1]));
-                    ObjComando.Parameters.Add(new SqlParameter("@IdEmprestimo", Insert[2]));
-                    ObjComando.Parameters.Add(new SqlParameter("@Album", Insert[3]));
-                    ObjComando.Parameters.Add(new SqlParameter("@Musica", Insert[4]));
-                    ObjComando.Parameters.Add(new SqlParameter("@TipoMidia", Insert[5]));
+                    ObjComando.Parameters.Add(new SqlParameter("@IdEmprestimo", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Interprete", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Album", Insert[2]));                    
+                    ObjComando.Parameters.Add(new SqlParameter("@Musica", Insert[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TipoMidia", Insert[4]));
 
                     ObjComando.ExecuteNonQuery();
 
@@ -515,7 +514,44 @@ namespace ProjetoFinalPJS
             else
             {
                 return false;
+
             }
+        }
+        public bool InserirDevolucao(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "INSERT INTO Devolucao VALUES (@IDEMPRESTIMO, @IDITEM, @DATADEVOLUCAO)";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@IDEMPRESTIMO", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@IDITEM", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DATADEVOLUCAO", Insert[2]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         # endregion
@@ -598,42 +634,7 @@ namespace ProjetoFinalPJS
 
         }
 
-        public bool InsertDevolucao(ArrayList Insert)
-        {
-            string stringComando = string.Empty;
-            stringComando = "INSERT INTO Devolucao VALUES (@IDEMPRESTIMO, @IDITEM, @DATADEVOLUCAO)";
-
-            SqlCommand ObjComando = new SqlCommand();
-
-            if (this.conectar())
-            {
-
-                try
-                {
-                    ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.Add(new SqlParameter("@IDEMPRESTIMO", Insert[0]));
-                    ObjComando.Parameters.Add(new SqlParameter("@IDITEM", Insert[1]));
-                    ObjComando.Parameters.Add(new SqlParameter("@DATADEVOLUCAO", Insert[2]));
-
-                    ObjComando.ExecuteNonQuery();
-
-                    return true;
-                }
-                catch (SqlException erro)
-                {
-                    throw erro;
-                }
-                finally
-                {
-                    this.desconectar();
-                }
-            }
-            else
-            {
-                return false;
-            }
-
-        }
+        
         #endregion
     }
 }
