@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
             this.lblApelido = new System.Windows.Forms.Label();
             this.lbInterprete = new System.Windows.Forms.Label();
             this.cbxInterprete = new System.Windows.Forms.ComboBox();
@@ -59,6 +59,7 @@
             this.errorProviderEmprestimo = new System.Windows.Forms.ErrorProvider(this.components);
             this.btRemover = new System.Windows.Forms.Button();
             this.tbxIdEmprestimo = new System.Windows.Forms.TextBox();
+            this.radioButtonSelecao = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmprestimo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -239,13 +240,13 @@
             this.LVMidia,
             this.LVDTEmpres});
             this.ListViewEmprestimos.FullRowSelect = true;
-            listViewGroup5.Header = "Musica";
-            listViewGroup5.Name = "Músicas";
-            listViewGroup6.Header = "Album";
-            listViewGroup6.Name = "Álbum";
+            listViewGroup1.Header = "Musica";
+            listViewGroup1.Name = "Músicas";
+            listViewGroup2.Header = "Album";
+            listViewGroup2.Name = "Álbum";
             this.ListViewEmprestimos.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup5,
-            listViewGroup6});
+            listViewGroup1,
+            listViewGroup2});
             this.ListViewEmprestimos.Location = new System.Drawing.Point(12, 184);
             this.ListViewEmprestimos.Name = "ListViewEmprestimos";
             this.ListViewEmprestimos.Size = new System.Drawing.Size(468, 173);
@@ -305,7 +306,7 @@
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(324, 363);
+            this.btRemover.Location = new System.Drawing.Point(324, 362);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(75, 23);
             this.btRemover.TabIndex = 11;
@@ -322,11 +323,22 @@
             this.tbxIdEmprestimo.Text = "1";
             this.tbxIdEmprestimo.Visible = false;
             // 
+            // radioButtonSelecao
+            // 
+            this.radioButtonSelecao.AutoSize = true;
+            this.radioButtonSelecao.Location = new System.Drawing.Point(137, 52);
+            this.radioButtonSelecao.Name = "radioButtonSelecao";
+            this.radioButtonSelecao.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonSelecao.TabIndex = 58;
+            this.radioButtonSelecao.TabStop = true;
+            this.radioButtonSelecao.UseVisualStyleBackColor = true;
+            // 
             // FormEmprestarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 397);
+            this.Controls.Add(this.radioButtonSelecao);
             this.Controls.Add(this.tbxIdEmprestimo);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btEmprestar);
@@ -389,5 +401,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderEmprestimo;
         private System.Windows.Forms.Button btRemover;
         private System.Windows.Forms.TextBox tbxIdEmprestimo;
+        private System.Windows.Forms.RadioButton radioButtonSelecao;
     }
 }

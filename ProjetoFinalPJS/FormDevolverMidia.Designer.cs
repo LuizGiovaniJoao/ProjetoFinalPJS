@@ -40,9 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.cbxEndereco = new System.Windows.Forms.ComboBox();
-            this.cbxIdEmprestimo = new System.Windows.Forms.ComboBox();
             this.btDevolver = new System.Windows.Forms.Button();
             this.btDevolveTudo = new System.Windows.Forms.Button();
+            this.cbxIdEmprestimo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbApelido
@@ -143,15 +143,6 @@
             this.cbxEndereco.Size = new System.Drawing.Size(136, 21);
             this.cbxEndereco.TabIndex = 13;
             // 
-            // cbxIdEmprestimo
-            // 
-            this.cbxIdEmprestimo.FormattingEnabled = true;
-            this.cbxIdEmprestimo.Location = new System.Drawing.Point(296, 25);
-            this.cbxIdEmprestimo.Name = "cbxIdEmprestimo";
-            this.cbxIdEmprestimo.Size = new System.Drawing.Size(37, 21);
-            this.cbxIdEmprestimo.TabIndex = 15;
-            this.cbxIdEmprestimo.Visible = false;
-            // 
             // btDevolver
             // 
             this.btDevolver.Location = new System.Drawing.Point(527, 327);
@@ -171,6 +162,15 @@
             this.btDevolveTudo.Text = "Devolver tudo";
             this.btDevolveTudo.UseVisualStyleBackColor = true;
             this.btDevolveTudo.Click += new System.EventHandler(this.btDevolveTudo_Click);
+            // 
+            // cbxIdEmprestimo
+            // 
+            this.cbxIdEmprestimo.FormattingEnabled = true;
+            this.cbxIdEmprestimo.Location = new System.Drawing.Point(296, 25);
+            this.cbxIdEmprestimo.Name = "cbxIdEmprestimo";
+            this.cbxIdEmprestimo.Size = new System.Drawing.Size(37, 21);
+            this.cbxIdEmprestimo.TabIndex = 15;
+            this.cbxIdEmprestimo.Visible = false;
             // 
             // FormDevolverMidia
             // 
@@ -208,9 +208,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ComboBox cbxEndereco;
-        private System.Windows.Forms.ComboBox cbxIdEmprestimo;
         private System.Windows.Forms.Button btDevolver;
         private System.Windows.Forms.Button btDevolveTudo;
         private System.Windows.Forms.ColumnHeader LVNidia;
+        private System.Windows.Forms.ComboBox cbxIdEmprestimo;
     }
 }

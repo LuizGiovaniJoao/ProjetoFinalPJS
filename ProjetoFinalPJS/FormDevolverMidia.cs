@@ -106,6 +106,16 @@ namespace ProjetoFinalPJS
                 if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
                 {
                     MessageBox.Show("Update", "");
+                    ArrayList objDelete = new ArrayList();
+                    objDelete.Add(dadosListView[0]);  //Intérprete
+                    objDelete.Add(dadosListView[1]);  //Álbum
+                    objDelete.Add(dadosListView[2]);  //Música
+                    objDelete.Add(dadosListView[3]);  //Tipo de mídia
+                    ///////////////////////
+                    if (Emprestar.DeletaItens(objDelete))
+                    {
+                        MessageBox.Show("deletou", "");
+                    }
                 }
                 ////////////////////////////////////////////////////////////////////////
                 listViewItem.Remove();
@@ -114,10 +124,9 @@ namespace ProjetoFinalPJS
 
         private void btDevolveTudo_Click(object sender, EventArgs e)
         {
-            string[] dadosListView = new string[6];
+            string[] dadosListView = new string[5];
             ClassSQL Emprestar = new ClassSQL();
             
-            //Item Empréstimo
             foreach (ListViewItem listViewItem in listViewDevMidia.Items)
             {
                 listViewItem.Selected = true;
@@ -128,7 +137,6 @@ namespace ProjetoFinalPJS
                 dadosListView[3] = listViewItem.SubItems[3].Text;//....Mídia
                 dadosListView[4] = listViewItem.SubItems[4].Text;//....Data Empréstimo
 
-                ///////////////////////////////////////////////////////////////////////
                 ArrayList objArrayDisponibilidade = new ArrayList();
                 objArrayDisponibilidade.Add("Disponível");
                 objArrayDisponibilidade.Add(dadosListView[0]);  //Intérprete
@@ -137,10 +145,24 @@ namespace ProjetoFinalPJS
 
                 if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
                 {
-                    MessageBox.Show("Update", "");
+                    //ArrayList InsertDevolucao();
+                    //if(Emprestar.Devolucao())
+                    //{
 
+                    //}
+
+                    MessageBox.Show("Update", "");
+                    ArrayList objDelete = new ArrayList();
+                    objDelete.Add(dadosListView[0]);  //Intérprete
+                    objDelete.Add(dadosListView[1]);  //Álbum
+                    objDelete.Add(dadosListView[2]);  //Música
+                    objDelete.Add(dadosListView[3]);
+                    ///////////////////////
+                    if(Emprestar.DeletaItens(objDelete))
+                    {
+                        MessageBox.Show("deletou","");
+                    }
                 }
-                ////////////////////////////////////////////////////////////////////////
                 listViewItem.Remove();
             }
         }

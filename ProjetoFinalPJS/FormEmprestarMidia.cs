@@ -231,6 +231,13 @@ namespace ProjetoFinalPJS
                     }
                     ////////////////////////////////////////////////////////////////////////
                     listViewItem.Remove();
+                    if(ListViewEmprestimos.Items.Count == 0)
+                    {
+                        radioButtonSelecao.Checked = true;
+                        listar("SELECT IdItem from ItemEmprestimo where IdItem < 0", cbxInterprete, "IdItem");
+                        cbxMidia.Text = "";
+                        btEmprestar.Enabled = false;
+                    }
                 }
                 else
                 {
