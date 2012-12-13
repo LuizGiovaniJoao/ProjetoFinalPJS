@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             System.Windows.Forms.ListViewGroup listViewGroup16 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup17 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup18 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup19 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup20 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
+
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
             this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -113,6 +116,7 @@
             this.situacao});
             this.listViewMidia.FullRowSelect = true;
             this.listViewMidia.GridLines = true;
+
             listViewGroup16.Header = "Vinil";
             listViewGroup16.Name = "Vinil";
             listViewGroup17.Header = "K7";
@@ -139,22 +143,22 @@
             // Musica
             // 
             this.Musica.Text = "Música";
-            this.Musica.Width = 160;
+            this.Musica.Width = 91;
             // 
             // album
             // 
             this.album.Text = "Álbum";
-            this.album.Width = 160;
+            this.album.Width = 87;
             // 
             // Autor
             // 
             this.Autor.Text = "Autor";
-            this.Autor.Width = 155;
+            this.Autor.Width = 69;
             // 
             // Interprete
             // 
             this.Interprete.Text = "Intérprete";
-            this.Interprete.Width = 155;
+            this.Interprete.Width = 74;
             // 
             // dataAlbum
             // 

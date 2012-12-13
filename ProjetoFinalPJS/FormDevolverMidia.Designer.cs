@@ -30,11 +30,19 @@
         {
             this.lbApelido = new System.Windows.Forms.Label();
             this.cbxApelido = new System.Windows.Forms.ComboBox();
-            this.lbNome = new System.Windows.Forms.Label();
             this.lbEndereco = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewDevMidia = new System.Windows.Forms.ListView();
+            this.LVInterprete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LVAlbum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LVMusica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LVNidia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LVDataEmprestimo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cbxEndereco = new System.Windows.Forms.ComboBox();
+            this.btDevolver = new System.Windows.Forms.Button();
+            this.btDevolveTudo = new System.Windows.Forms.Button();
+            this.cbxIdEmprestimo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbApelido
@@ -48,66 +56,140 @@
             // 
             // cbxApelido
             // 
+            this.cbxApelido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxApelido.FormattingEnabled = true;
             this.cbxApelido.Location = new System.Drawing.Point(12, 25);
             this.cbxApelido.Name = "cbxApelido";
-            this.cbxApelido.Size = new System.Drawing.Size(121, 21);
+            this.cbxApelido.Size = new System.Drawing.Size(136, 21);
             this.cbxApelido.TabIndex = 1;
-            // 
-            // lbNome
-            // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(136, 9);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(38, 13);
-            this.lbNome.TabIndex = 2;
-            this.lbNome.Text = "Nome:";
+            this.cbxApelido.SelectedIndexChanged += new System.EventHandler(this.cbxApelido_SelectedIndexChanged);
             // 
             // lbEndereco
             // 
             this.lbEndereco.AutoSize = true;
-            this.lbEndereco.Location = new System.Drawing.Point(261, 9);
+            this.lbEndereco.Location = new System.Drawing.Point(151, 9);
             this.lbEndereco.Name = "lbEndereco";
             this.lbEndereco.Size = new System.Drawing.Size(56, 13);
-            this.lbEndereco.TabIndex = 4;
+            this.lbEndereco.TabIndex = 2;
             this.lbEndereco.Text = "Endereço:";
             // 
-            // textBox1
+            // listViewDevMidia
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 20);
-            this.textBox1.TabIndex = 5;
+            this.listViewDevMidia.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LVInterprete,
+            this.LVAlbum,
+            this.LVMusica,
+            this.LVNidia,
+            this.LVDataEmprestimo});
+            this.listViewDevMidia.FullRowSelect = true;
+            this.listViewDevMidia.Location = new System.Drawing.Point(12, 52);
+            this.listViewDevMidia.Name = "listViewDevMidia";
+            this.listViewDevMidia.Size = new System.Drawing.Size(693, 269);
+            this.listViewDevMidia.TabIndex = 7;
+            this.listViewDevMidia.UseCompatibleStateImageBehavior = false;
+            this.listViewDevMidia.View = System.Windows.Forms.View.Details;
             // 
-            // textBox2
+            // LVInterprete
             // 
-            this.textBox2.Location = new System.Drawing.Point(263, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 20);
-            this.textBox2.TabIndex = 6;
+            this.LVInterprete.Text = "Intérprete";
+            this.LVInterprete.Width = 153;
             // 
-            // listView1
+            // LVAlbum
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 80);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(369, 191);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.LVAlbum.Text = "Álbum";
+            this.LVAlbum.Width = 162;
+            // 
+            // LVMusica
+            // 
+            this.LVMusica.Text = "Música";
+            this.LVMusica.Width = 107;
+            // 
+            // LVNidia
+            // 
+            this.LVNidia.Text = "Mídia";
+            this.LVNidia.Width = 115;
+            // 
+            // LVDataEmprestimo
+            // 
+            this.LVDataEmprestimo.Text = "Data do empréstimo";
+            this.LVDataEmprestimo.Width = 158;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(336, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Data de Devolução";
+            this.label1.Visible = false;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Enabled = false;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(339, 26);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(101, 20);
+            this.dateTimePicker2.TabIndex = 11;
+            this.dateTimePicker2.Visible = false;
+            // 
+            // cbxEndereco
+            // 
+            this.cbxEndereco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEndereco.FormattingEnabled = true;
+            this.cbxEndereco.Location = new System.Drawing.Point(154, 25);
+            this.cbxEndereco.Name = "cbxEndereco";
+            this.cbxEndereco.Size = new System.Drawing.Size(136, 21);
+            this.cbxEndereco.TabIndex = 13;
+            // 
+            // btDevolver
+            // 
+            this.btDevolver.Location = new System.Drawing.Point(527, 327);
+            this.btDevolver.Name = "btDevolver";
+            this.btDevolver.Size = new System.Drawing.Size(86, 23);
+            this.btDevolver.TabIndex = 16;
+            this.btDevolver.Text = "Devolver";
+            this.btDevolver.UseVisualStyleBackColor = true;
+            this.btDevolver.Click += new System.EventHandler(this.btDevolver_Click);
+            // 
+            // btDevolveTudo
+            // 
+            this.btDevolveTudo.Location = new System.Drawing.Point(619, 327);
+            this.btDevolveTudo.Name = "btDevolveTudo";
+            this.btDevolveTudo.Size = new System.Drawing.Size(86, 23);
+            this.btDevolveTudo.TabIndex = 17;
+            this.btDevolveTudo.Text = "Devolver tudo";
+            this.btDevolveTudo.UseVisualStyleBackColor = true;
+            this.btDevolveTudo.Click += new System.EventHandler(this.btDevolveTudo_Click);
+            // 
+            // cbxIdEmprestimo
+            // 
+            this.cbxIdEmprestimo.FormattingEnabled = true;
+            this.cbxIdEmprestimo.Location = new System.Drawing.Point(296, 25);
+            this.cbxIdEmprestimo.Name = "cbxIdEmprestimo";
+            this.cbxIdEmprestimo.Size = new System.Drawing.Size(37, 21);
+            this.cbxIdEmprestimo.TabIndex = 15;
+            this.cbxIdEmprestimo.Visible = false;
             // 
             // FormDevolverMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 357);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(717, 356);
+            this.Controls.Add(this.btDevolver);
+            this.Controls.Add(this.btDevolveTudo);
+            this.Controls.Add(this.cbxIdEmprestimo);
+            this.Controls.Add(this.cbxEndereco);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listViewDevMidia);
             this.Controls.Add(this.lbEndereco);
-            this.Controls.Add(this.lbNome);
             this.Controls.Add(this.cbxApelido);
             this.Controls.Add(this.lbApelido);
             this.Name = "FormDevolverMidia";
             this.Text = "Devolver Midia";
+            this.Load += new System.EventHandler(this.FormDevolverMidia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,10 +199,18 @@
 
         private System.Windows.Forms.Label lbApelido;
         private System.Windows.Forms.ComboBox cbxApelido;
-        private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbEndereco;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewDevMidia;
+        private System.Windows.Forms.ColumnHeader LVInterprete;
+        private System.Windows.Forms.ColumnHeader LVAlbum;
+        private System.Windows.Forms.ColumnHeader LVMusica;
+        private System.Windows.Forms.ColumnHeader LVDataEmprestimo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox cbxEndereco;
+        private System.Windows.Forms.Button btDevolver;
+        private System.Windows.Forms.Button btDevolveTudo;
+        private System.Windows.Forms.ColumnHeader LVNidia;
+        private System.Windows.Forms.ComboBox cbxIdEmprestimo;
     }
 }

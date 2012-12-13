@@ -47,8 +47,8 @@ GO
 CREATE TABLE ItemEmprestimo
 (
 	IdItem INT IDENTITY,
-    IdEmprestimo INT NOT NULL FOREIGN KEY REFERENCES Emprestimo(IdEmprestimo),
-    Interprete varchar(50),
+	IdEmprestimo INT NOT NULL FOREIGN KEY REFERENCES Emprestimo(IdEmprestimo),
+	Interprete varchar(50),
 	Album varchar(50),
 	Musica varchar(50),
 	TipoMidia varchar(20),
@@ -56,16 +56,18 @@ CREATE TABLE ItemEmprestimo
 );
 GO
 
---ALTER TABLE table_name
---DROP COLUMN column_name
-
-------CREATE TABLE Devolucao
-------( 
-------	Id int identity primary key,
-------	IdEmprestimo int not null foreign key references Emprestimo(Id),
-------	IdItem int,
-------	DataDevolucao date
-------);
+CREATE TABLE Devolucao 
+(
+	Id INT PRIMARY KEY IDENTITY,
+	Apelido VARCHAR(50),
+	DataEmprestimo DATE,
+	Interprete VARCHAR(50),
+	Tipo VARCHAR(10),
+	Musica VARCHAR(30),
+	Album VARCHAR(30),
+	DatADevolucao DATE
+);
+GO
 
 CREATE  TABLE estados (
   id_estado INT NOT NULL ,

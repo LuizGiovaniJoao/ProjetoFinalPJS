@@ -419,12 +419,47 @@ namespace ProjetoFinalPJS
                 try
                 {
                     ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@IdEmprestimo", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Interprete", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Album", Insert[2]));                    
+                    ObjComando.Parameters.Add(new SqlParameter("@Musica", Insert[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TipoMidia", Insert[4]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
+        public bool DeletaItens(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "DELETE FROM ItemEmprestimo WHERE INTERPRETE =  @Interprete AND ALBUM = @Album AND MUSICA = @Musica AND TIPOMIDIA = @TipoMidia";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
                     ObjComando.Parameters.Add(new SqlParameter("@Interprete", Insert[0]));
-                    ObjComando.Parameters.Add(new SqlParameter("@IdItem", Insert[1]));
-                    ObjComando.Parameters.Add(new SqlParameter("@IdEmprestimo", Insert[2]));
-                    ObjComando.Parameters.Add(new SqlParameter("@Album", Insert[3]));
-                    ObjComando.Parameters.Add(new SqlParameter("@Musica", Insert[4]));
-                    ObjComando.Parameters.Add(new SqlParameter("@TipoMidia", Insert[5]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Album", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Musica", Insert[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@TipoMidia", Insert[3]));
 
                     ObjComando.ExecuteNonQuery();
 
@@ -497,6 +532,46 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@Interprete", Update[1]));
                     ObjComando.Parameters.Add(new SqlParameter("@ALBum", Update[2]));
                     ObjComando.Parameters.Add(new SqlParameter("@MUSICA", Update[3]));
+
+                    ObjComando.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+            }
+            else
+            {
+                return false;
+
+            }
+        }
+
+        public bool Devolucao(ArrayList Insert)
+        {
+            string stringComando = string.Empty;
+            stringComando = "INSERT INTO DEVOLUCAO VALUES (@Apelido, @DataEmprestimo, @Interprete, @Tipo, @Musica, @Album, @DataDevolucao)";
+
+            SqlCommand ObjComando = new SqlCommand();
+
+            if (this.conectar())
+            {
+                try
+                {
+                    ObjComando = new SqlCommand(stringComando, ObjConexao);
+                    ObjComando.Parameters.Add(new SqlParameter("@Apelido", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DataEmprestimo", Insert[1]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Interprete", Insert[2]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Tipo", Insert[3]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Musica", Insert[4]));
+                    ObjComando.Parameters.Add(new SqlParameter("@Album", Insert[5]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DataDevolucao", Insert[0]));
 
                     ObjComando.ExecuteNonQuery();
 
@@ -597,42 +672,7 @@ namespace ProjetoFinalPJS
 
         }
 
-        public bool InsertDevolucao(ArrayList Insert)
-        {
-            string stringComando = string.Empty;
-            stringComando = "INSERT INTO Devolucao VALUES (@IDEMPRESTIMO, @IDITEM, @DATADEVOLUCAO)";
-
-            SqlCommand ObjComando = new SqlCommand();
-
-            if (this.conectar())
-            {
-
-                try
-                {
-                    ObjComando = new SqlCommand(stringComando, ObjConexao);
-                    ObjComando.Parameters.Add(new SqlParameter("@IDEMPRESTIMO", Insert[0]));
-                    ObjComando.Parameters.Add(new SqlParameter("@IDITEM", Insert[1]));
-                    ObjComando.Parameters.Add(new SqlParameter("@DATADEVOLUCAO", Insert[2]));
-
-                    ObjComando.ExecuteNonQuery();
-
-                    return true;
-                }
-                catch (SqlException erro)
-                {
-                    throw erro;
-                }
-                finally
-                {
-                    this.desconectar();
-                }
-            }
-            else
-            {
-                return false;
-            }
-
-        }
+        
         #endregion
     }
 }
