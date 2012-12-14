@@ -161,8 +161,9 @@ namespace ProjetoFinalPJS
 
                 if (InserirMidia.UpdateMidia(Salvar_Gravar_Midia()))
                 {
-                    FormularioPrincipal.AtualizaAutoCompletar();
-                    FormularioPrincipal.Exibicao_ListViewMidia();
+                    //FormularioPrincipal.AtualizaAutoCompletar();
+                    //FormularioPrincipal.Exibicao_ListViewMidia();
+                    this.Close();
                 }
             }
         }

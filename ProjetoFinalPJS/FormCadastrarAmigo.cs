@@ -42,6 +42,11 @@ namespace ProjetoFinalPJS
 
         private void button3_Click(object sender, EventArgs e)
         {
+            limpar();
+        }
+
+        public void limpar()
+        {
             tbxApelido.Text = null;
             tbxNome.Text = null;
             tbxBairro.Text = null;
@@ -76,7 +81,7 @@ namespace ProjetoFinalPJS
 
                 if (InserirAmigo.Insert(objArrayList))
                 {
-                    this.Close();
+                    limpar();
                     //FormularioListaAmigos.atualizaGridView();
                 }
             }
