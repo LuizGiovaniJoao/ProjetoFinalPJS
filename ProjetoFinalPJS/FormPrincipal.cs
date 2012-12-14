@@ -25,6 +25,8 @@ namespace ProjetoFinalPJS
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             AtualizaAutoCompletar();
+            this.dateTimeDataAlbum.Value = DateTime.Now;
+            this.dateTimeDataCompra.Value = DateTime.Now;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -482,6 +484,11 @@ namespace ProjetoFinalPJS
                     item.BackColor = Color.Gainsboro;
                 }
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

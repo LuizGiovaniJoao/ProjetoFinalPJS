@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-
-            System.Windows.Forms.ListViewGroup listViewGroup16 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup17 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup18 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup19 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup20 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
-
-
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
             this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -92,6 +89,7 @@
             this.emprestarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gpbxFiltro.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -116,23 +114,22 @@
             this.situacao});
             this.listViewMidia.FullRowSelect = true;
             this.listViewMidia.GridLines = true;
-
-            listViewGroup16.Header = "Vinil";
-            listViewGroup16.Name = "Vinil";
-            listViewGroup17.Header = "K7";
-            listViewGroup17.Name = "K7";
-            listViewGroup18.Header = "CD";
-            listViewGroup18.Name = "CD";
-            listViewGroup19.Header = "DVD";
-            listViewGroup19.Name = "DVD";
-            listViewGroup20.Header = "Digital";
-            listViewGroup20.Name = "Digital";
+            listViewGroup1.Header = "Vinil";
+            listViewGroup1.Name = "Vinil";
+            listViewGroup2.Header = "K7";
+            listViewGroup2.Name = "K7";
+            listViewGroup3.Header = "CD";
+            listViewGroup3.Name = "CD";
+            listViewGroup4.Header = "DVD";
+            listViewGroup4.Name = "DVD";
+            listViewGroup5.Header = "Digital";
+            listViewGroup5.Name = "Digital";
             this.listViewMidia.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup16,
-            listViewGroup17,
-            listViewGroup18,
-            listViewGroup19,
-            listViewGroup20});
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3,
+            listViewGroup4,
+            listViewGroup5});
             this.listViewMidia.Location = new System.Drawing.Point(12, 245);
             this.listViewMidia.Name = "listViewMidia";
             this.listViewMidia.Size = new System.Drawing.Size(1011, 296);
@@ -143,22 +140,22 @@
             // Musica
             // 
             this.Musica.Text = "Música";
-            this.Musica.Width = 91;
+            this.Musica.Width = 164;
             // 
             // album
             // 
             this.album.Text = "Álbum";
-            this.album.Width = 87;
+            this.album.Width = 161;
             // 
             // Autor
             // 
             this.Autor.Text = "Autor";
-            this.Autor.Width = 69;
+            this.Autor.Width = 148;
             // 
             // Interprete
             // 
             this.Interprete.Text = "Intérprete";
-            this.Interprete.Width = 74;
+            this.Interprete.Width = 156;
             // 
             // dataAlbum
             // 
@@ -228,21 +225,16 @@
             this.gpbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gpbxFiltro.BackColor = System.Drawing.SystemColors.Control;
-            this.gpbxFiltro.Controls.Add(this.dateTimePickerDataCompra1);
             this.gpbxFiltro.Controls.Add(this.btFiltral);
-            this.gpbxFiltro.Controls.Add(this.checkBox_dataAlbum1);
             this.gpbxFiltro.Controls.Add(this.btTodos);
-            this.gpbxFiltro.Controls.Add(this.dateTimePickerDataAlbum1);
             this.gpbxFiltro.Controls.Add(this.label1);
             this.gpbxFiltro.Controls.Add(this.dateTimeDataAlbum);
             this.gpbxFiltro.Controls.Add(this.comboBoxSituacao);
             this.gpbxFiltro.Controls.Add(this.dateTimeDataCompra);
             this.gpbxFiltro.Controls.Add(this.tbxOrigemCompra);
-            this.gpbxFiltro.Controls.Add(this.checkBoxSituacao);
             this.gpbxFiltro.Controls.Add(this.checkBox_dataAlbum);
             this.gpbxFiltro.Controls.Add(this.label2);
             this.gpbxFiltro.Controls.Add(this.checkBox_midia);
-            this.gpbxFiltro.Controls.Add(this.checkBoxDataCompra1);
             this.gpbxFiltro.Controls.Add(this.cbxMidia);
             this.gpbxFiltro.Controls.Add(this.checkBox_dataCompra);
             this.gpbxFiltro.Controls.Add(this.tbxAlbum);
@@ -268,7 +260,7 @@
             this.dateTimePickerDataCompra1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerDataCompra1.Enabled = false;
             this.dateTimePickerDataCompra1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataCompra1.Location = new System.Drawing.Point(618, 124);
+            this.dateTimePickerDataCompra1.Location = new System.Drawing.Point(149, 124);
             this.dateTimePickerDataCompra1.Name = "dateTimePickerDataCompra1";
             this.dateTimePickerDataCompra1.Size = new System.Drawing.Size(97, 22);
             this.dateTimePickerDataCompra1.TabIndex = 28;
@@ -292,7 +284,7 @@
             // 
             this.checkBox_dataAlbum1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataAlbum1.AutoSize = true;
-            this.checkBox_dataAlbum1.Location = new System.Drawing.Point(618, 64);
+            this.checkBox_dataAlbum1.Location = new System.Drawing.Point(149, 64);
             this.checkBox_dataAlbum1.Name = "checkBox_dataAlbum1";
             this.checkBox_dataAlbum1.Size = new System.Drawing.Size(15, 14);
             this.checkBox_dataAlbum1.TabIndex = 23;
@@ -317,7 +309,7 @@
             this.dateTimePickerDataAlbum1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerDataAlbum1.Enabled = false;
             this.dateTimePickerDataAlbum1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataAlbum1.Location = new System.Drawing.Point(618, 81);
+            this.dateTimePickerDataAlbum1.Location = new System.Drawing.Point(149, 81);
             this.dateTimePickerDataAlbum1.Name = "dateTimePickerDataAlbum1";
             this.dateTimePickerDataAlbum1.Size = new System.Drawing.Size(97, 22);
             this.dateTimePickerDataAlbum1.TabIndex = 24;
@@ -327,7 +319,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(590, 82);
+            this.label1.Location = new System.Drawing.Point(588, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 16);
             this.label1.TabIndex = 25;
@@ -339,7 +331,7 @@
             this.dateTimeDataAlbum.CustomFormat = "";
             this.dateTimeDataAlbum.Enabled = false;
             this.dateTimeDataAlbum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeDataAlbum.Location = new System.Drawing.Point(487, 81);
+            this.dateTimeDataAlbum.Location = new System.Drawing.Point(485, 81);
             this.dateTimeDataAlbum.Name = "dateTimeDataAlbum";
             this.dateTimeDataAlbum.Size = new System.Drawing.Size(97, 22);
             this.dateTimeDataAlbum.TabIndex = 18;
@@ -354,7 +346,7 @@
             this.comboBoxSituacao.Items.AddRange(new object[] {
             "Emprestado",
             "Disponível"});
-            this.comboBoxSituacao.Location = new System.Drawing.Point(618, 35);
+            this.comboBoxSituacao.Location = new System.Drawing.Point(617, 35);
             this.comboBoxSituacao.Name = "comboBoxSituacao";
             this.comboBoxSituacao.Size = new System.Drawing.Size(97, 24);
             this.comboBoxSituacao.TabIndex = 30;
@@ -364,7 +356,7 @@
             this.dateTimeDataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimeDataCompra.Enabled = false;
             this.dateTimeDataCompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeDataCompra.Location = new System.Drawing.Point(486, 125);
+            this.dateTimeDataCompra.Location = new System.Drawing.Point(484, 125);
             this.dateTimeDataCompra.Name = "dateTimeDataCompra";
             this.dateTimeDataCompra.Size = new System.Drawing.Size(97, 22);
             this.dateTimeDataCompra.TabIndex = 19;
@@ -384,7 +376,7 @@
             // 
             this.checkBoxSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxSituacao.AutoSize = true;
-            this.checkBoxSituacao.Location = new System.Drawing.Point(624, 14);
+            this.checkBoxSituacao.Location = new System.Drawing.Point(149, 14);
             this.checkBoxSituacao.Name = "checkBoxSituacao";
             this.checkBoxSituacao.Size = new System.Drawing.Size(67, 20);
             this.checkBoxSituacao.TabIndex = 29;
@@ -396,7 +388,7 @@
             // 
             this.checkBox_dataAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataAlbum.AutoSize = true;
-            this.checkBox_dataAlbum.Location = new System.Drawing.Point(486, 61);
+            this.checkBox_dataAlbum.Location = new System.Drawing.Point(484, 61);
             this.checkBox_dataAlbum.Name = "checkBox_dataAlbum";
             this.checkBox_dataAlbum.Size = new System.Drawing.Size(95, 20);
             this.checkBox_dataAlbum.TabIndex = 8;
@@ -408,7 +400,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(590, 124);
+            this.label2.Location = new System.Drawing.Point(588, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 16);
             this.label2.TabIndex = 26;
@@ -418,7 +410,7 @@
             // 
             this.checkBox_midia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_midia.AutoSize = true;
-            this.checkBox_midia.Location = new System.Drawing.Point(486, 14);
+            this.checkBox_midia.Location = new System.Drawing.Point(484, 14);
             this.checkBox_midia.Name = "checkBox_midia";
             this.checkBox_midia.Size = new System.Drawing.Size(52, 20);
             this.checkBox_midia.TabIndex = 11;
@@ -430,7 +422,7 @@
             // 
             this.checkBoxDataCompra1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxDataCompra1.AutoSize = true;
-            this.checkBoxDataCompra1.Location = new System.Drawing.Point(618, 108);
+            this.checkBoxDataCompra1.Location = new System.Drawing.Point(149, 108);
             this.checkBoxDataCompra1.Name = "checkBoxDataCompra1";
             this.checkBoxDataCompra1.Size = new System.Drawing.Size(15, 14);
             this.checkBoxDataCompra1.TabIndex = 27;
@@ -450,7 +442,7 @@
             "DVD",
             "K7",
             "Vinil"});
-            this.cbxMidia.Location = new System.Drawing.Point(487, 35);
+            this.cbxMidia.Location = new System.Drawing.Point(485, 35);
             this.cbxMidia.Name = "cbxMidia";
             this.cbxMidia.Size = new System.Drawing.Size(76, 24);
             this.cbxMidia.TabIndex = 6;
@@ -459,7 +451,7 @@
             // 
             this.checkBox_dataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataCompra.AutoSize = true;
-            this.checkBox_dataCompra.Location = new System.Drawing.Point(486, 105);
+            this.checkBox_dataCompra.Location = new System.Drawing.Point(484, 105);
             this.checkBox_dataCompra.Name = "checkBox_dataCompra";
             this.checkBox_dataCompra.Size = new System.Drawing.Size(102, 20);
             this.checkBox_dataCompra.TabIndex = 10;
@@ -495,7 +487,7 @@
             "08",
             "09",
             "10"});
-            this.cbxNota.Location = new System.Drawing.Point(571, 35);
+            this.cbxNota.Location = new System.Drawing.Point(569, 35);
             this.cbxNota.Name = "cbxNota";
             this.cbxNota.Size = new System.Drawing.Size(41, 24);
             this.cbxNota.TabIndex = 20;
@@ -504,7 +496,7 @@
             // 
             this.checkBox_nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_nota.AutoSize = true;
-            this.checkBox_nota.Location = new System.Drawing.Point(571, 14);
+            this.checkBox_nota.Location = new System.Drawing.Point(569, 14);
             this.checkBox_nota.Name = "checkBox_nota";
             this.checkBox_nota.Size = new System.Drawing.Size(49, 20);
             this.checkBox_nota.TabIndex = 21;
@@ -581,6 +573,11 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dateTimePickerDataCompra1);
+            this.groupBox1.Controls.Add(this.checkBoxSituacao);
+            this.groupBox1.Controls.Add(this.checkBox_dataAlbum1);
+            this.groupBox1.Controls.Add(this.dateTimePickerDataAlbum1);
+            this.groupBox1.Controls.Add(this.checkBoxDataCompra1);
             this.groupBox1.Location = new System.Drawing.Point(469, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 198);
@@ -610,7 +607,7 @@
             this.btDevolverMidia.Name = "btDevolverMidia";
             this.btDevolverMidia.Size = new System.Drawing.Size(132, 77);
             this.btDevolverMidia.TabIndex = 3;
-            this.btDevolverMidia.Text = "Devolver mídia";
+            this.btDevolverMidia.Text = "Devolver";
             this.btDevolverMidia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btDevolverMidia.UseVisualStyleBackColor = true;
             this.btDevolverMidia.Click += new System.EventHandler(this.button6_Click);
@@ -624,7 +621,7 @@
             this.btEmprestarMidia.Name = "btEmprestarMidia";
             this.btEmprestarMidia.Size = new System.Drawing.Size(132, 77);
             this.btEmprestarMidia.TabIndex = 2;
-            this.btEmprestarMidia.Text = "Emprestar mídia\r\n";
+            this.btEmprestarMidia.Text = "Emprestar";
             this.btEmprestarMidia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEmprestarMidia.UseVisualStyleBackColor = true;
             this.btEmprestarMidia.Click += new System.EventHandler(this.button5_Click);
@@ -634,6 +631,7 @@
             this.btCadAmigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btCadAmigo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btCadAmigo.Image = ((System.Drawing.Image)(resources.GetObject("btCadAmigo.Image")));
+            this.btCadAmigo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btCadAmigo.Location = new System.Drawing.Point(144, 20);
             this.btCadAmigo.Name = "btCadAmigo";
             this.btCadAmigo.Size = new System.Drawing.Size(132, 80);
@@ -671,6 +669,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1038, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // inserirToolStripMenuItem
             // 
@@ -732,6 +731,8 @@
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.gpbxFiltro.ResumeLayout(false);
             this.gpbxFiltro.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

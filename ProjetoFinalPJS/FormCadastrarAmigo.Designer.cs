@@ -179,6 +179,7 @@
             // cbxUF
             // 
             this.cbxUF.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbxUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxUF.FormattingEnabled = true;
             this.cbxUF.Location = new System.Drawing.Point(238, 141);
             this.cbxUF.Name = "cbxUF";
@@ -241,6 +242,7 @@
             // 
             // cbxCidade
             // 
+            this.cbxCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCidade.FormattingEnabled = true;
             this.cbxCidade.Location = new System.Drawing.Point(305, 141);
             this.cbxCidade.Name = "cbxCidade";

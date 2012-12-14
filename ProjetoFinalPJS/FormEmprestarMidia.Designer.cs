@@ -136,7 +136,7 @@
             // lbTipoMidia
             // 
             this.lbTipoMidia.AutoSize = true;
-            this.lbTipoMidia.Location = new System.Drawing.Point(243, 111);
+            this.lbTipoMidia.Location = new System.Drawing.Point(240, 112);
             this.lbTipoMidia.Name = "lbTipoMidia";
             this.lbTipoMidia.Size = new System.Drawing.Size(72, 13);
             this.lbTipoMidia.TabIndex = 39;
@@ -337,7 +337,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 397);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ClientSize = new System.Drawing.Size(502, 411);
             this.Controls.Add(this.radioButtonSelecao);
             this.Controls.Add(this.tbxIdEmprestimo);
             this.Controls.Add(this.btRemover);
@@ -361,9 +363,11 @@
             this.Controls.Add(this.cbxApelido);
             this.Controls.Add(this.lbInterprete);
             this.Controls.Add(this.lblApelido);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(508, 435);
             this.MinimumSize = new System.Drawing.Size(508, 435);
             this.Name = "FormEmprestarMidia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.FormEmprestarMidia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmprestimo)).EndInit();
             this.ResumeLayout(false);
