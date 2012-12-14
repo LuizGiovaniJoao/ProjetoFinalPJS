@@ -13,6 +13,8 @@ namespace ProjetoFinalPJS
 {
     public partial class FormCadastrarAmigo : Form
     {
+        public FormListaAmigos FormularioListaAmigos;
+
         public FormCadastrarAmigo()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace ProjetoFinalPJS
             tbxEmail.Text = dadosDGV[8];           
         }
 
-        public void Limpar()
+        private void button3_Click(object sender, EventArgs e)
         {
             tbxApelido.Text = null;
             tbxNome.Text = null;
@@ -51,16 +53,13 @@ namespace ProjetoFinalPJS
             tbxTelefoneMasc.Text = null;
             tbxEmail.Text = null;
             tbxApelido.Focus();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Limpar();
+            errorProviderAmigo.SetError(lbApelido, "");
+            errorProviderAmigo.SetError(lbNome, "");
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            if (tbxApelido.Text != "" && tbxNome.Text != "" && cbxCidade.Text != "" && cbxUF.Text != "")
+            if (tbxApelido.Text != "" && tbxNome.Text != "" && cbxCidade.Text != "" && cbxUF.Text != "" && tbxEndereco.Text != "")
             {
                 ClassSQL InserirAmigo = new ClassSQL();
                 ArrayList objArrayList = new ArrayList();
@@ -77,12 +76,8 @@ namespace ProjetoFinalPJS
 
                 if (InserirAmigo.Insert(objArrayList))
                 {
-                    Limpar();
-                    MessageBox.Show("Legaaallll");
-                }
-                else
-                {
-                    MessageBox.Show("Não deu");
+                    this.Close();
+                    //FormularioListaAmigos.atualizaGridView();
                 }
             }
             else
@@ -105,6 +100,10 @@ namespace ProjetoFinalPJS
                     errorProviderAmigo.SetError(lbUf, tooltip);
                 else
                     errorProviderAmigo.SetError(lbUf, "");
+                if (tbxEndereco.Text == "")
+                    errorProviderAmigo.SetError(lbEndereco, tooltip);
+                else
+                    errorProviderAmigo.SetError(lbEndereco, "");
                 }
         }
 
@@ -127,12 +126,8 @@ namespace ProjetoFinalPJS
 
                 if (AtualizarAmigo.Update(objArrayList, Apelido))
                 {
-                    MessageBox.Show("Legaaallll");
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Não deu");
+                    this.Close();
+                    //FormularioListaAmigos.atualizaGridView();
                 }
             }
             else
@@ -156,11 +151,6 @@ namespace ProjetoFinalPJS
                 else
                     errorProviderAmigo.SetError(lbUf, "");
             }
-        }
-
-        private void cbxUF_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void FormCadastrarAmigo_FormClosing(object sender, FormClosingEventArgs e)

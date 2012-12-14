@@ -75,6 +75,9 @@
             // 
             // listViewDevMidia
             // 
+            this.listViewDevMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewDevMidia.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.LVInterprete,
             this.LVAlbum,
@@ -119,13 +122,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(293, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Data de Devolução";
+            this.label1.Text = "Data de Devolução:";
             this.label1.Visible = false;
             // 
             // dtDevolucao
             // 
+            this.dtDevolucao.Enabled = false;
             this.dtDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDevolucao.Location = new System.Drawing.Point(296, 26);
             this.dtDevolucao.Name = "dtDevolucao";
@@ -143,6 +147,7 @@
             // 
             // btDevolver
             // 
+            this.btDevolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btDevolver.Location = new System.Drawing.Point(527, 327);
             this.btDevolver.Name = "btDevolver";
             this.btDevolver.Size = new System.Drawing.Size(86, 23);
@@ -153,6 +158,7 @@
             // 
             // btDevolveTudo
             // 
+            this.btDevolveTudo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btDevolveTudo.Location = new System.Drawing.Point(619, 327);
             this.btDevolveTudo.Name = "btDevolveTudo";
             this.btDevolveTudo.Size = new System.Drawing.Size(86, 23);
@@ -166,7 +172,7 @@
             this.cbxIdEmprestimo.FormattingEnabled = true;
             this.cbxIdEmprestimo.Location = new System.Drawing.Point(403, 25);
             this.cbxIdEmprestimo.Name = "cbxIdEmprestimo";
-            this.cbxIdEmprestimo.Size = new System.Drawing.Size(10, 21);
+            this.cbxIdEmprestimo.Size = new System.Drawing.Size(0, 21);
             this.cbxIdEmprestimo.TabIndex = 15;
             this.cbxIdEmprestimo.Visible = false;
             // 
@@ -185,6 +191,7 @@
             this.Controls.Add(this.lbEndereco);
             this.Controls.Add(this.cbxApelido);
             this.Controls.Add(this.lbApelido);
+            this.MinimumSize = new System.Drawing.Size(733, 394);
             this.Name = "FormDevolverMidia";
             this.Text = "Devolver Midia";
             this.Load += new System.EventHandler(this.FormDevolverMidia_Load);

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjetoFinalPJS
 {
@@ -27,10 +29,15 @@ namespace ProjetoFinalPJS
 
         }
 
-        private void FormListaAmigos_Load(object sender, EventArgs e)
+        public void atualizaGridView()
         {
             ClassSQL ApresentaAmigos = new ClassSQL();
             dGridViewListaNomes.DataSource = ApresentaAmigos.Listar();
+        }
+
+        private void FormListaAmigos_Load(object sender, EventArgs e)
+        {
+            atualizaGridView();
         }
 
         private void btRemover_Click(object sender, EventArgs e)
@@ -59,10 +66,9 @@ namespace ProjetoFinalPJS
             {
                  dadosDGV[I] = dGridViewListaNomes.CurrentRow.Cells[I].Value.ToString();
             }
+            
                 FormCadastrarAmigo frm = new FormCadastrarAmigo(dadosDGV);
                 frm.Show();
-                
-
         }
 
         private void txtPesquisaNome_TextChanged(object sender, EventArgs e)

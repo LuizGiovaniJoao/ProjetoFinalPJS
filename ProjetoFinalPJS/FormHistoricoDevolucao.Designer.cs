@@ -35,8 +35,10 @@
             // 
             // dGVHistoricoDevolucao
             // 
-            this.dGVHistoricoDevolucao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dGVHistoricoDevolucao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGVHistoricoDevolucao.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dGVHistoricoDevolucao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVHistoricoDevolucao.Location = new System.Drawing.Point(12, 25);
             this.dGVHistoricoDevolucao.Name = "dGVHistoricoDevolucao";

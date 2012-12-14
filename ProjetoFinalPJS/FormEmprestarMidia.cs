@@ -88,7 +88,7 @@ namespace ProjetoFinalPJS
 
         private void cbxApelido_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listar("SELECT Endereco FROM Amigo WHERE APELIDO = '" + cbxApelido.Text + "'", cbxEndereco, "Endereco");
+            listar("SELECT Endereco FROM Amigo WHERE Apelido = '" + cbxApelido.Text + "'", cbxEndereco, "Endereco");
         }
 
         private void cbxInterprete_SelectedIndexChanged(object sender, EventArgs e)
@@ -235,8 +235,12 @@ namespace ProjetoFinalPJS
                     {
                         radioButtonSelecao.Checked = true;
                         listar("SELECT IdItem from ItemEmprestimo where IdItem < 0", cbxInterprete, "IdItem");
+                        listar("SELECT Album FROM Midia WHERE ALBUM = ''", cbxAlbum, "ALBUM");
+                        listar("SELECT Musica FROM Midia WHERE Musica = ''", cbxMusica, "Musica");
+                        listar("SELECT Tipo FROM Midia WHERE Tipo = ''", cbxMidia, "Tipo");
                         cbxMidia.Text = "";
                         btEmprestar.Enabled = false;
+                        cbxApelido.Enabled = true;
                     }
                 }
                 else

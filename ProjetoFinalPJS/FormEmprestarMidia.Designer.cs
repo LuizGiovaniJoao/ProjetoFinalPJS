@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
             this.lblApelido = new System.Windows.Forms.Label();
             this.lbInterprete = new System.Windows.Forms.Label();
             this.cbxInterprete = new System.Windows.Forms.ComboBox();
@@ -129,27 +129,27 @@
             this.lbMusica.AutoSize = true;
             this.lbMusica.Location = new System.Drawing.Point(9, 112);
             this.lbMusica.Name = "lbMusica";
-            this.lbMusica.Size = new System.Drawing.Size(86, 13);
+            this.lbMusica.Size = new System.Drawing.Size(89, 13);
             this.lbMusica.TabIndex = 41;
-            this.lbMusica.Text = "Nome da música";
+            this.lbMusica.Text = "Nome da música:";
             // 
             // lbTipoMidia
             // 
             this.lbTipoMidia.AutoSize = true;
             this.lbTipoMidia.Location = new System.Drawing.Point(240, 112);
             this.lbTipoMidia.Name = "lbTipoMidia";
-            this.lbTipoMidia.Size = new System.Drawing.Size(72, 13);
+            this.lbTipoMidia.Size = new System.Drawing.Size(75, 13);
             this.lbTipoMidia.TabIndex = 39;
-            this.lbTipoMidia.Text = "Tipo de mídia";
+            this.lbTipoMidia.Text = "Tipo de mídia:";
             // 
             // lbAlbum
             // 
             this.lbAlbum.AutoSize = true;
-            this.lbAlbum.Location = new System.Drawing.Point(250, 72);
+            this.lbAlbum.Location = new System.Drawing.Point(240, 72);
             this.lbAlbum.Name = "lbAlbum";
-            this.lbAlbum.Size = new System.Drawing.Size(81, 13);
+            this.lbAlbum.Size = new System.Drawing.Size(84, 13);
             this.lbAlbum.TabIndex = 35;
-            this.lbAlbum.Text = "Nome do álbum";
+            this.lbAlbum.Text = "Nome do álbum:";
             // 
             // cbxMidia
             // 
@@ -196,6 +196,7 @@
             // 
             // DtEmprestimo
             // 
+            this.DtEmprestimo.Enabled = false;
             this.DtEmprestimo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DtEmprestimo.Location = new System.Drawing.Point(389, 129);
             this.DtEmprestimo.Name = "DtEmprestimo";
@@ -207,9 +208,9 @@
             this.lbEndereco.AutoSize = true;
             this.lbEndereco.Location = new System.Drawing.Point(240, 9);
             this.lbEndereco.Name = "lbEndereco";
-            this.lbEndereco.Size = new System.Drawing.Size(53, 13);
+            this.lbEndereco.Size = new System.Drawing.Size(56, 13);
             this.lbEndereco.TabIndex = 49;
-            this.lbEndereco.Text = "Endereço";
+            this.lbEndereco.Text = "Endereço:";
             // 
             // cbxEndereco
             // 
@@ -240,13 +241,13 @@
             this.LVMidia,
             this.LVDTEmpres});
             this.ListViewEmprestimos.FullRowSelect = true;
-            listViewGroup1.Header = "Musica";
-            listViewGroup1.Name = "Músicas";
-            listViewGroup2.Header = "Album";
-            listViewGroup2.Name = "Álbum";
+            listViewGroup3.Header = "Musica";
+            listViewGroup3.Name = "Músicas";
+            listViewGroup4.Header = "Album";
+            listViewGroup4.Name = "Álbum";
             this.ListViewEmprestimos.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
+            listViewGroup3,
+            listViewGroup4});
             this.ListViewEmprestimos.Location = new System.Drawing.Point(12, 184);
             this.ListViewEmprestimos.Name = "ListViewEmprestimos";
             this.ListViewEmprestimos.ShowGroups = false;
@@ -285,9 +286,9 @@
             this.lbApelido.AutoSize = true;
             this.lbApelido.Location = new System.Drawing.Point(12, 9);
             this.lbApelido.Name = "lbApelido";
-            this.lbApelido.Size = new System.Drawing.Size(42, 13);
+            this.lbApelido.Size = new System.Drawing.Size(45, 13);
             this.lbApelido.TabIndex = 54;
-            this.lbApelido.Text = "Apelido";
+            this.lbApelido.Text = "Apelido:";
             // 
             // btEmprestar
             // 
@@ -307,7 +308,7 @@
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(324, 362);
+            this.btRemover.Location = new System.Drawing.Point(324, 363);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(75, 23);
             this.btRemover.TabIndex = 11;
@@ -333,6 +334,7 @@
             this.radioButtonSelecao.TabIndex = 58;
             this.radioButtonSelecao.TabStop = true;
             this.radioButtonSelecao.UseVisualStyleBackColor = true;
+            this.radioButtonSelecao.Visible = false;
             // 
             // FormEmprestarMidia
             // 
@@ -340,7 +342,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(502, 411);
+            this.ClientSize = new System.Drawing.Size(498, 403);
             this.Controls.Add(this.radioButtonSelecao);
             this.Controls.Add(this.tbxIdEmprestimo);
             this.Controls.Add(this.btRemover);
@@ -364,7 +366,7 @@
             this.Controls.Add(this.cbxApelido);
             this.Controls.Add(this.lbInterprete);
             this.Controls.Add(this.lblApelido);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximumSize = new System.Drawing.Size(508, 435);
             this.MinimumSize = new System.Drawing.Size(508, 435);
             this.Name = "FormEmprestarMidia";

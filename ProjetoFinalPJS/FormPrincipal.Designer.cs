@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewGroup listViewGroup16 = new System.Windows.Forms.ListViewGroup("Vinil", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup17 = new System.Windows.Forms.ListViewGroup("K7", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup18 = new System.Windows.Forms.ListViewGroup("CD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup19 = new System.Windows.Forms.ListViewGroup("DVD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup20 = new System.Windows.Forms.ListViewGroup("Digital", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.listViewMidia = new System.Windows.Forms.ListView();
             this.Musica = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,19 +48,19 @@
             this.nota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.situacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gpbxFiltro = new System.Windows.Forms.GroupBox();
+            this.btFiltral = new System.Windows.Forms.Button();
+            this.btTodos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimeDataAlbum = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxSituacao = new System.Windows.Forms.ComboBox();
+            this.cbxSituacao = new System.Windows.Forms.ComboBox();
             this.dateTimeDataCompra = new System.Windows.Forms.DateTimePicker();
             this.tbxOrigemCompra = new System.Windows.Forms.TextBox();
             this.checkBox_dataAlbum = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox_midia = new System.Windows.Forms.CheckBox();
             this.cbxMidia = new System.Windows.Forms.ComboBox();
             this.checkBox_dataCompra = new System.Windows.Forms.CheckBox();
             this.tbxAlbum = new System.Windows.Forms.TextBox();
             this.cbxNota = new System.Windows.Forms.ComboBox();
-            this.checkBox_nota = new System.Windows.Forms.CheckBox();
             this.tbxAutor = new System.Windows.Forms.TextBox();
             this.checkBox_origemCompra = new System.Windows.Forms.CheckBox();
             this.tbxInterprete = new System.Windows.Forms.TextBox();
@@ -67,12 +68,19 @@
             this.checkBoxInterprete = new System.Windows.Forms.CheckBox();
             this.checkBox_Autor = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btHistórico = new System.Windows.Forms.Button();
             this.dateTimePickerDataCompra1 = new System.Windows.Forms.DateTimePicker();
             this.checkBoxSituacao = new System.Windows.Forms.CheckBox();
             this.checkBox_dataAlbum1 = new System.Windows.Forms.CheckBox();
             this.dateTimePickerDataAlbum1 = new System.Windows.Forms.DateTimePicker();
             this.checkBoxDataCompra1 = new System.Windows.Forms.CheckBox();
+            this.checkBox_midia = new System.Windows.Forms.CheckBox();
+            this.checkBox_nota = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btDevolverMidia = new System.Windows.Forms.Button();
+            this.btEmprestarMidia = new System.Windows.Forms.Button();
+            this.btCadAmigo = new System.Windows.Forms.Button();
+            this.btCadMidia = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mídiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,19 +88,14 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emprestarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btHistórico = new System.Windows.Forms.Button();
-            this.btDevolverMidia = new System.Windows.Forms.Button();
-            this.btEmprestarMidia = new System.Windows.Forms.Button();
-            this.btCadAmigo = new System.Windows.Forms.Button();
-            this.btCadMidia = new System.Windows.Forms.Button();
-            this.btFiltral = new System.Windows.Forms.Button();
-            this.btTodos = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
+            this.errorProviderFiltro = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpbxFiltro.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFiltro)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewMidia
@@ -115,22 +118,22 @@
             this.situacao});
             this.listViewMidia.FullRowSelect = true;
             this.listViewMidia.GridLines = true;
-            listViewGroup1.Header = "Vinil";
-            listViewGroup1.Name = "Vinil";
-            listViewGroup2.Header = "K7";
-            listViewGroup2.Name = "K7";
-            listViewGroup3.Header = "CD";
-            listViewGroup3.Name = "CD";
-            listViewGroup4.Header = "DVD";
-            listViewGroup4.Name = "DVD";
-            listViewGroup5.Header = "Digital";
-            listViewGroup5.Name = "Digital";
+            listViewGroup16.Header = "Vinil";
+            listViewGroup16.Name = "Vinil";
+            listViewGroup17.Header = "K7";
+            listViewGroup17.Name = "K7";
+            listViewGroup18.Header = "CD";
+            listViewGroup18.Name = "CD";
+            listViewGroup19.Header = "DVD";
+            listViewGroup19.Name = "DVD";
+            listViewGroup20.Header = "Digital";
+            listViewGroup20.Name = "Digital";
             this.listViewMidia.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3,
-            listViewGroup4,
-            listViewGroup5});
+            listViewGroup16,
+            listViewGroup17,
+            listViewGroup18,
+            listViewGroup19,
+            listViewGroup20});
             this.listViewMidia.Location = new System.Drawing.Point(12, 245);
             this.listViewMidia.Name = "listViewMidia";
             this.listViewMidia.Size = new System.Drawing.Size(1011, 296);
@@ -202,17 +205,13 @@
             this.gpbxFiltro.Controls.Add(this.btTodos);
             this.gpbxFiltro.Controls.Add(this.label1);
             this.gpbxFiltro.Controls.Add(this.dateTimeDataAlbum);
-            this.gpbxFiltro.Controls.Add(this.comboBoxSituacao);
             this.gpbxFiltro.Controls.Add(this.dateTimeDataCompra);
             this.gpbxFiltro.Controls.Add(this.tbxOrigemCompra);
             this.gpbxFiltro.Controls.Add(this.checkBox_dataAlbum);
             this.gpbxFiltro.Controls.Add(this.label2);
-            this.gpbxFiltro.Controls.Add(this.checkBox_midia);
             this.gpbxFiltro.Controls.Add(this.cbxMidia);
             this.gpbxFiltro.Controls.Add(this.checkBox_dataCompra);
             this.gpbxFiltro.Controls.Add(this.tbxAlbum);
-            this.gpbxFiltro.Controls.Add(this.cbxNota);
-            this.gpbxFiltro.Controls.Add(this.checkBox_nota);
             this.gpbxFiltro.Controls.Add(this.tbxAutor);
             this.gpbxFiltro.Controls.Add(this.checkBox_origemCompra);
             this.gpbxFiltro.Controls.Add(this.tbxInterprete);
@@ -227,6 +226,33 @@
             this.gpbxFiltro.TabIndex = 4;
             this.gpbxFiltro.TabStop = false;
             this.gpbxFiltro.Text = "Filtro";
+            // 
+            // btFiltral
+            // 
+            this.btFiltral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btFiltral.Enabled = false;
+            this.btFiltral.Image = ((System.Drawing.Image)(resources.GetObject("btFiltral.Image")));
+            this.btFiltral.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btFiltral.Location = new System.Drawing.Point(642, 169);
+            this.btFiltral.Name = "btFiltral";
+            this.btFiltral.Size = new System.Drawing.Size(75, 23);
+            this.btFiltral.TabIndex = 6;
+            this.btFiltral.Text = "Filtrar";
+            this.btFiltral.UseVisualStyleBackColor = true;
+            this.btFiltral.Click += new System.EventHandler(this.btFiltral_Click);
+            // 
+            // btTodos
+            // 
+            this.btTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btTodos.Image = ((System.Drawing.Image)(resources.GetObject("btTodos.Image")));
+            this.btTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btTodos.Location = new System.Drawing.Point(561, 169);
+            this.btTodos.Name = "btTodos";
+            this.btTodos.Size = new System.Drawing.Size(75, 23);
+            this.btTodos.TabIndex = 5;
+            this.btTodos.Text = "Todos";
+            this.btTodos.UseVisualStyleBackColor = true;
+            this.btTodos.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -250,19 +276,19 @@
             this.dateTimeDataAlbum.TabIndex = 18;
             this.dateTimeDataAlbum.Value = new System.DateTime(2012, 12, 7, 0, 0, 0, 0);
             // 
-            // comboBoxSituacao
+            // cbxSituacao
             // 
-            this.comboBoxSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSituacao.Enabled = false;
-            this.comboBoxSituacao.FormattingEnabled = true;
-            this.comboBoxSituacao.Items.AddRange(new object[] {
+            this.cbxSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSituacao.Enabled = false;
+            this.cbxSituacao.FormattingEnabled = true;
+            this.cbxSituacao.Items.AddRange(new object[] {
             "Emprestado",
             "Disponível"});
-            this.comboBoxSituacao.Location = new System.Drawing.Point(617, 35);
-            this.comboBoxSituacao.Name = "comboBoxSituacao";
-            this.comboBoxSituacao.Size = new System.Drawing.Size(97, 24);
-            this.comboBoxSituacao.TabIndex = 30;
+            this.cbxSituacao.Location = new System.Drawing.Point(149, 34);
+            this.cbxSituacao.Name = "cbxSituacao";
+            this.cbxSituacao.Size = new System.Drawing.Size(82, 24);
+            this.cbxSituacao.TabIndex = 30;
             // 
             // dateTimeDataCompra
             // 
@@ -289,11 +315,11 @@
             // 
             this.checkBox_dataAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataAlbum.AutoSize = true;
-            this.checkBox_dataAlbum.Location = new System.Drawing.Point(484, 61);
+            this.checkBox_dataAlbum.Location = new System.Drawing.Point(481, 61);
             this.checkBox_dataAlbum.Name = "checkBox_dataAlbum";
-            this.checkBox_dataAlbum.Size = new System.Drawing.Size(95, 20);
+            this.checkBox_dataAlbum.Size = new System.Drawing.Size(98, 20);
             this.checkBox_dataAlbum.TabIndex = 8;
-            this.checkBox_dataAlbum.Text = "Data do álbum";
+            this.checkBox_dataAlbum.Text = "Data do álbum:";
             this.checkBox_dataAlbum.UseVisualStyleBackColor = true;
             this.checkBox_dataAlbum.CheckedChanged += new System.EventHandler(this.checkBox_dataAlbum_CheckedChanged);
             // 
@@ -306,18 +332,6 @@
             this.label2.Size = new System.Drawing.Size(22, 16);
             this.label2.TabIndex = 26;
             this.label2.Text = "até";
-            // 
-            // checkBox_midia
-            // 
-            this.checkBox_midia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox_midia.AutoSize = true;
-            this.checkBox_midia.Location = new System.Drawing.Point(484, 14);
-            this.checkBox_midia.Name = "checkBox_midia";
-            this.checkBox_midia.Size = new System.Drawing.Size(52, 20);
-            this.checkBox_midia.TabIndex = 11;
-            this.checkBox_midia.Text = "Mídia";
-            this.checkBox_midia.UseVisualStyleBackColor = true;
-            this.checkBox_midia.CheckedChanged += new System.EventHandler(this.checkBox_midia_CheckedChanged);
             // 
             // cbxMidia
             // 
@@ -334,18 +348,18 @@
             "Vinil"});
             this.cbxMidia.Location = new System.Drawing.Point(485, 35);
             this.cbxMidia.Name = "cbxMidia";
-            this.cbxMidia.Size = new System.Drawing.Size(76, 24);
+            this.cbxMidia.Size = new System.Drawing.Size(55, 24);
             this.cbxMidia.TabIndex = 6;
             // 
             // checkBox_dataCompra
             // 
             this.checkBox_dataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_dataCompra.AutoSize = true;
-            this.checkBox_dataCompra.Location = new System.Drawing.Point(484, 105);
+            this.checkBox_dataCompra.Location = new System.Drawing.Point(481, 105);
             this.checkBox_dataCompra.Name = "checkBox_dataCompra";
-            this.checkBox_dataCompra.Size = new System.Drawing.Size(102, 20);
+            this.checkBox_dataCompra.Size = new System.Drawing.Size(105, 20);
             this.checkBox_dataCompra.TabIndex = 10;
-            this.checkBox_dataCompra.Text = "Data da compra";
+            this.checkBox_dataCompra.Text = "Data da compra:";
             this.checkBox_dataCompra.UseVisualStyleBackColor = true;
             this.checkBox_dataCompra.CheckedChanged += new System.EventHandler(this.checkBox_dataCompra_CheckedChanged);
             // 
@@ -377,22 +391,10 @@
             "08",
             "09",
             "10"});
-            this.cbxNota.Location = new System.Drawing.Point(569, 35);
+            this.cbxNota.Location = new System.Drawing.Point(77, 35);
             this.cbxNota.Name = "cbxNota";
-            this.cbxNota.Size = new System.Drawing.Size(41, 24);
+            this.cbxNota.Size = new System.Drawing.Size(64, 24);
             this.cbxNota.TabIndex = 20;
-            // 
-            // checkBox_nota
-            // 
-            this.checkBox_nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox_nota.AutoSize = true;
-            this.checkBox_nota.Location = new System.Drawing.Point(569, 14);
-            this.checkBox_nota.Name = "checkBox_nota";
-            this.checkBox_nota.Size = new System.Drawing.Size(49, 20);
-            this.checkBox_nota.TabIndex = 21;
-            this.checkBox_nota.Text = "Nota";
-            this.checkBox_nota.UseVisualStyleBackColor = true;
-            this.checkBox_nota.CheckedChanged += new System.EventHandler(this.checkBox_nota_CheckedChanged);
             // 
             // tbxAutor
             // 
@@ -409,9 +411,9 @@
             this.checkBox_origemCompra.AutoSize = true;
             this.checkBox_origemCompra.Location = new System.Drawing.Point(7, 150);
             this.checkBox_origemCompra.Name = "checkBox_origemCompra";
-            this.checkBox_origemCompra.Size = new System.Drawing.Size(114, 20);
+            this.checkBox_origemCompra.Size = new System.Drawing.Size(117, 20);
             this.checkBox_origemCompra.TabIndex = 0;
-            this.checkBox_origemCompra.Text = "Origem da compra";
+            this.checkBox_origemCompra.Text = "Origem da compra:";
             this.checkBox_origemCompra.UseVisualStyleBackColor = true;
             this.checkBox_origemCompra.CheckedChanged += new System.EventHandler(this.checkBox_origemCompra_CheckedChanged);
             // 
@@ -432,9 +434,9 @@
             this.checkBox_album.AutoSize = true;
             this.checkBox_album.Location = new System.Drawing.Point(6, 105);
             this.checkBox_album.Name = "checkBox_album";
-            this.checkBox_album.Size = new System.Drawing.Size(142, 20);
+            this.checkBox_album.Size = new System.Drawing.Size(145, 20);
             this.checkBox_album.TabIndex = 9;
-            this.checkBox_album.Text = "Nome do álbum / música";
+            this.checkBox_album.Text = "Nome do álbum / música:";
             this.checkBox_album.UseVisualStyleBackColor = true;
             this.checkBox_album.CheckedChanged += new System.EventHandler(this.checkBox_album_CheckedChanged);
             // 
@@ -443,9 +445,9 @@
             this.checkBoxInterprete.AutoSize = true;
             this.checkBoxInterprete.Location = new System.Drawing.Point(6, 14);
             this.checkBoxInterprete.Name = "checkBoxInterprete";
-            this.checkBoxInterprete.Size = new System.Drawing.Size(117, 20);
+            this.checkBoxInterprete.Size = new System.Drawing.Size(120, 20);
             this.checkBoxInterprete.TabIndex = 0;
-            this.checkBoxInterprete.Text = "Nome do intérprete";
+            this.checkBoxInterprete.Text = "Nome do intérprete:";
             this.checkBoxInterprete.UseVisualStyleBackColor = true;
             this.checkBoxInterprete.CheckedChanged += new System.EventHandler(this.checkBoxInterprete_CheckedChanged);
             // 
@@ -454,9 +456,9 @@
             this.checkBox_Autor.AutoSize = true;
             this.checkBox_Autor.Location = new System.Drawing.Point(6, 61);
             this.checkBox_Autor.Name = "checkBox_Autor";
-            this.checkBox_Autor.Size = new System.Drawing.Size(97, 20);
+            this.checkBox_Autor.Size = new System.Drawing.Size(100, 20);
             this.checkBox_Autor.TabIndex = 7;
-            this.checkBox_Autor.Text = "Nome do autor";
+            this.checkBox_Autor.Text = "Nome do autor:";
             this.checkBox_Autor.UseVisualStyleBackColor = true;
             this.checkBox_Autor.CheckedChanged += new System.EventHandler(this.checkBox_Autor_CheckedChanged);
             // 
@@ -467,13 +469,27 @@
             this.groupBox1.Controls.Add(this.dateTimePickerDataCompra1);
             this.groupBox1.Controls.Add(this.checkBoxSituacao);
             this.groupBox1.Controls.Add(this.checkBox_dataAlbum1);
+            this.groupBox1.Controls.Add(this.cbxSituacao);
             this.groupBox1.Controls.Add(this.dateTimePickerDataAlbum1);
             this.groupBox1.Controls.Add(this.checkBoxDataCompra1);
+            this.groupBox1.Controls.Add(this.checkBox_midia);
+            this.groupBox1.Controls.Add(this.checkBox_nota);
+            this.groupBox1.Controls.Add(this.cbxNota);
             this.groupBox1.Location = new System.Drawing.Point(469, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 198);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
+            // 
+            // btHistórico
+            // 
+            this.btHistórico.Location = new System.Drawing.Point(11, 169);
+            this.btHistórico.Name = "btHistórico";
+            this.btHistórico.Size = new System.Drawing.Size(75, 23);
+            this.btHistórico.TabIndex = 30;
+            this.btHistórico.Text = "Devoluções";
+            this.btHistórico.UseVisualStyleBackColor = true;
+            this.btHistórico.Click += new System.EventHandler(this.btHistórico_Click);
             // 
             // dateTimePickerDataCompra1
             // 
@@ -490,11 +506,11 @@
             // 
             this.checkBoxSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxSituacao.AutoSize = true;
-            this.checkBoxSituacao.Location = new System.Drawing.Point(149, 14);
+            this.checkBoxSituacao.Location = new System.Drawing.Point(161, 14);
             this.checkBoxSituacao.Name = "checkBoxSituacao";
-            this.checkBoxSituacao.Size = new System.Drawing.Size(67, 20);
+            this.checkBoxSituacao.Size = new System.Drawing.Size(70, 20);
             this.checkBoxSituacao.TabIndex = 29;
-            this.checkBoxSituacao.Text = "Situação";
+            this.checkBoxSituacao.Text = "Situação:";
             this.checkBoxSituacao.UseVisualStyleBackColor = true;
             this.checkBoxSituacao.CheckedChanged += new System.EventHandler(this.checkBoxSituacao_CheckedChanged);
             // 
@@ -531,6 +547,30 @@
             this.checkBoxDataCompra1.UseVisualStyleBackColor = true;
             this.checkBoxDataCompra1.CheckedChanged += new System.EventHandler(this.checkBoxDataCompra1_CheckedChanged);
             // 
+            // checkBox_midia
+            // 
+            this.checkBox_midia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox_midia.AutoSize = true;
+            this.checkBox_midia.Location = new System.Drawing.Point(11, 14);
+            this.checkBox_midia.Name = "checkBox_midia";
+            this.checkBox_midia.Size = new System.Drawing.Size(55, 20);
+            this.checkBox_midia.TabIndex = 11;
+            this.checkBox_midia.Text = "Mídia:";
+            this.checkBox_midia.UseVisualStyleBackColor = true;
+            this.checkBox_midia.CheckedChanged += new System.EventHandler(this.checkBox_midia_CheckedChanged);
+            // 
+            // checkBox_nota
+            // 
+            this.checkBox_nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox_nota.AutoSize = true;
+            this.checkBox_nota.Location = new System.Drawing.Point(89, 14);
+            this.checkBox_nota.Name = "checkBox_nota";
+            this.checkBox_nota.Size = new System.Drawing.Size(52, 20);
+            this.checkBox_nota.TabIndex = 21;
+            this.checkBox_nota.Text = "Nota:";
+            this.checkBox_nota.UseVisualStyleBackColor = true;
+            this.checkBox_nota.CheckedChanged += new System.EventHandler(this.checkBox_nota_CheckedChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
@@ -544,73 +584,6 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Menu";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inserirToolStripMenuItem,
-            this.movimentaçãoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1038, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // inserirToolStripMenuItem
-            // 
-            this.inserirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mídiaToolStripMenuItem,
-            this.amigoToolStripMenuItem});
-            this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
-            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.inserirToolStripMenuItem.Text = "Inserir";
-            // 
-            // mídiaToolStripMenuItem
-            // 
-            this.mídiaToolStripMenuItem.Name = "mídiaToolStripMenuItem";
-            this.mídiaToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.mídiaToolStripMenuItem.Text = "Mídia";
-            // 
-            // amigoToolStripMenuItem
-            // 
-            this.amigoToolStripMenuItem.Name = "amigoToolStripMenuItem";
-            this.amigoToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.amigoToolStripMenuItem.Text = "Amigo";
-            // 
-            // movimentaçãoToolStripMenuItem
-            // 
-            this.movimentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emprestarToolStripMenuItem,
-            this.devolverToolStripMenuItem});
-            this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
-            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
-            this.movimentaçãoToolStripMenuItem.Text = "Movimentação";
-            // 
-            // emprestarToolStripMenuItem
-            // 
-            this.emprestarToolStripMenuItem.Name = "emprestarToolStripMenuItem";
-            this.emprestarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.emprestarToolStripMenuItem.Text = "Emprestar";
-            // 
-            // devolverToolStripMenuItem
-            // 
-            this.devolverToolStripMenuItem.Name = "devolverToolStripMenuItem";
-            this.devolverToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.devolverToolStripMenuItem.Text = "Devolver";
-            // 
-            // btHistórico
-            // 
-            this.btHistórico.Location = new System.Drawing.Point(11, 169);
-            this.btHistórico.Name = "btHistórico";
-            this.btHistórico.Size = new System.Drawing.Size(75, 23);
-            this.btHistórico.TabIndex = 30;
-            this.btHistórico.Text = "Devoluções";
-            this.btHistórico.UseVisualStyleBackColor = true;
-            this.btHistórico.Click += new System.EventHandler(this.btHistórico_Click);
             // 
             // btDevolverMidia
             // 
@@ -670,32 +643,66 @@
             this.btCadMidia.UseVisualStyleBackColor = true;
             this.btCadMidia.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btFiltral
+            // menuStrip1
             // 
-            this.btFiltral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btFiltral.Enabled = false;
-            this.btFiltral.Image = ((System.Drawing.Image)(resources.GetObject("btFiltral.Image")));
-            this.btFiltral.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btFiltral.Location = new System.Drawing.Point(642, 169);
-            this.btFiltral.Name = "btFiltral";
-            this.btFiltral.Size = new System.Drawing.Size(75, 23);
-            this.btFiltral.TabIndex = 6;
-            this.btFiltral.Text = "Filtrar";
-            this.btFiltral.UseVisualStyleBackColor = true;
-            this.btFiltral.Click += new System.EventHandler(this.btFiltral_Click);
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserirToolStripMenuItem,
+            this.movimentaçãoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1038, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // btTodos
+            // inserirToolStripMenuItem
             // 
-            this.btTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btTodos.Image = ((System.Drawing.Image)(resources.GetObject("btTodos.Image")));
-            this.btTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btTodos.Location = new System.Drawing.Point(561, 169);
-            this.btTodos.Name = "btTodos";
-            this.btTodos.Size = new System.Drawing.Size(75, 23);
-            this.btTodos.TabIndex = 5;
-            this.btTodos.Text = "Todos";
-            this.btTodos.UseVisualStyleBackColor = true;
-            this.btTodos.Click += new System.EventHandler(this.button1_Click);
+            this.inserirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mídiaToolStripMenuItem,
+            this.amigoToolStripMenuItem});
+            this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
+            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.inserirToolStripMenuItem.Text = "Inserir";
+            // 
+            // mídiaToolStripMenuItem
+            // 
+            this.mídiaToolStripMenuItem.Name = "mídiaToolStripMenuItem";
+            this.mídiaToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.mídiaToolStripMenuItem.Text = "Mídia";
+            this.mídiaToolStripMenuItem.Click += new System.EventHandler(this.mídiaToolStripMenuItem_Click);
+            // 
+            // amigoToolStripMenuItem
+            // 
+            this.amigoToolStripMenuItem.Name = "amigoToolStripMenuItem";
+            this.amigoToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.amigoToolStripMenuItem.Text = "Amigo";
+            this.amigoToolStripMenuItem.Click += new System.EventHandler(this.amigoToolStripMenuItem_Click);
+            // 
+            // movimentaçãoToolStripMenuItem
+            // 
+            this.movimentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emprestarToolStripMenuItem,
+            this.devolverToolStripMenuItem});
+            this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
+            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.movimentaçãoToolStripMenuItem.Text = "Movimentação";
+            // 
+            // emprestarToolStripMenuItem
+            // 
+            this.emprestarToolStripMenuItem.Name = "emprestarToolStripMenuItem";
+            this.emprestarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.emprestarToolStripMenuItem.Text = "Emprestar";
+            this.emprestarToolStripMenuItem.Click += new System.EventHandler(this.emprestarToolStripMenuItem_Click);
+            // 
+            // devolverToolStripMenuItem
+            // 
+            this.devolverToolStripMenuItem.Name = "devolverToolStripMenuItem";
+            this.devolverToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.devolverToolStripMenuItem.Text = "Devolver";
+            this.devolverToolStripMenuItem.Click += new System.EventHandler(this.devolverToolStripMenuItem_Click);
             // 
             // btRemover
             // 
@@ -725,6 +732,11 @@
             this.btAlterar.UseVisualStyleBackColor = true;
             this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
+            // errorProviderFiltro
+            // 
+            this.errorProviderFiltro.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderFiltro.ContainerControl = this;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -748,6 +760,7 @@
             this.groupBox2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFiltro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -800,7 +813,7 @@
         private System.Windows.Forms.ColumnHeader Musica;
         private System.Windows.Forms.ColumnHeader situacao;
         private System.Windows.Forms.ColumnHeader dataAlbum;
-        private System.Windows.Forms.ComboBox comboBoxSituacao;
+        private System.Windows.Forms.ComboBox cbxSituacao;
         private System.Windows.Forms.CheckBox checkBoxSituacao;
         private System.Windows.Forms.DateTimePicker dateTimePickerDataCompra1;
         private System.Windows.Forms.CheckBox checkBoxDataCompra1;
@@ -810,6 +823,7 @@
         private System.Windows.Forms.CheckBox checkBox_dataAlbum1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btHistórico;
+        private System.Windows.Forms.ErrorProvider errorProviderFiltro;
 
     }
 }

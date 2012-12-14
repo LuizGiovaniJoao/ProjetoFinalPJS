@@ -93,7 +93,6 @@ namespace ProjetoFinalPJS
             string[] dadosListView = new string[6];
             ClassSQL Emprestar = new ClassSQL();
 
-            //Item Empréstimo
             foreach (ListViewItem listViewItem in listViewDevMidia.SelectedItems)
             {
                 dadosListView[0] = listViewItem.Text;//.................Intérprete
@@ -102,15 +101,16 @@ namespace ProjetoFinalPJS
                 dadosListView[3] = listViewItem.SubItems[3].Text;//....Mídia
                 dadosListView[4] = listViewItem.SubItems[4].Text;//....Data Empréstimo
 
-                ///////////////////////////////////////////////////////////////////////
                 ArrayList objArrayDisponibilidade = new ArrayList();
                 objArrayDisponibilidade.Add("Disponível");
                 objArrayDisponibilidade.Add(dadosListView[0]);  //Intérprete
                 objArrayDisponibilidade.Add(dadosListView[1]);  //Álbum
                 objArrayDisponibilidade.Add(dadosListView[2]);  //Música
 
+                //Autualiza a disponibilidade da música para que ela possa ser emprestada novamente
                 if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
                 {
+                    //Converte a data de devolução
                     string DataConvertida = dtDevolucao.Text;
                     char X;
                     char[] Data_ConvertidaArray = DataConvertida.ToCharArray();
@@ -131,25 +131,27 @@ namespace ProjetoFinalPJS
                     InsertDevolucao.Add(dadosListView[1]);
                     InsertDevolucao.Add(DataConvertida);
 
+                    //Inseri na tabela de devolução
                     if (Emprestar.Devolucao(InsertDevolucao))
                     {
-                        MessageBox.Show("Inseriu devolucao", "");
                     }
 
-                    MessageBox.Show("Update", "");
                     ArrayList objDelete = new ArrayList();
                     objDelete.Add(dadosListView[0]);  //Intérprete
                     objDelete.Add(dadosListView[1]);  //Álbum
                     objDelete.Add(dadosListView[2]);  //Música
                     objDelete.Add(dadosListView[3]);  //Tipo de mídia
-                    ///////////////////////
+                    
+                    //Devolve o Item emprestado
                     if (Emprestar.DeletaItens(objDelete))
                     {
-                        MessageBox.Show("deletou", "");
                     }
                 }
-                ////////////////////////////////////////////////////////////////////////
                 listViewItem.Remove();
+                if (listViewDevMidia.Items.Count == 0)
+                {
+                    listaSelect();
+                }
             }
         }
 

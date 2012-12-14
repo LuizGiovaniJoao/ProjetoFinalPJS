@@ -16,14 +16,12 @@ namespace ProjetoFinalPJS
         {
             InitializeComponent();
         }
-
+ 
         public FormPrincipal FormularioPrincipal;
 
         public FormCadastrarMidia(string[] dadosLV)
         {
             InitializeComponent();
-            //tbxApelido.Enabled = false;
-            //btSalvar.Enabled = false;
             if (dadosLV[1] == "")
             {
                 radioMusica.Checked = true;
@@ -51,17 +49,15 @@ namespace ProjetoFinalPJS
             radioMusica.Enabled = false;
             btSalvar.Enabled = false;
             btGravar.Enabled = true;
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            btLimpar.Enabled = false;
 
         }
 
         private void radio_Album_CheckedChanged(object sender, EventArgs e)
         {
+            btSalvar.Enabled = true;
             btGravar.Enabled = false;
+            tbxMusica.Text = "";
 
             if (radioAlbum.Checked)
             {
@@ -93,7 +89,9 @@ namespace ProjetoFinalPJS
 
         private void radioButton_Musica_CheckedChanged(object sender, EventArgs e)
         {
+            btSalvar.Enabled = true;
             btGravar.Enabled = false;
+            tbxAlbum.Text = "";
 
             if (radioMusica.Checked)
             {
@@ -123,15 +121,7 @@ namespace ProjetoFinalPJS
 
         private void buttonLimpar_Click(object sender, EventArgs e)
         {
-            tbxInterprete.Text = null;
-            tbxAutor.Text = null;
-            tbxAlbum.Text = null;
-            tbxMusica.Text = null;
-            tbxOrigemCompra.Text = null;
-            cbxMidia.Text = null;
-            cbxNota.Text = null;
-            tbxObsevacoes.Text = null;
-            tbxInterprete.Focus();
+            limpar();
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
@@ -143,12 +133,10 @@ namespace ProjetoFinalPJS
                 
                 if (InserirMidia.InsertMidia(Salvar_Gravar_Midia()))
                 {
-                    MessageBox.Show("Legaaallll");
                     FormularioPrincipal.AtualizaAutoCompletar();
                     FormularioPrincipal.Exibicao_ListViewMidia();
+                    limpar();
                 }
-                else
-                    MessageBox.Show("Não deu");
             }
             else
             {
@@ -167,24 +155,34 @@ namespace ProjetoFinalPJS
 
         public void btGravar_Click(object sender, EventArgs e)
         {
-            FormPrincipal frm = new FormPrincipal();
-
             if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
                 ClassSQL InserirMidia = new ClassSQL();
 
                 if (InserirMidia.UpdateMidia(Salvar_Gravar_Midia()))
                 {
-                    MessageBox.Show("Legaaallll");
-                    FormPrincipal teste = new FormPrincipal();
-                    teste.AtualizaAutoCompletar();
-                }
-                else
-                {
-                    MessageBox.Show("Não deu");
+                    FormularioPrincipal.AtualizaAutoCompletar();
+                    FormularioPrincipal.Exibicao_ListViewMidia();
                 }
             }
+        }
 
+        public void limpar()
+        {
+            tbxInterprete.Text = null;
+            tbxAutor.Text = null;
+            tbxAlbum.Text = null;
+            tbxMusica.Text = null;
+            tbxOrigemCompra.Text = null;
+            cbxMidia.Text = null;
+            cbxNota.Text = null;
+            tbxObsevacoes.Text = null;
+            tbxInterprete.Focus();
+            errorProviderMidia.SetError(lbNomeAutor, "");
+            errorProviderMidia.SetError(lbTipoMidia, "");
+            radioBSelecao.Checked = true;
+            tbxObsevacoes.Enabled = false;
+            btSalvar.Enabled = false;
         }
 
         public ArrayList Salvar_Gravar_Midia()
@@ -206,7 +204,4 @@ namespace ProjetoFinalPJS
             return(objArrayList);
        }
     }
-
 }
-
-

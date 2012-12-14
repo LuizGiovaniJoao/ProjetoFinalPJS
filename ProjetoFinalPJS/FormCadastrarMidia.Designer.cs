@@ -56,6 +56,7 @@
             this.radioAlbum = new System.Windows.Forms.RadioButton();
             this.radioMusica = new System.Windows.Forms.RadioButton();
             this.errorProviderMidia = new System.Windows.Forms.ErrorProvider(this.components);
+            this.radioBSelecao = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMidia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,61 +173,60 @@
             this.cbxNota.Name = "cbxNota";
             this.cbxNota.Size = new System.Drawing.Size(43, 21);
             this.cbxNota.TabIndex = 8;
-            this.cbxNota.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // lbNomeInt
             // 
             this.lbNomeInt.AutoSize = true;
             this.lbNomeInt.Location = new System.Drawing.Point(12, 41);
             this.lbNomeInt.Name = "lbNomeInt";
-            this.lbNomeInt.Size = new System.Drawing.Size(97, 13);
+            this.lbNomeInt.Size = new System.Drawing.Size(100, 13);
             this.lbNomeInt.TabIndex = 9;
-            this.lbNomeInt.Text = "Nome do intérprete";
+            this.lbNomeInt.Text = "Nome do intérprete:";
             // 
             // lbNomeAutor
             // 
             this.lbNomeAutor.AutoSize = true;
             this.lbNomeAutor.Location = new System.Drawing.Point(12, 80);
             this.lbNomeAutor.Name = "lbNomeAutor";
-            this.lbNomeAutor.Size = new System.Drawing.Size(78, 13);
+            this.lbNomeAutor.Size = new System.Drawing.Size(80, 13);
             this.lbNomeAutor.TabIndex = 10;
-            this.lbNomeAutor.Text = "Nome do Autor";
+            this.lbNomeAutor.Text = "Nome do autor:";
             // 
             // lbAlbum
             // 
             this.lbAlbum.AutoSize = true;
             this.lbAlbum.Location = new System.Drawing.Point(12, 119);
             this.lbAlbum.Name = "lbAlbum";
-            this.lbAlbum.Size = new System.Drawing.Size(81, 13);
+            this.lbAlbum.Size = new System.Drawing.Size(84, 13);
             this.lbAlbum.TabIndex = 11;
-            this.lbAlbum.Text = "Nome do álbum";
+            this.lbAlbum.Text = "Nome do álbum:";
             // 
             // lbDataAlbum
             // 
             this.lbDataAlbum.AutoSize = true;
             this.lbDataAlbum.Location = new System.Drawing.Point(17, 201);
             this.lbDataAlbum.Name = "lbDataAlbum";
-            this.lbDataAlbum.Size = new System.Drawing.Size(76, 13);
+            this.lbDataAlbum.Size = new System.Drawing.Size(79, 13);
             this.lbDataAlbum.TabIndex = 12;
-            this.lbDataAlbum.Text = "Data do álbum";
+            this.lbDataAlbum.Text = "Data do álbum:";
             // 
             // lbDataCompra
             // 
             this.lbDataCompra.AutoSize = true;
             this.lbDataCompra.Location = new System.Drawing.Point(157, 201);
             this.lbDataCompra.Name = "lbDataCompra";
-            this.lbDataCompra.Size = new System.Drawing.Size(84, 13);
+            this.lbDataCompra.Size = new System.Drawing.Size(86, 13);
             this.lbDataCompra.TabIndex = 13;
-            this.lbDataCompra.Text = "Data da Compra";
+            this.lbDataCompra.Text = "Data da compra:";
             // 
             // lbOriCompra
             // 
             this.lbOriCompra.AutoSize = true;
             this.lbOriCompra.Location = new System.Drawing.Point(17, 240);
             this.lbOriCompra.Name = "lbOriCompra";
-            this.lbOriCompra.Size = new System.Drawing.Size(93, 13);
+            this.lbOriCompra.Size = new System.Drawing.Size(96, 13);
             this.lbOriCompra.TabIndex = 14;
-            this.lbOriCompra.Text = "Origem da compra";
+            this.lbOriCompra.Text = "Origem da compra:";
             // 
             // lbTipoMidia
             // 
@@ -234,18 +234,17 @@
             this.lbTipoMidia.AutoSize = true;
             this.lbTipoMidia.Location = new System.Drawing.Point(411, 240);
             this.lbTipoMidia.Name = "lbTipoMidia";
-            this.lbTipoMidia.Size = new System.Drawing.Size(72, 13);
+            this.lbTipoMidia.Size = new System.Drawing.Size(75, 13);
             this.lbTipoMidia.TabIndex = 15;
-            this.lbTipoMidia.Text = "Tipo de mídia";
+            this.lbTipoMidia.Text = "Tipo de mídia:";
             // 
             // lbObservacoes
             // 
-            this.lbObservacoes.AutoSize = true;
-            this.lbObservacoes.Location = new System.Drawing.Point(17, 281);
+            this.lbObservacoes.Location = new System.Drawing.Point(17, 279);
             this.lbObservacoes.Name = "lbObservacoes";
-            this.lbObservacoes.Size = new System.Drawing.Size(70, 13);
+            this.lbObservacoes.Size = new System.Drawing.Size(96, 15);
             this.lbObservacoes.TabIndex = 16;
-            this.lbObservacoes.Text = "Observações\r\n";
+            this.lbObservacoes.Text = "Observações:";
             // 
             // lbNota
             // 
@@ -253,13 +252,14 @@
             this.lbNota.AutoSize = true;
             this.lbNota.Location = new System.Drawing.Point(510, 240);
             this.lbNota.Name = "lbNota";
-            this.lbNota.Size = new System.Drawing.Size(30, 13);
+            this.lbNota.Size = new System.Drawing.Size(33, 13);
             this.lbNota.TabIndex = 17;
-            this.lbNota.Text = "Nota";
+            this.lbNota.Text = "Nota:";
             // 
             // btSalvar
             // 
             this.btSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSalvar.Enabled = false;
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
             this.btSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSalvar.Location = new System.Drawing.Point(319, 363);
@@ -273,6 +273,7 @@
             // btLimpar
             // 
             this.btLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLimpar.Enabled = false;
             this.btLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btLimpar.Image")));
             this.btLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btLimpar.Location = new System.Drawing.Point(481, 363);
@@ -286,6 +287,7 @@
             // btGravar
             // 
             this.btGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btGravar.Enabled = false;
             this.btGravar.Image = ((System.Drawing.Image)(resources.GetObject("btGravar.Image")));
             this.btGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btGravar.Location = new System.Drawing.Point(400, 363);
@@ -301,9 +303,9 @@
             this.lbMusica.AutoSize = true;
             this.lbMusica.Location = new System.Drawing.Point(15, 162);
             this.lbMusica.Name = "lbMusica";
-            this.lbMusica.Size = new System.Drawing.Size(86, 13);
+            this.lbMusica.Size = new System.Drawing.Size(89, 13);
             this.lbMusica.TabIndex = 21;
-            this.lbMusica.Text = "Nome da música";
+            this.lbMusica.Text = "Nome da música:";
             // 
             // tbxMusica
             // 
@@ -344,11 +346,24 @@
             this.errorProviderMidia.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderMidia.ContainerControl = this;
             // 
+            // radioBSelecao
+            // 
+            this.radioBSelecao.AutoSize = true;
+            this.radioBSelecao.Location = new System.Drawing.Point(140, 13);
+            this.radioBSelecao.Name = "radioBSelecao";
+            this.radioBSelecao.Size = new System.Drawing.Size(14, 13);
+            this.radioBSelecao.TabIndex = 0;
+            this.radioBSelecao.TabStop = true;
+            this.radioBSelecao.UseVisualStyleBackColor = true;
+            this.radioBSelecao.Visible = false;
+            // 
             // FormCadastrarMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(569, 395);
+            this.Controls.Add(this.radioBSelecao);
             this.Controls.Add(this.radioMusica);
             this.Controls.Add(this.radioAlbum);
             this.Controls.Add(this.tbxMusica);
@@ -411,6 +426,7 @@
         private System.Windows.Forms.RadioButton radioAlbum;
         private System.Windows.Forms.RadioButton radioMusica;
         private System.Windows.Forms.ErrorProvider errorProviderMidia;
+        private System.Windows.Forms.RadioButton radioBSelecao;
 
 
     }

@@ -99,9 +99,9 @@
             this.lbPesquisaNome.AutoSize = true;
             this.lbPesquisaNome.Location = new System.Drawing.Point(6, 12);
             this.lbPesquisaNome.Name = "lbPesquisaNome";
-            this.lbPesquisaNome.Size = new System.Drawing.Size(35, 13);
+            this.lbPesquisaNome.Size = new System.Drawing.Size(38, 13);
             this.lbPesquisaNome.TabIndex = 0;
-            this.lbPesquisaNome.Text = "Nome";
+            this.lbPesquisaNome.Text = "Nome:";
             // 
             // btAlterar
             // 

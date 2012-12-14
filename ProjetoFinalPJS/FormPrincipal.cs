@@ -65,6 +65,7 @@ namespace ProjetoFinalPJS
 
             else
             {
+                errorProviderFiltro.SetError(checkBox_Autor, "");
                 tbxAutor.Enabled = false;
                 tbxAutor.Text = null;
             }
@@ -80,6 +81,7 @@ namespace ProjetoFinalPJS
             }
             else
             {
+                errorProviderFiltro.SetError(checkBox_dataAlbum, "");
                 tbxAlbum.Enabled = false;
                 tbxAlbum.Text = null;
             }
@@ -95,6 +97,7 @@ namespace ProjetoFinalPJS
             }
             else
             {
+                errorProviderFiltro.SetError(checkBoxInterprete, "");
                 tbxInterprete.Enabled = false;
                 tbxInterprete.Text = null;
             }
@@ -110,6 +113,7 @@ namespace ProjetoFinalPJS
             }
             else
             {
+                errorProviderFiltro.SetError(checkBox_origemCompra, "");
                 tbxOrigemCompra.Enabled = false;
                 tbxOrigemCompra.Text = null;
             }
@@ -150,6 +154,7 @@ namespace ProjetoFinalPJS
             }
             else
             {
+                errorProviderFiltro.SetError(checkBox_midia, "");
                 cbxMidia.Enabled = false;
                 cbxMidia.Text = null;
             }
@@ -164,6 +169,7 @@ namespace ProjetoFinalPJS
             }
             else
             {
+                errorProviderFiltro.SetError(checkBox_nota, "");
                 cbxNota.Enabled = false;
                 cbxNota.Text = null;
             }
@@ -309,61 +315,110 @@ namespace ProjetoFinalPJS
             conn.Close();
             DataTable TabelaDataSet = DataSetFiltro.Tables["Midias"];
 
-            
+
             foreach (DataRow registro in DataSetFiltro.Tables["Midias"].Rows)
             {
+                string tootip = "Campo em branco";
                 DateTime DataAlbum = Convert.ToDateTime(registro["DataAlbum"]);
                 DateTime DataCompra = Convert.ToDateTime(registro["DataAquisicao"]);
 
                 if (checkBoxInterprete.Checked)
+                {
+                    if (tbxInterprete.Text == "")
+                        errorProviderFiltro.SetError(checkBoxInterprete, tootip);
+                    else
+                    {
                         if (registro.RowState != DataRowState.Deleted && registro["Interprete"].ToString() != tbxInterprete.Text)
                             registro.Delete();
+                    }
+                }
 
                 if (checkBox_Autor.Checked)
+                {
+                    if (tbxAutor.Text == "")
+                        errorProviderFiltro.SetError(checkBox_Autor, tootip);
+                    else
+                    {
                         if (registro.RowState != DataRowState.Deleted && registro["Autor"].ToString() != tbxAutor.Text)
                             registro.Delete();
+                    }
+                }
 
                 if (checkBox_album.Checked)
+                {
+                    if (tbxAlbum.Text == "")
+                        errorProviderFiltro.SetError(checkBox_album, tootip);
+                    else
+                    {
                         if (registro.RowState != DataRowState.Deleted && registro["Album"].ToString() != tbxAlbum.Text && registro["Musica"].ToString() != tbxAlbum.Text)
                             registro.Delete();
+                    }
+                }
 
                 if (checkBox_origemCompra.Checked)
+                {
+                    if (tbxOrigemCompra.Text == "")
+                        errorProviderFiltro.SetError(checkBox_origemCompra, tootip);
+                    else
+                    {
                         if (registro.RowState != DataRowState.Deleted && registro["OrigemCompra"].ToString() != tbxOrigemCompra.Text)
                             registro.Delete();
+                    }
+                }
 
                 if (checkBox_midia.Checked)
+                {
+                    if (cbxMidia.Text == "")
+                        errorProviderFiltro.SetError(checkBox_midia, tootip);
+                    else
+                    {
                         if (registro.RowState != DataRowState.Deleted && registro["Tipo"].ToString() != cbxMidia.Text)
                             registro.Delete();
+                    }
+                }
 
                 if (checkBox_nota.Checked)
+                {
+                    if (cbxNota.Text == "")
+                        errorProviderFiltro.SetError(checkBox_nota, tootip);
+                    else
+                    {
                         if (registro.RowState != DataRowState.Deleted && registro["Nota"].ToString() != cbxNota.Text)
                             registro.Delete();
+                    }
+                }
 
-                if(checkBoxSituacao.Checked)
-                    if (registro.RowState != DataRowState.Deleted && registro["Situacao"].ToString() != comboBoxSituacao.Text)
-                        registro.Delete();
-
-                    //Superior a data de album
-                    if (checkBox_dataAlbum.Checked)
+                if (checkBoxSituacao.Checked)
+                {
+                    if (cbxSituacao.Text == "")
+                        errorProviderFiltro.SetError(checkBoxSituacao, tootip);
+                    else
+                    {
+                        if (registro.RowState != DataRowState.Deleted && registro["Situacao"].ToString() != cbxSituacao.Text)
+                            registro.Delete();
+                    }
+                }
+                //Superior a data de album
+                if (checkBox_dataAlbum.Checked)
                     if (registro.RowState != DataRowState.Deleted && DataAlbum < dateTimeDataAlbum.Value)
                         registro.Delete();
 
-                    //Inferior a data de album
+                //Inferior a data de album
                 if (checkBox_dataAlbum1.Checked)
                     if (registro.RowState != DataRowState.Deleted && DataAlbum > dateTimePickerDataAlbum1.Value)
                         registro.Delete();
 
-                    //Superior a data da compra
+                //Superior a data da compra
                 if (checkBox_dataCompra.Checked)
                     if (registro.RowState != DataRowState.Deleted && DataCompra < dateTimeDataCompra.Value)
                         registro.Delete();
 
-                    //Inferior a data de album
+                //Inferior a data de album
                 if (checkBoxDataCompra1.Checked)
                     if (registro.RowState != DataRowState.Deleted && DataCompra > dateTimePickerDataCompra1.Value)
                         registro.Delete();
             }
-                
+
             listViewMidia.Items.Clear();
 
             for (int i = 0; i < TabelaDataSet.Rows.Count; i++)
@@ -407,7 +462,6 @@ namespace ProjetoFinalPJS
                     Cor_ListViewMidia();//.................... Cor na Linha do ListviewMidia
                 }
             }
-
         }
 
 
@@ -448,11 +502,12 @@ namespace ProjetoFinalPJS
         private void checkBoxSituacao_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxSituacao.Checked)
-                comboBoxSituacao.Enabled = true;
+                cbxSituacao.Enabled = true;
             else
             {
-                comboBoxSituacao.Enabled = false;
-                comboBoxSituacao.Text = null;
+                errorProviderFiltro.SetError(checkBoxSituacao, "");
+                cbxSituacao.Enabled = false;
+                cbxSituacao.Text = null;
             }
         }
 
@@ -494,6 +549,30 @@ namespace ProjetoFinalPJS
         private void btHistórico_Click(object sender, EventArgs e)
         {
             FormHistoricoDevolucao abrir = new FormHistoricoDevolucao();
+            abrir.Show();
+        }
+
+        private void mídiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastrarMidia abrir = new FormCadastrarMidia();
+            abrir.Show();
+        }
+
+        private void amigoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCadastrarAmigo abrir = new FormCadastrarAmigo();
+            abrir.Show();
+        }
+
+        private void emprestarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEmprestarMidia abrir = new FormEmprestarMidia();
+            abrir.Show();
+        }
+
+        private void devolverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDevolverMidia abrir = new FormDevolverMidia();
             abrir.Show();
         }
     }
