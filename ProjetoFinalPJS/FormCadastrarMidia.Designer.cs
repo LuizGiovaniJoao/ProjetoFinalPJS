@@ -55,10 +55,8 @@
             this.tbxMusica = new System.Windows.Forms.TextBox();
             this.radioAlbum = new System.Windows.Forms.RadioButton();
             this.radioMusica = new System.Windows.Forms.RadioButton();
-
             this.errorProviderMidia = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMidia)).BeginInit();
-
             this.SuspendLayout();
             // 
             // tbxInterprete
@@ -137,7 +135,9 @@
             // cbxMidia
             // 
             this.cbxMidia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxMidia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMidia.Enabled = false;
+            this.cbxMidia.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbxMidia.FormattingEnabled = true;
             this.cbxMidia.Items.AddRange(new object[] {
             "Vinil",
@@ -153,6 +153,7 @@
             // cbxNota
             // 
             this.cbxNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxNota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNota.Enabled = false;
             this.cbxNota.FormattingEnabled = true;
             this.cbxNota.Items.AddRange(new object[] {

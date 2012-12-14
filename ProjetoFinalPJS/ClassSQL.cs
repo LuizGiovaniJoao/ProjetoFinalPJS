@@ -12,9 +12,9 @@ namespace ProjetoFinalPJS
     {
         //public string stringConexao = @"Data Source=FAMILIAFURLAN;Initial Catalog=BD_AcervoMusical;User ID=FamiliaFurlan;Password=12345";
         // String do João
-        //public string stringConexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
+        public string stringConexao = @"Data Source=JOÃOCÍCERO-PC\JOÃOCÍCERO;Initial Catalog=BD_AcervoMusical;User ID=JoaoCicero;Password=5077005077";
         // String do Giovani
-        public string stringConexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
+        //public string stringConexao = @"Data Source=GIOVANIAPARRECI;Initial Catalog=BD_AcervoMusical;Integrated Security=True";
 
         SqlConnection ObjConexao = null;
 
@@ -306,7 +306,7 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@TIPO", Insert[7]));
                     ObjComando.Parameters.Add(new SqlParameter("@OBSERVACOES", Insert[8]));
                     ObjComando.Parameters.Add(new SqlParameter("@NOTA", Insert[9]));
-                    ObjComando.Parameters.Add(new SqlParameter("@SITUACAO", Insert[10]));
+                    ObjComando.Parameters.Add(new SqlParameter("@SITUACAO", "Disponível"));
 
                     ObjComando.ExecuteNonQuery();
 
@@ -330,7 +330,7 @@ namespace ProjetoFinalPJS
         public bool UpdateMidia(ArrayList Update)
         {
             string stringComando = string.Empty;
-            stringComando = "UPDATE Midia SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observacoes = @OBSERVACOES, Nota = @NOTA, Situacao = @SITUACAO WHERE Interprete = @INTERPRETE AND Album = @ALBUM OR Interprete = @INTERPRETE AND Musica = @MUSICA ";
+            stringComando = "UPDATE Midia SET  Interprete = @INTERPRETE, Autor = @AUTOR, Album = @ALBUM, Musica = @MUSICA, DataAlbum = @DATAALBUM, DataAquisicao = @DATAAQUISICAO, OrigemCompra = @ORIGEMCOMPRA, Tipo = @TIPO, Observacoes = @OBSERVACOES, Nota = @NOTA WHERE Interprete = @INTERPRETE AND Album = @ALBUM OR Interprete = @INTERPRETE AND Musica = @MUSICA ";
 
             SqlCommand ObjComando = new SqlCommand();
 
@@ -350,7 +350,6 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@TIPO", Update[7]));
                     ObjComando.Parameters.Add(new SqlParameter("@OBSERVACOES", Update[8]));
                     ObjComando.Parameters.Add(new SqlParameter("@NOTA", Update[9]));
-                    ObjComando.Parameters.Add(new SqlParameter("@SITUACAO", Update[10]));
 
                     ObjComando.ExecuteNonQuery();
 

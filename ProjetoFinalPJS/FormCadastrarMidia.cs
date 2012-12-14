@@ -45,6 +45,7 @@ namespace ProjetoFinalPJS
             tbxObsevacoes.Text = dadosLV[7];
             cbxMidia.Text = dadosLV[8];
             cbxNota.Text = dadosLV[9];
+            string Situacao = dadosLV[10];
 
             radioAlbum.Enabled = false;
             radioMusica.Enabled = false;
@@ -144,6 +145,7 @@ namespace ProjetoFinalPJS
                 {
                     MessageBox.Show("Legaaallll");
                     FormularioPrincipal.AtualizaAutoCompletar();
+                    FormularioPrincipal.Exibicao_ListViewMidia();
                 }
                 else
                     MessageBox.Show("Não deu");
@@ -166,7 +168,7 @@ namespace ProjetoFinalPJS
         public void btGravar_Click(object sender, EventArgs e)
         {
             FormPrincipal frm = new FormPrincipal();
-            
+
             if (tbxAutor.Text != "" && cbxMidia.Text != "")
             {
                 ClassSQL InserirMidia = new ClassSQL();
@@ -193,13 +195,13 @@ namespace ProjetoFinalPJS
             objArrayList.Add(tbxAutor.Text);//......................... Autor
             objArrayList.Add(tbxAlbum.Text);//......................... Album
             objArrayList.Add(tbxMusica.Text);//........................ Música
-            objArrayList.Add(dateTimePickerAlbum.Value.ToString());//.. Data do Album
-            objArrayList.Add(dateTimePickerCompra.Value.ToString());//. Data da Compra
+            objArrayList.Add(dateTimePickerAlbum.Value);//............. Data do Album
+            objArrayList.Add(dateTimePickerCompra.Value);//............ Data da Compra
             objArrayList.Add(tbxOrigemCompra.Text);//.................. Origem da Compra
             objArrayList.Add(cbxMidia.Text);//......................... Tipo de Mídia
             objArrayList.Add(tbxObsevacoes.Text);//.................... Observações
             objArrayList.Add(cbxNota.Text);//.......................... Nota
-            objArrayList.Add("Disponível");//.......................... Situação
+            //objArrayList.Add("Disponível");//.......................... Situação
 
             return(objArrayList);
        }
