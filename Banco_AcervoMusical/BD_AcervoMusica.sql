@@ -56,11 +56,13 @@ CREATE TABLE ItemEmprestimo
 );
 GO
 
+update Midia set Situacao = 'Disponível'
+
 CREATE TABLE Devolucao 
 (
 	Id INT PRIMARY KEY IDENTITY,
 	Apelido VARCHAR(50),
-	DataEmprestimo DATE,
+	DataEmprestimo varchar(11),
 	Interprete VARCHAR(50),
 	Tipo VARCHAR(10),
 	Musica VARCHAR(30),

@@ -249,6 +249,7 @@
             listViewGroup2});
             this.ListViewEmprestimos.Location = new System.Drawing.Point(12, 184);
             this.ListViewEmprestimos.Name = "ListViewEmprestimos";
+            this.ListViewEmprestimos.ShowGroups = false;
             this.ListViewEmprestimos.Size = new System.Drawing.Size(468, 173);
             this.ListViewEmprestimos.TabIndex = 52;
             this.ListViewEmprestimos.UseCompatibleStateImageBehavior = false;
@@ -277,7 +278,7 @@
             // LVDTEmpres
             // 
             this.LVDTEmpres.Text = "Data Empréstimo";
-            this.LVDTEmpres.Width = 64;
+            this.LVDTEmpres.Width = 108;
             // 
             // lbApelido
             // 

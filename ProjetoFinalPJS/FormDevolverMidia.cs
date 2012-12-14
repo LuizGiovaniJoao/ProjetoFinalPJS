@@ -105,6 +105,31 @@ namespace ProjetoFinalPJS
 
                 if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
                 {
+                    string DataConvertida = dtDevolucao.Text;
+                    char X;
+                    char[] Data_ConvertidaArray = DataConvertida.ToCharArray();
+                    X = Data_ConvertidaArray[0];
+                    Data_ConvertidaArray[0] = Data_ConvertidaArray[3];
+                    Data_ConvertidaArray[3] = X;
+                    X = Data_ConvertidaArray[1];
+                    Data_ConvertidaArray[1] = Data_ConvertidaArray[4];
+                    Data_ConvertidaArray[4] = X;
+                    DataConvertida = new string(Data_ConvertidaArray);
+
+                    ArrayList InsertDevolucao = new ArrayList();
+                    InsertDevolucao.Add(cbxApelido.Text);
+                    InsertDevolucao.Add(dadosListView[4]);
+                    InsertDevolucao.Add(dadosListView[0]);
+                    InsertDevolucao.Add(dadosListView[3]);
+                    InsertDevolucao.Add(dadosListView[2]);
+                    InsertDevolucao.Add(dadosListView[1]);
+                    InsertDevolucao.Add(DataConvertida);
+
+                    if (Emprestar.Devolucao(InsertDevolucao))
+                    {
+                        MessageBox.Show("Inseriu devolucao", "");
+                    }
+
                     MessageBox.Show("Update", "");
                     ArrayList objDelete = new ArrayList();
                     objDelete.Add(dadosListView[0]);  //Intérprete
@@ -145,11 +170,30 @@ namespace ProjetoFinalPJS
 
                 if (Emprestar.AtualizaDisponibilidade(objArrayDisponibilidade))
                 {
-                    //ArrayList InsertDevolucao();
-                    //if(Emprestar.Devolucao())
-                    //{
+                    string DataConvertida = dtDevolucao.Text;
+                    char X;
+                    char[] Data_ConvertidaArray = DataConvertida.ToCharArray();
+                    X = Data_ConvertidaArray[0];
+                    Data_ConvertidaArray[0] = Data_ConvertidaArray[3];
+                    Data_ConvertidaArray[3] = X;
+                    X = Data_ConvertidaArray[1];
+                    Data_ConvertidaArray[1] = Data_ConvertidaArray[4];
+                    Data_ConvertidaArray[4] = X;
+                    DataConvertida = new string(Data_ConvertidaArray);
 
-                    //}
+                    ArrayList InsertDevolucao = new ArrayList();
+                    InsertDevolucao.Add(cbxApelido.Text);
+                    InsertDevolucao.Add(dadosListView[4]);
+                    InsertDevolucao.Add(dadosListView[0]);
+                    InsertDevolucao.Add(dadosListView[3]);
+                    InsertDevolucao.Add(dadosListView[2]);
+                    InsertDevolucao.Add(dadosListView[1]);
+                    InsertDevolucao.Add(DataConvertida);
+
+                    if(Emprestar.Devolucao(InsertDevolucao))
+                    {
+                        MessageBox.Show("Inseriu devolucao","");
+                    }
 
                     MessageBox.Show("Update", "");
                     ArrayList objDelete = new ArrayList();

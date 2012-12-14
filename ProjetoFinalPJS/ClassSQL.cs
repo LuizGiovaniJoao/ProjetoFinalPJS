@@ -572,7 +572,7 @@ namespace ProjetoFinalPJS
                     ObjComando.Parameters.Add(new SqlParameter("@Tipo", Insert[3]));
                     ObjComando.Parameters.Add(new SqlParameter("@Musica", Insert[4]));
                     ObjComando.Parameters.Add(new SqlParameter("@Album", Insert[5]));
-                    ObjComando.Parameters.Add(new SqlParameter("@DataDevolucao", Insert[0]));
+                    ObjComando.Parameters.Add(new SqlParameter("@DataDevolucao", Insert[6]));
 
                     ObjComando.ExecuteNonQuery();
 

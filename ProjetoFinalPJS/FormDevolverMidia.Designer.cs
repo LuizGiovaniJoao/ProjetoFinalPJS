@@ -38,7 +38,7 @@
             this.LVNidia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LVDataEmprestimo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtDevolucao = new System.Windows.Forms.DateTimePicker();
             this.cbxEndereco = new System.Windows.Forms.ComboBox();
             this.btDevolver = new System.Windows.Forms.Button();
             this.btDevolveTudo = new System.Windows.Forms.Button();
@@ -117,22 +117,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(336, 9);
+            this.label1.Location = new System.Drawing.Point(293, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Data de Devolução";
             this.label1.Visible = false;
             // 
-            // dateTimePicker2
+            // dtDevolucao
             // 
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(339, 26);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(101, 20);
-            this.dateTimePicker2.TabIndex = 11;
-            this.dateTimePicker2.Visible = false;
+            this.dtDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDevolucao.Location = new System.Drawing.Point(296, 26);
+            this.dtDevolucao.Name = "dtDevolucao";
+            this.dtDevolucao.Size = new System.Drawing.Size(101, 20);
+            this.dtDevolucao.TabIndex = 11;
             // 
             // cbxEndereco
             // 
@@ -166,9 +164,9 @@
             // cbxIdEmprestimo
             // 
             this.cbxIdEmprestimo.FormattingEnabled = true;
-            this.cbxIdEmprestimo.Location = new System.Drawing.Point(296, 25);
+            this.cbxIdEmprestimo.Location = new System.Drawing.Point(403, 25);
             this.cbxIdEmprestimo.Name = "cbxIdEmprestimo";
-            this.cbxIdEmprestimo.Size = new System.Drawing.Size(37, 21);
+            this.cbxIdEmprestimo.Size = new System.Drawing.Size(10, 21);
             this.cbxIdEmprestimo.TabIndex = 15;
             this.cbxIdEmprestimo.Visible = false;
             // 
@@ -181,7 +179,7 @@
             this.Controls.Add(this.btDevolveTudo);
             this.Controls.Add(this.cbxIdEmprestimo);
             this.Controls.Add(this.cbxEndereco);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dtDevolucao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listViewDevMidia);
             this.Controls.Add(this.lbEndereco);
@@ -206,7 +204,7 @@
         private System.Windows.Forms.ColumnHeader LVMusica;
         private System.Windows.Forms.ColumnHeader LVDataEmprestimo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtDevolucao;
         private System.Windows.Forms.ComboBox cbxEndereco;
         private System.Windows.Forms.Button btDevolver;
         private System.Windows.Forms.Button btDevolveTudo;
