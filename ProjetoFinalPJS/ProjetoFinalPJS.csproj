@@ -73,6 +73,12 @@
     <Compile Include="FormEmprestarMidia.Designer.cs">
       <DependentUpon>FormEmprestarMidia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHistoricoDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistoricoDevolucao.Designer.cs">
+      <DependentUpon>FormHistoricoDevolucao.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListaAmigos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmprestarMidia.resx">
       <DependentUpon>FormEmprestarMidia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistoricoDevolucao.resx">
+      <DependentUpon>FormHistoricoDevolucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListaAmigos.resx">
       <DependentUpon>FormListaAmigos.cs</DependentUpon>
