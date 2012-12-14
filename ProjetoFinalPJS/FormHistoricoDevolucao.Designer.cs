@@ -62,6 +62,7 @@
             this.Controls.Add(this.lbHistorico);
             this.Controls.Add(this.dGVHistoricoDevolucao);
             this.Name = "FormHistoricoDevolucao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHistoricoDevolucao";
             this.Load += new System.EventHandler(this.FormHistoricoDevolucao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVHistoricoDevolucao)).EndInit();

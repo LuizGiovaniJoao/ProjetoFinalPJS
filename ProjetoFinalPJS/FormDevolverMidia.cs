@@ -223,5 +223,11 @@ namespace ProjetoFinalPJS
                 listaSelect();
             }
         }
+
+        private void btDevolucoes_Click(object sender, EventArgs e)
+        {
+            FormHistoricoDevolucao abrir = new FormHistoricoDevolucao();
+            abrir.Show();
+        }
     }
 }

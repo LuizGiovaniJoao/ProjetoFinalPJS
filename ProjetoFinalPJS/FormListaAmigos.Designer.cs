@@ -154,6 +154,7 @@
             this.Controls.Add(this.gbxPesquisaNome);
             this.Controls.Add(this.dGridViewListaNomes);
             this.Name = "FormListaAmigos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Amigos";
             this.Load += new System.EventHandler(this.FormListaAmigos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewListaNomes)).EndInit();

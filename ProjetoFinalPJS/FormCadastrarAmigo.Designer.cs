@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 260);
+            this.ClientSize = new System.Drawing.Size(521, 270);
             this.Controls.Add(this.cbxCidade);
             this.Controls.Add(this.tbxApelido);
             this.Controls.Add(this.lbApelido);
@@ -279,6 +279,7 @@
             this.MaximumSize = new System.Drawing.Size(527, 298);
             this.MinimumSize = new System.Drawing.Size(527, 298);
             this.Name = "FormCadastrarAmigo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadatro de Amigo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastrarAmigo_FormClosing);
             this.Load += new System.EventHandler(this.FormCadastrarAmigo_Load);

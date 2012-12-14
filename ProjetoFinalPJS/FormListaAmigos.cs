@@ -50,11 +50,6 @@ namespace ProjetoFinalPJS
             if (DeletarAmigo.Delete(Apelido))
             {
                 dGridViewListaNomes.Rows.RemoveAt(dGridViewListaNomes.CurrentRow.Index);
-                MessageBox.Show("Removido");
-            }
-            else
-            {
-                MessageBox.Show("Não Removeu");
             }
         }
 

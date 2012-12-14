@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Musica", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Album", System.Windows.Forms.HorizontalAlignment.Left);
             this.lblApelido = new System.Windows.Forms.Label();
             this.lbInterprete = new System.Windows.Forms.Label();
             this.cbxInterprete = new System.Windows.Forms.ComboBox();
@@ -241,13 +241,13 @@
             this.LVMidia,
             this.LVDTEmpres});
             this.ListViewEmprestimos.FullRowSelect = true;
-            listViewGroup3.Header = "Musica";
-            listViewGroup3.Name = "Músicas";
-            listViewGroup4.Header = "Album";
-            listViewGroup4.Name = "Álbum";
+            listViewGroup1.Header = "Musica";
+            listViewGroup1.Name = "Músicas";
+            listViewGroup2.Header = "Album";
+            listViewGroup2.Name = "Álbum";
             this.ListViewEmprestimos.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup1,
+            listViewGroup2});
             this.ListViewEmprestimos.Location = new System.Drawing.Point(12, 184);
             this.ListViewEmprestimos.Name = "ListViewEmprestimos";
             this.ListViewEmprestimos.ShowGroups = false;
@@ -370,7 +370,7 @@
             this.MaximumSize = new System.Drawing.Size(508, 435);
             this.MinimumSize = new System.Drawing.Size(508, 435);
             this.Name = "FormEmprestarMidia";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormEmprestarMidia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmprestimo)).EndInit();
             this.ResumeLayout(false);

@@ -56,8 +56,6 @@ CREATE TABLE ItemEmprestimo
 );
 GO
 
-update Midia set Situacao = 'Disponível'
-
 CREATE TABLE Devolucao 
 (
 	Id INT PRIMARY KEY IDENTITY,
@@ -70,10 +68,6 @@ CREATE TABLE Devolucao
 	DatADevolucao DATE
 );
 GO
-
-select * from Devolucao
-
-select * from ItemEmprestimo
 
 CREATE  TABLE estados (
   id_estado INT NOT NULL ,

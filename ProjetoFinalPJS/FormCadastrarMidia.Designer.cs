@@ -390,6 +390,7 @@
             this.Controls.Add(this.tbxAutor);
             this.Controls.Add(this.tbxInterprete);
             this.Name = "FormCadastrarMidia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Mídia";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMidia)).EndInit();
             this.ResumeLayout(false);

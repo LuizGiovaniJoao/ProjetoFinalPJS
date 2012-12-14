@@ -43,6 +43,7 @@
             this.btDevolver = new System.Windows.Forms.Button();
             this.btDevolveTudo = new System.Windows.Forms.Button();
             this.cbxIdEmprestimo = new System.Windows.Forms.ComboBox();
+            this.btDevolucoes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbApelido
@@ -148,7 +149,7 @@
             // btDevolver
             // 
             this.btDevolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btDevolver.Location = new System.Drawing.Point(527, 327);
+            this.btDevolver.Location = new System.Drawing.Point(435, 327);
             this.btDevolver.Name = "btDevolver";
             this.btDevolver.Size = new System.Drawing.Size(86, 23);
             this.btDevolver.TabIndex = 16;
@@ -159,7 +160,7 @@
             // btDevolveTudo
             // 
             this.btDevolveTudo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btDevolveTudo.Location = new System.Drawing.Point(619, 327);
+            this.btDevolveTudo.Location = new System.Drawing.Point(527, 327);
             this.btDevolveTudo.Name = "btDevolveTudo";
             this.btDevolveTudo.Size = new System.Drawing.Size(86, 23);
             this.btDevolveTudo.TabIndex = 17;
@@ -176,11 +177,23 @@
             this.cbxIdEmprestimo.TabIndex = 15;
             this.cbxIdEmprestimo.Visible = false;
             // 
+            // btDevolucoes
+            // 
+            this.btDevolucoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btDevolucoes.Location = new System.Drawing.Point(619, 327);
+            this.btDevolucoes.Name = "btDevolucoes";
+            this.btDevolucoes.Size = new System.Drawing.Size(86, 23);
+            this.btDevolucoes.TabIndex = 18;
+            this.btDevolucoes.Text = "Devoluções";
+            this.btDevolucoes.UseVisualStyleBackColor = true;
+            this.btDevolucoes.Click += new System.EventHandler(this.btDevolucoes_Click);
+            // 
             // FormDevolverMidia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 356);
+            this.Controls.Add(this.btDevolucoes);
             this.Controls.Add(this.btDevolver);
             this.Controls.Add(this.btDevolveTudo);
             this.Controls.Add(this.cbxIdEmprestimo);
@@ -193,6 +206,7 @@
             this.Controls.Add(this.lbApelido);
             this.MinimumSize = new System.Drawing.Size(733, 394);
             this.Name = "FormDevolverMidia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Devolver Midia";
             this.Load += new System.EventHandler(this.FormDevolverMidia_Load);
             this.ResumeLayout(false);
@@ -217,5 +231,6 @@
         private System.Windows.Forms.Button btDevolveTudo;
         private System.Windows.Forms.ColumnHeader LVNidia;
         private System.Windows.Forms.ComboBox cbxIdEmprestimo;
+        private System.Windows.Forms.Button btDevolucoes;
     }
 }

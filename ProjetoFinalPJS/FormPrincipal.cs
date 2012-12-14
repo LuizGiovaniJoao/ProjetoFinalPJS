@@ -27,6 +27,8 @@ namespace ProjetoFinalPJS
             AtualizaAutoCompletar();
             this.dateTimeDataAlbum.Value = DateTime.Now;
             this.dateTimeDataCompra.Value = DateTime.Now;
+            this.dateTimePickerDataAlbum1.Value = DateTime.Now;
+            this.dateTimePickerDataCompra1.Value = DateTime.Now;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -292,13 +294,8 @@ namespace ProjetoFinalPJS
                 {
                     if (DeletarMidia.DeleteMidia(listViewItem.SubItems[3].Text, listViewItem.SubItems[1].Text, listViewItem.Text))
                     {
-                        MessageBox.Show("Removido");
                         listViewItem.Remove();
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Não Removeu");
                     }
                     Cor_ListViewMidia();
                 }
@@ -574,6 +571,11 @@ namespace ProjetoFinalPJS
         {
             FormDevolverMidia abrir = new FormDevolverMidia();
             abrir.Show();
+        }
+
+        private void dateTimeDataAlbum_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
