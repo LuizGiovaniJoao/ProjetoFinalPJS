@@ -22,7 +22,7 @@ namespace ProjetoFinalPJS
 
         private void FormDevolverMidia_Load(object sender, EventArgs e)
         {
-            listar("SELECT DISTINCT Apelido FROM Emprestimo", cbxApelido, "Apelido");
+            listar("SELECT DISTINCT Apelido FROM Emprestimo Emp INNER JOIN ItemEmprestimo Ite ON Emp.IdEmprestimo = Ite.IdEmprestimo", cbxApelido, "Apelido");
             // DISTINCT para impedir dados repetidos no select
         }
 
@@ -40,10 +40,16 @@ namespace ProjetoFinalPJS
             caixaTexto.ValueMember = Campo;
         }
 
-        private void cbxApelido_SelectedIndexChanged(object sender, EventArgs e)
+        public void listaSelect()
         {
+            listar("SELECT DISTINCT Apelido FROM Emprestimo Emp INNER JOIN ItemEmprestimo Ite ON Emp.IdEmprestimo = Ite.IdEmprestimo", cbxApelido, "Apelido");
             listar("SELECT DISTINCT EnderecoAmigo FROM EMPRESTIMO WHERE Apelido = '" + cbxApelido.Text + "'", cbxEndereco, "EnderecoAmigo");
             listar("SELECT IdEmprestimo FROM Emprestimo WHERE APELIDO = '" + cbxApelido.Text + "'", cbxIdEmprestimo, "IdEmprestimo");
+        }
+
+        private void cbxApelido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listaSelect();
             SqlConnection conn = new SqlConnection(conexao.stringConexao);
             conn.Open();
 
@@ -202,12 +208,17 @@ namespace ProjetoFinalPJS
                     objDelete.Add(dadosListView[2]);  //Música
                     objDelete.Add(dadosListView[3]);
                     ///////////////////////
-                    if(Emprestar.DeletaItens(objDelete))
+                    if (Emprestar.DeletaItens(objDelete))
                     {
-                        MessageBox.Show("deletou","");
+                        MessageBox.Show("deletou", "");
                     }
                 }
                 listViewItem.Remove();
+            }
+
+            if (listViewDevMidia.Items.Count == 0)
+            {
+                listaSelect();
             }
         }
     }

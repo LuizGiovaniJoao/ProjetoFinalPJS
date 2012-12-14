@@ -71,6 +71,10 @@ CREATE TABLE Devolucao
 );
 GO
 
+select * from Devolucao
+
+select * from ItemEmprestimo
+
 CREATE  TABLE estados (
   id_estado INT NOT NULL ,
   uf VARCHAR(2) NOT NULL ,
